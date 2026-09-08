@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>지영이와 노량진, 그리고 포천</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFF4F7; --ink:#4A2C3A; --muted:#9A6F82; --line:#F7D6E2;
+  --night:#F06292; --night-soft:#F48FB1; --lake:#C48FE0; --lake-soft:#D7B3EC;
+  --ramen:#FFD3E1; --card:#FFFFFF; --heart:#F06292;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#2A1C24; --ink:#FBE9F0; --muted:#D9A9BE; --line:#4A3040; --card:#382531;
+    --night:#C2456F; --night-soft:#D6608A; --lake:#8E5FB3; --lake-soft:#A67CC6; --ramen:#F48FB1;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#2A1C24; --ink:#FBE9F0; --muted:#D9A9BE; --line:#4A3040; --card:#382531;
+  --night:#C2456F; --night-soft:#D6608A; --lake:#8E5FB3; --lake-soft:#A67CC6; --ramen:#F48FB1;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans KR","Apple SD Gothic Neo",sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+img{max-width:100%}
+a{color:inherit}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:62vh;color:#fff}
+.hero a{display:flex;flex-direction:column;justify-content:flex-end;padding:22px 18px 26px;text-decoration:none;position:relative}
+.hero .sat{background:var(--night)}
+.hero .sun{background:var(--lake)}
+.hero .date{font-size:13px;opacity:.75;margin-bottom:6px}
+.hero h1{font-family:"Gowun Dodum","Noto Sans KR",sans-serif;font-weight:700;font-size:38px;line-height:1.15;margin:0 0 10px;writing-mode:vertical-rl;text-orientation:upright;letter-spacing:6px;height:200px;position:absolute;top:22px;right:18px}
+.hero p{margin:0;font-size:14px;line-height:1.55;opacity:.9;max-width:150px}
+.hero .go{margin-top:14px;font-size:13px;border-bottom:1px solid rgba(255,255,255,.5);align-self:flex-start;padding-bottom:2px}
+.hero .ramen{position:absolute;left:18px;top:22px;width:44px;height:44px;border-radius:50%;background:var(--ramen);display:grid;place-items:center;color:#1B2A3A;font-weight:700;font-size:12px;line-height:1.1;text-align:center}
+
+.intro{padding:26px 20px 6px;max-width:640px;margin:0 auto}
+.intro p{margin:0 0 10px;color:var(--muted);font-size:15px}
+.intro b{color:var(--ink)}
+
+/* day switcher */
+.tabs{position:sticky;top:0;z-index:5;display:flex;background:var(--paper);border-bottom:1px solid var(--line)}
+.tabs a{flex:1;text-align:center;padding:14px 8px;text-decoration:none;font-weight:500;font-size:15px;color:var(--muted);border-bottom:3px solid transparent}
+.tabs a.on{color:var(--ink);border-color:currentColor}
+
+section.day{max-width:640px;margin:0 auto;padding:28px 20px 8px}
+.day h2{font-family:"Gowun Dodum","Noto Sans KR",sans-serif;font-size:28px;font-weight:700;margin:0 0 4px;line-height:1.25}
+.day .lead{margin:0 0 18px;color:var(--muted);font-size:15px}
+.stat{display:flex;gap:18px;font-size:13px;color:var(--muted);margin:0 0 22px;flex-wrap:wrap}
+.stat b{display:block;font-size:18px;color:var(--ink);font-family:"Gowun Dodum","Noto Sans KR",sans-serif;font-weight:700}
+
+/* timeline */
+.tl{display:grid;grid-template-columns:54px 1fr;row-gap:0}
+.tl .t{font-family:"Gowun Dodum","Noto Sans KR",sans-serif;font-size:17px;font-weight:700;padding-top:14px;color:var(--ink)}
+.tl .t small{display:block;font-size:11px;color:var(--muted);font-family:"Noto Sans KR",sans-serif;font-weight:400;line-height:1.3}
+.tl .c{border-left:2px solid var(--line);padding:12px 0 22px 16px;position:relative}
+.tl .c::before{content:"";position:absolute;left:-7px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--dot,var(--night))}
+.sun-day .tl .c{--dot:var(--lake)}
+.tl h3{margin:0 0 4px;font-size:17px;font-weight:700}
+.tl p{margin:0 0 8px;font-size:15px}
+.tl .move{font-size:13px;color:var(--muted);margin:0 0 6px}
+.act{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.act a{font-size:13px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;text-decoration:none;background:var(--card);color:var(--ink)}
+.act a.map{border-color:transparent;background:var(--ramen);color:#1B2A3A;font-weight:500}
+
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:14px;margin:8px 0 20px}
+.note b{display:block;margin-bottom:2px}
+.planb{border-left:4px solid var(--ramen);padding-left:12px;margin:0 0 14px;font-size:14px;color:var(--muted)}
+
+/* budget + checklist */
+.wrap{max-width:640px;margin:0 auto;padding:10px 20px 40px}
+.wrap h2{font-family:"Gowun Dodum","Noto Sans KR",sans-serif;font-size:24px;margin:22px 0 10px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-weight:500;color:var(--muted);padding:6px 0;border-bottom:1px solid var(--line)}
+td{padding:9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td+td,th+th{padding-left:10px}
+ul.chk{list-style:none;padding:0;margin:0}
+ul.chk li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid var(--line);font-size:15px}
+ul.chk li::before{content:"";position:absolute;left:2px;top:12px;width:16px;height:16px;border:2px solid var(--muted);border-radius:4px}
+ul.chk li.done{color:var(--muted);text-decoration:line-through}
+ul.chk li.done::before{background:var(--ramen);border-color:var(--ramen)}
+.foot{color:var(--muted);font-size:12px;text-align:center;padding:10px 20px 40px}
+.tel{display:grid;grid-template-columns:1fr auto;gap:6px 12px;font-size:15px}
+.tel a{text-decoration:none;color:var(--lake);font-weight:500}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+:focus-visible{outline:3px solid var(--ramen);outline-offset:2px}
+@media(min-width:640px){.hero{min-height:420px}.hero p{max-width:260px}}
+
+.hero .pet{position:absolute;left:14px;bottom:110px;width:96px;height:96px}
+.hero .ramen{color:#8A2C55;font-family:"Gowun Dodum",sans-serif;font-size:13px;box-shadow:0 4px 0 rgba(0,0,0,.08)}
+.hero h1{text-shadow:0 2px 0 rgba(0,0,0,.12)}
+.hero .go{border-bottom:2px dotted rgba(255,255,255,.7)}
+.hero .sun .pet{left:auto;right:14px}
+.hero .sun h1{right:auto;left:18px}
+.hearts{display:flex;justify-content:center;gap:6px;font-size:18px;margin:6px 0 0;letter-spacing:2px}
+.tl .c::before{width:14px;height:14px;border:none;background:var(--heart);
+  clip-path:polygon(50% 100%,10% 55%,10% 25%,30% 10%,50% 25%,70% 10%,90% 25%,90% 55%);left:-8px;top:18px}
+.sun-day .tl .c::before{background:var(--lake)}
+.note,.act a,table{border-radius:16px}
+.note{background:#fff;border:2px dashed var(--line)}
+.act a.map{background:var(--night);color:#fff}
+.sun-day .act a.map{background:var(--lake)}
+.tabs a.on{color:var(--night)}
+.sticker{position:absolute;font-size:26px;line-height:1}
+.day h2{display:flex;align-items:center;gap:8px}
+.day h2 svg{width:34px;height:34px;flex:none}
+ul.chk li::before{border-radius:50%;border-color:var(--night-soft)}
+ul.chk li.done::before{background:var(--night);border-color:var(--night)}
+.paw{display:flex;justify-content:center;gap:14px;padding:6px 0 0;opacity:.7}
+.paw svg{width:22px;height:22px;transform:rotate(-15deg)}
+.paw svg:nth-child(2n){transform:rotate(15deg)}
+.foot{font-family:"Gowun Dodum",sans-serif;font-size:14px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <a class="sat" href="#sat">
+    <span class="ramen">한강<br>라면 ♥</span>
+    <h1>노량진</h1>
+    <svg class="pet" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path d="M22 40 L18 12 L40 28 Z" fill="#FFF"/><path d="M78 40 L82 12 L60 28 Z" fill="#FFF"/>
+<path d="M26 34 L23 18 L36 30 Z" fill="#FFB6CC"/><path d="M74 34 L77 18 L64 30 Z" fill="#FFB6CC"/>
+<ellipse cx="50" cy="56" rx="34" ry="30" fill="#FFF"/>
+<circle cx="38" cy="52" r="3.5" fill="#4A2C3A"/><circle cx="62" cy="52" r="3.5" fill="#4A2C3A"/>
+<circle cx="30" cy="62" r="5" fill="#FFB6CC"/><circle cx="70" cy="62" r="5" fill="#FFB6CC"/>
+<path d="M47 60 h6 l-3 4 z" fill="#F06292"/><path d="M44 66 q3 4 6 0 q3 4 6 0" fill="none" stroke="#4A2C3A" stroke-width="2" stroke-linecap="round"/>
+<path d="M14 58 l14 2 M14 66 l14 -2 M86 58 l-14 2 M86 66 l-14 -2" stroke="#4A2C3A" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M50 30 l-3 -6 l3 -2 l3 2 z" fill="#F06292"/></svg>
+    <span class="date">9월 12일 토요일 저녁</span>
+    <p>대게 한 상, 한강대교 건너 노들섬에서 라면 한 그릇.</p>
+    <span class="go">토요일 보기</span>
+  </a>
+  <a class="sun" href="#sun">
+    <h1>포천</h1>
+    <svg class="pet" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<ellipse cx="22" cy="52" rx="12" ry="22" fill="#F8C9DD"/><ellipse cx="78" cy="52" rx="12" ry="22" fill="#F8C9DD"/>
+<ellipse cx="50" cy="56" rx="32" ry="30" fill="#FFF"/>
+<circle cx="39" cy="50" r="3.5" fill="#4A2C3A"/><circle cx="61" cy="50" r="3.5" fill="#4A2C3A"/>
+<ellipse cx="50" cy="64" rx="6" ry="4.5" fill="#4A2C3A"/>
+<path d="M50 68 v5 M44 74 q6 5 12 0" fill="none" stroke="#4A2C3A" stroke-width="2" stroke-linecap="round"/>
+<circle cx="31" cy="60" r="5" fill="#FFB6CC"/><circle cx="69" cy="60" r="5" fill="#FFB6CC"/>
+<path d="M50 24 l6 -8 l4 3 l-5 6 z" fill="#F06292"/><path d="M40 24 l-6 -8 l-4 3 l5 6 z" fill="#F06292"/>
+<path d="M45 26 l5 -4 l5 4 l-5 4 z" fill="#F06292"/></svg>
+    <span class="date">9월 13일 일요일</span>
+    <p>산정호수 둘레길, 해 질 녘 허브아일랜드.</p>
+    <span class="go">일요일 보기</span>
+  </a>
+</header>
+
+<div class="intro">
+  <div class="hearts">💗 🐱 💗 🐶 💗</div>
+  <p><b>이번 주말 이틀.</b> 토요일은 차를 지영이 집에 두고 택시로, 일요일은 지영이 집에서 바로 출발합니다. 사람 많은 곳은 피하고, 맛있는 건 확실하게.</p>
+  <p>이동 시간과 거리는 추정치예요. 시장 시세와 교통 상황에 따라 달라질 수 있습니다.</p>
+</div>
+
+<nav class="tabs" id="tabs">
+  <a href="#sat" class="on" data-for="sat">토요일</a>
+  <a href="#sun" data-for="sun">일요일</a>
+  <a href="#more" data-for="more">예산·준비물</a>
+</nav>
+
+<section class="day sat-day" id="sat">
+  <h2><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-4.6-9.5-9C.8 8.7 2.4 4.5 6.3 4.1 8.5 3.9 10.3 5 12 7c1.7-2 3.5-3.1 5.7-2.9 3.9.4 5.5 4.6 3.8 7.9C19 16.4 12 21 12 21z" fill="#F06292"/></svg>노량진, 대게 한 상 🦀</h2>
+  <p class="lead">운전 없는 날. 한잔 편하게 하려면 차는 두고 가는 게 맞아요.</p>
+  <div class="stat">
+    <div><b>17:15</b>학교에서 출발</div>
+    <div><b>약 28 km</b>지영이 집 → 노량진</div>
+    <div><b>택시 3.5~4.5만</b>편도, 40~60분</div>
+  </div>
+
+  <div class="tl">
+    <div class="t">17:15</div>
+    <div class="c">
+      <h3>보문에서 지영이 집으로</h3>
+      <p class="move">보문 캠퍼스 → 덕릉로42길, 차로 약 30분</p>
+      <p>차를 지영이 집에 대고, 거기서 택시. 토요일 저녁 동부간선이 밀리면 4호선 상계역에서 지하철도 한 방법입니다(동작 환승, 약 55분).</p>
+    </div>
+
+    <div class="t">18:30</div>
+    <div class="c">
+      <h3>노량진수산시장 🦀</h3>
+      <p class="move">택시 40~60분</p>
+      <p>연결해 둔 가게로 바로. 들어가기 전에 <b>오늘 선화 대게 나왔는지, kg당 얼마인지</b> 전화로 한 번 확인하세요. 1kg 안팎 한 마리면 둘이 넉넉하고, 남은 살은 볶음밥으로.</p>
+      <p class="planb">시세가 안 맞으면 인스타에서 같이 봤던 꽃게집으로. 지영이가 아는 곳이라 위치만 미리 찍어두면 됩니다.</p>
+      <div class="act">
+        <a class="map" href="https://maps.google.com/?cid=17842096914891094837" target="_blank" rel="noopener">지도 열기</a>
+        <a href="tel:0222548000">시장 안내 전화</a>
+      </div>
+    </div>
+
+    <div class="t">20:30</div>
+    <div class="c">
+      <h3>한강대교 건너 노들섬 🍜</h3>
+      <p class="move">시장에서 도보 약 1.5 km, 20분</p>
+      <p>시장 뒤 한강대교 남단으로 올라가서 다리 위 보행로로 노들섬까지. 다리 위에서 보는 63빌딩 쪽 야경이 이 코스의 포인트예요. 노들섬 잔디밭에 앉아 <b>편의점 라면</b>으로 마무리. 라면 조리기 있는 편의점이 섬 안에 있고, 없으면 잔디밭 배달도 됩니다.</p>
+      <div class="act">
+        <a class="map" href="https://maps.google.com/?cid=15087095656289364406" target="_blank" rel="noopener">지도 열기</a>
+      </div>
+    </div>
+
+    <div class="t">22:00</div>
+    <div class="c">
+      <h3>귀가</h3>
+      <p class="move">노들역(9호선)이 섬 바로 옆 · 택시는 노들섬 북단 승강장</p>
+      <p>택시로 지영이 집까지 40분 안팎. 밤에는 동부간선이 안 밀려서 낮보다 빨라요.</p>
+    </div>
+  </div>
+
+  <div class="note"><b>사육신공원은 뺐어요</b>묘역 개방이 17시까지라 저녁엔 애매합니다. 한강대교–노들섬 쪽이 밤에 훨씬 좋아요.</div>
+</section>
+
+<section class="day sun-day" id="sun">
+  <h2><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-4.6-9.5-9C.8 8.7 2.4 4.5 6.3 4.1 8.5 3.9 10.3 5 12 7c1.7-2 3.5-3.1 5.7-2.9 3.9.4 5.5 4.6 3.8 7.9C19 16.4 12 21 12 21z" fill="#C48FE0"/></svg>포천, 호수와 허브 정원 🌷</h2>
+  <p class="lead">가볍게 드라이브. 지영이 집에서 출발해서 지영이 집으로.</p>
+  <div class="stat">
+    <div><b>10:00</b>덕릉로 출발</div>
+    <div><b>약 136 km</b>왕복 주행</div>
+    <div><b>약 2.8시간</b>총 운전</div>
+    <div><b>유류비 1.9만</b>12 km/L 기준</div>
+  </div>
+
+  <div class="tl">
+    <div class="t">10:00</div>
+    <div class="c">
+      <h3>덕릉로에서 출발</h3>
+      <p class="move">상계 → 산정호수, 약 65 km · 1시간 20분 (43번 국도 → 포천)</p>
+      <p>출발 전에 주유. 포천 시내 지나면 주유소가 드물어요.</p>
+    </div>
+
+    <div class="t">11:30</div>
+    <div class="c">
+      <h3>산호식당 🍚</h3>
+      <p>호수 입구 조각상 앞. 더덕구이 산채정식이 대표 메뉴. 12시 넘으면 대기가 생기니 11시 반 입장이 핵심.</p>
+      <div class="act">
+        <a class="map" href="https://maps.google.com/?cid=11154262489294700436" target="_blank" rel="noopener">지도 열기</a>
+        <a href="tel:0315318787">전화</a>
+      </div>
+    </div>
+
+    <div class="t">12:45</div>
+    <div class="c">
+      <h3>산정호수 둘레길 🌿</h3>
+      <p class="move">식당에서 도보</p>
+      <p>3 km 데크길, 천천히 한 시간. 하동주차장 쪽에 차를 대면 덜 붐비고 뷰도 더 좋습니다.</p>
+      <div class="act">
+        <a class="map" href="https://maps.google.com/?cid=12405417257393131194" target="_blank" rel="noopener">지도 열기</a>
+      </div>
+    </div>
+
+    <div class="t">14:00</div>
+    <div class="c">
+      <h3>가비가배 ☕</h3>
+      <p>호수 옆 한옥 카페. 2층 창가 긴 테이블이 명당. 지영이가 말한 “커피산도”가 따로 있으면 그쪽으로 바꿔도 돼요.</p>
+      <div class="act">
+        <a class="map" href="https://maps.google.com/?cid=6804006252224554518" target="_blank" rel="noopener">지도 열기</a>
+        <a href="tel:0315353460">전화</a>
+      </div>
+    </div>
+
+    <div class="t">15:30</div>
+    <div class="c">
+      <h3>허브아일랜드 🌸</h3>
+      <p class="move">산정호수 → 허브아일랜드, 약 27 km · 35분</p>
+      <p>낮보다 해 질 무렵 조명 켜질 때가 볼만해요. 일요일 19시 마감이라 17시쯤 나오면 딱 맞습니다.</p>
+      <p class="planb">최근 관리 상태 평이 좋지 않아요. “돌아오는 길에 산책 삼아 들르는 곳” 정도로. 별로면 바로 나와서 저녁 먹으러 가면 됩니다.</p>
+      <div class="act">
+        <a class="map" href="https://maps.google.com/?cid=7881864788837568676" target="_blank" rel="noopener">지도 열기</a>
+        <a href="tel:0315356494">전화</a>
+      </div>
+    </div>
+
+    <div class="t">17:15</div>
+    <div class="c">
+      <h3>귀가</h3>
+      <p class="move">허브아일랜드 → 덕릉로, 약 44 km · 55분</p>
+      <p>18시 좀 넘어 지영이 집 도착. 저녁은 상계 근처에서 가볍게.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" id="more">
+  <div class="paw"><svg viewBox="0 0 24 24" fill="var(--night)" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="8" r="2.5"/><circle cx="12" cy="5" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M12 10c-4 0-7 3.5-7 7 0 2 1.5 3 3 3 1.6 0 2.4-1 4-1s2.4 1 4 1c1.5 0 3-1 3-3 0-3.5-3-7-7-7z"/></svg><svg viewBox="0 0 24 24" fill="var(--night)" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="8" r="2.5"/><circle cx="12" cy="5" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M12 10c-4 0-7 3.5-7 7 0 2 1.5 3 3 3 1.6 0 2.4-1 4-1s2.4 1 4 1c1.5 0 3-1 3-3 0-3.5-3-7-7-7z"/></svg><svg viewBox="0 0 24 24" fill="var(--night)" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="8" r="2.5"/><circle cx="12" cy="5" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M12 10c-4 0-7 3.5-7 7 0 2 1.5 3 3 3 1.6 0 2.4-1 4-1s2.4 1 4 1c1.5 0 3-1 3-3 0-3.5-3-7-7-7z"/></svg><svg viewBox="0 0 24 24" fill="var(--night)" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="8" r="2.5"/><circle cx="12" cy="5" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M12 10c-4 0-7 3.5-7 7 0 2 1.5 3 3 3 1.6 0 2.4-1 4-1s2.4 1 4 1c1.5 0 3-1 3-3 0-3.5-3-7-7-7z"/></svg><svg viewBox="0 0 24 24" fill="var(--night)" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="8" r="2.5"/><circle cx="12" cy="5" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M12 10c-4 0-7 3.5-7 7 0 2 1.5 3 3 3 1.6 0 2.4-1 4-1s2.4 1 4 1c1.5 0 3-1 3-3 0-3.5-3-7-7-7z"/></svg></div>
+  <h2>💕 예산 (2인, 예상)</h2>
+  <table>
+    <thead><tr><th>항목</th><th>토요일</th><th>일요일</th></tr></thead>
+    <tbody>
+      <tr><td>식사</td><td>대게 1~1.5 kg 8~12만 (꽃게면 6~8만)</td><td>산호식당 3만 내외</td></tr>
+      <tr><td>라면·카페</td><td>노들섬 편의점 1만 내외</td><td>가비가배 1.5만 내외</td></tr>
+      <tr><td>교통·입장</td><td>택시 왕복 7~9만</td><td>허브아일랜드 입장 2만 + 유류비 1.9만</td></tr>
+      <tr><td><b>합계</b></td><td><b>약 16~22만</b></td><td><b>약 8.5만</b></td></tr>
+    </tbody>
+  </table>
+
+  <h2>🐾 챙길 것</h2>
+  <ul class="chk" id="chk">
+    <li>편한 신발 — 시장 바닥 미끄럽고 다리 위 20분 걸어요</li>
+    <li>물티슈 — 대게 먹고 나면 필수</li>
+    <li>얇은 겉옷 — 밤 다리 위, 낮 호숫가 바람</li>
+    <li>보조배터리 — 노들섬 야경·허브 조명 사진</li>
+    <li>일요일 출발 전 주유</li>
+    <li>산호식당 11시 반 입장 지키기</li>
+  </ul>
+
+  <h2>📞 전화번호</h2>
+  <div class="tel">
+    <span>노량진수산시장</span><a href="tel:0222548000">02-2254-8000</a>
+    <span>산호식당</span><a href="tel:0315318787">031-531-8787</a>
+    <span>가비가배</span><a href="tel:0315353460">031-535-3460</a>
+    <span>허브아일랜드</span><a href="tel:0315356494">031-535-6494</a>
+  </div>
+</div>
+
+<p class="foot">다음 주 토요일은 성북동에서. 일요일은 짐 싸는 날.<br>거리·시간은 좌표 기반 추정, 가격은 예상 범위입니다.</p>
+
+<script>
+(function(){
+  // 체크리스트: 탭하면 체크, 이 폰에서만 기억
+  var list=document.getElementById('chk');
+  var KEY='dateguide-chk';
+  var saved=[];
+  try{saved=JSON.parse(localStorage.getItem(KEY)||'[]');}catch(e){}
+  var items=list.querySelectorAll('li');
+  items.forEach(function(li,i){
+    if(saved[i]) li.classList.add('done');
+    li.addEventListener('click',function(){
+      li.classList.toggle('done');
+      var arr=[];items.forEach(function(x){arr.push(x.classList.contains('done')?1:0);});
+      try{localStorage.setItem(KEY,JSON.stringify(arr));}catch(e){}
+    });
+  });
+  // 탭 하이라이트
+  var tabs=document.querySelectorAll('#tabs a');
+  var secs=['sat','sun','more'].map(function(id){return document.getElementById(id);});
+  function upd(){
+    var y=window.scrollY+120, cur='sat';
+    secs.forEach(function(s){ if(s && s.offsetTop<=y) cur=s.id; });
+    tabs.forEach(function(t){ t.classList.toggle('on', t.dataset.for===cur); });
+  }
+  window.addEventListener('scroll',upd,{passive:true}); upd();
+})();
+</script>
+</body>
+</html>
