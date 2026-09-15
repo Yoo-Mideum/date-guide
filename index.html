@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="cache-control" content="no-cache">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>내일, 수요일 💗</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,6 +70,21 @@ h2 svg{width:26px;height:26px;flex:none}
   .hero .float{animation:bob 4s ease-in-out infinite}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 }
+
+.arc{margin:30px 0 0;border-top:1px solid var(--line);padding-top:14px}
+.arc summary{cursor:pointer;list-style:none;color:var(--muted);font-size:14px;
+  font-family:"Gowun Dodum",sans-serif;padding:8px 0;text-align:center}
+.arc summary::-webkit-details-marker{display:none}
+.arc summary::after{content:" ▾"}
+.arc[open] summary::after{content:" ▴"}
+.arow{display:flex;gap:12px;align-items:center;padding:12px 14px;margin-top:8px;
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  text-decoration:none;color:var(--ink);font-size:15px}
+.arow .ad{font-family:"Gowun Dodum",sans-serif;color:var(--pink);font-weight:700;flex:none;width:44px}
+.arow .at{flex:1}
+.arow em{font-style:normal;font-size:12px;color:var(--muted);margin-left:8px}
+.arow.off{opacity:.55}
+.arow.off .ad{color:var(--muted)}
 :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 </style>
 </head>
@@ -168,6 +184,21 @@ h2 svg{width:26px;height:26px;flex:none}
     <svg viewBox="0 0 24 24" fill="#F06292" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="8" r="2.5"/><circle cx="12" cy="5" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M12 10c-4 0-7 3.5-7 7 0 2 1.5 3 3 3 1.6 0 2.4-1 4-1s2.4 1 4 1c1.5 0 3-1 3-3 0-3.5-3-7-7-7z"/></svg>
     <svg viewBox="0 0 24 24" fill="#C48FE0" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="8" r="2.5"/><circle cx="12" cy="5" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M12 10c-4 0-7 3.5-7 7 0 2 1.5 3 3 3 1.6 0 2.4-1 4-1s2.4 1 4 1c1.5 0 3-1 3-3 0-3.5-3-7-7-7z"/></svg>
   </div>
+
+
+  <details class="arc">
+    <summary>지난 일정 보기</summary>
+
+    <a class="arow" href="./2026-09-12/">
+      <span class="ad">9.12</span>
+      <span class="at">노량진 — 대게 한 상<em>다녀옴</em></span>
+    </a>
+
+    <div class="arow off">
+      <span class="ad">9.13</span>
+      <span class="at">포천 — 산정호수<em>취소</em></span>
+    </div>
+  </details>
 
   <p class="foot">내일 봐 💗</p>
 </div>
