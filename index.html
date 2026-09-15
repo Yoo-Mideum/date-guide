@@ -74,6 +74,13 @@ h2 svg{width:26px;height:26px;flex:none}
 
 
 
+
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.thumbs a{text-decoration:none;color:var(--ink)}
+.thumbs .ph{display:grid;place-items:center;aspect-ratio:1/1;border-radius:14px;
+  font-size:30px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.thumbs .cap{display:block;font-size:12px;margin-top:6px;text-align:center;line-height:1.35}
+.thumbs .cap em{display:block;font-style:normal;font-size:10.5px;color:var(--muted)}
 .btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
 .btns a{font-size:13px;padding:8px 14px;border-radius:999px;text-decoration:none;
   background:var(--pink);color:#fff;font-weight:500}
@@ -179,9 +186,19 @@ h2 svg{width:26px;height:26px;flex:none}
       <p>더 이탈리안 클럽 — 현대백화점 무역센터점 <b>10층 식당가</b></p>
       <p class="addr">서울 강남구 테헤란로 517 · 백화점 주차장 이용<br>
         생면 파스타 · 화덕 피자 · 라자냐</p>
-      <div class="btns">
-        <a href="https://app.catchtable.co.kr/ct/shop/italian_club" target="_blank" rel="noopener">사진 · 메뉴 보기 📸</a>
-        <a href="https://www.ehyundai.com/newPortal/DP/DP000000_V.do?branchCd=B00122000" target="_blank" rel="noopener">백화점 안내 🏬</a>
+      <div class="thumbs">
+        <a href="https://www.google.com/search?tbm=isch&q=%EB%8D%94+%EC%9D%B4%ED%83%88%EB%A6%AC%EC%95%88+%ED%81%B4%EB%9F%BD+%EB%AC%B4%EC%97%AD%EC%84%BC%ED%84%B0" target="_blank" rel="noopener">
+          <span class="ph" style="background:linear-gradient(140deg,#F8C9DD,#E7A6C6)">🍝</span>
+          <span class="cap">가게 사진<em>구글 이미지</em></span>
+        </a>
+        <a href="https://app.catchtable.co.kr/ct/shop/italian_club" target="_blank" rel="noopener">
+          <span class="ph" style="background:linear-gradient(140deg,#D9BDEE,#B98FD8)">📸</span>
+          <span class="cap">메뉴 · 리뷰<em>캐치테이블</em></span>
+        </a>
+        <a href="https://www.ehyundai.com/newPortal/DP/DP000000_V.do?branchCd=B00122000" target="_blank" rel="noopener">
+          <span class="ph" style="background:linear-gradient(140deg,#FBDDA8,#EEBE68)">🏬</span>
+          <span class="cap">층별 안내<em>현대백화점</em></span>
+        </a>
       </div>
     </div>
 
