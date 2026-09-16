@@ -77,6 +77,32 @@ h2 svg{width:26px;height:26px;flex:none}
 
 
 
+
+.pick{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 15px;margin:12px 0}
+.pick.sel{border:2px solid var(--pink);box-shadow:0 4px 14px rgba(240,98,146,.18)}
+.pick.dim{opacity:.4}
+.ptop{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.rank{font-size:11px;background:var(--lav);color:#fff;padding:3px 10px;border-radius:999px;font-weight:700}
+.star{font-size:13px;color:var(--pink);font-weight:700}
+.star em{font-style:normal;color:var(--muted);font-weight:400;font-size:11px}
+.pname{display:block;font-family:"Gowun Dodum",sans-serif;font-size:18px}
+.pmeta{display:block;font-size:11.5px;color:var(--muted);margin:3px 0 8px}
+.pdesc{font-size:13.5px;margin:0 0 8px;line-height:1.6}
+.pmenu{display:block;font-size:12.5px;color:var(--muted);background:rgba(196,143,224,.12);
+  border-radius:8px;padding:6px 9px}
+.pbtn{width:100%;margin-top:10px;padding:10px;border:none;border-radius:999px;
+  background:var(--pink);color:#fff;font-size:14px;font-weight:700;cursor:pointer;
+  font-family:"Gowun Dodum",sans-serif}
+.pbtn:active{transform:scale(.98)}
+.decide{text-align:center;margin-top:14px;font-family:"Gowun Dodum",sans-serif}
+.decide b{display:block;font-size:17px;color:var(--pink)}
+.decide span{font-size:13px;color:var(--muted)}
+.done{text-align:center;margin-top:14px;padding:16px;border-radius:16px;
+  background:rgba(240,98,146,.12);font-family:"Gowun Dodum",sans-serif}
+.done b{display:block;font-size:18px;color:var(--pink)}
+.done span{display:block;font-size:13.5px;color:var(--muted);margin-top:4px}
+.reset{margin-top:10px;background:none;border:1px solid var(--line);border-radius:999px;
+  padding:6px 14px;font-size:12px;color:var(--muted);cursor:pointer}
 .menu{margin-top:14px;background:var(--card);border:1px solid var(--line);
   border-radius:16px;padding:14px 15px}
 .mh{font-family:"Gowun Dodum",sans-serif;font-size:15px;color:var(--pink);
@@ -92,6 +118,32 @@ h2 svg{width:26px;height:26px;flex:none}
   border-radius:10px;padding:9px 11px;margin:12px 0 0;line-height:1.6}
 .mtip b{color:var(--pink)}
 
+
+.pick{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 15px;margin:12px 0}
+.pick.sel{border:2px solid var(--pink);box-shadow:0 4px 14px rgba(240,98,146,.18)}
+.pick.dim{opacity:.4}
+.ptop{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.rank{font-size:11px;background:var(--lav);color:#fff;padding:3px 10px;border-radius:999px;font-weight:700}
+.star{font-size:13px;color:var(--pink);font-weight:700}
+.star em{font-style:normal;color:var(--muted);font-weight:400;font-size:11px}
+.pname{display:block;font-family:"Gowun Dodum",sans-serif;font-size:18px}
+.pmeta{display:block;font-size:11.5px;color:var(--muted);margin:3px 0 8px}
+.pdesc{font-size:13.5px;margin:0 0 8px;line-height:1.6}
+.pmenu{display:block;font-size:12.5px;color:var(--muted);background:rgba(196,143,224,.12);
+  border-radius:8px;padding:6px 9px}
+.pbtn{width:100%;margin-top:10px;padding:10px;border:none;border-radius:999px;
+  background:var(--pink);color:#fff;font-size:14px;font-weight:700;cursor:pointer;
+  font-family:"Gowun Dodum",sans-serif}
+.pbtn:active{transform:scale(.98)}
+.decide{text-align:center;margin-top:14px;font-family:"Gowun Dodum",sans-serif}
+.decide b{display:block;font-size:17px;color:var(--pink)}
+.decide span{font-size:13px;color:var(--muted)}
+.done{text-align:center;margin-top:14px;padding:16px;border-radius:16px;
+  background:rgba(240,98,146,.12);font-family:"Gowun Dodum",sans-serif}
+.done b{display:block;font-size:18px;color:var(--pink)}
+.done span{display:block;font-size:13.5px;color:var(--muted);margin-top:4px}
+.reset{margin-top:10px;background:none;border:1px solid var(--line);border-radius:999px;
+  padding:6px 14px;font-size:12px;color:var(--muted);cursor:pointer}
 .menu{margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 15px}
 .mh{font-family:"Gowun Dodum",sans-serif;font-size:15px;color:var(--pink);font-weight:700;margin-bottom:10px}
 .mh.sub{margin-top:16px;color:var(--lav);padding-top:12px;border-top:1px dashed var(--line)}
@@ -216,49 +268,69 @@ h2 svg{width:26px;height:26px;flex:none}
     <div class="c">
       <h3>구경 갑니다 👀</h3>
       <p>끝나기 30분쯤 전에 올라가 볼게요. 예뻐지는 거 옆에서 구경하고 싶어서요 🎀</p>
-    </div>
-
-    <div class="t">19:10</div>
-    <div class="c">
-      <h3>이동 🚗</h3>
-      <p class="move">디머드헤어 → 엘리스 리틀 이태리<br>
-        <b>약 1 km · 차로 5분 · 걸어서 12분</b> (같은 송리단길 안쪽)</p>
+      <p class="addr">차는 미용실 주차 또는 송파동공영주차장(시간당 600원)에 대둘게요.<br>
+        저녁 먹으러는 <b>걸어서</b> 갑니다 🚶</p>
     </div>
 
     <div class="t">19:20</div>
     <div class="c">
       <h3>저녁 🍝</h3>
-      <p>엘리스 리틀 이태리 — 송리단길</p>
-      <p class="addr">송파구 백제고분로41길 43-21 · 010-6545-1410<br>
-        화덕 피자 · 생면 리가토니 · 보리 리조또</p>
+      <p>세 곳 골라놨어요. <b>전부 걸어서 10분 안</b>이라 차는 그대로 두고 가면 됩니다.</p>
 
-      <div class="thumbs">
-        <a href="https://www.google.com/search?tbm=isch&q=%EC%97%98%EB%A6%AC%EC%8A%A4%EB%A6%AC%ED%8B%80%EC%9D%B4%ED%83%9C%EB%A6%AC+%EC%86%A1%EB%A6%AC%EB%8B%A8%EA%B8%B8" target="_blank" rel="noopener">
-          <span class="ph" style="background:linear-gradient(140deg,#F8C9DD,#E7A6C6)">🍝</span>
-          <span class="cap">가게 사진<em>구글 이미지</em></span>
-        </a>
-        <a href="https://www.google.com/search?q=%EC%97%98%EB%A6%AC%EC%8A%A4%EB%A6%AC%ED%8B%80%EC%9D%B4%ED%83%9C%EB%A6%AC+%ED%9B%84%EA%B8%B0" target="_blank" rel="noopener">
-          <span class="ph" style="background:linear-gradient(140deg,#D9BDEE,#B98FD8)">📸</span>
-          <span class="cap">메뉴 · 리뷰<em>블로그 후기</em></span>
-        </a>
-        <a href="tel:01065451410">
-          <span class="ph" style="background:linear-gradient(140deg,#FBDDA8,#EEBE68)">📞</span>
-          <span class="cap">전화 예약<em>010-6545-1410</em></span>
-        </a>
+      <div class="pick" data-pick="lacrose">
+        <div class="ptop">
+          <span class="rank">추천 1</span>
+          <span class="star">★ 5.0 <em>(214)</em></span>
+        </div>
+        <b class="pname">락로즈 (Lac Rose)</b>
+        <span class="pmeta">🚶 걸어서 4분 · 220 m &nbsp;|&nbsp; ~23:00 &nbsp;|&nbsp; 백제고분로45길 40, 2층</span>
+        <p class="pdesc">파스타 레스토랑이면서 바를 겸해서, <b>식사하고 그 자리에서 한 잔까지</b> 이어갈 수 있어요.
+          새우가 통통하고 마늘 오일 향이 좋아 바게트를 계속 찍어 먹게 된다는 후기,
+          버섯 리조또가 훌륭했다는 평이 많습니다. 기념일엔 폴라로이드도 찍어준대요 📸</p>
+        <span class="pmenu">🍽️ 버섯 리조또 · 감바스 · 칵테일</span>
+        <button class="pbtn" type="button">이걸로 할래요</button>
       </div>
 
-      <div class="menu">
-        <div class="mh">🍽️ 오늘의 추천</div>
-        <div class="mi"><span class="mn">1</span><div><b>보리 리조또 (소고기)</b><em>부드러운 소고기에 보리의 고소한 식감, 은은한 트러플 향. 여기 대표 메뉴예요.</em></div></div>
-        <div class="mi"><span class="mn">2</span><div><b>생면 리가토니</b><em>직접 뽑은 면. 진하고 크리미한데 부담스럽지 않고 고소해요.</em></div></div>
-        <div class="mi"><span class="mn">3</span><div><b>마르게리타 피자</b><em>화덕에 구워 도우가 쫄깃하고 가벼워요. 생모짜렐라가 신선합니다.</em></div></div>
-        <div class="mh sub">🥂 곁들임</div>
-        <div class="mi"><span class="mn side">＋</span><div><b>카프레제</b><em>가볍게 시작하기 좋아요.</em></div></div>
-        <div class="mi"><span class="mn side">＋</span><div><b>하우스 와인</b><em>한 잔씩만.</em></div></div>
-        <p class="mtip">💡 <b>메뉴 2개면 충분해요.</b> 빵과 리조또볼을 서비스로 주니까 더 그렇습니다.
-          한 접시 2~3만원대, 남으면 포장하면 돼요 🙂<br>
-          자리가 적어서 <b>예약 필수</b> · 화덕 있음</p>
+      <div class="pick" data-pick="ellie">
+        <div class="ptop">
+          <span class="rank">추천 2</span>
+          <span class="star">★ 4.5 <em>(742)</em></span>
+        </div>
+        <b class="pname">엘리스 리틀 이태리</b>
+        <span class="pmeta">🚶 걸어서 7분 · 430 m &nbsp;|&nbsp; ~22:00 &nbsp;|&nbsp; 백제고분로41길 43-21</span>
+        <p class="pdesc">송리단길 대표 이탈리안. 화덕이 있어 피자를 직접 굽고,
+          트러플 들어간 리조또와 파스타 퀄리티가 높다는 평이에요.
+          빵과 리조또볼을 서비스로 줍니다. 자리가 적어 <b>예약 권장</b>.</p>
+        <span class="pmenu">🍽️ 보리 리조또 · 생면 리가토니 · 마르게리타</span>
+        <button class="pbtn" type="button">이걸로 할래요</button>
       </div>
+
+      <div class="pick" data-pick="hailu">
+        <div class="ptop">
+          <span class="rank">추천 3</span>
+          <span class="star">★ 4.8 <em>(28)</em></span>
+        </div>
+        <b class="pname">하이루 (Hailu)</b>
+        <span class="pmeta">🚶 걸어서 2분 · 100 m &nbsp;|&nbsp; ~20:30 &nbsp;|&nbsp; 오금로18길 10</span>
+        <p class="pdesc">일식과 이탈리안을 섞은 곳. 면을 직접 뽑고, 오마카세 같은 조용한 분위기예요.
+          제일 가깝지만 <b>20:30에 닫아서</b> 여유 있게 먹으려면 조금 서둘러야 합니다.</p>
+        <span class="pmenu">🍽️ 생면 파스타 · 타레 소고기 카르파초 · 아란치니</span>
+        <button class="pbtn" type="button">이걸로 할래요</button>
+      </div>
+
+      <div class="decide" id="decide">
+        <b>지금 결정하시겠어요? 👑</b>
+        <span>고르시면 바로 예약 넣을게요</span>
+      </div>
+
+      <div class="done" id="done" hidden>
+        <b>✅ <span id="donename"></span> 확정!</b>
+        <span>예약 넣어두겠습니다. 수요일에 뵈어요 💗</span>
+        <button class="reset" type="button" id="reset">다시 고르기</button>
+      </div>
+
+      <p class="mtip" style="margin-top:14px">💡 <b>메뉴 2개면 충분해요.</b> 한 접시 2~3만원대,
+        남으면 포장하면 됩니다. 부담 갖지 마세요 🙂</p>
     </div>
 
     <div class="t">21:30</div>
@@ -270,7 +342,7 @@ h2 svg{width:26px;height:26px;flex:none}
     <div class="t">밤</div>
     <div class="c">
       <h3>집까지 모셔다드리기 🏠</h3>
-      <p class="move">잠실 → 집<br>
+      <p class="move">송리단길 → 집<br>
         <b>약 19 km · 차로 35~45분</b> (동부간선 경유, 밤이라 수월)</p>
     </div>
 
@@ -398,6 +470,50 @@ h2 svg{width:26px;height:26px;flex:none}
   var d = Math.round((target - now) / 86400000);
   var el = document.getElementById('dday');
   if (el) { el.textContent = d > 0 ? 'D-' + d : (d === 0 ? 'D-DAY' : '출발 완료'); }
+})();
+
+(function(){
+  var KEY='dinner-pick-0916';
+  var names={lacrose:'락로즈', ellie:'엘리스 리틀 이태리', hailu:'하이루'};
+  var picks=document.querySelectorAll('.pick');
+  var decide=document.getElementById('decide');
+  var done=document.getElementById('done');
+  var dn=document.getElementById('donename');
+  var reset=document.getElementById('reset');
+
+  function render(v){
+    picks.forEach(function(p){
+      var on = p.dataset.pick===v;
+      p.classList.toggle('sel', !!v && on);
+      p.classList.toggle('dim', !!v && !on);
+      var b=p.querySelector('.pbtn');
+      if(b) b.textContent = (!!v && on) ? '✅ 선택하셨어요' : '이걸로 할래요';
+    });
+    if(v){ dn.textContent=names[v]||v; done.hidden=false; decide.hidden=true; }
+    else { done.hidden=true; decide.hidden=false; }
+  }
+
+  var saved=null;
+  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  render(saved);
+
+  picks.forEach(function(p){
+    var b=p.querySelector('.pbtn');
+    if(!b) return;
+    b.addEventListener('click',function(){
+      var v=p.dataset.pick;
+      try{ localStorage.setItem(KEY,v); }catch(e){}
+      render(v);
+      done.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  });
+
+  if(reset){
+    reset.addEventListener('click',function(){
+      try{ localStorage.removeItem(KEY); }catch(e){}
+      render(null);
+    });
+  }
 })();
 </script>
 </body>
