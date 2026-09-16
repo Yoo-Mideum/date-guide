@@ -35,6 +35,11 @@ body{margin:0;background:var(--paper);color:var(--ink);
 .hero h1{font-family:"Gowun Dodum",sans-serif;font-size:40px;margin:10px 0 6px;line-height:1.2;
   text-shadow:0 2px 0 rgba(0,0,0,.1)}
 .hero .date{font-size:15px;opacity:.95}
+
+.cd{margin-top:14px;background:rgba(255,255,255,.18);border-radius:16px;
+  padding:12px 16px;display:inline-block}
+.cd span{display:block;font-family:"Gowun Dodum",sans-serif;font-size:30px;font-weight:700;line-height:1.1}
+.cd small{display:block;font-size:11.5px;opacity:.85;margin-top:3px}
 .hero .pets{display:flex;justify-content:center;gap:10px;margin-top:16px}
 .hero .pets svg{width:76px;height:76px}
 .hero .float{position:absolute;font-size:20px;opacity:.55}
@@ -238,9 +243,10 @@ h2 svg{width:26px;height:26px;flex:none}
   <span class="float" style="left:14%;bottom:16%;animation-delay:1.2s">✨</span>
   <span class="float" style="right:16%;bottom:12%;animation-delay:1.8s">💗</span>
 
-  <div class="kicker">COMING TOMORROW</div>
-  <h1>찌영이 공쥬님<br><span style="font-size:26px">내일 일정 안내문</span></h1>
-  <div class="date">9월 16일 수요일 · 예고편 👑</div>
+  <div class="kicker">TODAY</div>
+  <h1>찌영이 공쥬님<br><span style="font-size:26px">오늘 일정 안내문</span></h1>
+  <div class="date">9월 16일 수요일 👑</div>
+  <div class="cd"><span id="cd">계산 중…</span><small>믿음이 만나기까지</small></div>
 
   <div class="pets">
     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -529,7 +535,7 @@ h2 svg{width:26px;height:26px;flex:none}
     </div>
   </details>
 
-  <p class="foot">내일 모시러 가겠습니다 공쥬님 💗</p>
+  <p class="foot">오늘 모시러 가겠습니다 공쥬님 💗</p>
 </div>
 
 <script>
@@ -583,6 +589,19 @@ h2 svg{width:26px;height:26px;flex:none}
       render(null);
     });
   }
+})();
+
+(function(){
+  var t=new Date(2026,8,16,18,0,0);
+  var el=document.getElementById('cd');
+  if(!el) return;
+  function tick(){
+    var d=t-new Date();
+    if(d<=0){ el.textContent='지금 만나는 중 💗'; return; }
+    var h=Math.floor(d/3600000), m=Math.floor(d%3600000/60000), sec=Math.floor(d%60000/1000);
+    el.textContent=(h<10?'0':'')+h+':'+(m<10?'0':'')+m+':'+(sec<10?'0':'')+sec;
+  }
+  tick(); setInterval(tick,1000);
 })();
 </script>
 </body>
