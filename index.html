@@ -358,7 +358,7 @@ h2 svg{width:26px;height:26px;flex:none}
     <div class="t">19:20</div>
     <div data-t="1920" class="c" data-lat="37.509" data-lng="127.109" data-name="저녁 🍝">
       <h3>저녁 🍝</h3>
-      <p>세 곳 골라놨어요. <b>전부 걸어서 10분 안</b>이라 차는 그대로 두고 가면 됩니다.</p>
+      <p><b>엘리스 리틀 이태리</b>로 정해졌어요 🎉 고르시느라 고생하셨습니다.</p>
 
       <div class="pick" data-pick="ellie">
         <div class="ptop">
@@ -455,7 +455,8 @@ h2 svg{width:26px;height:26px;flex:none}
 
       <div class="done" id="done" hidden>
         <b>✅ <span id="donename"></span> 확정!</b>
-        <span>예약 넣어두겠습니다. 수요일에 뵈어요 💗</span>
+        <span>골라주셔서 고맙습니다 💗<br>
+          자리 잡아두고, 맛있게 드실 수 있게 열심히 준비하겠습니다.</span>
         <button class="reset" type="button" id="reset">다시 고르기</button>
       </div>
 
@@ -473,7 +474,7 @@ h2 svg{width:26px;height:26px;flex:none}
     <div class="t">21:30</div>
     <div data-t="2130" class="c wine" data-lat="37.5105" data-lng="127.1088" data-name="와인 한 잔 🍷">
       <h3>와인 한 잔 🍷</h3>
-      <p>드라이한 걸로 골라놨어요. 세 곳 다 <b>걸어서 5분 안</b>, 여기도 골라주세요.</p>
+      <p><b>타임투칠</b>로 정해졌어요 🍷 조용한 자리로 부탁드려 둘게요.</p>
 
       <div class="pick w1" data-pick="gudaeryuk">
         <div class="ptop">
@@ -558,7 +559,8 @@ h2 svg{width:26px;height:26px;flex:none}
       </div>
       <div class="done" id="wdone" hidden>
         <b>🍷 <span id="wdonename"></span> 확정!</b>
-        <span>자리 잡아두겠습니다 💗</span>
+        <span>여기까지 골라주셔서 고맙습니다 🍷<br>
+          조용한 자리로 부탁드려 두겠습니다. 드라이한 걸로 준비할게요.</span>
         <button class="reset" type="button" id="wreset">다시 고르기</button>
       </div>
     </div>
@@ -721,8 +723,8 @@ h2 svg{width:26px;height:26px;flex:none}
     else { done.hidden=true; decide.hidden=false; }
   }
 
-  var saved=null;
-  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  var saved='ellie';
+  try{ saved=localStorage.getItem(KEY)||'ellie'; }catch(e){}
   render(saved);
 
   picks.forEach(function(p){
@@ -777,8 +779,8 @@ h2 svg{width:26px;height:26px;flex:none}
     if(v){ dn.textContent=names[v]||v; done.hidden=false; decide.hidden=true; }
     else { done.hidden=true; decide.hidden=false; }
   }
-  var saved=null;
-  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  var saved='timetochill';
+  try{ saved=localStorage.getItem(KEY)||'timetochill'; }catch(e){}
   render(saved);
   picks.forEach(function(p){
     var b=p.querySelector('.pbtn'); if(!b) return;
