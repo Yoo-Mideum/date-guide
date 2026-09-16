@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cache-control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>강릉 2박 3일 🌊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4FAFC; --ink:#17323D; --muted:#5E7C89; --line:#CFE4EC; --card:#FFFFFF;
+  --sea:#2E7C94; --sea2:#4FA3BD; --sand:#E8B84B; --pink:#F06292;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#111F26; --ink:#E6F2F6; --muted:#9BB8C4; --line:#28414D; --card:#1A2E38;
+    --sea:#4FA3BD; --sea2:#6FBBD2;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111F26; --ink:#E6F2F6; --muted:#9BB8C4; --line:#28414D; --card:#1A2E38;
+  --sea:#4FA3BD; --sea2:#6FBBD2;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans KR","Apple SD Gothic Neo",sans-serif;font-size:16px;line-height:1.7}
+.wrap{max-width:600px;margin:0 auto;padding:0 18px 48px}
+
+.hero{background:linear-gradient(165deg,var(--sea),var(--sea2));color:#fff;
+  padding:38px 20px 30px;text-align:center;position:relative;overflow:hidden}
+.hero .kicker{font-size:11px;letter-spacing:5px;opacity:.85}
+.hero h1{font-family:"Gowun Dodum",sans-serif;font-size:36px;margin:10px 0 4px;line-height:1.2}
+.hero .date{font-size:14px;opacity:.95}
+.cd{margin-top:14px;background:rgba(255,255,255,.18);border-radius:16px;padding:11px 16px;display:inline-block}
+.cd span{display:block;font-family:"Gowun Dodum",sans-serif;font-size:28px;font-weight:700;line-height:1.1}
+.cd small{display:block;font-size:11px;opacity:.85;margin-top:2px}
+.wave{font-size:22px;letter-spacing:6px;margin-top:12px;opacity:.75}
+
+.tabs{position:sticky;top:0;z-index:5;display:flex;background:var(--paper);
+  border-bottom:1px solid var(--line)}
+.tabs button{flex:1;padding:13px 4px;border:none;background:none;font-size:15px;
+  color:var(--muted);font-family:"Gowun Dodum",sans-serif;font-weight:700;
+  border-bottom:3px solid transparent;cursor:pointer}
+.tabs button.on{color:var(--sea);border-color:var(--sea)}
+
+.day{display:none}
+.day.on{display:block}
+.dayhead{background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:14px 16px;margin:20px 0 6px}
+.dayhead b{font-family:"Gowun Dodum",sans-serif;font-size:19px;display:block}
+.dayhead span{font-size:13px;color:var(--muted)}
+
+.tl{display:grid;grid-template-columns:62px 1fr}
+.tl .t{font-family:"Gowun Dodum",sans-serif;font-size:16px;font-weight:700;padding-top:14px;color:var(--sea)}
+.tl .c{border-left:2px solid var(--line);padding:12px 0 20px 15px;position:relative}
+.tl .c::before{content:"";position:absolute;left:-7px;top:19px;width:12px;height:12px;
+  border-radius:50%;background:var(--sea)}
+.tl .c.drive::before{background:var(--sand)}
+.tl .c.eat::before{background:var(--pink)}
+.tl h3{margin:0 0 4px;font-size:16.5px}
+.tl p{margin:0 0 6px;font-size:14.5px}
+.tl .sub{font-size:12.5px;color:var(--muted);line-height:1.55}
+.move{font-size:13.5px;background:var(--card);border:1px dashed var(--line);
+  border-radius:11px;padding:8px 11px;margin:4px 0 6px;line-height:1.6}
+.move b{color:var(--sand)}
+.chk{font-size:13px;color:var(--muted);background:rgba(46,124,148,.08);
+  border-radius:10px;padding:8px 11px;margin-top:6px}
+
+.note{background:var(--card);border:2px dashed var(--line);border-radius:14px;
+  padding:13px 15px;font-size:14px;margin:16px 0}
+.note b{color:var(--sea)}
+
+.later{margin:30px 0 0;padding:20px 18px;border-radius:20px;
+  background:linear-gradient(160deg,rgba(240,98,146,.12),rgba(196,143,224,.12));
+  border:1px solid rgba(240,98,146,.3)}
+.later h2{font-family:"Gowun Dodum",sans-serif;font-size:20px;margin:0 0 4px;color:var(--pink)}
+.later .sub2{font-size:12.5px;color:var(--muted);margin:0 0 12px}
+.li{display:flex;gap:12px;padding:10px 0;border-top:1px dashed rgba(240,98,146,.3);align-items:flex-start}
+.li:first-of-type{border-top:none}
+.li .ld{flex:none;width:50px;font-family:"Gowun Dodum",sans-serif;font-size:14px;
+  color:var(--pink);font-weight:700;line-height:1.25}
+.li .ld em{display:block;font-style:normal;font-size:10px;color:var(--muted)}
+.li b{display:block;font-size:14.5px}
+.li i{display:block;font-style:normal;font-size:12px;color:var(--muted);margin-top:1px}
+
+.arc{margin:26px 0 0;border-top:1px solid var(--line);padding-top:12px}
+.arc summary{cursor:pointer;list-style:none;color:var(--muted);font-size:14px;
+  font-family:"Gowun Dodum",sans-serif;padding:8px 0;text-align:center}
+.arc summary::-webkit-details-marker{display:none}
+.arc summary::after{content:" ▾"}
+.arc[open] summary::after{content:" ▴"}
+.arow{display:flex;gap:12px;align-items:center;padding:11px 14px;margin-top:8px;
+  background:var(--card);border:1px solid var(--line);border-radius:13px;
+  text-decoration:none;color:var(--ink);font-size:14.5px}
+.arow .ad{font-family:"Gowun Dodum",sans-serif;color:var(--muted);font-weight:700;flex:none;width:44px}
+.arow em{font-style:normal;font-size:11.5px;color:var(--muted);margin-left:8px}
+.arow.off{opacity:.55}
+.foot{text-align:center;color:var(--muted);font-size:13.5px;
+  font-family:"Gowun Dodum",sans-serif;padding-top:20px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+:focus-visible{outline:3px solid var(--sand);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">SECOND TRIP</div>
+  <h1>강릉 2박 3일</h1>
+  <div class="date">9월 21일(월) ~ 23일(수) · 찌영이 공쥬님과 🌊</div>
+  <div class="cd"><span id="cd">계산 중…</span><small>출발까지</small></div>
+  <div class="wave">🌊 🐚 🌊 🐋 🌊</div>
+</header>
+
+<div class="wrap">
+
+  <div class="tabs">
+    <button class="on" data-day="d1">1일차 월</button>
+    <button data-day="d2">2일차 화</button>
+    <button data-day="d3">3일차 수</button>
+  </div>
+
+  <!-- ───────── DAY 1 ───────── -->
+  <section class="day on" id="d1">
+    <div class="dayhead">
+      <b>9월 21일 (월) · 서울 → 강릉</b>
+      <span>총 주행 약 220 km · 순수 운전 3시간 · 휴게소 포함 3시간 40분</span>
+    </div>
+
+    <div class="tl">
+      <div class="t">06:00</div>
+      <div class="c">
+        <h3>기상 · 마지막 짐 점검 🧳</h3>
+        <p class="sub">전날 밤에 다 실어뒀으니 오늘은 확인만.
+          화장품 파우치, 충전기, 지갑, 수영복 — 이 넷만 다시 보면 됩니다.</p>
+        <div class="chk">☑ 냉장고에 넣어둔 것 챙기기 ☑ 보조배터리 완충 ☑ 텀블러 물 채우기</div>
+      </div>
+
+      <div class="t">06:40</div>
+      <div class="c drive">
+        <h3>공쥬님 픽업 🚗</h3>
+        <p class="sub">덕릉로 도착. 짐 싣고 커피 한 잔 사서 출발 준비.</p>
+      </div>
+
+      <div class="t">07:00</div>
+      <div class="c drive">
+        <h3>출발</h3>
+        <div class="move">🛣️ 상계 → 덕소삼패IC → 서울양양고속도로<br>
+          <b>1구간 약 90 km · 1시간 10분</b> (월요일 오전이라 서울 빠져나가는 데 20분쯤 더)</div>
+        <p class="sub">출발 전 주유는 서울에서. 고속도로 진입 후엔 비쌉니다.</p>
+      </div>
+
+      <div class="t">08:20</div>
+      <div class="c">
+        <h3>가평휴게소 ☕</h3>
+        <p class="sub">첫 휴게소. 화장실 들르고 커피·간단한 아침.
+          공쥬님이 차에서 잠들었으면 그냥 지나쳐도 됩니다.</p>
+        <div class="chk">⏱️ 20분 · 아침 안 드셨으면 여기서 해결</div>
+      </div>
+
+      <div class="t">08:40</div>
+      <div class="c drive">
+        <h3>다시 출발</h3>
+        <div class="move">🛣️ 가평 → 동홍천IC → 인제 방향<br>
+          <b>2구간 약 75 km · 55분</b></div>
+      </div>
+
+      <div class="t">09:35</div>
+      <div class="c">
+        <h3>내린천휴게소 🏞️</h3>
+        <p class="sub">전망 좋기로 유명한 곳. 사진 한 장 찍고 스트레칭.
+          여기 지나면 터널 구간이 길어서 쉴 데가 마땅치 않아요.</p>
+        <div class="chk">⏱️ 15분 · 마지막 휴게소</div>
+      </div>
+
+      <div class="t">09:50</div>
+      <div class="c drive">
+        <h3>강릉으로</h3>
+        <div class="move">🛣️ 인제 → 양양JC → 동해고속도로 → 강릉<br>
+          <b>3구간 약 55 km · 50분</b></div>
+      </div>
+
+      <div class="t">10:40</div>
+      <div class="c eat">
+        <h3>초당순두부 🥣</h3>
+        <p><b>믿음이 지인분 가게</b></p>
+        <p class="sub">11시 예정이었는데 조금 일찍 도착. 오히려 좋아요, 점심 붐비기 전입니다.
+          인사 나누고 여유 있게.</p>
+        <div class="chk">⏱️ 식사 60분 + 인사 20분 = 80분 잡기</div>
+      </div>
+
+      <div class="t">12:00</div>
+      <div class="c">
+        <h3>여유 시간 ☀️</h3>
+        <p class="sub">체크인이 15시라 세 시간이 뜹니다. 아래 중에 골라 채우면 좋아요.</p>
+        <div class="chk">① 강문·안목해변 산책 + 커피거리 (차로 10분)<br>
+          ② 오죽헌·선교장 (차로 15분, 조용함)<br>
+          ③ 그냥 카페에서 쉬기 — 운전 3시간 했으니 이것도 정답</div>
+      </div>
+
+      <div class="t">15:00</div>
+      <div class="c">
+        <h3>신라 모노그램 체크인 🏨</h3>
+        <p class="sub">짐 풀고 방 구경하고, 수영장 위치·이용 시간 확인해두기.
+          내일 아침 7시에 열리는지 프런트에 물어보세요.</p>
+        <div class="chk">☑ 수영장 운영 시간 ☑ 조식 시간 ☑ 바 M 위스키 행사 내용</div>
+      </div>
+
+      <div class="t">16:30</div>
+      <div class="c">
+        <h3>잠깐 다녀올 곳 🎁</h3>
+        <p class="sub">공쥬님 씻고 준비하시는 동안, 잠깐 나갔다 오겠습니다.
+          20분이면 돼요.</p>
+      </div>
+
+      <div class="t">18:10</div>
+      <div class="c drive">
+        <h3>저녁 나가기</h3>
+        <div class="move">🚗 호텔 → 스시카이토 · <b>약 10분</b><br>
+          주차 자리 확인하고 여유 있게 도착</div>
+      </div>
+
+      <div class="t">18:30</div>
+      <div class="c eat">
+        <h3>스시 오마카세 — 스시카이토 🍣</h3>
+        <p class="sub">코스라 2시간쯤 걸립니다. 천천히 드세요.
+          디저트 타이밍에 뭔가 나올지도 몰라요 🤫</p>
+        <div class="chk">⏱️ 2시간~2시간 30분 · 20:30~21:00 종료 예상</div>
+      </div>
+
+      <div class="t">21:00</div>
+      <div class="c">
+        <h3>호텔 복귀 · 첫날 마무리 🌙</h3>
+        <p class="sub">운전 많이 한 날이라 무리하지 않기.
+          내일 아침 수영이 있으니 일찍 자는 걸로.</p>
+      </div>
+    </div>
+
+    <div class="note"><b>1일차 체크</b><br>
+      · 새벽 출발이라 전날 밤 짐은 미리 차에<br>
+      · 고속도로 통행료 약 12,000원 (하이패스)<br>
+      · 오픈카면 대관령 넘을 때 바람 참 — 겉옷·스카프 준비<br>
+      · 초당순두부 도착 시간 지인분께 미리 연락</div>
+  </section>
+
+  <!-- ───────── DAY 2 ───────── -->
+  <section class="day" id="d2">
+    <div class="dayhead">
+      <b>9월 22일 (화) · 강릉에서 하루 종일</b>
+      <span>운전 거의 없음 · 호텔 중심</span>
+    </div>
+
+    <div class="tl">
+      <div class="t">07:00</div>
+      <div class="c">
+        <h3>수영 🏊</h3>
+        <p class="sub">아침 수영. 3시간 잡아뒀지만 1시간 반만 해도 충분해요.
+          체력 남겨두는 게 하루가 편합니다.</p>
+        <div class="chk">☑ 수영복·래시가드 ☑ 수건은 호텔 것 ☑ 선크림(실외풀이면)</div>
+      </div>
+
+      <div class="t">09:00</div>
+      <div class="c eat">
+        <h3>조식 · 휴식 ☕</h3>
+        <p class="sub">수영하고 바로 먹기. 방에 올라가서 씻고 좀 쉬어도 좋고요.</p>
+      </div>
+
+      <div class="t">11:30</div>
+      <div class="c drive">
+        <h3>점심 나가기</h3>
+        <div class="move">🚗 호텔 → 초우당막국수 · <b>약 15분</b><br>
+          12시 전 도착이면 대기 없음</div>
+      </div>
+
+      <div class="t">12:00</div>
+      <div class="c eat">
+        <h3>초우당막국수 🍜</h3>
+        <div class="chk">⏱️ 60분 · 막국수는 회전이 빨라요</div>
+      </div>
+
+      <div class="t">13:30</div>
+      <div class="c">
+        <h3>오후 — 자유 ☀️</h3>
+        <p class="sub">저녁 6시까지 네 시간 반. 골라서 채우세요.</p>
+        <div class="chk">① 경포호 자전거 (호수 한 바퀴 4.3 km, 대여 가능)<br>
+          ② 안목 커피거리에서 바다 보며 쉬기<br>
+          ③ 하슬라아트월드 (바다 위 미술관, 차로 25분)<br>
+          ④ 호텔 돌아가서 낮잠 — 이것도 좋습니다</div>
+      </div>
+
+      <div class="t">17:40</div>
+      <div class="c drive">
+        <h3>저녁 나가기</h3>
+        <div class="move">🚗 호텔 → 저녁 식당 · <b>10~20분</b> (어디로 정하느냐에 따라)</div>
+      </div>
+
+      <div class="t">18:00</div>
+      <div class="c eat">
+        <h3>저녁 🦀</h3>
+        <p><b>해송 / 초당우가 / 다이닝조개 / 솔향대게</b> 중 한 곳</p>
+        <p class="sub">전날까지 정해서 예약하는 게 좋아요.
+          대게는 시가라 가격 차이가 크고, 조개·한우 쪽은 예측 가능합니다.</p>
+        <div class="chk">⏱️ 90분~2시간</div>
+      </div>
+
+      <div class="t">20:30</div>
+      <div class="c">
+        <h3>호텔 복귀 · 잠깐 쉬기</h3>
+        <p class="sub">방에서 좀 쉬었다가 바로 내려가면 딱 좋아요.</p>
+      </div>
+
+      <div class="t">21:00</div>
+      <div class="c">
+        <h3>바 M — 위스키 🥃</h3>
+        <p class="sub">호텔 2층, 66석. 라운지&amp;바 11:00~24:00, 안주는 18:00부터.
+          위스키 행사 내용은 체크인할 때 확인해두기.</p>
+        <div class="chk">☎ 033-820-0143 · 투숙객 혜택 있는지 물어보세요</div>
+      </div>
+
+      <div class="t">23:00</div>
+      <div class="c">
+        <h3>마무리 🌙</h3>
+        <p class="sub">내일 아침에도 수영이 있으니 적당히.</p>
+      </div>
+    </div>
+
+    <div class="note"><b>2일차 체크</b><br>
+      · 이날은 운전이 거의 없어서 술 마셔도 부담 없음<br>
+      · 저녁 식당은 <b>전날(월요일)까지 예약</b><br>
+      · 오후 일정은 날씨 보고 정하기 — 비 오면 하슬라아트월드</div>
+  </section>
+
+  <!-- ───────── DAY 3 ───────── -->
+  <section class="day" id="d3">
+    <div class="dayhead">
+      <b>9월 23일 (수) · 강릉 → 서울</b>
+      <span>체크아웃 11시 · 총 주행 약 230 km</span>
+    </div>
+
+    <div class="tl">
+      <div class="t">07:00</div>
+      <div class="c">
+        <h3>마지막 수영 🏊</h3>
+        <p class="sub">체크아웃 전이라 1시간 반 정도가 적당.
+          8시 반쯤 올라와서 씻고 짐 싸면 여유 있습니다.</p>
+      </div>
+
+      <div class="t">09:00</div>
+      <div class="c">
+        <h3>짐 싸기 🧳</h3>
+        <p class="sub">2박이면 짐이 흩어져 있습니다. 넉넉히 한 시간 잡으세요.</p>
+        <div class="chk">☑ 욕실 어메니티·충전기 ☑ 냉장고 확인 ☑ 서랍·옷장 한 번 더<br>
+          ☑ 젖은 수영복은 비닐에 따로</div>
+      </div>
+
+      <div class="t">10:30</div>
+      <div class="c eat">
+        <h3>조식 또는 커피 ☕</h3>
+        <p class="sub">점심이 15시라 뭔가 먹어두는 게 좋아요.</p>
+      </div>
+
+      <div class="t">11:00</div>
+      <div class="c">
+        <h3>체크아웃</h3>
+        <div class="move">🚗 호텔 → 아르떼뮤지엄 · <b>약 20분</b></div>
+      </div>
+
+      <div class="t">12:00</div>
+      <div class="c">
+        <h3>아르떼뮤지엄 강릉 🎨</h3>
+        <p class="sub">미디어아트 전시. 관람 1시간~1시간 30분이면 충분합니다.
+          사진 많이 찍게 되니 폰 배터리 확인.</p>
+        <div class="chk">⏱️ 90분 · 13:30 나오면 딱</div>
+      </div>
+
+      <div class="t">13:40</div>
+      <div class="c drive">
+        <h3>이동</h3>
+        <div class="move">🚗 아르떼뮤지엄 → 중앙시장 · <b>약 15분</b></div>
+      </div>
+
+      <div class="t">14:00</div>
+      <div class="c">
+        <h3>중앙시장 먼저 🛍️</h3>
+        <p class="sub">점심 전에 시장부터 도는 걸 추천합니다.
+          배부른 상태로 시장 가면 아무것도 못 사거든요.</p>
+        <div class="chk">🛒 오징어순대 · 누룽지 · 강릉길감자 · 꽈배기<br>
+          ⏱️ 50분 · 살 것 정해가면 빠릅니다</div>
+      </div>
+
+      <div class="t">15:00</div>
+      <div class="c eat">
+        <h3>형제칼국수 🍲</h3>
+        <p class="sub">시장 근처. 애매한 시간이라 대기 없을 거예요.</p>
+        <div class="chk">⏱️ 50분</div>
+      </div>
+
+      <div class="t">16:00</div>
+      <div class="c drive">
+        <h3>주유 · 출발 준비 ⛽</h3>
+        <p class="sub">강릉에서 넣고 가는 게 쌉니다. 차 안 정리하고 출발.</p>
+      </div>
+
+      <div class="t">16:30</div>
+      <div class="c drive">
+        <h3>서울로 출발</h3>
+        <div class="move">🛣️ 강릉 → 양양JC → 인제<br>
+          <b>1구간 약 60 km · 55분</b></div>
+        <p class="sub">17시 출발 예정이었는데 30분 당겼습니다.
+          수요일 저녁 서울 진입이 밀려서요.</p>
+      </div>
+
+      <div class="t">17:30</div>
+      <div class="c">
+        <h3>내린천 또는 인제휴게소 ☕</h3>
+        <div class="chk">⏱️ 20분 · 저녁 대신 간식으로</div>
+      </div>
+
+      <div class="t">17:50</div>
+      <div class="c drive">
+        <h3>다시 출발</h3>
+        <div class="move">🛣️ 인제 → 동홍천 → 가평<br>
+          <b>2구간 약 80 km · 1시간</b></div>
+      </div>
+
+      <div class="t">18:50</div>
+      <div class="c">
+        <h3>가평휴게소 (선택)</h3>
+        <p class="sub">피곤하면 한 번 더. 아니면 그냥 통과.</p>
+      </div>
+
+      <div class="t">19:00</div>
+      <div class="c drive">
+        <h3>서울 진입</h3>
+        <div class="move">🛣️ 가평 → 덕소 → 상계<br>
+          <b>3구간 약 90 km · 1시간 10분~1시간 30분</b> (정체 감안)</div>
+      </div>
+
+      <div class="t">20:30</div>
+      <div class="c">
+        <h3>도착 🏠</h3>
+        <p class="sub">짐 내려드리고, 세탁물은 바로 꺼내두기.
+          다음 날 추석 연휴 시작이니 푹 쉬세요.</p>
+      </div>
+    </div>
+
+    <div class="note"><b>3일차 체크</b><br>
+      · 원래 12시 아르떼 → 15시 칼국수였는데, 사이 3시간이 붕 떠서 <b>시장을 먼저</b> 넣었습니다<br>
+      · 출발을 17시 → 16시 30분으로 당김 (수요일 저녁 정체)<br>
+      · 젖은 수영복 담을 비닐봉지 꼭 챙기기<br>
+      · 다음날이 추석 연휴 첫날이라 23일 저녁부터 도로 붐빌 수 있음</div>
+  </section>
+
+  <!-- 다가올 일정 -->
+  <div class="later">
+    <h2>💗 여행 다녀와서</h2>
+    <p class="sub2">강릉 이후 일정들</p>
+    <div class="li"><span class="ld">9.24<em>목</em></span><div><b>등산 &amp; 백숙</b><i>연휴 첫날, 가볍게</i></div></div>
+    <div class="li"><span class="ld">9.25<em>금</em></span><div><b>추석 · 각자 업무</b><i>9.25~9.28 연휴</i></div></div>
+    <div class="li"><span class="ld">10.14<em>수</em></span><div><b>100일 🎉</b><i>부산 조새호 오마카세</i></div></div>
+    <div class="li"><span class="ld">10.21<em>수~목</em></span><div><b>에버랜드 할로윈</b><i>게임 캐릭터 분장 · 용인 1박</i></div></div>
+    <div class="li"><span class="ld">12.03<em>목</em></span><div><b>150일 💗</b><i>같이 정하기</i></div></div>
+    <div class="li"><span class="ld">12.24<em>목</em></span><div><b>크리스마스 이브 🎄</b><i>12.25 금 연휴</i></div></div>
+    <div class="li"><span class="ld">12.31<em>목</em></span><div><b>연말 · 새해맞이 🎆</b><i>1.1 금 연휴</i></div></div>
+    <div class="li"><span class="ld">2027<em>2월</em></span><div><b>삿포로 눈축제 ❄️</b><i>첫 해외여행</i></div></div>
+  </div>
+
+  <details class="arc">
+    <summary>지난 일정 보기</summary>
+    <a class="arow" href="../"><span class="ad">9.16</span>
+      <span>수요일 — 잠실 염색 &amp; 저녁<em>바로가기</em></span></a>
+    <a class="arow" href="../2026-09-12/"><span class="ad">9.12</span>
+      <span>노량진 — 대게 한 상<em>다녀옴</em></span></a>
+    <div class="arow off"><span class="ad">9.13</span>
+      <span>포천 — 산정호수<em>취소</em></span></div>
+  </details>
+
+  <p class="foot">공쥬님, 이번엔 바다예요 🌊</p>
+</div>
+
+<script>
+(function(){
+  var t=new Date(2026,8,21,7,0,0);
+  var el=document.getElementById('cd');
+  function tick(){
+    var d=t-new Date();
+    if(d<=0){ el.textContent='출발! 🚗'; return; }
+    var day=Math.floor(d/86400000), h=Math.floor(d%86400000/3600000),
+        m=Math.floor(d%3600000/60000), sec=Math.floor(d%60000/1000);
+    el.textContent = day>0 ? ('D-'+day+'  '+h+':'+(m<10?'0':'')+m)
+      : (h+':'+(m<10?'0':'')+m+':'+(sec<10?'0':'')+sec);
+  }
+  tick(); setInterval(tick,1000);
+
+  var btns=document.querySelectorAll('.tabs button');
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      btns.forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on');
+      document.querySelectorAll('.day').forEach(function(d){
+        d.classList.toggle('on', d.id===b.dataset.day);
+      });
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+})();
+</script>
+</body>
+</html>
