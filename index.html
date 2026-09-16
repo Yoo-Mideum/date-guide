@@ -256,6 +256,19 @@ h2 svg{width:26px;height:26px;flex:none}
 .arow em{font-style:normal;font-size:12px;color:var(--muted);margin-left:8px}
 .arow.off{opacity:.55}
 .arow.off .ad{color:var(--muted)}
+
+.now{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin:18px 0 6px}
+.nowtop{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.nowtop b{font-family:"Gowun Dodum",sans-serif;font-size:17px;color:var(--pink)}
+.nowtop span{font-size:13px;color:var(--muted);white-space:nowrap}
+.nowsub{font-size:13px;color:var(--muted);margin-top:3px}
+.geo{margin-top:10px;width:100%;padding:9px;border:1px dashed var(--line);border-radius:999px;
+  background:none;color:var(--pink);font-size:13px;cursor:pointer;font-family:"Gowun Dodum",sans-serif}
+.geores{margin-top:9px;font-size:13px;background:rgba(240,98,146,.10);border-radius:10px;padding:9px 11px;line-height:1.6}
+.tl .c.past{opacity:.36}
+.tl .c.past::before{background:var(--muted) !important}
+.tl .c.cur{background:rgba(240,98,146,.10);border-radius:0 12px 12px 0;box-shadow:inset 3px 0 0 var(--pink)}
+.tl .c.cur::before{background:var(--pink) !important;box-shadow:0 0 0 4px rgba(240,98,146,.22)}
 :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 </style>
 </head>
@@ -308,16 +321,24 @@ h2 svg{width:26px;height:26px;flex:none}
     공쥬님 내일 동선
   </h2>
 
+
+  <div class="now" id="now">
+    <div class="nowtop"><b id="nowtitle">계산 중…</b><span id="nowleft"></span></div>
+    <div class="nowsub" id="nowsub"></div>
+    <button class="geo" type="button" id="geo">📍 내 위치로 남은 시간 보기</button>
+    <div class="geores" id="geores" hidden></div>
+  </div>
+
   <div class="tl">
     <div class="t">16:00</div>
-    <div class="c">
+    <div data-t="1600" class="c" data-lat="37.5096" data-lng="127.1094" data-name="염색 중 🎨">
       <h3>염색 중 🎨</h3>
       <p>천천히 예쁘게 하고 계세요. 2~3시간 걸린다고 하니 <b>18:00~19:00</b>쯤 끝날 예정.</p>
       <p class="addr">디머드헤어 잠실송파점 · 송파구 백제고분로45길 7-3, 2층<br>02-422-0804</p>
     </div>
 
     <div class="t">18:00</div>
-    <div class="c">
+    <div data-t="1800" class="c" data-lat="37.5096" data-lng="127.1094" data-name="구경 갑니다 👀">
       <h3>구경 갑니다 👀</h3>
       <p>끝나기 30분쯤 전에 올라가 볼게요. 예뻐지는 거 옆에서 구경하고 싶어서요 🎀</p>
       <p class="addr">차는 <b>송파여성문화회관 공영주차장</b>에 댈게요 (10분 300원 · 24시간 · 도보 4분).<br>
@@ -325,7 +346,7 @@ h2 svg{width:26px;height:26px;flex:none}
     </div>
 
     <div class="t">19:20</div>
-    <div class="c">
+    <div data-t="1920" class="c" data-lat="37.509" data-lng="127.109" data-name="저녁 🍝">
       <h3>저녁 🍝</h3>
       <p>세 곳 골라놨어요. <b>전부 걸어서 10분 안</b>이라 차는 그대로 두고 가면 됩니다.</p>
 
@@ -433,14 +454,14 @@ h2 svg{width:26px;height:26px;flex:none}
     </div>
 
     <div class="t">21:00</div>
-    <div class="c">
+    <div data-t="2100" class="c" data-lat="37.5085" data-lng="127.103" data-name="석촌호수 산책 🌃">
       <h3>석촌호수 산책 🌃</h3>
       <p>밥 먹고 바로 앉기 아쉬우니 호수 한 바퀴. 롯데타워 야경이 제일 예쁜 시간이에요.
         전체 둘레 2.5 km인데, 반 바퀴만 돌아도 충분합니다 (약 20분).</p>
     </div>
 
     <div class="t">21:30</div>
-    <div class="c wine">
+    <div data-t="2130" class="c wine" data-lat="37.5105" data-lng="127.1088" data-name="와인 한 잔 🍷">
       <h3>와인 한 잔 🍷</h3>
       <p>드라이한 걸로 골라놨어요. 세 곳 다 <b>걸어서 5분 안</b>, 여기도 골라주세요.</p>
 
@@ -533,14 +554,14 @@ h2 svg{width:26px;height:26px;flex:none}
     </div>
 
     <div class="t">밤</div>
-    <div class="c">
+    <div data-t="2300" class="c" data-lat="37.6614" data-lng="127.076" data-name="집까지 모셔다드리기 🏠">
       <h3>집까지 모셔다드리기 🏠</h3>
       <p class="move">송리단길 → 집<br>
         <b>약 19 km · 차로 35~45분</b> (동부간선 경유, 밤이라 수월)</p>
     </div>
 
     <div class="t">목 아침</div>
-    <div class="c">
+    <div data-t="D2-0900" class="c">
       <h3>푹 쉬기 😴</h3>
       <p>세신은 다음 기회에. 아침에 여유 있게 주무세요.</p>
     </div>
@@ -758,6 +779,65 @@ h2 svg{width:26px;height:26px;flex:none}
   if(reset) reset.addEventListener('click',function(){
     try{ localStorage.removeItem(KEY); }catch(e){}
     render(null);
+  });
+})();
+
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.c[data-t]'));
+  if(!items.length) return;
+  items.forEach(function(el){
+    var t=el.dataset.t, d;
+    if(t.indexOf('D2-')===0){ t=t.slice(3); d=new Date(2026,8,17,+t.slice(0,2),+t.slice(2)); }
+    else d=new Date(2026,8,16,+t.slice(0,2),+t.slice(2));
+    el.__when=d;
+    var h=el.querySelector('h3'); el.__title=h?h.textContent.trim():'';
+  });
+  items.sort(function(a,b){return a.__when-b.__when;});
+  function fmt(ms){var m=Math.round(ms/60000);return m<60?m+'분':Math.floor(m/60)+'시간 '+(m%60)+'분';}
+  var T=document.getElementById('nowtitle'),L=document.getElementById('nowleft'),S=document.getElementById('nowsub');
+  function paint(){
+    var n=new Date(),cur=null,nxt=null;
+    items.forEach(function(el){
+      el.classList.remove('past','cur');
+      if(el.__when<=n) cur=el; else if(!nxt) nxt=el;
+    });
+    items.forEach(function(el){ if(el.__when<n && el!==cur) el.classList.add('past'); });
+    if(cur && n-cur.__when<5*3600000) cur.classList.add('cur');
+    var first=items[0].__when,last=items[items.length-1].__when;
+    if(n<first){ T.textContent='만나기 전 💗'; L.textContent=fmt(first-n)+' 남음';
+      S.textContent='첫 일정: '+items[0].__title; }
+    else if(n>last){ T.textContent='오늘 끝 💗'; L.textContent='';
+      S.textContent='다음은 9월 21일 강릉 여행 🌊'; }
+    else { T.textContent='지금 → '+(cur?cur.__title:'-');
+      if(nxt){ L.textContent='다음까지 '+fmt(nxt.__when-n);
+        S.textContent='다음: '+nxt.__title; }
+      else { L.textContent=''; S.textContent='오늘 마지막 일정이에요'; } }
+  }
+  paint(); setInterval(paint,30000);
+
+  var btn=document.getElementById('geo'),box=document.getElementById('geores');
+  if(!btn) return;
+  btn.addEventListener('click',function(){
+    if(!navigator.geolocation){box.hidden=false;box.textContent='이 브라우저는 위치를 지원하지 않아요.';return;}
+    box.hidden=false; box.textContent='위치 확인 중…';
+    navigator.geolocation.getCurrentPosition(function(pos){
+      var la=pos.coords.latitude,lo=pos.coords.longitude,target=null;
+      for(var i=0;i<items.length;i++){ if(items[i].dataset.lat && items[i].__when>new Date()){target=items[i];break;} }
+      if(!target){box.textContent='남은 이동 일정이 없어요 🙂';return;}
+      var R=6371,p=Math.PI/180;
+      var dla=(target.dataset.lat-la)*p,dlo=(target.dataset.lng-lo)*p;
+      var a=Math.sin(dla/2)*Math.sin(dla/2)+Math.cos(la*p)*Math.cos(target.dataset.lat*p)*Math.sin(dlo/2)*Math.sin(dlo/2);
+      var km=2*R*Math.asin(Math.sqrt(a))*1.25;
+      var speed=km>40?85:(km>3?28:4);
+      var min=Math.max(1,Math.round(km/speed*60));
+      var arr=new Date(Date.now()+min*60000), late=arr-target.__when;
+      box.innerHTML='다음 목적지 <b>'+(target.dataset.name||target.__title)+'</b><br>약 <b>'+
+        km.toFixed(1)+' km</b> · '+(km>3?'차로 ':'걸어서 ')+'<b>'+min+'분</b><br>지금 나서면 '+
+        ('0'+arr.getHours()).slice(-2)+':'+('0'+arr.getMinutes()).slice(-2)+' 도착 '+
+        (late>0?'(예정보다 '+fmt(late)+' 늦음 ⚠️)':'(예정보다 '+fmt(-late)+' 여유 ✅)')+
+        '<br><span style="font-size:11.5px;opacity:.75">※ 직선거리에 도로 보정을 더한 추정치예요</span>';
+    },function(){box.textContent='위치를 못 가져왔어요. 위치 권한을 허용해 주세요.';},
+    {enableHighAccuracy:true,timeout:10000});
   });
 })();
 </script>
