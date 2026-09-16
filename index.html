@@ -108,7 +108,12 @@ h2 svg{width:26px;height:26px;flex:none}
   text-decoration:none;background:var(--paper);border:1px solid var(--line);color:var(--ink)}
 .pick{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 15px;margin:12px 0}
 .pick.sel{border:2px solid var(--pink);box-shadow:0 4px 14px rgba(240,98,146,.18)}
-.pick.dim{opacity:.4}
+.pick.dim{opacity:.45;max-height:74px;overflow:hidden;position:relative;padding-bottom:6px}
+.pick.dim .chef,.pick.dim .links,.pick.dim .pdesc,.pick.dim .pmenu{display:none}
+.pick.dim .pbtn{padding:6px;font-size:12.5px;margin-top:6px}
+.pick.dim::after{content:"";position:absolute;left:0;right:0;bottom:0;height:26px;
+  background:linear-gradient(transparent,var(--card))}
+.pick{transition:max-height .35s ease, opacity .25s ease}
 .ptop{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
 .rank{font-size:11px;background:var(--lav);color:#fff;padding:3px 10px;border-radius:999px;font-weight:700}
 .star{font-size:13px;color:var(--pink);font-weight:700}
@@ -172,7 +177,12 @@ h2 svg{width:26px;height:26px;flex:none}
   text-decoration:none;background:var(--paper);border:1px solid var(--line);color:var(--ink)}
 .pick{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 15px;margin:12px 0}
 .pick.sel{border:2px solid var(--pink);box-shadow:0 4px 14px rgba(240,98,146,.18)}
-.pick.dim{opacity:.4}
+.pick.dim{opacity:.45;max-height:74px;overflow:hidden;position:relative;padding-bottom:6px}
+.pick.dim .chef,.pick.dim .links,.pick.dim .pdesc,.pick.dim .pmenu{display:none}
+.pick.dim .pbtn{padding:6px;font-size:12.5px;margin-top:6px}
+.pick.dim::after{content:"";position:absolute;left:0;right:0;bottom:0;height:26px;
+  background:linear-gradient(transparent,var(--card))}
+.pick{transition:max-height .35s ease, opacity .25s ease}
 .ptop{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
 .rank{font-size:11px;background:var(--lav);color:#fff;padding:3px 10px;border-radius:999px;font-weight:700}
 .star{font-size:13px;color:var(--pink);font-weight:700}
@@ -693,7 +703,7 @@ h2 svg{width:26px;height:26px;flex:none}
 (function(){
   var KEY='dinner-pick-0916';
   var names={ellie:'엘리스 리틀 이태리', onryang:'온량', chwihyang:'송리단취향'};
-  var picks=document.querySelectorAll('.pick');
+  var picks=document.querySelectorAll('.c:not(.wine) .pick');
   var decide=document.getElementById('decide');
   var done=document.getElementById('done');
   var dn=document.getElementById('donename');
