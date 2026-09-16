@@ -101,6 +101,23 @@ body{margin:0;background:var(--paper);color:var(--ink);
 .foot{text-align:center;color:var(--muted);font-size:13.5px;
   font-family:"Gowun Dodum",sans-serif;padding-top:20px}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+.now{background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:14px 16px;margin:18px 0 4px}
+.nowtop{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.nowtop b{font-family:"Gowun Dodum",sans-serif;font-size:17px;color:var(--sea)}
+.nowtop span{font-size:13px;color:var(--muted);white-space:nowrap}
+.nowsub{font-size:13px;color:var(--muted);margin-top:3px}
+.geo{margin-top:10px;width:100%;padding:9px;border:1px dashed var(--line);
+  border-radius:999px;background:none;color:var(--sea);font-size:13px;cursor:pointer;
+  font-family:"Gowun Dodum",sans-serif}
+.geores{margin-top:9px;font-size:13px;background:rgba(46,124,148,.09);
+  border-radius:10px;padding:9px 11px;line-height:1.6}
+.c.past{opacity:.38}
+.c.past::before{background:var(--muted) !important}
+.c.cur{background:rgba(232,184,75,.14);border-radius:0 12px 12px 0;
+  box-shadow:inset 3px 0 0 var(--sand)}
+.c.cur::before{background:var(--sand) !important;box-shadow:0 0 0 4px rgba(232,184,75,.25)}
 :focus-visible{outline:3px solid var(--sand);outline-offset:2px}
 </style>
 </head>
@@ -115,6 +132,14 @@ body{margin:0;background:var(--paper);color:var(--ink);
 </header>
 
 <div class="wrap">
+
+
+  <div class="now" id="now">
+    <div class="nowtop"><b id="nowtitle">지금 일정 계산 중…</b><span id="nowleft"></span></div>
+    <div class="nowsub" id="nowsub"></div>
+    <button class="geo" type="button" id="geo">📍 내 위치로 남은 시간 보기</button>
+    <div class="geores" id="geores" hidden></div>
+  </div>
 
   <div class="tabs">
     <button class="on" data-day="d1">1일차 월</button>
@@ -131,7 +156,7 @@ body{margin:0;background:var(--paper);color:var(--ink);
 
     <div class="tl">
       <div class="t">06:00</div>
-      <div class="c">
+      <div data-day="d1" data-t="0600" class="c">
         <h3>기상 · 마지막 짐 점검 🧳</h3>
         <p class="sub">전날 밤에 다 실어뒀으니 오늘은 확인만.
           화장품 파우치, 충전기, 지갑, 수영복 — 이 넷만 다시 보면 됩니다.</p>
@@ -139,13 +164,13 @@ body{margin:0;background:var(--paper);color:var(--ink);
       </div>
 
       <div class="t">06:40</div>
-      <div class="c drive">
+      <div data-day="d1" data-t="0640" class="c drive">
         <h3>공쥬님 픽업 🚗</h3>
         <p class="sub">덕릉로 도착. 짐 싣고 커피 한 잔 사서 출발 준비.</p>
       </div>
 
       <div class="t">07:00</div>
-      <div class="c drive">
+      <div data-day="d1" data-t="0700" class="c drive">
         <h3>출발</h3>
         <div class="move">🛣️ 상계 → 덕소삼패IC → 서울양양고속도로<br>
           <b>1구간 약 90 km · 1시간 10분</b> (월요일 오전이라 서울 빠져나가는 데 20분쯤 더)</div>
@@ -153,7 +178,7 @@ body{margin:0;background:var(--paper);color:var(--ink);
       </div>
 
       <div class="t">08:20</div>
-      <div class="c">
+      <div data-day="d1" data-t="0820" class="c" data-lat="37.7657" data-lng="127.445" data-name="가평휴게소 ☕">
         <h3>가평휴게소 ☕</h3>
         <p class="sub">첫 휴게소. 화장실 들르고 커피·간단한 아침.
           공쥬님이 차에서 잠들었으면 그냥 지나쳐도 됩니다.</p>
@@ -161,14 +186,14 @@ body{margin:0;background:var(--paper);color:var(--ink);
       </div>
 
       <div class="t">08:40</div>
-      <div class="c drive">
+      <div data-day="d1" data-t="0840" class="c drive">
         <h3>다시 출발</h3>
         <div class="move">🛣️ 가평 → 동홍천IC → 인제 방향<br>
           <b>2구간 약 75 km · 55분</b></div>
       </div>
 
       <div class="t">09:35</div>
-      <div class="c">
+      <div data-day="d1" data-t="0935" class="c" data-lat="37.925" data-lng="128.253" data-name="내린천휴게소 🏞️">
         <h3>내린천휴게소 🏞️</h3>
         <p class="sub">전망 좋기로 유명한 곳. 사진 한 장 찍고 스트레칭.
           여기 지나면 터널 구간이 길어서 쉴 데가 마땅치 않아요.</p>
@@ -176,14 +201,14 @@ body{margin:0;background:var(--paper);color:var(--ink);
       </div>
 
       <div class="t">09:50</div>
-      <div class="c drive">
+      <div data-day="d1" data-t="0950" class="c drive">
         <h3>강릉으로</h3>
         <div class="move">🛣️ 인제 → 양양JC → 동해고속도로 → 강릉<br>
           <b>3구간 약 55 km · 50분</b></div>
       </div>
 
       <div class="t">10:40</div>
-      <div class="c eat">
+      <div data-day="d1" data-t="1040" class="c eat" data-lat="37.7955" data-lng="128.906" data-name="초당순두부 🥣">
         <h3>초당순두부 🥣</h3>
         <p><b>믿음이 지인분 가게</b></p>
         <p class="sub">11시 예정이었는데 조금 일찍 도착. 오히려 좋아요, 점심 붐비기 전입니다.
@@ -192,7 +217,7 @@ body{margin:0;background:var(--paper);color:var(--ink);
       </div>
 
       <div class="t">12:00</div>
-      <div class="c">
+      <div data-day="d1" data-t="1200" class="c">
         <h3>여유 시간 ☀️</h3>
         <p class="sub">체크인이 15시라 세 시간이 뜹니다. 아래 중에 골라 채우면 좋아요.</p>
         <div class="chk">① 강문·안목해변 산책 + 커피거리 (차로 10분)<br>
@@ -201,7 +226,7 @@ body{margin:0;background:var(--paper);color:var(--ink);
       </div>
 
       <div class="t">15:00</div>
-      <div class="c">
+      <div data-day="d1" data-t="1500" class="c" data-lat="37.8005" data-lng="128.9165" data-name="신라 모노그램 체크인 🏨">
         <h3>신라 모노그램 체크인 🏨</h3>
         <p class="sub">짐 풀고 방 구경하고, 수영장 위치·이용 시간 확인해두기.
           내일 아침 7시에 열리는지 프런트에 물어보세요.</p>
@@ -209,21 +234,21 @@ body{margin:0;background:var(--paper);color:var(--ink);
       </div>
 
       <div class="t">16:30</div>
-      <div class="c">
+      <div data-day="d1" data-t="1630" class="c">
         <h3>잠깐 다녀올 곳 🎁</h3>
         <p class="sub">공쥬님 씻고 준비하시는 동안, 잠깐 나갔다 오겠습니다.
           20분이면 돼요.</p>
       </div>
 
       <div class="t">18:10</div>
-      <div class="c drive">
+      <div data-day="d1" data-t="1810" class="c drive">
         <h3>저녁 나가기</h3>
         <div class="move">🚗 호텔 → 스시카이토 · <b>약 10분</b><br>
           주차 자리 확인하고 여유 있게 도착</div>
       </div>
 
       <div class="t">18:30</div>
-      <div class="c eat">
+      <div data-day="d1" data-t="1830" class="c eat" data-lat="37.7834" data-lng="128.9168" data-name="스시 오마카세 — 스시카이토 🍣">
         <h3>스시 오마카세 — 스시카이토 🍣</h3>
         <p class="sub">코스라 2시간쯤 걸립니다. 천천히 드세요.
           디저트 타이밍에 뭔가 나올지도 몰라요 🤫</p>
@@ -231,7 +256,7 @@ body{margin:0;background:var(--paper);color:var(--ink);
       </div>
 
       <div class="t">21:00</div>
-      <div class="c">
+      <div data-day="d1" data-t="2100" class="c">
         <h3>호텔 복귀 · 첫날 마무리 🌙</h3>
         <p class="sub">운전 많이 한 날이라 무리하지 않기.
           내일 아침 수영이 있으니 일찍 자는 걸로.</p>
@@ -254,7 +279,7 @@ body{margin:0;background:var(--paper);color:var(--ink);
 
     <div class="tl">
       <div class="t">07:00</div>
-      <div class="c">
+      <div data-day="d2" data-t="0700" class="c">
         <h3>수영 🏊</h3>
         <p class="sub">아침 수영. 3시간 잡아뒀지만 1시간 반만 해도 충분해요.
           체력 남겨두는 게 하루가 편합니다.</p>
@@ -262,26 +287,26 @@ body{margin:0;background:var(--paper);color:var(--ink);
       </div>
 
       <div class="t">09:00</div>
-      <div class="c eat">
+      <div data-day="d2" data-t="0900" class="c eat">
         <h3>조식 · 휴식 ☕</h3>
         <p class="sub">수영하고 바로 먹기. 방에 올라가서 씻고 좀 쉬어도 좋고요.</p>
       </div>
 
       <div class="t">11:30</div>
-      <div class="c drive">
+      <div data-day="d2" data-t="1130" class="c drive">
         <h3>점심 나가기</h3>
         <div class="move">🚗 호텔 → 초우당막국수 · <b>약 15분</b><br>
           12시 전 도착이면 대기 없음</div>
       </div>
 
       <div class="t">12:00</div>
-      <div class="c eat">
+      <div data-day="d2" data-t="1200" class="c eat" data-lat="37.78" data-lng="128.89" data-name="초우당막국수 🍜">
         <h3>초우당막국수 🍜</h3>
         <div class="chk">⏱️ 60분 · 막국수는 회전이 빨라요</div>
       </div>
 
       <div class="t">13:30</div>
-      <div class="c">
+      <div data-day="d2" data-t="1330" class="c">
         <h3>오후 — 자유 ☀️</h3>
         <p class="sub">저녁 6시까지 네 시간 반. 골라서 채우세요.</p>
         <div class="chk">① 경포호 자전거 (호수 한 바퀴 4.3 km, 대여 가능)<br>
@@ -291,13 +316,13 @@ body{margin:0;background:var(--paper);color:var(--ink);
       </div>
 
       <div class="t">17:40</div>
-      <div class="c drive">
+      <div data-day="d2" data-t="1740" class="c drive">
         <h3>저녁 나가기</h3>
         <div class="move">🚗 호텔 → 저녁 식당 · <b>10~20분</b> (어디로 정하느냐에 따라)</div>
       </div>
 
       <div class="t">18:00</div>
-      <div class="c eat">
+      <div data-day="d2" data-t="1800" class="c eat">
         <h3>저녁 🦀</h3>
         <p><b>해송 / 초당우가 / 다이닝조개 / 솔향대게</b> 중 한 곳</p>
         <p class="sub">전날까지 정해서 예약하는 게 좋아요.
@@ -306,13 +331,13 @@ body{margin:0;background:var(--paper);color:var(--ink);
       </div>
 
       <div class="t">20:30</div>
-      <div class="c">
+      <div data-day="d2" data-t="2030" class="c">
         <h3>호텔 복귀 · 잠깐 쉬기</h3>
         <p class="sub">방에서 좀 쉬었다가 바로 내려가면 딱 좋아요.</p>
       </div>
 
       <div class="t">21:00</div>
-      <div class="c">
+      <div data-day="d2" data-t="2100" class="c">
         <h3>바 M — 위스키 🥃</h3>
         <p class="sub">호텔 2층, 66석. 라운지&amp;바 11:00~24:00, 안주는 18:00부터.
           위스키 행사 내용은 체크인할 때 확인해두기.</p>
@@ -320,7 +345,7 @@ body{margin:0;background:var(--paper);color:var(--ink);
       </div>
 
       <div class="t">23:00</div>
-      <div class="c">
+      <div data-day="d2" data-t="2300" class="c">
         <h3>마무리 🌙</h3>
         <p class="sub">내일 아침에도 수영이 있으니 적당히.</p>
       </div>
@@ -341,14 +366,14 @@ body{margin:0;background:var(--paper);color:var(--ink);
 
     <div class="tl">
       <div class="t">07:00</div>
-      <div class="c">
+      <div data-day="d3" data-t="0700" class="c">
         <h3>마지막 수영 🏊</h3>
         <p class="sub">체크아웃 전이라 1시간 반 정도가 적당.
           8시 반쯤 올라와서 씻고 짐 싸면 여유 있습니다.</p>
       </div>
 
       <div class="t">09:00</div>
-      <div class="c">
+      <div data-day="d3" data-t="0900" class="c">
         <h3>짐 싸기 🧳</h3>
         <p class="sub">2박이면 짐이 흩어져 있습니다. 넉넉히 한 시간 잡으세요.</p>
         <div class="chk">☑ 욕실 어메니티·충전기 ☑ 냉장고 확인 ☑ 서랍·옷장 한 번 더<br>
@@ -356,19 +381,19 @@ body{margin:0;background:var(--paper);color:var(--ink);
       </div>
 
       <div class="t">10:30</div>
-      <div class="c eat">
+      <div data-day="d3" data-t="1030" class="c eat">
         <h3>조식 또는 커피 ☕</h3>
         <p class="sub">점심이 15시라 뭔가 먹어두는 게 좋아요.</p>
       </div>
 
       <div class="t">11:00</div>
-      <div class="c">
+      <div data-day="d3" data-t="1100" class="c">
         <h3>체크아웃</h3>
         <div class="move">🚗 호텔 → 아르떼뮤지엄 · <b>약 20분</b></div>
       </div>
 
       <div class="t">12:00</div>
-      <div class="c">
+      <div data-day="d3" data-t="1200" class="c" data-lat="37.793" data-lng="128.906" data-name="아르떼뮤지엄 강릉 🎨">
         <h3>아르떼뮤지엄 강릉 🎨</h3>
         <p class="sub">미디어아트 전시. 관람 1시간~1시간 30분이면 충분합니다.
           사진 많이 찍게 되니 폰 배터리 확인.</p>
@@ -376,13 +401,13 @@ body{margin:0;background:var(--paper);color:var(--ink);
       </div>
 
       <div class="t">13:40</div>
-      <div class="c drive">
+      <div data-day="d3" data-t="1340" class="c drive">
         <h3>이동</h3>
         <div class="move">🚗 아르떼뮤지엄 → 중앙시장 · <b>약 15분</b></div>
       </div>
 
       <div class="t">14:00</div>
-      <div class="c">
+      <div data-day="d3" data-t="1400" class="c" data-lat="37.753" data-lng="128.896" data-name="중앙시장 먼저 🛍️">
         <h3>중앙시장 먼저 🛍️</h3>
         <p class="sub">점심 전에 시장부터 도는 걸 추천합니다.
           배부른 상태로 시장 가면 아무것도 못 사거든요.</p>
@@ -391,20 +416,20 @@ body{margin:0;background:var(--paper);color:var(--ink);
       </div>
 
       <div class="t">15:00</div>
-      <div class="c eat">
+      <div data-day="d3" data-t="1500" class="c eat" data-lat="37.754" data-lng="128.895" data-name="형제칼국수 🍲">
         <h3>형제칼국수 🍲</h3>
         <p class="sub">시장 근처. 애매한 시간이라 대기 없을 거예요.</p>
         <div class="chk">⏱️ 50분</div>
       </div>
 
       <div class="t">16:00</div>
-      <div class="c drive">
+      <div data-day="d3" data-t="1600" class="c drive">
         <h3>주유 · 출발 준비 ⛽</h3>
         <p class="sub">강릉에서 넣고 가는 게 쌉니다. 차 안 정리하고 출발.</p>
       </div>
 
       <div class="t">16:30</div>
-      <div class="c drive">
+      <div data-day="d3" data-t="1630" class="c drive">
         <h3>서울로 출발</h3>
         <div class="move">🛣️ 강릉 → 양양JC → 인제<br>
           <b>1구간 약 60 km · 55분</b></div>
@@ -413,33 +438,33 @@ body{margin:0;background:var(--paper);color:var(--ink);
       </div>
 
       <div class="t">17:30</div>
-      <div class="c">
+      <div data-day="d3" data-t="1730" class="c">
         <h3>내린천 또는 인제휴게소 ☕</h3>
         <div class="chk">⏱️ 20분 · 저녁 대신 간식으로</div>
       </div>
 
       <div class="t">17:50</div>
-      <div class="c drive">
+      <div data-day="d3" data-t="1750" class="c drive">
         <h3>다시 출발</h3>
         <div class="move">🛣️ 인제 → 동홍천 → 가평<br>
           <b>2구간 약 80 km · 1시간</b></div>
       </div>
 
       <div class="t">18:50</div>
-      <div class="c">
+      <div data-day="d3" data-t="1850" class="c">
         <h3>가평휴게소 (선택)</h3>
         <p class="sub">피곤하면 한 번 더. 아니면 그냥 통과.</p>
       </div>
 
       <div class="t">19:00</div>
-      <div class="c drive">
+      <div data-day="d3" data-t="1900" class="c drive">
         <h3>서울 진입</h3>
         <div class="move">🛣️ 가평 → 덕소 → 상계<br>
           <b>3구간 약 90 km · 1시간 10분~1시간 30분</b> (정체 감안)</div>
       </div>
 
       <div class="t">20:30</div>
-      <div class="c">
+      <div data-day="d3" data-t="2030" class="c" data-lat="37.6614" data-lng="127.076" data-name="도착 🏠">
         <h3>도착 🏠</h3>
         <p class="sub">짐 내려드리고, 세탁물은 바로 꺼내두기.
           다음 날 추석 연휴 시작이니 푹 쉬세요.</p>
@@ -504,6 +529,109 @@ body{margin:0;background:var(--paper);color:var(--ink);
       });
       window.scrollTo({top:0,behavior:'smooth'});
     });
+  });
+})();
+
+(function(){
+  var DAY={d1:[2026,8,21], d2:[2026,8,22], d3:[2026,8,23]};
+  var items=[].slice.call(document.querySelectorAll('.c[data-t]'));
+  if(!items.length) return;
+
+  items.forEach(function(el){
+    var d=DAY[el.dataset.day], t=el.dataset.t;
+    el.__when=new Date(d[0],d[1],d[2],+t.slice(0,2),+t.slice(2));
+    var h=el.querySelector('h3');
+    el.__title=h?h.textContent.trim():'';
+  });
+  items.sort(function(a,b){return a.__when-b.__when;});
+
+  function fmt(ms){
+    var m=Math.round(ms/60000);
+    if(m<60) return m+'분';
+    return Math.floor(m/60)+'시간 '+(m%60)+'분';
+  }
+
+  var nowTitle=document.getElementById('nowtitle');
+  var nowLeft=document.getElementById('nowleft');
+  var nowSub=document.getElementById('nowsub');
+  var nextItem=null;
+
+  function paint(){
+    var n=new Date(), cur=null, nxt=null;
+    items.forEach(function(el){
+      el.classList.remove('past','cur');
+      if(el.__when<=n) cur=el;
+      else if(!nxt) nxt=el;
+    });
+    items.forEach(function(el){ if(el.__when<n && el!==cur) el.classList.add('past'); });
+    if(cur && n-cur.__when < 6*3600000) cur.classList.add('cur');
+    nextItem=nxt;
+
+    var first=items[0].__when, last=items[items.length-1].__when;
+    if(n<first){
+      nowTitle.textContent='출발 전 🧳';
+      nowLeft.textContent=fmt(first-n)+' 남음';
+      nowSub.textContent='첫 일정: '+items[0].__title;
+    } else if(n>last){
+      nowTitle.textContent='여행 끝 💗';
+      nowLeft.textContent='';
+      nowSub.textContent='다음은 9월 24일 등산 & 백숙';
+    } else {
+      nowTitle.textContent='지금 → '+(cur?cur.__title:'-');
+      if(nxt){
+        nowLeft.textContent='다음까지 '+fmt(nxt.__when-n);
+        nowSub.textContent='다음 일정: '+nxt.__title+' ('+nxt.dataset.t.slice(0,2)+':'+nxt.dataset.t.slice(2)+')';
+      } else { nowLeft.textContent=''; nowSub.textContent='오늘 마지막 일정이에요'; }
+    }
+
+    // 오늘 날짜 탭 자동 선택 (최초 1회)
+    if(!paint.done){
+      paint.done=true;
+      var key=null, t=new Date();
+      for(var k in DAY){
+        var d=DAY[k];
+        if(t.getFullYear()===d[0]&&t.getMonth()===d[1]&&t.getDate()===d[2]) key=k;
+      }
+      if(key){
+        document.querySelectorAll('.tabs button').forEach(function(b){
+          b.classList.toggle('on', b.dataset.day===key);
+        });
+        document.querySelectorAll('.day').forEach(function(s){
+          s.classList.toggle('on', s.id===key);
+        });
+      }
+    }
+  }
+  paint(); setInterval(paint,30000);
+
+  // 위치 기반 남은 거리
+  var btn=document.getElementById('geo'), box=document.getElementById('geores');
+  btn.addEventListener('click',function(){
+    if(!navigator.geolocation){ box.hidden=false; box.textContent='이 브라우저는 위치를 지원하지 않아요.'; return; }
+    box.hidden=false; box.textContent='위치 확인 중…';
+    navigator.geolocation.getCurrentPosition(function(pos){
+      var la=pos.coords.latitude, lo=pos.coords.longitude;
+      var target=null;
+      for(var i=0;i<items.length;i++){
+        if(items[i].dataset.lat && items[i].__when>new Date()){ target=items[i]; break; }
+      }
+      if(!target){ box.textContent='남은 이동 일정이 없어요 🙂'; return; }
+      var R=6371, p=Math.PI/180;
+      var dla=(target.dataset.lat-la)*p, dlo=(target.dataset.lng-lo)*p;
+      var a=Math.sin(dla/2)*Math.sin(dla/2)+Math.cos(la*p)*Math.cos(target.dataset.lat*p)*Math.sin(dlo/2)*Math.sin(dlo/2);
+      var km=2*R*Math.asin(Math.sqrt(a))*1.25;
+      var speed = km>40 ? 85 : (km>5 ? 40 : 4);
+      var min=Math.round(km/speed*60);
+      var arrive=new Date(Date.now()+min*60000);
+      var late=arrive-target.__when;
+      box.innerHTML='다음 목적지 <b>'+(target.dataset.name||target.__title)+'</b><br>'+
+        '약 <b>'+km.toFixed(1)+' km</b> · '+(km>5?'차로 ':'걸어서 ')+'<b>'+min+'분</b><br>'+
+        '지금 출발하면 '+('0'+arrive.getHours()).slice(-2)+':'+('0'+arrive.getMinutes()).slice(-2)+' 도착 ' +
+        (late>0 ? '(예정보다 '+fmt(late)+' 늦음 ⚠️)' : '(예정보다 '+fmt(-late)+' 여유 ✅)') +
+        '<br><span style="font-size:11.5px;opacity:.75">※ 직선거리에 도로 보정을 더한 추정치예요</span>';
+    },function(){
+      box.textContent='위치를 못 가져왔어요. 브라우저에서 위치 권한을 허용해 주세요.';
+    },{enableHighAccuracy:true,timeout:10000});
   });
 })();
 </script>
