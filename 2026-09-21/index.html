@@ -233,13 +233,47 @@ body{margin:0;background:var(--paper);color:var(--ink);
           <b>3구간 약 55 km · 50분</b></div>
       </div>
 
-      <div class="t">10:40</div>
-      <div data-day="d1" data-t="1040" class="c eat" data-lat="37.7955" data-lng="128.906" data-name="초당순두부 🥣">
-        <h3>초당순두부 🥣</h3>
-        <p><b>믿음이 지인분 가게</b></p>
-        <p class="sub">11시 예정이었는데 조금 일찍 도착. 오히려 좋아요, 점심 붐비기 전입니다.
-          인사 나누고 여유 있게.</p>
-        <div class="chk">⏱️ 식사 60분 + 인사 20분 = 80분 잡기</div>
+      <div class="t">11:00</div>
+      <div data-day="d1" data-t="1100" class="c eat" data-lat="37.7990" data-lng="128.9141" data-name="가벼운 점심">
+        <h3>가벼운 점심 🥪 <span class="badge">공쥬님 선택</span></h3>
+        <p class="sub">저녁에 <b>오마카세</b>가 기다리고 있으니 점심은 가볍게.
+          둘이서 1인분 정도만 나눠 먹는 걸로 골라놨어요.</p>
+
+        <div class="rec" data-slot="lunch" data-pick="sand730">
+          <div class="rtop"><span class="rno">A</span><b>샌드위치730 🦀</b><span class="rmeta">해변 앞 · 8~22시</span></div>
+          <p>강문해변 바로 앞 샌드위치집. <b>홍게 샌드위치</b>가 대표인데
+            게살 향이 은은하고 채소가 신선해서 부담 없다는 평이 많아요.
+            버섯 크림 스프랑 같이 시켜 하나씩 나눠 먹으면 딱입니다.
+            포장해서 바다 보면서 먹어도 좋고요.</p>
+          <span class="rtip">🥪 가장 가볍고 빠름 · 매일 영업</span>
+          <button class="rbtn" type="button">이거 할래요</button>
+        </div>
+
+        <div class="rec" data-slot="lunch" data-pick="longbread">
+          <div class="rtop"><span class="rno">B</span><b>롱브레드 🍞</b><span class="rmeta">경포 · 8~21시</span></div>
+          <p>바다 보이는 창가 자리가 있는 브런치 카페. 리뷰 591개.
+            <b>베이컨 에그 파니니</b>랑 프렌치토스트가 맛있다는 평이고,
+            커피도 신맛 없이 깔끔하다고 해요. 앉아서 쉬기 좋아서
+            운전 3시간 하고 오신 뒤에 딱입니다. 바로 앞 주차 가능.</p>
+          <span class="rtip">☕ 앉아서 쉬기 · 바다 창가</span>
+          <button class="rbtn" type="button">이거 할래요</button>
+        </div>
+
+        <div class="rec" data-slot="lunch" data-pick="mandong">
+          <div class="rtop"><span class="rno">C</span><b>만동제과 🧄</b><span class="rmeta">중앙시장 근처 · 11~18시</span></div>
+          <p>강릉에서 빵으로 제일 유명한 집. <b>마늘 바게트</b>와
+            <b>어니언 크림 베이글</b>이 시그니처예요. 마늘버터가 흠뻑 배어 있어
+            중독성 있다는 후기가 많습니다. 장갑도 주고 바로 앞에서 먹을 수 있어요.
+            줄이 길 수 있다는 게 유일한 단점.</p>
+          <span class="rtip">🥖 빵으로 때우기 · 남으면 차에서</span>
+          <button class="rbtn" type="button">이거 할래요</button>
+        </div>
+
+        <div class="rdone" hidden><b>✅ <span></span></b> 알겠습니다, 그렇게 준비할게요 💗</div>
+
+        <div class="chk" style="margin-top:10px">🍪 <b>주전부리</b> — 강릉사임당 (성곡고양길, 10~20시, 별점 4.9)<br>
+          곶감 버터크림 샌드가 대표. 낱개 포장이라 차에서 하나씩 먹기 좋고,
+          집에 가져갈 선물로도 괜찮아요.</div>
       </div>
 
       <div class="t">12:00</div>
@@ -319,7 +353,7 @@ body{margin:0;background:var(--paper);color:var(--ink);
       · 새벽 출발이라 전날 밤 짐은 미리 차에<br>
       · 고속도로 통행료 약 12,000원 (하이패스)<br>
       · 오픈카면 대관령 넘을 때 바람 참 — 겉옷·스카프 준비<br>
-      · 초당순두부 도착 시간 지인분께 미리 연락</div>
+      · 점심은 가볍게 → 저녁 오마카세에 집중</div>
   </section>
 
   <!-- ───────── DAY 2 ───────── -->
@@ -729,9 +763,10 @@ body{margin:0;background:var(--paper);color:var(--ink);
   var LABEL={
     anmok:'안목 커피거리 ☕', ojuk:'오죽헌·선교장 🎍', rest:'그냥 쉬기 😴',
     bike:'경포호 자전거 🚲', haslla:'하슬라아트월드 🗿',
-    jumunjin:'주문진 도깨비 방파제 🌊', nap:'호텔에서 낮잠 💤'
+    jumunjin:'주문진 도깨비 방파제 🌊', nap:'호텔에서 낮잠 💤',
+    sand730:'샌드위치730 🦀', longbread:'롱브레드 🍞', mandong:'만동제과 🧄'
   };
-  ['d1','d2'].forEach(function(slot){
+  ['lunch','d1','d2'].forEach(function(slot){
     var KEY='trip-'+slot;
     var recs=[].slice.call(document.querySelectorAll('.rec[data-slot="'+slot+'"]'));
     if(!recs.length) return;
@@ -765,8 +800,9 @@ body{margin:0;background:var(--paper);color:var(--ink);
   if(!btn) return;
   btn.addEventListener('click',function(){
     var g=function(k){ try{return localStorage.getItem(k);}catch(e){return null;} };
-    var d1=g('trip-d1'), d2=g('trip-d2');
+    var lu=g('trip-lunch'), d1=g('trip-d1'), d2=g('trip-d2');
     var t='🌊 강릉 여행 — 공쥬님이 고른 것\n'+
+      '1일차 점심: '+(lu?LABEL[lu]:'아직 안 골랐어요')+'\n'+
       '1일차 오후: '+(d1?LABEL[d1]:'아직 안 골랐어요')+'\n'+
       '2일차 오후: '+(d2?LABEL[d2]:'아직 안 골랐어요');
     if(navigator.share){
