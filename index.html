@@ -49,6 +49,11 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:28px 0 10px;
 .card.orange::before{background:#E07A28}
 .card.grey::before{background:var(--muted)}
 
+
+.card.hike::before{background:#2E7D4F}
+.card.hike .d{color:#2E7D4F} .card.hike .tag{background:#2E7D4F} .card.hike .go{color:#2E7D4F}
+.card.sketch::before{background:#8B6BB1}
+.card.sketch .d{color:#8B6BB1} .card.sketch .tag{background:#8B6BB1} .card.sketch .go{color:#8B6BB1}
 .card.snow::before{background:#5B8DD6}
 .card.snow .d{color:#5B8DD6} .card.snow .tag{background:#5B8DD6}
 .card.slot{border-style:dashed;opacity:.9}
@@ -122,11 +127,12 @@ a.card:active{transform:scale(.99)}
     <span class="go">상세 일정 보기 →</span>
   </a>
 
-  <div class="card plain">
-    <div class="top"><span class="d">9월 24일 (목)</span><span class="tag">연휴</span></div>
-    <b>등산 &amp; 백숙 ⛰️</b>
-    <span class="desc">추석 연휴 첫날, 가볍게</span>
-  </div>
+  <a class="card hike" href="./2026-09-24/">
+    <div class="top"><span class="d">9월 24일 (목)</span><span class="tag" id="t3">D-</span></div>
+    <b>북한산 등산 &amp; 백숙 ⛰️</b>
+    <span class="desc">코스 3개 중에 고르기 · 하산 후 백숙</span>
+    <span class="go">코스 보기 →</span>
+  </a>
 
   <a class="card orange" href="./2026-10-14/">
     <div class="top"><span class="d">10월 14일 (수) ~ 15일 (목)</span><span class="tag" id="t2">D-</span></div>
@@ -135,28 +141,49 @@ a.card:active{transform:scale(.99)}
     <span class="go">준비 계획 보기 →</span>
   </a>
 
-  <div class="card plain">
-    <div class="top"><span class="d">12월 3일 (목)</span><span class="tag">150일</span></div>
-    <b>150일 💗</b>
-    <span class="desc">어떻게 보낼지 같이 정하기</span>
-  </div>
-
-  <div class="card plain">
-    <div class="top"><span class="d">12월 24일 (목)</span><span class="tag">연휴</span></div>
+  <a class="card sketch" href="./ideas/">
+    <div class="top"><span class="d">12월 24일 (목)</span><span class="tag">아이디어 3개</span></div>
     <b>크리스마스 이브 🎄</b>
-    <span class="desc">12월 25일 금요일 성탄절</span>
-  </div>
+    <span class="desc">호텔에서 조용히 / 집에서 만들어 먹기 / 일루미네이션</span>
+    <span class="go">스케치 보기 →</span>
+  </a>
 
-  <div class="card plain">
-    <div class="top"><span class="d">12월 31일 (목)</span><span class="tag">연휴</span></div>
+  <a class="card sketch" href="./ideas/">
+    <div class="top"><span class="d">12월 31일 (목)</span><span class="tag">아이디어 3개</span></div>
     <b>연말 · 새해맞이 🎆</b>
-    <span class="desc">1월 1일 금요일 신정</span>
+    <span class="desc">해돋이 / 카운트다운 / 한 해 정리하는 시간</span>
+    <span class="go">스케치 보기 →</span>
+  </a>
+
+  <div class="card plain">
+    <div class="top"><span class="d">2027년 1월 16일 (토)</span><span class="tag">생일</span></div>
+    <b>믿음이 생일 🎂</b>
+    <span class="desc">공쥬님이 정해주세요 🙂</span>
   </div>
 
   <div class="card plain">
-    <div class="top"><span class="d">2027년 2월 초</span><span class="tag">해외</span></div>
+    <div class="top"><span class="d">2027년 1월 22일 (금)</span><span class="tag">200일</span></div>
+    <b>200일 💗</b>
+    <span class="desc">생일 다음 주라 붙여서 보내도 좋고요</span>
+  </div>
+
+  <a class="card sketch" href="./ideas/">
+    <div class="top"><span class="d">2027년 2월 초</span><span class="tag">아이디어 3개</span></div>
     <b>삿포로 눈축제 ❄️</b>
-    <span class="desc">첫 해외여행 · 항공·숙소 11~12월 예약</span>
+    <span class="desc">눈축제 정공법 / 온천 메인 / 오타루까지</span>
+    <span class="go">스케치 보기 →</span>
+  </a>
+
+  <div class="card plain">
+    <div class="top"><span class="d">2027년 3월 20일 (토)</span><span class="tag">생일</span></div>
+    <b>찌영이 공쥬님 생일 🎉</b>
+    <span class="desc">제일 중요한 날 · 크게 준비할게요</span>
+  </div>
+
+  <div class="card plain">
+    <div class="top"><span class="d">2027년 7월 7일 (수)</span><span class="tag">1주년</span></div>
+    <b>1주년 💗</b>
+    <span class="desc">벌써 여기까지 생각하게 되네요</span>
   </div>
 
 
@@ -217,6 +244,7 @@ a.card:active{transform:scale(.99)}
   }
   dd('t1',2026,8,21);
   dd('t2',2026,9,14);
+  dd('t3',2026,8,24);
 })();
 </script>
 </body>
