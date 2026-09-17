@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="cache-control" content="no-cache">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>내일, 수요일 💗</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,6 +35,11 @@ body{margin:0;background:var(--paper);color:var(--ink);
 .hero h1{font-family:"Gowun Dodum",sans-serif;font-size:40px;margin:10px 0 6px;line-height:1.2;
   text-shadow:0 2px 0 rgba(0,0,0,.1)}
 .hero .date{font-size:15px;opacity:.95}
+
+.cd{margin-top:14px;background:rgba(255,255,255,.18);border-radius:16px;
+  padding:12px 16px;display:inline-block}
+.cd span{display:block;font-family:"Gowun Dodum",sans-serif;font-size:30px;font-weight:700;line-height:1.1}
+.cd small{display:block;font-size:11.5px;opacity:.85;margin-top:3px}
 .hero .pets{display:flex;justify-content:center;gap:10px;margin-top:16px}
 .hero .pets svg{width:76px;height:76px}
 .hero .float{position:absolute;font-size:20px;opacity:.55}
@@ -69,6 +75,210 @@ h2 svg{width:26px;height:26px;flex:none}
   .hero .float{animation:bob 4s ease-in-out infinite}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 }
+
+
+
+
+
+
+
+
+
+
+.c.wine .pick{background:linear-gradient(165deg,rgba(90,40,70,.06),rgba(140,60,90,.10));
+  border-color:rgba(150,70,110,.35)}
+.c.wine .rank{background:#8E3B63}
+.c.wine .star{color:#B04B7C}
+.c.wine .chef{background:rgba(142,59,99,.10)}
+.c.wine .pbtn{background:#8E3B63}
+.c.wine .pick.sel{border:2px solid #8E3B63;box-shadow:0 4px 14px rgba(142,59,99,.22)}
+.c.wine .decide b,.c.wine .done b{color:#8E3B63}
+.c.wine .done{background:rgba(142,59,99,.12)}
+.pick.w2 .chef{background:rgba(196,143,224,.14)}
+.pick.w3 .chef{background:rgba(120,170,120,.14)}
+.chef{display:flex;gap:10px;margin-top:10px;padding:11px 12px;border-radius:14px;
+  background:rgba(240,98,146,.09);align-items:flex-start}
+.chef .face{font-size:26px;line-height:1.1;flex:none}
+.chef p{margin:0;font-size:13px;line-height:1.65;font-family:"Gowun Dodum",sans-serif}
+.links{display:flex;gap:7px;margin-top:10px}
+
+.links .no{flex:1;text-align:center;font-size:12.5px;padding:8px 4px;border-radius:10px;
+  background:var(--paper);border:1px dashed var(--line);color:var(--muted)}
+.links a{flex:1;text-align:center;font-size:12.5px;padding:8px 4px;border-radius:10px;
+  text-decoration:none;background:var(--paper);border:1px solid var(--line);color:var(--ink)}
+.pick{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 15px;margin:12px 0}
+.pick.sel{border:2px solid var(--pink);box-shadow:0 4px 14px rgba(240,98,146,.18)}
+.pick.dim{opacity:.45;max-height:74px;overflow:hidden;position:relative;padding-bottom:6px}
+.pick.dim .chef,.pick.dim .links,.pick.dim .pdesc,.pick.dim .pmenu{display:none}
+.pick.dim .pbtn{padding:6px;font-size:12.5px;margin-top:6px}
+.pick.dim::after{content:"";position:absolute;left:0;right:0;bottom:0;height:26px;
+  background:linear-gradient(transparent,var(--card))}
+.pick{transition:max-height .35s ease, opacity .25s ease}
+.ptop{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.rank{font-size:11px;background:var(--lav);color:#fff;padding:3px 10px;border-radius:999px;font-weight:700}
+.star{font-size:13px;color:var(--pink);font-weight:700}
+.star em{font-style:normal;color:var(--muted);font-weight:400;font-size:11px}
+.pname{display:block;font-family:"Gowun Dodum",sans-serif;font-size:18px}
+.pmeta{display:block;font-size:11.5px;color:var(--muted);margin:3px 0 8px}
+.pdesc{font-size:13.5px;margin:0 0 8px;line-height:1.6}
+.pmenu{display:block;font-size:12.5px;color:var(--muted);background:rgba(196,143,224,.12);
+  border-radius:8px;padding:6px 9px}
+.pbtn{width:100%;margin-top:10px;padding:10px;border:none;border-radius:999px;
+  background:var(--pink);color:#fff;font-size:14px;font-weight:700;cursor:pointer;
+  font-family:"Gowun Dodum",sans-serif}
+.pbtn:active{transform:scale(.98)}
+.decide{text-align:center;margin-top:14px;font-family:"Gowun Dodum",sans-serif}
+.decide b{display:block;font-size:17px;color:var(--pink)}
+.decide span{font-size:13px;color:var(--muted)}
+.done{text-align:center;margin-top:14px;padding:16px;border-radius:16px;
+  background:rgba(240,98,146,.12);font-family:"Gowun Dodum",sans-serif}
+.done b{display:block;font-size:18px;color:var(--pink)}
+.done span{display:block;font-size:13.5px;color:var(--muted);margin-top:4px}
+.reset{margin-top:10px;background:none;border:1px solid var(--line);border-radius:999px;
+  padding:6px 14px;font-size:12px;color:var(--muted);cursor:pointer}
+.menu{margin-top:14px;background:var(--card);border:1px solid var(--line);
+  border-radius:16px;padding:14px 15px}
+.mh{font-family:"Gowun Dodum",sans-serif;font-size:15px;color:var(--pink);
+  font-weight:700;margin-bottom:10px}
+.mh.sub{margin-top:16px;color:var(--lav);padding-top:12px;border-top:1px dashed var(--line)}
+.mi{display:flex;gap:10px;margin-bottom:11px;align-items:flex-start}
+.mn{flex:none;width:22px;height:22px;border-radius:50%;background:var(--pink);color:#fff;
+  font-size:12px;display:grid;place-items:center;margin-top:2px;font-weight:700}
+.mn.side{background:var(--lav)}
+.mi b{display:block;font-size:14.5px}
+.mi em{display:block;font-style:normal;font-size:12.5px;color:var(--muted);line-height:1.5;margin-top:2px}
+.mtip{font-size:12.5px;color:var(--muted);background:rgba(240,98,146,.08);
+  border-radius:10px;padding:9px 11px;margin:12px 0 0;line-height:1.6}
+.mtip b{color:var(--pink)}
+
+
+
+
+.c.wine .pick{background:linear-gradient(165deg,rgba(90,40,70,.06),rgba(140,60,90,.10));
+  border-color:rgba(150,70,110,.35)}
+.c.wine .rank{background:#8E3B63}
+.c.wine .star{color:#B04B7C}
+.c.wine .chef{background:rgba(142,59,99,.10)}
+.c.wine .pbtn{background:#8E3B63}
+.c.wine .pick.sel{border:2px solid #8E3B63;box-shadow:0 4px 14px rgba(142,59,99,.22)}
+.c.wine .decide b,.c.wine .done b{color:#8E3B63}
+.c.wine .done{background:rgba(142,59,99,.12)}
+.pick.w2 .chef{background:rgba(196,143,224,.14)}
+.pick.w3 .chef{background:rgba(120,170,120,.14)}
+.chef{display:flex;gap:10px;margin-top:10px;padding:11px 12px;border-radius:14px;
+  background:rgba(240,98,146,.09);align-items:flex-start}
+.chef .face{font-size:26px;line-height:1.1;flex:none}
+.chef p{margin:0;font-size:13px;line-height:1.65;font-family:"Gowun Dodum",sans-serif}
+.links{display:flex;gap:7px;margin-top:10px}
+
+.links .no{flex:1;text-align:center;font-size:12.5px;padding:8px 4px;border-radius:10px;
+  background:var(--paper);border:1px dashed var(--line);color:var(--muted)}
+.links a{flex:1;text-align:center;font-size:12.5px;padding:8px 4px;border-radius:10px;
+  text-decoration:none;background:var(--paper);border:1px solid var(--line);color:var(--ink)}
+.pick{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 15px;margin:12px 0}
+.pick.sel{border:2px solid var(--pink);box-shadow:0 4px 14px rgba(240,98,146,.18)}
+.pick.dim{opacity:.45;max-height:74px;overflow:hidden;position:relative;padding-bottom:6px}
+.pick.dim .chef,.pick.dim .links,.pick.dim .pdesc,.pick.dim .pmenu{display:none}
+.pick.dim .pbtn{padding:6px;font-size:12.5px;margin-top:6px}
+.pick.dim::after{content:"";position:absolute;left:0;right:0;bottom:0;height:26px;
+  background:linear-gradient(transparent,var(--card))}
+.pick{transition:max-height .35s ease, opacity .25s ease}
+.ptop{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.rank{font-size:11px;background:var(--lav);color:#fff;padding:3px 10px;border-radius:999px;font-weight:700}
+.star{font-size:13px;color:var(--pink);font-weight:700}
+.star em{font-style:normal;color:var(--muted);font-weight:400;font-size:11px}
+.pname{display:block;font-family:"Gowun Dodum",sans-serif;font-size:18px}
+.pmeta{display:block;font-size:11.5px;color:var(--muted);margin:3px 0 8px}
+.pdesc{font-size:13.5px;margin:0 0 8px;line-height:1.6}
+.pmenu{display:block;font-size:12.5px;color:var(--muted);background:rgba(196,143,224,.12);
+  border-radius:8px;padding:6px 9px}
+.pbtn{width:100%;margin-top:10px;padding:10px;border:none;border-radius:999px;
+  background:var(--pink);color:#fff;font-size:14px;font-weight:700;cursor:pointer;
+  font-family:"Gowun Dodum",sans-serif}
+.pbtn:active{transform:scale(.98)}
+.decide{text-align:center;margin-top:14px;font-family:"Gowun Dodum",sans-serif}
+.decide b{display:block;font-size:17px;color:var(--pink)}
+.decide span{font-size:13px;color:var(--muted)}
+.done{text-align:center;margin-top:14px;padding:16px;border-radius:16px;
+  background:rgba(240,98,146,.12);font-family:"Gowun Dodum",sans-serif}
+.done b{display:block;font-size:18px;color:var(--pink)}
+.done span{display:block;font-size:13.5px;color:var(--muted);margin-top:4px}
+.reset{margin-top:10px;background:none;border:1px solid var(--line);border-radius:999px;
+  padding:6px 14px;font-size:12px;color:var(--muted);cursor:pointer}
+.menu{margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 15px}
+.mh{font-family:"Gowun Dodum",sans-serif;font-size:15px;color:var(--pink);font-weight:700;margin-bottom:10px}
+.mh.sub{margin-top:16px;color:var(--lav);padding-top:12px;border-top:1px dashed var(--line)}
+.mi{display:flex;gap:10px;margin-bottom:11px;align-items:flex-start}
+.mn{flex:none;width:22px;height:22px;border-radius:50%;background:var(--pink);color:#fff;font-size:12px;display:grid;place-items:center;margin-top:2px;font-weight:700}
+.mn.side{background:var(--lav)}
+.mi b{display:block;font-size:14.5px}
+.mi em{display:block;font-style:normal;font-size:12.5px;color:var(--muted);line-height:1.5;margin-top:2px}
+.mtip{font-size:12.5px;color:var(--muted);background:rgba(240,98,146,.08);border-radius:10px;padding:9px 11px;margin:12px 0 0;line-height:1.6}
+.mtip b{color:var(--pink)}
+
+.up{margin:30px 0 0;padding:20px 18px;border-radius:20px;background:var(--card);border:1px solid var(--line)}
+.upsub{margin:0 0 14px;font-size:13px;color:var(--muted)}
+.ui{display:flex;gap:12px;padding:11px 0;border-top:1px dashed var(--line);align-items:flex-start}
+.ui:first-of-type{border-top:none}
+.ud{flex:none;width:52px;font-family:"Gowun Dodum",sans-serif;font-size:15px;color:var(--pink);font-weight:700;line-height:1.25}
+.ud em{display:block;font-style:normal;font-size:10.5px;color:var(--muted)}
+.ui b{display:block;font-size:15px}
+.ui span:not(.ud){display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+.trip{margin:34px 0 0;padding:22px 18px;border-radius:20px;
+  background:linear-gradient(160deg,rgba(196,143,224,.16),rgba(240,98,146,.14));
+  border:1px solid var(--line)}
+.tbadge{display:inline-block;font-size:10.5px;letter-spacing:3px;color:#fff;
+  background:var(--lav);padding:4px 10px;border-radius:999px}
+.tsub{margin:0 0 14px;font-size:13.5px;color:var(--muted)}
+.tday{background:var(--card);border-radius:14px;padding:13px 15px;margin-bottom:10px}
+.tday b{display:block;font-family:"Gowun Dodum",sans-serif;font-size:15px;color:var(--pink);margin-bottom:6px}
+.tday span{display:block;font-size:14px;padding:2px 0}
+.tday em{font-style:normal;color:var(--muted);font-size:12px}
+.tnote{text-align:center;font-family:"Gowun Dodum",sans-serif;font-size:15px;margin:14px 0 0}
+.tnote small{color:var(--muted);font-size:12.5px}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.thumbs a{text-decoration:none;color:var(--ink)}
+.thumbs .ph{display:grid;place-items:center;aspect-ratio:1/1;border-radius:14px;
+  font-size:30px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.thumbs .cap{display:block;font-size:12px;margin-top:6px;text-align:center;line-height:1.35}
+.thumbs .cap em{display:block;font-style:normal;font-size:10.5px;color:var(--muted)}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.btns a{font-size:13px;padding:8px 14px;border-radius:999px;text-decoration:none;
+  background:var(--pink);color:#fff;font-weight:500}
+.btns a+a{background:var(--lav)}
+.move{font-size:14px !important;color:var(--ink) !important;
+  background:var(--card);border:1px dashed var(--line);border-radius:12px;
+  padding:9px 12px;margin-top:4px !important;line-height:1.6}
+.move b{color:var(--pink)}
+.addr{font-size:12.5px !important;color:var(--muted);margin-top:6px !important;line-height:1.5}
+.addr a{color:var(--pink);text-decoration:none;border-bottom:1px dotted var(--pink)}
+.arc{margin:30px 0 0;border-top:1px solid var(--line);padding-top:14px}
+.arc summary{cursor:pointer;list-style:none;color:var(--muted);font-size:14px;
+  font-family:"Gowun Dodum",sans-serif;padding:8px 0;text-align:center}
+.arc summary::-webkit-details-marker{display:none}
+.arc summary::after{content:" ▾"}
+.arc[open] summary::after{content:" ▴"}
+.arow{display:flex;gap:12px;align-items:center;padding:12px 14px;margin-top:8px;
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  text-decoration:none;color:var(--ink);font-size:15px}
+.arow .ad{font-family:"Gowun Dodum",sans-serif;color:var(--pink);font-weight:700;flex:none;width:44px}
+.arow .at{flex:1}
+.arow em{font-style:normal;font-size:12px;color:var(--muted);margin-left:8px}
+.arow.off{opacity:.55}
+.arow.off .ad{color:var(--muted)}
+
+.now{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin:18px 0 6px}
+.nowtop{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.nowtop b{font-family:"Gowun Dodum",sans-serif;font-size:17px;color:var(--pink)}
+.nowtop span{font-size:13px;color:var(--muted);white-space:nowrap}
+.nowsub{font-size:13px;color:var(--muted);margin-top:3px}
+.geo{margin-top:10px;width:100%;padding:9px;border:1px dashed var(--line);border-radius:999px;
+  background:none;color:var(--pink);font-size:13px;cursor:pointer;font-family:"Gowun Dodum",sans-serif}
+.geores{margin-top:9px;font-size:13px;background:rgba(240,98,146,.10);border-radius:10px;padding:9px 11px;line-height:1.6}
+.tl .c.past{opacity:.36}
+.tl .c.past::before{background:var(--muted) !important}
+.tl .c.cur{background:rgba(240,98,146,.10);border-radius:0 12px 12px 0;box-shadow:inset 3px 0 0 var(--pink)}
+.tl .c.cur::before{background:var(--pink) !important;box-shadow:0 0 0 4px rgba(240,98,146,.22)}
 :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 </style>
 </head>
@@ -80,9 +290,10 @@ h2 svg{width:26px;height:26px;flex:none}
   <span class="float" style="left:14%;bottom:16%;animation-delay:1.2s">✨</span>
   <span class="float" style="right:16%;bottom:12%;animation-delay:1.8s">💗</span>
 
-  <div class="kicker">COMING TOMORROW</div>
-  <h1>내일, 수요일</h1>
-  <div class="date">9월 16일 · 예고편</div>
+  <div class="kicker">TODAY</div>
+  <h1>찌영이 공쥬님<br><span style="font-size:26px">오늘 일정 안내문</span></h1>
+  <div class="date">9월 16일 수요일 👑</div>
+  <div class="cd"><span id="cd">계산 중…</span><small>믿음이 만나기까지</small></div>
 
   <div class="pets">
     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -110,45 +321,264 @@ h2 svg{width:26px;height:26px;flex:none}
 <div class="wrap">
 
   <div class="teaser">
-    <p>머리는 예쁘게 하고 나와 🎀</p>
-    <p>나머지는 내가 알아서 할게</p>
-    <small>자세한 건 만나서 —</small>
+    <p>공쥬님, 머리만 예쁘게 하고 계세요 🎀</p>
+    <p>나머지는 제가 다 준비해두겠습니다</p>
+    <small>— 전속 기사 겸 수행비서 올림 🚗</small>
   </div>
 
   <h2>
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-4.6-9.5-9C.8 8.7 2.4 4.5 6.3 4.1 8.5 3.9 10.3 5 12 7c1.7-2 3.5-3.1 5.7-2.9 3.9.4 5.5 4.6 3.8 7.9C19 16.4 12 21 12 21z" fill="#F06292"/></svg>
-    내일의 순서
+    공쥬님 내일 동선
   </h2>
+
+
+  <div class="now" id="now">
+    <div class="nowtop"><b id="nowtitle">계산 중…</b><span id="nowleft"></span></div>
+    <div class="nowsub" id="nowsub"></div>
+    <button class="geo" type="button" id="geo">📍 내 위치로 남은 시간 보기</button>
+    <div class="geores" id="geores" hidden></div>
+  </div>
 
   <div class="tl">
     <div class="t">16:00</div>
-    <div class="c">
-      <h3>염색 🎨</h3>
-      <p>강남에서. 끝날 때쯤 연락 줘, 올라갈게.</p>
+    <div data-t="1600" class="c" data-lat="37.5096" data-lng="127.1094" data-name="염색 중 🎨">
+      <h3>염색 중 🎨</h3>
+      <p>천천히 예쁘게 하고 계세요. 2~3시간 걸린다고 하니 <b>18:00~19:00</b>쯤 끝날 예정.</p>
+      <p class="addr">디머드헤어 잠실송파점 · 송파구 백제고분로45길 7-3, 2층<br>02-422-0804</p>
     </div>
 
-    <div class="t">19:00</div>
-    <div class="c">
-      <h3>데리러 감 🚗</h3>
-      <p>근처에 차 대놓고 기다리고 있을 예정.</p>
+    <div class="t">18:00</div>
+    <div data-t="1800" class="c" data-lat="37.5096" data-lng="127.1094" data-name="구경 갑니다 👀">
+      <h3>구경 갑니다 👀</h3>
+      <p>끝나기 30분쯤 전에 올라가 볼게요. 예뻐지는 거 옆에서 구경하고 싶어서요 🎀</p>
+      <p class="addr">차는 <b>송파여성문화회관 공영주차장</b>에 댈게요 (10분 300원 · 24시간 · 도보 4분).<br>
+        세 식당 다 거기서 걸어서 갑니다 🚶</p>
     </div>
 
-    <div class="t">19:30</div>
-    <div class="c">
-      <h3>파스타 🍝</h3>
-      <p>예약해 둔 곳. 어딘지는 가서 보기.</p>
+    <div class="t">19:20</div>
+    <div data-t="1920" class="c" data-lat="37.509" data-lng="127.109" data-name="저녁 🍝">
+      <h3>저녁 🍝</h3>
+      <p><b>엘리스 리틀 이태리</b>로 정해졌어요 🎉 고르시느라 고생하셨습니다.</p>
+
+      <div class="pick" data-pick="ellie">
+        <div class="ptop">
+          <span class="rank">추천 1</span>
+          <span class="star">★ 4.5 <em>(742)</em></span>
+        </div>
+        <b class="pname">엘리스 리틀 이태리</b>
+        <span class="pmeta">🚶 걸어서 7분 · 420 m &nbsp;|&nbsp; ~22:00 &nbsp;|&nbsp; 백제고분로41길 43-21</span>
+        <p class="pdesc">송리단길 대표 이탈리안. 화덕이 있어 피자를 직접 굽고,
+          트러플 들어간 리조또와 파스타 퀄리티가 높다는 평이에요.
+          빵과 리조또볼을 서비스로 줍니다. 자리가 적어 <b>예약 권장</b> · 010-6545-1410</p>
+        <span class="pmenu">🍽️ 보리 리조또 · 생면 리가토니 · 마르게리타</span>
+        <div class="chef">
+          <span class="face">🧑‍🍳</span>
+          <p><b>“엘리스입니다 🔥”</b><br>
+            저희 집 자랑 좀 할게요. 화덕은 매일 아침부터 달궈둡니다.
+            리뷰 742개에 4.5점, 송리단길에서 제일 오래 줄 서는 집이에요.
+            오시면 갓 구운 빵이랑 튀긴 리조또볼부터 내드립니다. 물론 서비스예요.<br>
+            두 분이시면 <b>보리 리조또에 마르게리타</b>. 소고기는 미디엄레어로,
+            트러플 향 은은하게. 다들 이거 드시고 또 오세요.<br>
+            자리가 몇 없어서 그러는데… 오늘 꼭 뵙고 싶습니다 🙏</p>
+        </div>
+        <div class="links">
+          <a href="https://www.google.com/search?tbm=isch&q=%EC%97%98%EB%A6%AC%EC%8A%A4%EB%A6%AC%ED%8B%80%EC%9D%B4%ED%83%9C%EB%A6%AC%20%EC%86%A1%EB%A6%AC%EB%8B%A8%EA%B8%B8" target="_blank" rel="noopener">🖼️ 사진</a>
+          <a href="https://naver.me/x67yB21A" target="_blank" rel="noopener">📍 플레이스</a>
+          <a href="https://app.catchtable.co.kr/ct/shop/ellieslittleitaly" target="_blank" rel="noopener">🗓️ 웨이팅 등록</a>
+        </div>
+        <button class="pbtn" type="button">이걸로 할래요</button>
+      </div>
+
+      <div class="pick" data-pick="onryang">
+        <div class="ptop">
+          <span class="rank">추천 2</span>
+          <span class="star">★ 71점 <em>(다이닝코드)</em></span>
+        </div>
+        <b class="pname">온량</b>
+        <span class="pmeta">🚶 걸어서 8분 · 550 m &nbsp;|&nbsp; 매일 12:00~21:00 &nbsp;|&nbsp; 백제고분로43길 4, 1층 · 0507-1363-3642</span>
+        <p class="pdesc">유럽 시골 마을 같은 따뜻한 분위기. 크고 화려하기보다 아늑하고 정감 있어서
+          연인끼리 오기 좋다는 평이 많아요. <b>가게 앞에서 롯데타워가 보입니다.</b>
+          리코타 샐러드가 미니로 시켜도 양 많고 맛있다는 후기, 해산물이 싱싱하다는 평.</p>
+        <span class="pmenu">🍽️ 로제 파스타 · 토마호크 포크커틀렛 · 리코타 샐러드</span>
+        <div class="chef">
+          <span class="face">🧑‍🍳</span>
+          <p><b>“온량입니다 🌇”</b><br>
+            여긴 유럽 시골 마을 같다는 말을 제일 많이 들어요.
+            크고 화려한 집 말고, 이탈리아 가정집처럼 따뜻한 데를 찾으셨다면 잘 오신 겁니다.
+            그릇 하나까지 골라서 씁니다.<br>
+            두 분이면 <b>로제 파스타에 미니 리코타 샐러드</b> — 미니인데도 양 많다고 다들 놀라세요.
+            토마호크 포크커틀렛도 저희 자랑입니다.<br>
+            그리고 가게 앞에서 <b>롯데타워가 그대로 보여요.</b>
+            해 지고 오시면… 그 장면 때문에라도 다시 오시게 됩니다 ✨</p>
+        </div>
+        <div class="links">
+          <a href="https://www.google.com/search?tbm=isch&q=%EC%98%A8%EB%9F%89%20%EC%86%A1%EB%A6%AC%EB%8B%A8%EA%B8%B8" target="_blank" rel="noopener">🖼️ 사진</a>
+          <a href="https://naver.me/52R5LOWs" target="_blank" rel="noopener">📍 플레이스</a>
+          <a href="https://app.catchtable.co.kr/ct/shop/onryang_restaurant_jamsil" target="_blank" rel="noopener">🗓️ 예약하기</a>
+        </div>
+        <button class="pbtn" type="button">이걸로 할래요</button>
+      </div>
+
+      <div class="pick" data-pick="chwihyang">
+        <div class="ptop">
+          <span class="rank">추천 3</span>
+          <span class="star">★ 감성 맛집 <em>(다이닝코드)</em></span>
+        </div>
+        <b class="pname">송리단취향</b>
+        <span class="pmeta">🚶 걸어서 3분 · 220 m &nbsp;|&nbsp; 매일 12:00~21:00 (브레이크 없음) &nbsp;|&nbsp; 백제고분로45길 20, 1층 102호 · 0507-1366-0526</span>
+        <p class="pdesc">미용실에서 가장 가깝습니다. 폴란드 수입 그릇에 플레이팅이 예뻐서
+          사진 찍기 좋다는 평이 많아요. 파스타 16,500~18,900원으로 <b>가격도 착한 편</b>.
+          송파여성문화회관 주차장이 도보 2분입니다.</p>
+        <span class="pmenu">🍽️ 통삼겹 로제 파스타 · 바다향 봉골레 · 회오리 오므라이스</span>
+        <div class="chef">
+          <span class="face">👩‍🍳</span>
+          <p><b>“송리단취향입니다 📷”</b><br>
+            저희는 그릇부터 자랑하고 싶어요. 폴란드에서 직접 들여온 접시에만 담아 냅니다.
+            사진 안 찍고는 못 배기실 거예요.<br>
+            <b>통삼겹 로제 파스타(18,900)에 회오리 오므라이스(15,500)</b> 조합이 제일 인기.
+            통삼겹 스테이크를 통째로 올리고, 오므라이스는 생크림 그레이비를 부어드립니다.<br>
+            브레이크 타임이 없어서 언제 오셔도 괜찮고,
+            미용실에서 <b>걸어서 3분</b>이에요. 예쁘게 하고 바로 오세요 💕</p>
+        </div>
+        <div class="links">
+          <a href="https://www.google.com/search?tbm=isch&q=%EC%86%A1%EB%A6%AC%EB%8B%A8%EC%B7%A8%ED%96%A5" target="_blank" rel="noopener">🖼️ 사진</a>
+          <a href="https://map.naver.com/p/search/%EB%B0%B1%EC%A0%9C%EA%B3%A0%EB%B6%84%EB%A1%9C45%EA%B8%B8%2020" target="_blank" rel="noopener">📍 플레이스</a>
+          <a href="https://app.catchtable.co.kr/ct/shop/songridan_" target="_blank" rel="noopener">🗓️ 예약하기</a>
+        </div>
+        <button class="pbtn" type="button">이걸로 할래요</button>
+      </div>
+
+      <div class="decide" id="decide">
+        <b>지금 결정하시겠어요? 👑</b>
+        <span>고르시면 바로 예약 넣을게요</span>
+      </div>
+
+      <div class="done" id="done" hidden>
+        <b>✅ <span id="donename"></span> 확정!</b>
+        <span>골라주셔서 고맙습니다 💗<br>
+          자리 잡아두고, 맛있게 드실 수 있게 열심히 준비하겠습니다.</span>
+        <button class="reset" type="button" id="reset">다시 고르기</button>
+      </div>
+
+      <p class="mtip" style="margin-top:14px">💡 <b>메뉴 2개면 충분해요.</b> 한 접시 2~3만원대,
+        남으면 포장하면 됩니다. 부담 갖지 마세요 🙂</p>
+    </div>
+
+    <div class="t">21:00</div>
+    <div data-t="2100" class="c" data-lat="37.5085" data-lng="127.103" data-name="석촌호수 산책 🌃">
+      <h3>석촌호수 산책 🌃</h3>
+      <p>밥 먹고 바로 앉기 아쉬우니 호수 한 바퀴. 롯데타워 야경이 제일 예쁜 시간이에요.
+        전체 둘레 2.5 km인데, 반 바퀴만 돌아도 충분합니다 (약 20분).</p>
+    </div>
+
+    <div class="t">21:30</div>
+    <div data-t="2130" class="c wine" data-lat="37.5105" data-lng="127.1088" data-name="와인 한 잔 🍷">
+      <h3>와인 한 잔 🍷</h3>
+      <p><b>타임투칠</b>로 정해졌어요 🍷 조용한 자리로 부탁드려 둘게요.</p>
+
+      <div class="pick w1" data-pick="gudaeryuk">
+        <div class="ptop">
+          <span class="rank">와인 1</span>
+          <span class="star">★ 4.4 <em>(61)</em></span>
+        </div>
+        <b class="pname">구대륙</b>
+        <span class="pmeta">🚶 걸어서 3분 &nbsp;|&nbsp; 18:00~24:00 &nbsp;|&nbsp; 오금로18길 9-1 · 02-3210-4020</span>
+        <div class="chef">
+          <span class="face">🍇</span>
+          <p><b>“구대륙입니다.”</b><br>
+            저희는 비싸게 안 받습니다. <b>글라스 와인이 9,000~12,000원</b>이에요.
+            부담 없이 두세 잔 하시라고요.<br>
+            드라이한 거 좋아하신다면 <b>구대륙 화이트 — 프랑스 루아르나 이탈리아 북부 쪽</b>으로
+            한 잔 따라드릴게요. 산미 있고 깔끔합니다.
+            레드면 키안티 계열이 무난하고요.<br>
+            안주는 <b>구대륙 모둠 플레이트</b>에 감자튀김. 이거면 충분해요.<br>
+            <b>꼭 1층으로 오세요.</b> 지하는 시멘트라 좀 시끄럽고,
+            1층은 우드톤이라 조용하고 따뜻합니다 🌳</p>
+        </div>
+        <div class="links">
+          <a href="https://naver.me/IFg0HwM4" target="_blank" rel="noopener">📍 플레이스</a>
+          <a href="https://app.catchtable.co.kr/ct/shop/Y2F0Y2hfZStISmNacmxxVE1GN3pLOXJKNGYwdz09" target="_blank" rel="noopener">🗓️ 예약</a>
+        </div>
+        <button class="pbtn" type="button">여기서 마실래요</button>
+      </div>
+
+      <div class="pick w2" data-pick="timetochill">
+        <div class="ptop">
+          <span class="rank">와인 2</span>
+          <span class="star">★ 4.8 <em>(41)</em></span>
+        </div>
+        <b class="pname">타임투칠</b>
+        <span class="pmeta">🚶 걸어서 2분 &nbsp;|&nbsp; 18:00~새벽 1:00 &nbsp;|&nbsp; 백제고분로45길 24-18, 1층 101호</span>
+        <div class="chef">
+          <span class="face">🕯️</span>
+          <p><b>“타임투칠, 조용한 자리 하나 비워뒀습니다.”</b><br>
+            여긴 떠드는 곳이 아니에요. 노란 조명에 음악 낮게 깔아두고,
+            두 분이 이야기하기 좋은 온도로 맞춰둡니다.<br>
+            와인 리스트는 제가 계절마다 바꿔요. <b>드라이한 걸 말씀하시면
+            그날 열어둔 것 중에 맞춰 따라드립니다.</b> 설명도 천천히 해드려요.<br>
+            음식은 저희 자랑입니다. <b>포르치니 리조또</b> — 진하고 크리미해서
+            와인이랑 같이 가기 딱이고, <b>무 튀김</b>은 드셔본 분들이 못 잊으세요.
+            트러플 올린 고구마도요.<br>
+            메뉴가 계절마다 바뀌니, 오늘은 뭐가 있는지 보러 오세요 ✨</p>
+        </div>
+        <div class="links">
+          <a href="https://naver.me/GYC9yFpo" target="_blank" rel="noopener">📍 플레이스</a>
+          <a href="https://app.catchtable.co.kr/ct/shop/timetochill_bistro" target="_blank" rel="noopener">🗓️ 예약</a>
+        </div>
+        <button class="pbtn" type="button">여기서 마실래요</button>
+      </div>
+
+      <div class="pick w3" data-pick="greenpercent">
+        <div class="ptop">
+          <span class="rank">와인 3</span>
+          <span class="star">★ 4.6 <em>(9)</em></span>
+        </div>
+        <b class="pname">그린퍼센트</b>
+        <span class="pmeta">🚶 걸어서 6분 &nbsp;|&nbsp; 17:00~24:00 &nbsp;|&nbsp; 백제고분로40길 23, 1층</span>
+        <div class="chef">
+          <span class="face">🌸</span>
+          <p><b>“그린퍼센트예요. 꽃도 팔아요.”</b><br>
+            네, 꽃집이면서 와인바입니다. 미국에서 가져온 목재로 공간을 짰어요.
+            <b>요세미티 산장 같다</b>는 말을 자주 들어요.<br>
+            와인은 종류가 아주 많진 않아요. 대신 <b>테이스팅으로 여러 잔 비교</b>해보실 수 있고,
+            드라이한 쪽으로 골라드릴 수 있습니다. 맥주도 있고요.<br>
+            안주는 핑거푸드 위주예요. 가볍게 한 잔 하실 때 좋습니다.<br>
+            자리가 넓진 않지만, <b>연인끼리 조용히 마시기엔 완벽하다</b>는 말을 제일 많이 듣습니다.
+            나가실 때 꽃 한 송이 어떠세요? 💐</p>
+        </div>
+        <div class="links">
+          <a href="https://naver.me/xIeXPOh6" target="_blank" rel="noopener">📍 플레이스</a>
+          <a href="https://app.catchtable.co.kr/ct/shop/greenpercent" target="_blank" rel="noopener">🗓️ 예약</a>
+        </div>
+        <button class="pbtn" type="button">여기서 마실래요</button>
+      </div>
+
+      <div class="decide" id="wdecide">
+        <b>어디서 마실까요? 🍷</b>
+        <span>고르시면 자리 잡아둘게요</span>
+      </div>
+      <div class="done" id="wdone" hidden>
+        <b>🍷 <span id="wdonename"></span> 확정!</b>
+        <span>여기까지 골라주셔서 고맙습니다 🍷<br>
+          조용한 자리로 부탁드려 두겠습니다. 드라이한 걸로 준비할게요.</span>
+        <button class="reset" type="button" id="wreset">다시 고르기</button>
+      </div>
     </div>
 
     <div class="t">밤</div>
-    <div class="c">
-      <h3>한 잔 🥂</h3>
-      <p>딱 기분 좋을 만큼만.</p>
+    <div data-t="2300" class="c" data-lat="37.6614" data-lng="127.076" data-name="집까지 모셔다드리기 🏠">
+      <h3>집까지 모셔다드리기 🏠</h3>
+      <p class="move">송리단길 → 집<br>
+        <b>약 19 km · 차로 35~45분</b> (동부간선 경유, 밤이라 수월)</p>
+      <p class="addr">🅿️ <b>송파여성문화회관 공영주차장</b> (백제고분로45길 42, 24시간)<br>
+        10분 300원 · 1시간 1,800원 · 5시간 대면 <b>약 9,000원</b><br>
+        만차면 송파동공영주차장 (시간당 600원) · 결제는 출차 때 카드 가능</p>
     </div>
 
     <div class="t">목 아침</div>
-    <div class="c">
-      <h3>세신샵 데려다주기 🛁</h3>
-      <p>푹 자고 개운하게.</p>
+    <div data-t="D2-0900" class="c">
+      <h3>푹 쉬기 😴</h3>
+      <p>세신은 다음 기회에. 아침에 여유 있게 주무세요.</p>
     </div>
   </div>
 
@@ -169,7 +599,98 @@ h2 svg{width:26px;height:26px;flex:none}
     <svg viewBox="0 0 24 24" fill="#C48FE0" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="8" r="2.5"/><circle cx="12" cy="5" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M12 10c-4 0-7 3.5-7 7 0 2 1.5 3 3 3 1.6 0 2.4-1 4-1s2.4 1 4 1c1.5 0 3-1 3-3 0-3.5-3-7-7-7z"/></svg>
   </div>
 
-  <p class="foot">내일 봐 💗</p>
+
+  <div class="trip">
+    <div class="tbadge">NEXT WEEK</div>
+    <h2 style="margin-top:6px">🌊 그리고 강릉</h2>
+    <p class="tsub">9월 21일(월) ~ 23일(수) · 2박 3일 · 두 번째 여행</p>
+
+    <div class="tday">
+      <b>1일차 — 월요일</b>
+      <span>07:00 출발 · 서울 → 강릉 <em>약 220 km, 3시간</em></span>
+      <span>11:00 초당순두부</span>
+      <span>15:00 신라 모노그램 강릉 체크인</span>
+      <span>18:30 스시 오마카세 🍣</span>
+    </div>
+
+    <div class="tday">
+      <b>2일차 — 화요일</b>
+      <span>07:00 아침 수영 🏊</span>
+      <span>12:00 초우당막국수</span>
+      <span>18:00 저녁 — 대게? 조개? 그날 기분대로</span>
+      <span>21:00 호텔 바에서 한 잔 🥂</span>
+    </div>
+
+    <div class="tday">
+      <b>3일차 — 수요일</b>
+      <span>07:00 마지막 수영 · 11:00 체크아웃</span>
+      <span>12:00 아르떼뮤지엄 강릉 🎨</span>
+      <span>15:00 형제칼국수 · 16:00 중앙시장</span>
+      <span>17:00 출발 → 20:00 서울 도착</span>
+    </div>
+
+    <p class="tnote">공쥬님, 수영복 꼭 챙기세요 🩱<br>
+      <small>세부 일정은 출발 전에 따로 안내드리겠습니다</small></p>
+  </div>
+
+  <div class="up">
+    <h2 style="margin-top:0">📅 다가올 데이트</h2>
+    <p class="upsub">공쥬님과의 앞으로 일정 — 확정되면 자세히 안내드릴게요<br>오전 일정 있으실 것 같으면 알려주세요, 시간 맞춰 짜겠습니다 🙂</p>
+
+    <div class="ui">
+      <span class="ud">9.21<em>월~수</em></span>
+      <div><b><a href="./2026-09-21/" style="color:var(--pink)">강릉 2박 3일 →</a></b>
+        <span>상세 일정 나왔어요! 눌러서 보세요 🌊</span></div>
+    </div>
+    <div class="ui">
+      <span class="ud">9.24<em>목</em></span>
+      <div><b>등산 &amp; 백숙</b><span>연휴 첫날, 가볍게</span></div>
+    </div>
+    <div class="ui">
+      <span class="ud">10.14<em>수</em></span>
+      <div><b>100일 🎉</b><span>부산 조새호 오마카세 — 첫 여행지로 다시</span></div>
+    </div>
+    <div class="ui">
+      <span class="ud">10.21<em>수~목</em></span>
+      <div><b>에버랜드 할로윈</b><span>게임 캐릭터 분장 · 16~21시 · 용인에서 1박</span></div>
+    </div>
+    <div class="ui">
+      <span class="ud">12.03<em>목</em></span>
+      <div><b>150일 💗</b><span>어떻게 보낼지는 같이 정하기</span></div>
+    </div>
+    <div class="ui">
+      <span class="ud">12.24<em>목</em></span>
+      <div><b>크리스마스 이브 🎄</b><span>12.25 금 성탄절 — 연휴</span></div>
+    </div>
+    <div class="ui">
+      <span class="ud">12.31<em>목</em></span>
+      <div><b>연말 · 새해맞이 🎆</b><span>1.1 금 신정 — 연휴</span></div>
+    </div>
+    <div class="ui">
+      <span class="ud">2.16<em>화</em></span>
+      <div><b>설날 🌙</b><span>2.15 월 ~ 2.17 수 — 연휴</span></div>
+    </div>
+    <div class="ui">
+      <span class="ud">2027<em>2월</em></span>
+      <div><b>삿포로 눈축제 ❄️</b><span>첫 해외여행 · 설 연휴와 겹치지 않게 조율</span></div>
+    </div>
+  </div>
+
+  <details class="arc">
+    <summary>지난 일정 보기</summary>
+
+    <a class="arow" href="./2026-09-12/">
+      <span class="ad">9.12</span>
+      <span class="at">노량진 — 대게 한 상<em>다녀옴</em></span>
+    </a>
+
+    <div class="arow off">
+      <span class="ad">9.13</span>
+      <span class="at">포천 — 산정호수<em>취소</em></span>
+    </div>
+  </details>
+
+  <p class="foot">오늘 모시러 가겠습니다 공쥬님 💗</p>
 </div>
 
 <script>
@@ -180,6 +701,161 @@ h2 svg{width:26px;height:26px;flex:none}
   var el = document.getElementById('dday');
   if (el) { el.textContent = d > 0 ? 'D-' + d : (d === 0 ? 'D-DAY' : '출발 완료'); }
 })();
+
+(function(){
+  var KEY='dinner-pick-0916';
+  var names={ellie:'엘리스 리틀 이태리', onryang:'온량', chwihyang:'송리단취향'};
+  var picks=document.querySelectorAll('.c:not(.wine) .pick');
+  var decide=document.getElementById('decide');
+  var done=document.getElementById('done');
+  var dn=document.getElementById('donename');
+  var reset=document.getElementById('reset');
+
+  function render(v){
+    picks.forEach(function(p){
+      var on = p.dataset.pick===v;
+      p.classList.toggle('sel', !!v && on);
+      p.classList.toggle('dim', !!v && !on);
+      var b=p.querySelector('.pbtn');
+      if(b) b.textContent = (!!v && on) ? '✅ 선택하셨어요' : '이걸로 할래요';
+    });
+    if(v){ dn.textContent=names[v]||v; done.hidden=false; decide.hidden=true; }
+    else { done.hidden=true; decide.hidden=false; }
+  }
+
+  var saved='ellie';
+  try{ saved=localStorage.getItem(KEY)||'ellie'; }catch(e){}
+  render(saved);
+
+  picks.forEach(function(p){
+    var b=p.querySelector('.pbtn');
+    if(!b) return;
+    b.addEventListener('click',function(){
+      var v=p.dataset.pick;
+      try{ localStorage.setItem(KEY,v); }catch(e){}
+      render(v);
+      done.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  });
+
+  if(reset){
+    reset.addEventListener('click',function(){
+      try{ localStorage.removeItem(KEY); }catch(e){}
+      render(null);
+    });
+  }
+})();
+
+(function(){
+  var t=new Date(2026,8,16,18,0,0);
+  var el=document.getElementById('cd');
+  if(!el) return;
+  function tick(){
+    var d=t-new Date();
+    if(d<=0){ el.textContent='지금 만나는 중 💗'; return; }
+    var h=Math.floor(d/3600000), m=Math.floor(d%3600000/60000), sec=Math.floor(d%60000/1000);
+    el.textContent=(h<10?'0':'')+h+':'+(m<10?'0':'')+m+':'+(sec<10?'0':'')+sec;
+  }
+  tick(); setInterval(tick,1000);
+})();
+
+(function(){
+  var KEY='wine-pick-0916';
+  var names={gudaeryuk:'구대륙', timetochill:'타임투칠', greenpercent:'그린퍼센트'};
+  var picks=document.querySelectorAll('.c.wine .pick');
+  var decide=document.getElementById('wdecide');
+  var done=document.getElementById('wdone');
+  var dn=document.getElementById('wdonename');
+  var reset=document.getElementById('wreset');
+  if(!picks.length) return;
+  function render(v){
+    picks.forEach(function(p){
+      var on=p.dataset.pick===v;
+      p.classList.toggle('sel', !!v && on);
+      p.classList.toggle('dim', !!v && !on);
+      var b=p.querySelector('.pbtn');
+      if(b) b.textContent=(!!v&&on)?'✅ 여기로 정했어요':'여기서 마실래요';
+    });
+    if(v){ dn.textContent=names[v]||v; done.hidden=false; decide.hidden=true; }
+    else { done.hidden=true; decide.hidden=false; }
+  }
+  var saved='timetochill';
+  try{ saved=localStorage.getItem(KEY)||'timetochill'; }catch(e){}
+  render(saved);
+  picks.forEach(function(p){
+    var b=p.querySelector('.pbtn'); if(!b) return;
+    b.addEventListener('click',function(){
+      var v=p.dataset.pick;
+      try{ localStorage.setItem(KEY,v); }catch(e){}
+      render(v);
+      done.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  });
+  if(reset) reset.addEventListener('click',function(){
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    render(null);
+  });
+})();
+
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.c[data-t]'));
+  if(!items.length) return;
+  items.forEach(function(el){
+    var t=el.dataset.t, d;
+    if(t.indexOf('D2-')===0){ t=t.slice(3); d=new Date(2026,8,17,+t.slice(0,2),+t.slice(2)); }
+    else d=new Date(2026,8,16,+t.slice(0,2),+t.slice(2));
+    el.__when=d;
+    var h=el.querySelector('h3'); el.__title=h?h.textContent.trim():'';
+  });
+  items.sort(function(a,b){return a.__when-b.__when;});
+  function fmt(ms){var m=Math.round(ms/60000);return m<60?m+'분':Math.floor(m/60)+'시간 '+(m%60)+'분';}
+  var T=document.getElementById('nowtitle'),L=document.getElementById('nowleft'),S=document.getElementById('nowsub');
+  function paint(){
+    var n=new Date(),cur=null,nxt=null;
+    items.forEach(function(el){
+      el.classList.remove('past','cur');
+      if(el.__when<=n) cur=el; else if(!nxt) nxt=el;
+    });
+    items.forEach(function(el){ if(el.__when<n && el!==cur) el.classList.add('past'); });
+    if(cur && n-cur.__when<5*3600000) cur.classList.add('cur');
+    var first=items[0].__when,last=items[items.length-1].__when;
+    if(n<first){ T.textContent='만나기 전 💗'; L.textContent=fmt(first-n)+' 남음';
+      S.textContent='첫 일정: '+items[0].__title; }
+    else if(n>last){ T.textContent='오늘 끝 💗'; L.textContent='';
+      S.textContent='다음은 9월 21일 강릉 여행 🌊'; }
+    else { T.textContent='지금 → '+(cur?cur.__title:'-');
+      if(nxt){ L.textContent='다음까지 '+fmt(nxt.__when-n);
+        S.textContent='다음: '+nxt.__title; }
+      else { L.textContent=''; S.textContent='오늘 마지막 일정이에요'; } }
+  }
+  paint(); setInterval(paint,30000);
+
+  var btn=document.getElementById('geo'),box=document.getElementById('geores');
+  if(!btn) return;
+  btn.addEventListener('click',function(){
+    if(!navigator.geolocation){box.hidden=false;box.textContent='이 브라우저는 위치를 지원하지 않아요.';return;}
+    box.hidden=false; box.textContent='위치 확인 중…';
+    navigator.geolocation.getCurrentPosition(function(pos){
+      var la=pos.coords.latitude,lo=pos.coords.longitude,target=null;
+      for(var i=0;i<items.length;i++){ if(items[i].dataset.lat && items[i].__when>new Date()){target=items[i];break;} }
+      if(!target){box.textContent='남은 이동 일정이 없어요 🙂';return;}
+      var R=6371,p=Math.PI/180;
+      var dla=(target.dataset.lat-la)*p,dlo=(target.dataset.lng-lo)*p;
+      var a=Math.sin(dla/2)*Math.sin(dla/2)+Math.cos(la*p)*Math.cos(target.dataset.lat*p)*Math.sin(dlo/2)*Math.sin(dlo/2);
+      var km=2*R*Math.asin(Math.sqrt(a))*1.25;
+      var speed=km>40?85:(km>3?28:4);
+      var min=Math.max(1,Math.round(km/speed*60));
+      var arr=new Date(Date.now()+min*60000), late=arr-target.__when;
+      box.innerHTML='다음 목적지 <b>'+(target.dataset.name||target.__title)+'</b><br>약 <b>'+
+        km.toFixed(1)+' km</b> · '+(km>3?'차로 ':'걸어서 ')+'<b>'+min+'분</b><br>지금 나서면 '+
+        ('0'+arr.getHours()).slice(-2)+':'+('0'+arr.getMinutes()).slice(-2)+' 도착 '+
+        (late>0?'(예정보다 '+fmt(late)+' 늦음 ⚠️)':'(예정보다 '+fmt(-late)+' 여유 ✅)')+
+        '<br><span style="font-size:11.5px;opacity:.75">※ 직선거리에 도로 보정을 더한 추정치예요</span>';
+    },function(){box.textContent='위치를 못 가져왔어요. 위치 권한을 허용해 주세요.';},
+    {enableHighAccuracy:true,timeout:10000});
+  });
+})();
 </script>
+<p style="text-align:center;padding:18px 0"><a href="../" style="color:var(--pink);font-size:13.5px;text-decoration:none">← 데이트 앨범으로 돌아가기</a></p>
 </body>
 </html>
