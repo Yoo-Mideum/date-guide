@@ -343,9 +343,34 @@ body{margin:0;background:var(--paper);color:var(--ink);
 
       <div class="t">21:00</div>
       <div data-day="d1" data-t="2100" class="c">
-        <h3>호텔 복귀 · 첫날 마무리 🌙</h3>
-        <p class="sub">운전 많이 한 날이라 무리하지 않기.
-          내일 아침 수영이 있으니 일찍 자는 걸로.</p>
+        <h3>첫날 마무리 🌙 <span class="badge">공쥬님 선택</span></h3>
+        <p class="sub">오마카세 끝나고 바로 잘지, 좀 더 놀지 골라주세요.</p>
+
+        <div class="rec" data-slot="n1" data-pick="barM">
+          <div class="rtop"><span class="rno">A</span><b>호텔 바 M에서 한 잔 🥃</b><span class="rmeta">호텔 2층 · ~24시</span></div>
+          <p>둘째 날에도 갈 수 있지만, 첫날 밤에 가볍게 한 잔 하는 것도 좋아요.
+            위스키 행사 내용도 미리 볼 수 있고요.</p>
+          <span class="rtip">🥂 이틀 다 가도 괜찮아요</span>
+          <button class="rbtn" type="button">이거 할래요</button>
+        </div>
+
+        <div class="rec" data-slot="n1" data-pick="beach">
+          <div class="rtop"><span class="rno">B</span><b>밤바다 산책 🌊</b><span class="rmeta">강문해변 · 도보권</span></div>
+          <p>호텔에서 바다가 가까워요. 밤에 파도 소리 들으면서 20분만 걸어도
+            여행 온 기분이 확 납니다. 9월 말 밤바람은 선선하니 겉옷 챙기세요.</p>
+          <span class="rtip">🧥 겉옷 필수 · 사진 예쁨</span>
+          <button class="rbtn" type="button">이거 할래요</button>
+        </div>
+
+        <div class="rec" data-slot="n1" data-pick="sleep">
+          <div class="rtop"><span class="rno">C</span><b>바로 쉬기 😴</b><span class="rmeta">객실</span></div>
+          <p>새벽 6시 기상에 운전 3시간, 오마카세까지. 충분히 긴 하루였어요.
+            내일 아침 수영이 있으니 일찍 자는 것도 정답입니다.</p>
+          <span class="rtip">💤 내일을 위해</span>
+          <button class="rbtn" type="button">이거 할래요</button>
+        </div>
+
+        <div class="rdone" hidden><b>✅ <span></span></b> 알겠습니다, 그렇게 하겠습니다 💗</div>
       </div>
     </div>
 
@@ -443,11 +468,43 @@ body{margin:0;background:var(--paper);color:var(--ink);
 
       <div class="t">18:00</div>
       <div data-day="d2" data-t="1800" class="c eat">
-        <h3>저녁 🦀</h3>
-        <p><b>해송 / 초당우가 / 다이닝조개 / 솔향대게</b> 중 한 곳</p>
-        <p class="sub">전날까지 정해서 예약하는 게 좋아요.
-          대게는 시가라 가격 차이가 크고, 조개·한우 쪽은 예측 가능합니다.</p>
-        <div class="chk">⏱️ 90분~2시간</div>
+        <h3>저녁 🦀 <span class="badge">공쥬님 선택</span></h3>
+        <p class="sub">네 곳 중에 골라주세요. 정해지면 <b>전날까지 예약</b>해둘게요.</p>
+
+        <div class="rec" data-slot="dn2" data-pick="daege">
+          <div class="rtop"><span class="rno">A</span><b>솔향대게 🦀</b><span class="rmeta">대게 전문</span></div>
+          <p>강릉 와서 대게 한 번은 먹어야죠. 찜으로 먹고 마지막에 내장 볶음밥까지.
+            다만 <b>시가라 그날 가격이 갈립니다</b>. 2인 10~20만원 사이로 보시면 돼요.</p>
+          <span class="rtip">💰 가장 비쌀 수 있음 · 강릉다운 선택</span>
+          <button class="rbtn" type="button">이거 할래요</button>
+        </div>
+
+        <div class="rec" data-slot="dn2" data-pick="jogae">
+          <div class="rtop"><span class="rno">B</span><b>다이닝조개 🐚</b><span class="rmeta">조개구이·해산물</span></div>
+          <p>조개구이에 술 한 잔. 대게보다 가볍고 가격도 예측 가능해요.
+            이날은 운전이 없으니 편하게 마실 수 있습니다.</p>
+          <span class="rtip">🍺 술이랑 잘 어울림 · 가성비</span>
+          <button class="rbtn" type="button">이거 할래요</button>
+        </div>
+
+        <div class="rec" data-slot="dn2" data-pick="uga">
+          <div class="rtop"><span class="rno">C</span><b>초당우가 🥩</b><span class="rmeta">한우</span></div>
+          <p>해산물이 이틀 연속이면 물릴 수 있어요. 전날 오마카세였으니
+            둘째 날은 고기로 바꾸는 것도 좋은 선택입니다.</p>
+          <span class="rtip">🔥 전날과 완전히 다른 맛</span>
+          <button class="rbtn" type="button">이거 할래요</button>
+        </div>
+
+        <div class="rec" data-slot="dn2" data-pick="haesong">
+          <div class="rtop"><span class="rno">D</span><b>해송 🍽️</b><span class="rmeta">한정식·해산물</span></div>
+          <p>차분하게 앉아서 먹는 쪽. 여러 가지를 조금씩 맛보고 싶을 때 좋아요.
+            공쥬님 식사량 생각하면 이런 구성이 편할 수도 있습니다.</p>
+          <span class="rtip">🌿 조용하게 · 조금씩 여러 가지</span>
+          <button class="rbtn" type="button">이거 할래요</button>
+        </div>
+
+        <div class="rdone" hidden><b>✅ <span></span></b> 여기로 예약해두겠습니다 💗</div>
+        <div class="chk" style="margin-top:10px">⏱️ 90분~2시간 · 정해지면 월요일까지 예약</div>
       </div>
 
       <div class="t">20:30</div>
@@ -559,8 +616,33 @@ body{margin:0;background:var(--paper);color:var(--ink);
 
       <div class="t">17:30</div>
       <div data-day="d3" data-t="1730" class="c">
-        <h3>내린천 또는 인제휴게소 ☕</h3>
-        <div class="chk">⏱️ 20분 · 저녁 대신 간식으로</div>
+        <h3>휴게소 ☕ <span class="badge">공쥬님 선택</span></h3>
+        <p class="sub">돌아오는 길에 어디서 쉴까요?</p>
+
+        <div class="rec" data-slot="r3" data-pick="naerin">
+          <div class="rtop"><span class="rno">A</span><b>내린천휴게소</b><span class="rmeta">전망 좋음</span></div>
+          <p>올 때 들렀던 그곳. 계곡 전망이 좋아서 사진 한 장 더 찍기 좋아요.</p>
+          <span class="rtip">📸 전망 · 20분</span>
+          <button class="rbtn" type="button">이거 할래요</button>
+        </div>
+
+        <div class="rec" data-slot="r3" data-pick="gapyeong">
+          <div class="rtop"><span class="rno">B</span><b>가평휴게소에서 저녁</b><span class="rmeta">제대로 먹기</span></div>
+          <p>중앙시장에서 간식만 먹었으면 여기서 제대로 한 끼.
+            서울 도착이 늦어지니 배고픈 채로 오지 않아도 돼요.</p>
+          <span class="rtip">🍜 40분 · 저녁 해결</span>
+          <button class="rbtn" type="button">이거 할래요</button>
+        </div>
+
+        <div class="rec" data-slot="r3" data-pick="nonstop">
+          <div class="rtop"><span class="rno">C</span><b>안 쉬고 쭉 가기</b><span class="rmeta">빠른 귀가</span></div>
+          <p>중앙시장에서 산 것들 차에서 먹으면서 논스톱.
+            20시 전에 집에 도착할 수 있어요.</p>
+          <span class="rtip">🏠 제일 빠름</span>
+          <button class="rbtn" type="button">이거 할래요</button>
+        </div>
+
+        <div class="rdone" hidden><b>✅ <span></span></b> 그렇게 하겠습니다 💗</div>
       </div>
 
       <div class="t">17:50</div>
@@ -764,9 +846,12 @@ body{margin:0;background:var(--paper);color:var(--ink);
     anmok:'안목 커피거리 ☕', ojuk:'오죽헌·선교장 🎍', rest:'그냥 쉬기 😴',
     bike:'경포호 자전거 🚲', haslla:'하슬라아트월드 🗿',
     jumunjin:'주문진 도깨비 방파제 🌊', nap:'호텔에서 낮잠 💤',
-    sand730:'샌드위치730 🦀', longbread:'롱브레드 🍞', mandong:'만동제과 🧄'
+    sand730:'샌드위치730 🦀', longbread:'롱브레드 🍞', mandong:'만동제과 🧄',
+    barM:'호텔 바 M 🥃', beach:'밤바다 산책 🌊', sleep:'바로 쉬기 😴',
+    daege:'솔향대게 🦀', jogae:'다이닝조개 🐚', uga:'초당우가 🥩', haesong:'해송 🍽️',
+    naerin:'내린천휴게소', gapyeong:'가평휴게소에서 저녁', nonstop:'안 쉬고 쭉 가기'
   };
-  ['lunch','d1','d2'].forEach(function(slot){
+  ['lunch','d1','n1','dn2','d2','r3'].forEach(function(slot){
     var KEY='trip-'+slot;
     var recs=[].slice.call(document.querySelectorAll('.rec[data-slot="'+slot+'"]'));
     if(!recs.length) return;
@@ -800,11 +885,13 @@ body{margin:0;background:var(--paper);color:var(--ink);
   if(!btn) return;
   btn.addEventListener('click',function(){
     var g=function(k){ try{return localStorage.getItem(k);}catch(e){return null;} };
-    var lu=g('trip-lunch'), d1=g('trip-d1'), d2=g('trip-d2');
     var t='🌊 강릉 여행 — 공쥬님이 고른 것\n'+
-      '1일차 점심: '+(lu?LABEL[lu]:'아직 안 골랐어요')+'\n'+
-      '1일차 오후: '+(d1?LABEL[d1]:'아직 안 골랐어요')+'\n'+
-      '2일차 오후: '+(d2?LABEL[d2]:'아직 안 골랐어요');
+      '1일차 점심: '+(g('trip-lunch')?LABEL[g('trip-lunch')]:'미정')+'\n'+
+      '1일차 오후: '+(g('trip-d1')?LABEL[g('trip-d1')]:'미정')+'\n'+
+      '1일차 밤: '+(g('trip-n1')?LABEL[g('trip-n1')]:'미정')+'\n'+
+      '2일차 오후: '+(g('trip-d2')?LABEL[g('trip-d2')]:'미정')+'\n'+
+      '2일차 저녁: '+(g('trip-dn2')?LABEL[g('trip-dn2')]:'미정')+'\n'+
+      '3일차 휴게소: '+(g('trip-r3')?LABEL[g('trip-r3')]:'미정');
     if(navigator.share){
       navigator.share({title:'강릉 여행 선택',text:t}).catch(function(){});
     } else if(navigator.clipboard){
