@@ -53,6 +53,9 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:28px 0 10px;
 
 .card.shop::before{background:#D4849B}
 .card.shop .d{color:#D4849B} .card.shop .tag{background:#D4849B}
+
+.card.ddp::before{background:#4A5A8C}
+.card.ddp .d{color:#4A5A8C} .card.ddp .tag{background:#4A5A8C} .card.ddp .go{color:#4A5A8C}
 .card.hike::before{background:#2E7D4F}
 .card.hike .d{color:#2E7D4F} .card.hike .tag{background:#2E7D4F} .card.hike .go{color:#2E7D4F}
 .card.sketch::before{background:#8B6BB1}
@@ -122,6 +125,13 @@ a.card:active{transform:scale(.99)}
 
   <h2>🗓️ 다가올 일정</h2>
   <p class="hint">눌러서 자세한 계획을 볼 수 있어요</p>
+
+  <a class="card ddp" href="./2026-09-20/">
+    <div class="top"><span class="d">9월 20일 (일) 저녁</span><span class="tag" id="t0">D-</span></div>
+    <b>DDP 숙제 데이트 📸</b>
+    <span class="desc">샵에서 픽업 → DDP 과제 사진 → 가볍게 저녁 → 귀가</span>
+    <span class="go">일정 보기 →</span>
+  </a>
 
   <a class="card sea" href="./2026-09-21/">
     <div class="top"><span class="d">9월 21일 (월) ~ 23일 (수)</span><span class="tag" id="t1">D-</span></div>
@@ -251,6 +261,7 @@ a.card:active{transform:scale(.99)}
     var k=Math.round((t-n)/86400000);
     el.textContent = k>0 ? 'D-'+k : (k===0 ? 'D-DAY' : '지남');
   }
+  dd('t0',2026,8,20);
   dd('t1',2026,8,21);
   dd('t2',2026,9,14);
   dd('t3',2026,8,24);

@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cache-control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DDP 숙제 데이트 📸</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F5F9; --ink:#22202E; --muted:#6B667D; --line:#DEDAE8; --card:#FFFFFF;
+  --ddp:#4A5A8C; --ddp2:#7A8BC4; --pink:#F06292; --green:#2FA36B; --gold:#E8B84B;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#16151F; --ink:#EDEBF5; --muted:#ABA5BE; --line:#2E2B3C; --card:#201E2B;
+    --ddp:#7A8BC4; --ddp2:#9AA8D8;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans KR","Apple SD Gothic Neo",sans-serif;font-size:16px;line-height:1.7}
+.wrap{max-width:600px;margin:0 auto;padding:0 18px 52px}
+.hero{background:linear-gradient(160deg,#2E3556,var(--ddp) 60%,var(--ddp2));color:#fff;
+  padding:38px 20px 30px;text-align:center}
+.hero .kick{font-size:11px;letter-spacing:5px;opacity:.85}
+.hero h1{font-family:"Gowun Dodum",sans-serif;font-size:31px;margin:8px 0 4px;line-height:1.3}
+.hero .date{font-size:13.5px;opacity:.95}
+.dd{margin-top:14px;display:inline-block;background:rgba(255,255,255,.18);border-radius:16px;padding:11px 18px}
+.dd b{display:block;font-family:"Gowun Dodum",sans-serif;font-size:26px;line-height:1.1}
+.dd small{display:block;font-size:11px;opacity:.85}
+.ico{font-size:21px;letter-spacing:8px;margin-top:12px;opacity:.8}
+
+h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:26px 0 6px}
+.hint{font-size:12.5px;color:var(--muted);margin:-2px 0 12px}
+.note{background:var(--card);border:2px dashed var(--line);border-radius:14px;
+  padding:13px 15px;font-size:14px;margin:16px 0}
+.note b{color:var(--ddp)}
+
+.tl{display:grid;grid-template-columns:62px 1fr}
+.tl .t{font-family:"Gowun Dodum",sans-serif;font-size:16px;font-weight:700;padding-top:14px;color:var(--ddp)}
+.tl .c{border-left:2px solid var(--line);padding:12px 0 20px 15px;position:relative}
+.tl .c::before{content:"";position:absolute;left:-7px;top:19px;width:12px;height:12px;
+  border-radius:50%;background:var(--ddp)}
+.tl .c.eat::before{background:var(--pink)}
+.tl .c.work::before{background:var(--gold)}
+.tl h3{margin:0 0 4px;font-size:16.5px}
+.tl p{margin:0 0 6px;font-size:14.5px}
+.tl .sub{font-size:12.5px;color:var(--muted);line-height:1.55}
+.move{font-size:13.5px;background:var(--card);border:1px dashed var(--line);
+  border-radius:11px;padding:8px 11px;margin:4px 0 6px;line-height:1.6}
+.move b{color:var(--ddp)}
+.chk{font-size:13px;color:var(--muted);background:rgba(74,90,140,.09);
+  border-radius:10px;padding:8px 11px;margin-top:6px}
+
+.badge{font-size:11px;background:var(--green);color:#fff;padding:3px 9px;border-radius:999px;
+  vertical-align:middle;margin-left:6px;font-weight:700}
+.rec{background:linear-gradient(160deg,rgba(47,163,107,.09),rgba(120,200,150,.12));
+  border:1px solid rgba(47,163,107,.33);border-radius:15px;padding:13px 14px;margin:10px 0;
+  transition:max-height .35s ease,opacity .25s ease}
+.rtop{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+.rno{flex:none;width:23px;height:23px;border-radius:50%;background:var(--green);color:#fff;
+  font-size:12px;font-weight:700;display:grid;place-items:center}
+.rtop b{font-family:"Gowun Dodum",sans-serif;font-size:16.5px;flex:1}
+.rmeta{font-size:11.5px;color:var(--muted);white-space:nowrap}
+.rec p{font-size:13.5px;margin:0 0 7px;line-height:1.6}
+.price{display:block;font-size:12.5px;color:#1E7A4F;background:rgba(47,163,107,.14);
+  border-radius:8px;padding:5px 9px;margin-bottom:7px}
+.links{display:flex;gap:7px;margin-top:8px}
+.links a{flex:1;text-align:center;font-size:12.5px;padding:8px 4px;border-radius:10px;
+  text-decoration:none;background:var(--paper);border:1px solid var(--line);color:var(--ink)}
+.rbtn{width:100%;margin-top:9px;padding:9px;border:none;border-radius:999px;background:var(--green);
+  color:#fff;font-size:13.5px;font-weight:700;cursor:pointer;font-family:"Gowun Dodum",sans-serif}
+.rec.sel{border:2px solid var(--green);box-shadow:0 4px 12px rgba(47,163,107,.2)}
+.rec.dim{opacity:.45;max-height:46px;overflow:hidden}
+.rec.dim p,.rec.dim .price,.rec.dim .links,.rec.dim .rbtn{display:none}
+.rdone{margin-top:11px;padding:13px;border-radius:13px;background:rgba(47,163,107,.14);
+  text-align:center;font-family:"Gowun Dodum",sans-serif;font-size:14.5px}
+.rdone b{color:#1E7A4F}
+.budget{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px;font-size:14px}
+.budget table{width:100%;border-collapse:collapse;font-size:13.5px}
+.budget td{padding:5px 0;border-bottom:1px dashed var(--line)}
+.budget td:last-child{text-align:right;font-weight:700}
+.budget tr:last-child td{border:none;color:var(--ddp)}
+.share{position:sticky;bottom:12px;margin:20px 0 0;width:100%;padding:14px;border:none;
+  border-radius:999px;background:var(--ddp);color:#fff;font-size:15px;font-weight:700;
+  cursor:pointer;font-family:"Gowun Dodum",sans-serif;box-shadow:0 6px 18px rgba(74,90,140,.32)}
+.sharemsg{font-size:12.5px;color:var(--muted);text-align:center;margin-top:8px}
+.back{display:inline-block;margin-top:22px;font-size:13.5px;color:var(--ddp);
+  text-decoration:none;font-family:"Gowun Dodum",sans-serif}
+.foot{text-align:center;color:var(--muted);font-size:13.5px;
+  font-family:"Gowun Dodum",sans-serif;padding-top:18px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kick">SHORT DATE</div>
+  <h1>DDP 숙제 데이트</h1>
+  <div class="date">9월 20일 (일) 저녁 · 짧고 알차게</div>
+  <div class="dd"><b id="dd">…</b><small>일요일까지</small></div>
+  <div class="ico">📸 🏛️ 🍽️</div>
+</header>
+
+<div class="wrap">
+
+  <div class="note"><b>공쥬님 과제 도와드리는 날</b><br>
+    DDP에서 학술자료 사진 찍는 게 목적이니 그게 1순위예요.
+    찍고 나서 <b>과하지 않게 저녁</b> 먹고 집까지 모셔다드리는 짧은 코스로 잡았습니다.
+    다음 날이 강릉 여행 준비일이라 무리하지 않는 게 좋겠어요.</div>
+
+  <h2>🕐 하루 흐름</h2>
+
+  <div class="tl">
+    <div class="t">16:45</div>
+    <div class="c">
+      <h3>강남에서 출발 🚗</h3>
+      <div class="move">🛣️ 강남 → 성신여대 (키티티바이지영)<br>
+        <b>약 12 km · 35~45분</b> (일요일 오후, 한남대교 경유)</div>
+      <p class="sub">여유 있게 45분 잡았어요. 일찍 도착하면 근처에서 기다리면 됩니다.</p>
+    </div>
+
+    <div class="t">17:30</div>
+    <div class="c">
+      <h3>샵에서 만나기 🎀</h3>
+      <p><b>키티티바이지영</b> · 성신여대</p>
+      <p class="sub">샵 앞이 좁으면 근처에 세워두고 연락드릴게요.
+        정리하실 시간 필요하면 말씀만 주세요.</p>
+    </div>
+
+    <div class="t">17:45</div>
+    <div class="c">
+      <h3>DDP로 이동</h3>
+      <div class="move">🛣️ 성신여대 → DDP<br>
+        <b>약 4.5 km · 15~20분</b> (창경궁로 경유)</div>
+    </div>
+
+    <div class="t">18:05</div>
+    <div class="c work">
+      <h3>DDP 도착 · 주차 🏛️</h3>
+      <p class="sub">DDP 지하주차장 이용. 일요일 저녁이라 자리는 있을 거예요.
+        10분당 계산이라 1시간 반이면 부담 없습니다.</p>
+      <div class="chk">📍 서울 중구 을지로 281 · 동대문역사문화공원역 바로</div>
+    </div>
+
+    <div class="t">18:15</div>
+    <div class="c work">
+      <h3>과제 사진 촬영 📸</h3>
+      <p><b>15~30분</b> — 오늘의 본업</p>
+      <p class="sub">해 지는 시간이 6시 40분쯤이라 <b>자연광과 조명이 겹치는 시간</b>에 딱 걸립니다.
+        DDP 곡면 외벽은 이때가 가장 예뻐요. 필요한 각도 있으면 제가 찍어드릴게요.</p>
+      <div class="chk">☑ 필요한 컷 미리 정리해두기 ☑ 폰 배터리<br>
+        💡 어두워지면 LED 장미정원 쪽도 자료 사진으로 좋습니다</div>
+    </div>
+
+    <div class="t">18:50</div>
+    <div class="c eat">
+      <h3>저녁 🍽️ <span class="badge">공쥬님 선택</span></h3>
+      <p class="sub"><b>2인 5만원 안쪽</b>으로 세 곳 골라놨어요.
+        전부 DDP에서 걸어서 5~10분, 일요일에도 영업합니다.</p>
+
+      <div class="rec" data-pick="assolonga">
+        <div class="rtop"><span class="rno">A</span><b>아스론가 동대문</b><span class="rmeta">★ 4.9 (418) · 도보 7분</span></div>
+        <span class="price">파스타 + 피자 2인 약 4~5만원 · 일요일 11:00~24:00</span>
+        <p>골목 3층에 숨어 있는 이탈리안. 후기에 <b>"너무 격식 차리지 않고
+          와인 한 잔과 가볍게 먹기 좋은 곳"</b>이라고 나와요.
+          루프탑이 있어서 해 질 때 가면 전망도 좋다고 합니다.
+          과하지 않게 먹자는 오늘 취지에 제일 맞아요.</p>
+        <div class="links">
+          <a href="https://www.google.com/search?tbm=isch&q=%EC%95%84%EC%8A%A4%EB%A1%A0%EA%B0%80+%EB%8F%99%EB%8C%80%EB%AC%B8" target="_blank" rel="noopener">🖼️ 사진</a>
+          <a href="https://map.naver.com/p/search/%EB%8F%99%ED%98%B8%EB%A1%9C34%EA%B8%B8%2018" target="_blank" rel="noopener">📍 플레이스</a>
+          <a href="tel:01099578841">📞 전화</a>
+        </div>
+        <button class="rbtn" type="button">여기서 먹을래요</button>
+      </div>
+
+      <div class="rec" data-pick="bukchang">
+        <div class="rtop"><span class="rno">B</span><b>북창동순두부 동대문점</b><span class="rmeta">★ 4.3 · 도보 5분</span></div>
+        <span class="price">2인 약 2~3만원 · 일요일 11:00~21:00</span>
+        <p>제일 가볍고 빠른 선택. 순두부는 맑고 매운맛 정도가 딱 좋다는 평이고,
+          양이 많다는 후기도 있어요. <b>공쥬님 식사량 생각하면 이게 가장 편할 수도</b> 있습니다.
+          다음 날 여행 준비를 생각하면 속 편한 게 낫고요.</p>
+        <div class="links">
+          <a href="https://www.google.com/search?tbm=isch&q=%EB%B6%81%EC%B0%BD%EB%8F%99%EC%88%9C%EB%91%90%EB%B6%80+%EB%8F%99%EB%8C%80%EB%AC%B8" target="_blank" rel="noopener">🖼️ 사진</a>
+          <a href="https://map.naver.com/p/search/%EC%9E%A5%EC%B6%A9%EB%8B%A8%EB%A1%9C13%EA%B8%B8%2011" target="_blank" rel="noopener">📍 플레이스</a>
+          <a href="tel:0222782752">📞 전화</a>
+        </div>
+        <button class="rbtn" type="button">여기서 먹을래요</button>
+      </div>
+
+      <div class="rec" data-pick="yoogane">
+        <div class="rtop"><span class="rno">C</span><b>유가네닭갈비 동대문점</b><span class="rmeta">★ 4.9 (1,705) · 도보 5분</span></div>
+        <span class="price">2인 약 3~4만원 · 일요일 11:00~01:30</span>
+        <p>리뷰 1,700개에 4.9점. 2인분 양이 넉넉해서 <b>둘이 나눠 먹으면 남는다</b>는 후기가 많아요.
+          국물과 샐러드는 셀프바로 무료입니다. 볶음밥까지 하면 배부르게 먹는 쪽이니,
+          가볍게 가려면 A나 B가 낫습니다.</p>
+        <div class="links">
+          <a href="https://www.google.com/search?tbm=isch&q=%EC%9C%A0%EA%B0%80%EB%84%A4%EB%8B%AD%EA%B0%88%EB%B9%84+%EB%8F%99%EB%8C%80%EB%AC%B8%EC%A0%90" target="_blank" rel="noopener">🖼️ 사진</a>
+          <a href="https://map.naver.com/p/search/%EC%9D%84%EC%A7%80%EB%A1%9C43%EA%B8%B8%209" target="_blank" rel="noopener">📍 플레이스</a>
+          <a href="tel:0222990506">📞 전화</a>
+        </div>
+        <button class="rbtn" type="button">여기서 먹을래요</button>
+      </div>
+
+      <div class="rdone" id="rdone" hidden><b>✅ <span id="rname"></span></b><br>여기로 준비하겠습니다 💗</div>
+    </div>
+
+    <div class="t">20:10</div>
+    <div class="c">
+      <h3>집까지 모셔다드리기 🏠</h3>
+      <div class="move">🛣️ DDP → 덕릉로<br>
+        <b>약 14 km · 30~40분</b> (동부간선 경유, 일요일 밤이라 수월)</div>
+      <p class="sub">21시 전에 도착. 다음 날 여행 준비하셔야 하니 일찍 마무리하는 걸로.</p>
+    </div>
+  </div>
+
+  <h2>💰 예산</h2>
+  <div class="budget">
+    <table>
+      <tr><td>저녁 (2인)</td><td>~5만원</td></tr>
+      <tr><td>DDP 주차 1시간 반</td><td>약 3~4천원</td></tr>
+      <tr><td>유류비</td><td>약 6천원</td></tr>
+      <tr><td><b>합계</b></td><td><b>약 6만원 안쪽</b></td></tr>
+    </table>
+  </div>
+
+  <h2>🎒 챙길 것</h2>
+  <div class="budget">
+    <ul style="margin:0;padding-left:18px">
+      <li>공쥬님 — 필요한 사진 컷 목록, 폰 완충</li>
+      <li>믿음 — 보조배터리, 삼각대 대신 쓸 만한 것</li>
+      <li>겉옷 — 해 지면 쌀쌀합니다</li>
+    </ul>
+  </div>
+
+  <button class="share" type="button" id="share">💌 고른 곳 믿음이에게 보내기</button>
+  <p class="sharemsg" id="sharemsg">누르면 카톡으로 보낼 수 있게 정리해드려요</p>
+
+  <a class="back" href="../">← 데이트 앨범으로 돌아가기</a>
+  <p class="foot">과제도 데이트도 잘 끝내봐요 공쥬님 📸</p>
+</div>
+
+<script>
+(function(){
+  var t=new Date(2026,8,20,17,30), n=new Date();
+  var el=document.getElementById('dd');
+  function tick(){
+    var d=t-new Date();
+    if(d<=0){ el.textContent='만나는 중 💗'; return; }
+    var day=Math.floor(d/86400000), h=Math.floor(d%86400000/3600000), m=Math.floor(d%3600000/60000);
+    el.textContent = day>0 ? ('D-'+day+'  '+h+'시간') : (h+'시간 '+m+'분');
+  }
+  tick(); setInterval(tick,30000);
+
+  var LABEL={assolonga:'아스론가 동대문 🍝', bukchang:'북창동순두부 🥣', yoogane:'유가네닭갈비 🍗'};
+  var KEY='ddp-dinner-0920';
+  var recs=[].slice.call(document.querySelectorAll('.rec'));
+  var done=document.getElementById('rdone'), nm=document.getElementById('rname');
+  function render(v){
+    recs.forEach(function(r){
+      var on=r.dataset.pick===v;
+      r.classList.toggle('sel',!!v&&on);
+      r.classList.toggle('dim',!!v&&!on);
+      var b=r.querySelector('.rbtn');
+      if(b) b.textContent=(!!v&&on)?'✅ 여기로 정했어요':'여기서 먹을래요';
+    });
+    if(v){ done.hidden=false; nm.textContent=LABEL[v]||v; } else done.hidden=true;
+  }
+  var saved=null; try{saved=localStorage.getItem(KEY);}catch(e){}
+  render(saved);
+  recs.forEach(function(r){
+    var b=r.querySelector('.rbtn'); if(!b) return;
+    b.addEventListener('click',function(){
+      var v=r.dataset.pick;
+      try{localStorage.setItem(KEY,v);}catch(e){}
+      render(v);
+      done.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  });
+  var btn=document.getElementById('share'), msg=document.getElementById('sharemsg');
+  btn.addEventListener('click',function(){
+    var v=null; try{v=localStorage.getItem(KEY);}catch(e){}
+    var txt='📸 DDP 숙제 데이트 (9/20 일)\n저녁: '+(v?LABEL[v]:'아직 안 골랐어요');
+    if(navigator.share){ navigator.share({title:'DDP 데이트',text:txt}).catch(function(){}); }
+    else if(navigator.clipboard){ navigator.clipboard.writeText(txt).then(function(){
+      msg.textContent='✅ 복사했어요! 카톡에 붙여넣기 하면 됩니다'; }); }
+    else { msg.textContent=txt; }
+  });
+})();
+</script>
+</body>
+</html>
