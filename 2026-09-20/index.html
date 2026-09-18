@@ -160,8 +160,7 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:26px 0 6px}
     <div class="t">18:50</div>
     <div class="c eat">
       <h3>저녁 🍽️ <span class="badge">공쥬님 선택</span></h3>
-      <p class="sub"><b>2인 5만원 안쪽</b>으로 세 곳 골라놨어요.
-        전부 DDP에서 걸어서 5~10분, 일요일에도 영업합니다.</p>
+      <p class="sub"><b>유가네닭갈비</b>로 정해졌어요 🎉 골라주셔서 고맙습니다.</p>
 
       <div class="rec" data-pick="sushi">
         <div class="rtop"><span class="rno">A</span><b>오오키나스시 회전초밥</b><span class="rmeta">★ 4.5 · 차로 5분</span></div>
@@ -207,7 +206,7 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:26px 0 6px}
         <button class="rbtn" type="button">여기서 먹을래요</button>
       </div>
 
-      <div class="rdone" id="rdone" hidden><b>✅ <span id="rname"></span></b><br>여기로 준비하겠습니다 💗</div>
+      <div class="rdone" id="rdone" hidden><b>✅ <span id="rname"></span></b><br>골라주셔서 고맙습니다 💗<br>자리 확인해두고 맛있게 드실 수 있게 준비할게요.</div>
     </div>
 
     <div class="t">20:10</div>
@@ -270,7 +269,7 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:26px 0 6px}
     });
     if(v){ done.hidden=false; nm.textContent=LABEL[v]||v; } else done.hidden=true;
   }
-  var saved=null; try{saved=localStorage.getItem(KEY);}catch(e){}
+  var saved='yoogane'; try{saved=localStorage.getItem(KEY)||'yoogane';}catch(e){}
   render(saved);
   recs.forEach(function(r){
     var b=r.querySelector('.rbtn'); if(!b) return;

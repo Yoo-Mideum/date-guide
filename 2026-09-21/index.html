@@ -240,8 +240,7 @@ a.li.golink u{display:block;text-decoration:none;font-size:12px;color:var(--pink
       <div class="t">11:00</div>
       <div data-day="d1" data-t="1100" class="c eat" data-lat="37.7990" data-lng="128.9141" data-name="가벼운 점심">
         <h3>가벼운 점심 🥪 <span class="badge">공쥬님 선택</span></h3>
-        <p class="sub">저녁에 <b>오마카세</b>가 기다리고 있으니 점심은 가볍게.
-          둘이서 1인분 정도만 나눠 먹는 걸로 골라놨어요.</p>
+        <p class="sub"><b>샌드위치730</b>으로 정해졌어요 🥪 바다 보면서 가볍게.</p>
 
         <div class="rec" data-slot="lunch" data-pick="sand730">
           <div class="rtop"><span class="rno">A</span><b>샌드위치730 🦀</b><span class="rmeta">해변 앞 · 8~22시</span></div>
@@ -283,7 +282,7 @@ a.li.golink u{display:block;text-decoration:none;font-size:12px;color:var(--pink
       <div class="t">12:00</div>
       <div data-day="d1" data-t="1200" class="c">
         <h3>여유 시간 ☀️ <span class="badge">공쥬님 선택</span></h3>
-        <p class="sub">체크인이 15시라 <b>세 시간</b>이 비어요. 뭐 하고 싶으세요?</p>
+        <p class="sub"><b>안목 커피거리</b>로 정해졌어요 ☕ 보사노바 루프탑 자리 노려볼게요.</p>
 
         <div class="rec" data-slot="d1" data-pick="anmok">
           <div class="rtop"><span class="rno">A</span><b>안목 커피거리 ☕</b><span class="rmeta">차로 10분</span></div>
@@ -348,7 +347,7 @@ a.li.golink u{display:block;text-decoration:none;font-size:12px;color:var(--pink
       <div class="t">21:00</div>
       <div data-day="d1" data-t="2100" class="c">
         <h3>첫날 마무리 🌙 <span class="badge">공쥬님 선택</span></h3>
-        <p class="sub">오마카세 끝나고 바로 잘지, 좀 더 놀지 골라주세요.</p>
+        <p class="sub"><b>밤바다 산책</b>으로 정해졌어요 🌊 겉옷 꼭 챙기세요.</p>
 
         <div class="rec" data-slot="n1" data-pick="barM">
           <div class="rtop"><span class="rno">A</span><b>호텔 바 M에서 한 잔 🥃</b><span class="rmeta">호텔 2층 · ~24시</span></div>
@@ -423,7 +422,7 @@ a.li.golink u{display:block;text-decoration:none;font-size:12px;color:var(--pink
       <div class="t">13:30</div>
       <div data-day="d2" data-t="1330" class="c">
         <h3>오후 — 자유 ☀️ <span class="badge">공쥬님 선택</span></h3>
-        <p class="sub">저녁 6시까지 <b>네 시간 반</b>. 어떤 걸로 채울까요?</p>
+        <p class="sub"><b>경포호 자전거</b>로 정해졌어요 🚲 4륜으로 나란히 타요.</p>
 
         <div class="rec" data-slot="d2" data-pick="bike">
           <div class="rtop"><span class="rno">A</span><b>경포호 자전거 🚲</b><span class="rmeta">차로 10분</span></div>
@@ -473,7 +472,8 @@ a.li.golink u{display:block;text-decoration:none;font-size:12px;color:var(--pink
       <div class="t">18:00</div>
       <div data-day="d2" data-t="1800" class="c eat">
         <h3>저녁 🦀 <span class="badge">공쥬님 선택</span></h3>
-        <p class="sub">네 곳 중에 골라주세요. 정해지면 <b>전날까지 예약</b>해둘게요.</p>
+        <p class="sub">⚠️ <b>여기만 아직 안 정해졌어요!</b> 네 곳 중에 골라주시면
+          월요일까지 예약해두겠습니다.</p>
 
         <div class="rec" data-slot="dn2" data-pick="daege">
           <div class="rtop"><span class="rno">A</span><b>솔향대게 🦀</b><span class="rmeta">대게 전문</span></div>
@@ -621,7 +621,7 @@ a.li.golink u{display:block;text-decoration:none;font-size:12px;color:var(--pink
       <div class="t">17:30</div>
       <div data-day="d3" data-t="1730" class="c">
         <h3>휴게소 ☕ <span class="badge">공쥬님 선택</span></h3>
-        <p class="sub">돌아오는 길에 어디서 쉴까요?</p>
+        <p class="sub"><b>안 쉬고 쭉 가기</b>로 정해졌어요 🏠 중앙시장에서 산 걸로 차에서.</p>
 
         <div class="rec" data-slot="r3" data-pick="naerin">
           <div class="rtop"><span class="rno">A</span><b>내린천휴게소</b><span class="rmeta">전망 좋음</span></div>
@@ -887,7 +887,9 @@ a.li.golink u{display:block;text-decoration:none;font-size:12px;color:var(--pink
         else done.hidden=true;
       }
     }
-    var saved=null; try{saved=localStorage.getItem(KEY);}catch(e){}
+    var DEF={lunch:'sand730', d1:'anmok', n1:'beach', d2:'bike', r3:'nonstop'};
+    var saved=DEF[slot]||null;
+    try{ saved=localStorage.getItem(KEY)||DEF[slot]||null; }catch(e){}
     render(saved);
     recs.forEach(function(r){
       var b=r.querySelector('.rbtn'); if(!b) return;
