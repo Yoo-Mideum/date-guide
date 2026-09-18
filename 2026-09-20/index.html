@@ -166,10 +166,9 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:26px 0 6px}
       <div class="rec" data-pick="assolonga">
         <div class="rtop"><span class="rno">A</span><b>아스론가 동대문</b><span class="rmeta">★ 4.9 (418) · 도보 7분</span></div>
         <span class="price">파스타 + 피자 2인 약 4~5만원 · 일요일 11:00~24:00</span>
-        <p>골목 3층에 숨어 있는 이탈리안. 후기에 <b>"너무 격식 차리지 않고
-          와인 한 잔과 가볍게 먹기 좋은 곳"</b>이라고 나와요.
-          루프탑이 있어서 해 질 때 가면 전망도 좋다고 합니다.
-          과하지 않게 먹자는 오늘 취지에 제일 맞아요.</p>
+        <p>골목 3층에 숨어 있는 이탈리안. <b>격식 차리지 않고 가볍게 먹기 좋은 곳</b>이라는
+          후기가 많아요. 루프탑이 있어서 해 질 때 가면 전망도 좋다고 합니다.
+          파스타 하나에 피자 하나 나눠 먹으면 딱 맞습니다.</p>
         <div class="links">
           <a href="https://www.google.com/search?tbm=isch&q=%EC%95%84%EC%8A%A4%EB%A1%A0%EA%B0%80+%EB%8F%99%EB%8C%80%EB%AC%B8" target="_blank" rel="noopener">🖼️ 사진</a>
           <a href="https://map.naver.com/p/search/%EB%8F%99%ED%98%B8%EB%A1%9C34%EA%B8%B8%2018" target="_blank" rel="noopener">📍 플레이스</a>
@@ -178,16 +177,17 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:26px 0 6px}
         <button class="rbtn" type="button">여기서 먹을래요</button>
       </div>
 
-      <div class="rec" data-pick="bukchang">
-        <div class="rtop"><span class="rno">B</span><b>북창동순두부 동대문점</b><span class="rmeta">★ 4.3 · 도보 5분</span></div>
-        <span class="price">2인 약 2~3만원 · 일요일 11:00~21:00</span>
-        <p>제일 가볍고 빠른 선택. 순두부는 맑고 매운맛 정도가 딱 좋다는 평이고,
-          양이 많다는 후기도 있어요. <b>공쥬님 식사량 생각하면 이게 가장 편할 수도</b> 있습니다.
-          다음 날 여행 준비를 생각하면 속 편한 게 낫고요.</p>
+      <div class="rec" data-pick="katsu">
+        <div class="rtop"><span class="rno">B</span><b>경양카츠 동대문</b><span class="rmeta">★ 4.4 · 차로 6분</span></div>
+        <span class="price">2인 약 3만원 · 매일 11:00~21:30</span>
+        <p>돈카츠 전문점. 후기에 <b>안심·등심 카츠가 부드럽고 튀김옷이 소스에 적셔도
+          바삭함을 유지한다</b>는 평이 있어요. 소면·양배추 샐러드·나물 같은 사이드가 같이 나와서
+          한 상이 깔끔하게 채워집니다. <b>조용하고 쾌적하다는 평</b>도 많아서
+          이야기하면서 먹기 좋아요. 주문·결제도 테이블에서 합니다.</p>
         <div class="links">
-          <a href="https://www.google.com/search?tbm=isch&q=%EB%B6%81%EC%B0%BD%EB%8F%99%EC%88%9C%EB%91%90%EB%B6%80+%EB%8F%99%EB%8C%80%EB%AC%B8" target="_blank" rel="noopener">🖼️ 사진</a>
-          <a href="https://map.naver.com/p/search/%EC%9E%A5%EC%B6%A9%EB%8B%A8%EB%A1%9C13%EA%B8%B8%2011" target="_blank" rel="noopener">📍 플레이스</a>
-          <a href="tel:0222782752">📞 전화</a>
+          <a href="https://www.google.com/search?tbm=isch&q=%EA%B2%BD%EC%96%91%EC%B9%B4%EC%B4%88+%EB%8F%99%EB%8C%80%EB%AC%B8" target="_blank" rel="noopener">🖼️ 사진</a>
+          <a href="https://map.naver.com/p/search/%EA%B2%BD%EC%96%91%EC%B9%B4%EC%B4%88%20%EB%8F%99%EB%8C%80%EB%AC%B8" target="_blank" rel="noopener">📍 플레이스</a>
+          <span style="flex:1;text-align:center;font-size:12.5px;padding:8px 4px;border-radius:10px;background:var(--paper);border:1px dashed var(--line);color:var(--muted)">전화번호 없음</span>
         </div>
         <button class="rbtn" type="button">여기서 먹을래요</button>
       </div>
@@ -256,7 +256,7 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:26px 0 6px}
   }
   tick(); setInterval(tick,30000);
 
-  var LABEL={assolonga:'아스론가 동대문 🍝', bukchang:'북창동순두부 🥣', yoogane:'유가네닭갈비 🍗'};
+  var LABEL={assolonga:'아스론가 동대문 🍝', katsu:'경양카츠 동대문 🍤', yoogane:'유가네닭갈비 🍗'};
   var KEY='ddp-dinner-0920';
   var recs=[].slice.call(document.querySelectorAll('.rec'));
   var done=document.getElementById('rdone'), nm=document.getElementById('rname');
