@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cache-control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>9월 27일 일요일 🚗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF7F2; --ink:#2C2620; --muted:#7A6E5F; --line:#E6DDCE; --card:#FFFFFF;
+  --main:#8A6A3B; --main2:#B08D57; --green:#2FA36B; --gold:#E8B84B; --pink:#F06292;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1B1713; --ink:#F2EAE0; --muted:#B9AB97; --line:#3A3128; --card:#251F19;
+    --main:#B08D57; --main2:#CDA870;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans KR","Apple SD Gothic Neo",sans-serif;font-size:16px;line-height:1.7}
+.wrap{max-width:600px;margin:0 auto;padding:0 18px 52px}
+.hero{background:linear-gradient(160deg,#4A3A22,var(--main) 60%,var(--main2));color:#fff;
+  padding:38px 20px 30px;text-align:center}
+.hero .kick{font-size:11px;letter-spacing:5px;opacity:.85}
+.hero h1{font-family:"Gowun Dodum",sans-serif;font-size:30px;margin:8px 0 4px;line-height:1.3}
+.hero .date{font-size:13.5px;opacity:.95}
+.dd{margin-top:14px;display:inline-block;background:rgba(255,255,255,.18);border-radius:16px;padding:11px 18px}
+.dd b{display:block;font-family:"Gowun Dodum",sans-serif;font-size:26px;line-height:1.1}
+.dd small{display:block;font-size:11px;opacity:.85}
+.ico{font-size:21px;letter-spacing:8px;margin-top:12px;opacity:.8}
+
+h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:26px 0 6px}
+.hint{font-size:12.5px;color:var(--muted);margin:-2px 0 12px}
+.note{background:var(--card);border:2px dashed var(--line);border-radius:14px;
+  padding:13px 15px;font-size:14px;margin:16px 0}
+.note b{color:var(--main)}
+
+.tl{display:grid;grid-template-columns:62px 1fr}
+.tl .t{font-family:"Gowun Dodum",sans-serif;font-size:16px;font-weight:700;padding-top:14px;color:var(--main)}
+.tl .c{border-left:2px solid var(--line);padding:12px 0 20px 15px;position:relative}
+.tl .c::before{content:"";position:absolute;left:-7px;top:19px;width:12px;height:12px;
+  border-radius:50%;background:var(--main)}
+.tl .c.eat::before{background:var(--pink)}
+.tl .c.free::before{background:var(--green)}
+.tl h3{margin:0 0 4px;font-size:16.5px}
+.tl p{margin:0 0 6px;font-size:14.5px}
+.tl .sub{font-size:12.5px;color:var(--muted);line-height:1.55}
+.chk{font-size:13px;color:var(--muted);background:rgba(138,106,59,.09);
+  border-radius:10px;padding:8px 11px;margin-top:6px}
+
+.badge{font-size:11px;background:var(--green);color:#fff;padding:3px 9px;border-radius:999px;
+  vertical-align:middle;margin-left:6px;font-weight:700}
+.rec{background:linear-gradient(160deg,rgba(47,163,107,.09),rgba(120,200,150,.12));
+  border:1px solid rgba(47,163,107,.33);border-radius:15px;padding:13px 14px;margin:10px 0;
+  transition:max-height .35s ease,opacity .25s ease}
+.rtop{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+.rno{flex:none;width:23px;height:23px;border-radius:50%;background:var(--green);color:#fff;
+  font-size:12px;font-weight:700;display:grid;place-items:center}
+.rtop b{font-family:"Gowun Dodum",sans-serif;font-size:16.5px;flex:1}
+.rmeta{font-size:11.5px;color:var(--muted);white-space:nowrap}
+.rec p{font-size:13.5px;margin:0 0 7px;line-height:1.6}
+.price{display:block;font-size:12.5px;color:#1E7A4F;background:rgba(47,163,107,.14);
+  border-radius:8px;padding:5px 9px;margin-bottom:7px}
+.links{display:flex;gap:7px;margin-top:8px}
+.links a{flex:1;text-align:center;font-size:12.5px;padding:8px 4px;border-radius:10px;
+  text-decoration:none;background:var(--card);border:1px solid var(--line);color:var(--ink)}
+.rbtn{width:100%;margin-top:9px;padding:9px;border:none;border-radius:999px;background:var(--green);
+  color:#fff;font-size:13.5px;font-weight:700;cursor:pointer;font-family:"Gowun Dodum",sans-serif}
+.rec.sel{border:2px solid var(--green);box-shadow:0 4px 12px rgba(47,163,107,.2)}
+.rec.dim{opacity:.45;max-height:46px;overflow:hidden}
+.rec.dim p,.rec.dim .price,.rec.dim .links,.rec.dim .rbtn{display:none}
+.rdone{margin-top:11px;padding:13px;border-radius:13px;background:rgba(47,163,107,.14);
+  text-align:center;font-family:"Gowun Dodum",sans-serif;font-size:14.5px}
+.rdone b{color:#1E7A4F}
+.share{position:sticky;bottom:12px;margin:20px 0 0;width:100%;padding:14px;border:none;
+  border-radius:999px;background:var(--main);color:#fff;font-size:15px;font-weight:700;
+  cursor:pointer;font-family:"Gowun Dodum",sans-serif;box-shadow:0 6px 18px rgba(138,106,59,.32)}
+.sharemsg{font-size:12.5px;color:var(--muted);text-align:center;margin-top:8px}
+.back{display:inline-block;margin-top:22px;font-size:13.5px;color:var(--main);
+  text-decoration:none;font-family:"Gowun Dodum",sans-serif}
+.foot{text-align:center;color:var(--muted);font-size:13.5px;
+  font-family:"Gowun Dodum",sans-serif;padding-top:18px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kick">SUNDAY</div>
+  <h1>차량 감정 &amp;<br><span style="font-size:22px">명절 느낌 점심</span></h1>
+  <div class="date">9월 27일 (일) · 연휴 셋째 날</div>
+  <div class="dd"><b id="dd">…</b><small>감정평가사 방문까지</small></div>
+  <div class="ico">🚗 🍽️ 🍂</div>
+</header>
+
+<div class="wrap">
+
+  <div class="note"><b>오늘은 반나절만</b><br>
+    오전에 공쥬님 벤츠 감정평가 보고, 점심은 연휴답게 <b>명절 음식 느낌으로 가볍게</b>.
+    오후는 아직 비워뒀어요 — 아래에서 골라주시면 그걸로 준비하겠습니다.</div>
+
+  <h2>🕐 오늘의 순서</h2>
+
+  <div class="tl">
+    <div class="t">11:30</div>
+    <div class="c">
+      <h3>감정평가사 방문 🚗</h3>
+      <p><b>공쥬님 벤츠 차량 감정</b></p>
+      <p class="sub">같이 입회해서 설명 듣고, 평가 결과와 근거를 메모해둘게요.
+        나중에 매각하거나 비교할 때 기준이 됩니다.</p>
+      <div class="chk">📋 <b>미리 챙겨두면 좋은 것</b><br>
+        · 자동차등록증 · 보험개발원 사고이력 조회 결과<br>
+        · 정비·수리 영수증 (정비 이력이 있으면 값이 올라갑니다)<br>
+        · 현재 주행거리 확인 · 옵션 목록<br>
+        🧼 가능하면 <b>세차하고 실내 정리</b> — 첫인상이 평가에 영향이 있어요</div>
+    </div>
+
+    <div class="t">12:30</div>
+    <div class="c eat">
+      <h3>점심 🍽️ <span class="badge">공쥬님 선택</span></h3>
+      <p class="sub">연휴니까 <b>명절 음식 느낌</b>으로. 전·갈비·나물 같은 한상 차림으로 세 곳 골랐어요.
+        전부 노원 쪽이라 가깝습니다.</p>
+
+      <div class="rec" data-pick="masil">
+        <div class="rtop"><span class="rno">A</span><b>숟가락반상마실</b><span class="rmeta">★ 4.1 (836) · 상계4동</span></div>
+        <span class="price">매일 11:30~21:30 · 2인 세트 · 02-930-5111</span>
+        <p><b>명절 느낌에 가장 가깝습니다.</b> 반상 차림으로 나오는 전통 한식집이에요.
+          후기에 <b>"간이 세지 않아 재료 본연의 맛이 살아 있다"</b>는 평,
+          2인 세트가 전부 맛있고 플레이팅이 예뻤다는 평이 있어요.
+          소라 샐러드와 버섯 전골이 특히 좋았다고 합니다.
+          가족 모임이나 특별한 날에 좋다는 평이 많고요.<br>
+          다만 <b>테이블 간격이 좁다</b>는 지적이 있습니다.</p>
+        <div class="links">
+          <a href="https://www.google.com/search?tbm=isch&q=%EC%88%9F%EA%B0%80%EB%9D%BD%EB%B0%98%EC%83%81%EB%A7%88%EC%8B%A4" target="_blank" rel="noopener">🖼️ 사진</a>
+          <a href="https://maps.google.com/?cid=5744646948486104301" target="_blank" rel="noopener">📍 지도</a>
+          <a href="tel:0229305111">📞 전화</a>
+        </div>
+        <button class="rbtn" type="button">여기로 할래요</button>
+      </div>
+
+      <div class="rec" data-pick="yehyang">
+        <div class="rtop"><span class="rno">B</span><b>예향정</b><span class="rmeta">★ 4.7 (109) · 노원역</span></div>
+        <span class="price">일요일 11:00~21:00 · 2인 3~4만원 · 02-937-9998</span>
+        <p>집밥 느낌의 쌈밥 정식. <b>별점이 셋 중 가장 높습니다.</b>
+          들어서면 갓 지은 밥 냄새가 나고, 인원수에 맞춰 <b>솥밥을 통째로</b> 내준다는 후기가 있어요.
+          쌈채소 8종이 무한 리필이고, 불고기·제육·된장찌개가 다 좋다는 평.
+          <b>공간이 넓어서 편하고</b> 노원역 근처인데 조용한 길에 있습니다.</p>
+        <div class="links">
+          <a href="https://www.google.com/search?tbm=isch&q=%EB%85%B8%EC%9B%90+%EC%98%88%ED%96%A5%EC%A0%95" target="_blank" rel="noopener">🖼️ 사진</a>
+          <a href="https://maps.google.com/?cid=12977434318261571920" target="_blank" rel="noopener">📍 지도</a>
+          <a href="tel:0229379998">📞 전화</a>
+        </div>
+        <button class="rbtn" type="button">여기로 할래요</button>
+      </div>
+
+      <div class="rec" data-pick="seoulgalbi">
+        <div class="rtop"><span class="rno">C</span><b>서울갈비 노원본점</b><span class="rmeta">★ 4.8 (12) · 노원역</span></div>
+        <span class="price">2인 6~8만원 · 룸 있음</span>
+        <p>명절 하면 갈비죠. <b>직원이 앞에서 구워줍니다.</b>
+          두툼한 서울식 양념갈비가 간이 딱 맞고 맛있었다는 평,
+          배와 아보카도를 올린 한우 육회가 보기에도 맛에도 훌륭했다는 후기가 있어요.
+          마무리로 양곰탕까지. <b>룸이 잘 갖춰져 있어</b> 조용히 먹기 좋습니다.<br>
+          다만 리뷰가 12개뿐이고 <b>영업시간이 확인 안 됩니다</b> — 전화 먼저.</p>
+        <div class="links">
+          <a href="https://www.google.com/search?tbm=isch&q=%EC%84%9C%EC%9A%B8%EA%B0%88%EB%B9%84+%EB%85%B8%EC%9B%90%EB%B3%B8%EC%A0%90" target="_blank" rel="noopener">🖼️ 사진</a>
+          <a href="https://maps.google.com/?cid=3992123697745300534" target="_blank" rel="noopener">📍 지도</a>
+          <a href="https://map.naver.com/p/search/%EB%85%B8%ED%95%B4%EB%A1%9C%20459%20%EC%84%9C%EC%9A%B8%EA%B0%88%EB%B9%84" target="_blank" rel="noopener">📍 플레이스</a>
+        </div>
+        <button class="rbtn" type="button">여기로 할래요</button>
+      </div>
+
+      <div class="rdone" id="ldone" hidden><b>✅ <span id="lname"></span></b><br>여기로 준비하겠습니다 💗</div>
+
+      <div class="chk" style="margin-top:12px">☎️ 오늘도 <b>연휴</b>라 영업 확인 전화 한 통은 필수예요.
+        특히 서울갈비는 영업시간 정보가 없습니다.</div>
+    </div>
+
+    <div class="t">14:30</div>
+    <div class="c free">
+      <h3>오후 ☀️ <span class="badge">공쥬님 선택</span></h3>
+      <p class="sub">아직 정하지 않았어요. 뭐 하고 싶으세요?</p>
+
+      <div class="rec" data-pick="walk">
+        <div class="rtop"><span class="rno">A</span><b>가볍게 산책 🍂</b><span class="rmeta">불암산 · 중랑천</span></div>
+        <p>어제 많이 걸었으니 무리하지 않고. 불암산 둘레길이나 중랑천 산책로를
+          한 시간쯤 걷는 정도. <b>9월 말이라 날씨가 제일 좋을 때</b>예요.
+          다음 주 등산 전에 몸 풀기로도 좋고요.</p>
+        <button class="rbtn" type="button">이거 할래요</button>
+      </div>
+
+      <div class="rec" data-pick="cafe">
+        <div class="rtop"><span class="rno">B</span><b>카페에서 쉬기 ☕</b><span class="rmeta">노원 · 중계</span></div>
+        <p>연휴 끝자락이니 아무것도 안 하는 것도 방법. 조용한 카페 찾아서
+          앉아 있다가 저녁에 각자 정리하는 걸로. <b>내일이 대체공휴일 마지막 날</b>이라
+          체력 아껴두는 것도 괜찮아요.</p>
+        <button class="rbtn" type="button">이거 할래요</button>
+      </div>
+
+      <div class="rec" data-pick="movie">
+        <div class="rtop"><span class="rno">C</span><b>영화 보기 🎬</b><span class="rmeta">실내</span></div>
+        <p>밖에 나가기 애매하면 영화. 연휴라 개봉작이 많을 거예요.
+          아니면 집에서 편하게 봐도 되고요 — <b>프로젝터가 생기면 더 좋겠지만</b> 그건 다음에 🙂</p>
+        <button class="rbtn" type="button">이거 할래요</button>
+      </div>
+
+      <div class="rdone" id="adone" hidden><b>✅ <span id="aname"></span></b><br>그렇게 하겠습니다 💗</div>
+    </div>
+  </div>
+
+  <button class="share" type="button" id="share">💌 고른 것 믿음이에게 보내기</button>
+  <p class="sharemsg" id="sharemsg">누르면 카톡으로 보낼 수 있게 정리해드려요</p>
+
+  <a class="back" href="../">← 데이트 앨범으로 돌아가기</a>
+  <p class="foot">오늘은 천천히 보내요 공쥬님 🍂</p>
+</div>
+
+<script>
+(function(){
+  var t=new Date(2026,8,27,11,30);
+  var el=document.getElementById('dd');
+  function tick(){
+    var d=t-new Date();
+    if(d<=0){ el.textContent='시작! 🚗'; return; }
+    var h=Math.floor(d/3600000), m=Math.floor(d%3600000/60000);
+    el.textContent = h+'시간 '+m+'분';
+  }
+  tick(); setInterval(tick,30000);
+
+  var LABEL={masil:'숟가락반상마실 🍽️', yehyang:'예향정 🍚', seoulgalbi:'서울갈비 노원본점 🥩',
+             walk:'가볍게 산책 🍂', cafe:'카페에서 쉬기 ☕', movie:'영화 보기 🎬'};
+
+  function bind(sel, key, doneId, nameId, label){
+    var recs=[].slice.call(document.querySelectorAll(sel));
+    var done=document.getElementById(doneId), nm=document.getElementById(nameId);
+    if(!recs.length) return;
+    function render(v){
+      recs.forEach(function(r){
+        var on=r.dataset.pick===v;
+        r.classList.toggle('sel',!!v&&on);
+        r.classList.toggle('dim',!!v&&!on);
+        var b=r.querySelector('.rbtn');
+        if(b) b.textContent=(!!v&&on)?'✅ 정했어요':label;
+      });
+      if(v){ done.hidden=false; nm.textContent=LABEL[v]||v; } else done.hidden=true;
+    }
+    var saved=null; try{saved=localStorage.getItem(key);}catch(e){}
+    render(saved);
+    recs.forEach(function(r){
+      var b=r.querySelector('.rbtn'); if(!b) return;
+      b.addEventListener('click',function(){
+        var v=r.dataset.pick;
+        try{localStorage.setItem(key,v);}catch(e){}
+        render(v);
+      });
+    });
+  }
+  bind('.c.eat .rec','lunch-0927','ldone','lname','여기로 할래요');
+  bind('.c.free .rec','afternoon-0927','adone','aname','이거 할래요');
+
+  var btn=document.getElementById('share'), msg=document.getElementById('sharemsg');
+  btn.addEventListener('click',function(){
+    var g=function(k){ try{return localStorage.getItem(k);}catch(e){return null;} };
+    var txt='🚗 일요일 (9/27)\n점심: '+(g('lunch-0927')?LABEL[g('lunch-0927')]:'미정')+
+            '\n오후: '+(g('afternoon-0927')?LABEL[g('afternoon-0927')]:'미정');
+    if(navigator.share){ navigator.share({title:'일요일 일정',text:txt}).catch(function(){}); }
+    else if(navigator.clipboard){ navigator.clipboard.writeText(txt).then(function(){
+      msg.textContent='✅ 복사했어요! 카톡에 붙여넣기 하면 됩니다'; }); }
+    else { msg.textContent=txt; }
+  });
+})();
+</script>
+</body>
+</html>
