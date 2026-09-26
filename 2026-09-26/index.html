@@ -80,6 +80,13 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:26px 0 6px}
 .rdone{margin-top:11px;padding:13px;border-radius:13px;background:rgba(47,163,107,.14);
   text-align:center;font-family:"Gowun Dodum",sans-serif;font-size:14.5px}
 .rdone b{color:#1E7A4F}
+
+.album{display:grid;gap:14px;margin-top:6px}
+.album figure{margin:0;background:var(--card);border:1px solid var(--line);
+  border-radius:16px;overflow:hidden}
+.album img{width:100%;display:block}
+.album figcaption{padding:11px 14px;font-size:13.5px;line-height:1.6;color:var(--muted)}
+.album figcaption b{color:var(--ink);font-family:"Gowun Dodum",sans-serif;font-size:14.5px}
 .share{position:sticky;bottom:12px;margin:20px 0 0;width:100%;padding:14px;border:none;
   border-radius:999px;background:var(--red);color:#fff;font-size:15px;font-weight:700;
   cursor:pointer;font-family:"Gowun Dodum",sans-serif;box-shadow:0 6px 18px rgba(192,57,43,.32)}
@@ -188,7 +195,8 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:26px 0 6px}
     <div class="t">19:00</div>
     <div class="c night">
       <h3>양꼬치 &amp; 고량주 🥃 <span class="badge">공쥬님 선택</span></h3>
-      <p class="sub">수유역 근처로 세 곳 골라놨어요. 전부 도보권입니다.</p>
+      <p class="sub">✅ <b>계획 변경</b> — 양꼬치 대신 <b>해산물</b>로 갔어요 🦐
+        (아래 후보들은 다음에)</p>
 
       <div class="rec" data-pick="yeonhwa">
         <div class="rtop"><span class="rno">A</span><b>연화양꼬치</b><span class="rmeta">★ 4.3 (139) · 한천로</span></div>
@@ -247,6 +255,25 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:26px 0 6px}
       <h3>마무리 🌙</h3>
       <p class="sub">수유 안이라 걸어서 또는 택시로 금방. 내일 일정 없으면 느긋하게.</p>
     </div>
+  </div>
+
+
+  <h2>📷 오늘의 앨범</h2>
+  <p class="hint">다녀온 순서대로 쌓아둘게요</p>
+
+  <div class="album">
+    <figure>
+      <img src="./photos/01-museum.jpg" alt="북서울미술관 전시" loading="lazy">
+      <figcaption><b>16:50 · 북서울미술관</b><br>
+        어두운 전시실, 계단 영상 앞에 선 공쥬님 🖤</figcaption>
+    </figure>
+
+    <figure>
+      <img src="./photos/02-seafood.jpg" alt="저녁 해산물 한 상" loading="lazy">
+      <figcaption><b>19:00 · 저녁</b><br>
+        양꼬치 대신 해산물로! 전복·가리비·새우·멍게에 소라까지 🦐<br>
+        소주 한 잔 곁들여서</figcaption>
+    </figure>
   </div>
 
   <button class="share" type="button" id="share">💌 고른 곳 믿음이에게 보내기</button>
