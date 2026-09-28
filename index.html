@@ -49,11 +49,8 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:28px 0 10px;
 .card.orange::before{background:#E07A28}
 .card.grey::before{background:var(--muted)}
 
-
-
-
-
-
+.card.rf::before{background:#4E9E92}
+.card.rf .d{color:#4E9E92} .card.rf .tag{background:#4E9E92} .card.rf .go{color:#4E9E92}
 .card.sun27::before{background:#8A6A3B}
 .card.sun27 .d{color:#8A6A3B} .card.sun27 .tag{background:#8A6A3B} .card.sun27 .go{color:#8A6A3B}
 .card.today::before{background:#C0392B}
@@ -136,39 +133,11 @@ a.card:active{transform:scale(.99)}
   <h2>🗓️ 다가올 일정</h2>
   <p class="hint">눌러서 자세한 계획을 볼 수 있어요</p>
 
-  <a class="card ddp" href="./2026-09-20/">
-    <div class="top"><span class="d">9월 20일 (일) 저녁</span><span class="tag" id="t0">D-</span></div>
-    <b>DDP 숙제 데이트 📸</b>
-    <span class="desc">샵에서 픽업 → DDP 과제 사진 → 가볍게 저녁 → 귀가</span>
-    <span class="go">일정 보기 →</span>
-  </a>
-
-  <a class="card sea" href="./2026-09-21/">
-    <div class="top"><span class="d">9월 21일 (월) ~ 23일 (수)</span><span class="tag" id="t1">D-</span></div>
-    <b>강릉 2박 3일 🌊</b>
-    <span class="desc">신라 모노그램 · 스시 오마카세 · 아침 수영 · 아르떼뮤지엄</span>
-    <span class="go">상세 일정 보기 →</span>
-  </a>
-
-  <a class="card sun27" href="./2026-09-27/">
-    <div class="top"><span class="d">9월 27일 (일)</span><span class="tag">내일</span></div>
-    <b>차량 감정 &amp; 명절 느낌 점심 🚗</b>
-    <span class="desc">11:30 감정평가사 방문 → 점심 → 오후는 골라주세요</span>
-    <span class="go">일정 보기 →</span>
-  </a>
-
-  <a class="card today" href="./2026-09-26/">
-    <div class="top"><span class="d">9월 26일 (토)</span><span class="tag">다녀옴</span></div>
-    <b>훠궈 · 미술관 · 해산물 🍲</b>
-    <span class="desc">하이디라오 → 북서울미술관 → 해산물 · 📷 사진 있어요</span>
-    <span class="go">앨범 보기 →</span>
-  </a>
-
-  <a class="card hike" href="./2026-09-24/">
-    <div class="top"><span class="d">9월 24일 (목)</span><span class="tag" id="t3">D-</span></div>
-    <b>북한산 등산 &amp; 백숙 ⛰️</b>
-    <span class="desc">코스 3개 중에 고르기 · 하산 후 백숙</span>
-    <span class="go">코스 보기 →</span>
+  <a class="card rf" href="./2026-10-01/">
+    <div class="top"><span class="d">10월 1일 (목)</span><span class="tag" id="t0">D-</span></div>
+    <b>공쥬님 회복 데이트 🤍</b>
+    <span class="desc">팔 고주파 끝나고 · 죽 한 끼 → 상표권 출원 30분 → 조용한 카페</span>
+    <span class="go">일정 보기 · 골라주세요 →</span>
   </a>
 
   <a class="card orange" href="./2026-10-14/">
@@ -244,9 +213,17 @@ a.card:active{transform:scale(.99)}
   <p class="hint">둘이 같이 챙기기로 한 일들 · 하나씩 지워나가요</p>
 
   <div class="card todo">
-    <div class="top"><span class="d">제일 급함</span><span class="tag">샵</span></div>
+    <div class="top"><span class="d">10월 1일 (목)</span><span class="tag">샵</span></div>
     <b>키티티바이지영 상표권 출원 ⚖️</b>
-    <span class="desc">출원부터 등록까지 보통 1년 이상 · 2월 오픈 생각하면 지금 시작해야 해요</span>
+    <span class="desc">목요일 카페에서 같이 하기로 · 30분이면 끝나요<br>
+      출원부터 등록까지 보통 1년 이상 · 2월 오픈 생각하면 지금이 마지노선</span>
+  </div>
+
+  <div class="card todo">
+    <div class="top"><span class="d">공쥬님 요청</span><span class="tag">개발</span></div>
+    <b>영상 자동화 프로그램 🎬</b>
+    <span class="desc">공쥬님이 만들어달라고 한 것 · 샵 홍보 영상에도 쓸 수 있게<br>
+      어떤 영상을 어디에 올릴 건지부터 같이 정하기</span>
   </div>
 
   <div class="card todo">
@@ -283,7 +260,42 @@ a.card:active{transform:scale(.99)}
   <details class="arc">
     <summary>지난 일정 보기</summary>
 
-    <a class="card grey" href="./2026-09-16/" style="margin-top:12px">
+    <a class="card grey" href="./2026-09-27/" style="margin-top:12px">
+      <div class="top"><span class="d">9월 27일 (일)</span><span class="tag">다녀옴</span></div>
+      <b>차량 감정 &amp; 명절 느낌 점심</b>
+      <span class="desc">감정평가사 방문 · 점심</span>
+      <span class="go" style="color:var(--muted)">다시 보기 →</span>
+    </a>
+
+    <a class="card grey" href="./2026-09-26/">
+      <div class="top"><span class="d">9월 26일 (토)</span><span class="tag">📷 사진 있음</span></div>
+      <b>훠궈 · 미술관 · 해산물</b>
+      <span class="desc">하이디라오 → 북서울미술관 → 해산물</span>
+      <span class="go" style="color:var(--muted)">앨범 보기 →</span>
+    </a>
+
+    <a class="card grey" href="./2026-09-24/">
+      <div class="top"><span class="d">9월 24일 (목)</span><span class="tag">다녀옴</span></div>
+      <b>북한산 등산 &amp; 백숙</b>
+      <span class="desc">우이동 코스 · 하산 후 백숙</span>
+      <span class="go" style="color:var(--muted)">다시 보기 →</span>
+    </a>
+
+    <a class="card grey" href="./2026-09-21/">
+      <div class="top"><span class="d">9월 21일 (월) ~ 23일 (수)</span><span class="tag">다녀옴</span></div>
+      <b>강릉 2박 3일 🌊</b>
+      <span class="desc">신라 모노그램 · 오마카세 · 아침 수영 · 아르떼뮤지엄</span>
+      <span class="go" style="color:var(--muted)">다시 보기 →</span>
+    </a>
+
+    <a class="card grey" href="./2026-09-20/">
+      <div class="top"><span class="d">9월 20일 (일)</span><span class="tag">다녀옴</span></div>
+      <b>DDP 숙제 데이트 📸</b>
+      <span class="desc">샵에서 픽업 → DDP 과제 사진 → 저녁</span>
+      <span class="go" style="color:var(--muted)">다시 보기 →</span>
+    </a>
+
+    <a class="card grey" href="./2026-09-16/">
       <div class="top"><span class="d">9월 16일 (수)</span><span class="tag">다녀옴</span></div>
       <b>잠실 — 염색 &amp; 송리단길</b>
       <span class="desc">엘리스 리틀 이태리 · 석촌호수 · 타임투칠</span>
@@ -326,10 +338,8 @@ a.card:active{transform:scale(.99)}
     var k=Math.round((t-n)/86400000);
     el.textContent = k>0 ? 'D-'+k : (k===0 ? 'D-DAY' : '지남');
   }
-  dd('t0',2026,8,20);
-  dd('t1',2026,8,21);
+  dd('t0',2026,9,1);
   dd('t2',2026,9,14);
-  dd('t3',2026,8,24);
 })();
 </script>
 </body>

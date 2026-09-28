@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cache-control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>10월 1일 · 공쥬님 회복 데이트 🤍</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4FAF8; --ink:#27403C; --muted:#6C8A84; --line:#D5E8E3; --card:#FFFFFF;
+  --mint:#4E9E92; --pink:#EE7FA6; --gold:#E0A83C; --warn:#C96A4B;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#16211F; --ink:#E6F2EF; --muted:#9BB8B2; --line:#2C403C; --card:#1F2E2B;
+    --mint:#62B8AB; --pink:#F49BBB; --warn:#E08B6B;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans KR","Apple SD Gothic Neo",sans-serif;font-size:16px;line-height:1.7}
+.wrap{max-width:600px;margin:0 auto;padding:0 18px 56px}
+
+.hero{background:linear-gradient(160deg,#4E9E92,#7FBFB0 55%,#EEA6BF);color:#fff;
+  padding:38px 20px 30px;text-align:center}
+.hero .kick{font-size:11px;letter-spacing:5px;opacity:.85}
+.hero h1{font-family:"Gowun Dodum",sans-serif;font-size:29px;margin:8px 0 4px;line-height:1.3}
+.hero .sub{font-size:13.5px;opacity:.95}
+.cd{margin-top:15px;display:inline-block;background:rgba(255,255,255,.18);
+  border-radius:16px;padding:11px 22px}
+.cd b{display:block;font-family:"Gowun Dodum",sans-serif;font-size:27px;line-height:1.15}
+.cd small{display:block;font-size:11.5px;opacity:.85;margin-top:2px}
+.hero .ico{font-size:20px;letter-spacing:8px;margin-top:12px;opacity:.85}
+
+h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:30px 0 8px;
+  display:flex;align-items:center;gap:8px}
+.hint{font-size:12.5px;color:var(--muted);margin:-4px 0 13px}
+
+.note{background:var(--card);border:2px dashed var(--line);border-radius:16px;
+  padding:14px 16px;font-size:13.5px;margin:20px 0 0;line-height:1.7}
+.note b{color:var(--mint)}
+
+.care{background:linear-gradient(160deg,rgba(201,106,75,.09),rgba(224,168,60,.08));
+  border:1px solid rgba(201,106,75,.32);border-radius:18px;padding:16px 17px;margin-top:8px}
+.care h3{font-family:"Gowun Dodum",sans-serif;font-size:17px;margin:0 0 9px;color:var(--warn)}
+.care ul{margin:0;padding-left:19px;font-size:13.5px;line-height:1.85}
+.care li b{color:var(--ink)}
+.care .src{font-size:11.5px;color:var(--muted);margin:10px 0 0;line-height:1.6}
+
+/* 타임라인 */
+.tl{position:relative;margin-top:6px;padding-left:22px}
+.tl::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;
+  background:var(--line)}
+.ti{position:relative;margin-bottom:15px}
+.ti::before{content:"";position:absolute;left:-21px;top:7px;width:11px;height:11px;
+  border-radius:50%;background:var(--mint);border:2px solid var(--paper)}
+.ti.fix::before{background:var(--warn)}
+.ti.pick::before{background:var(--pink)}
+.ti .t{font-family:"Gowun Dodum",sans-serif;font-size:13.5px;color:var(--mint);font-weight:700}
+.ti.fix .t{color:var(--warn)} .ti.pick .t{color:var(--pink)}
+.ti .h{font-family:"Gowun Dodum",sans-serif;font-size:17px;margin:1px 0 2px}
+.ti p{margin:0;font-size:13px;color:var(--muted);line-height:1.65}
+.ti .mv{display:inline-block;margin-top:5px;font-size:11.5px;color:var(--muted);
+  background:var(--card);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+
+/* 선택 카드 */
+.c{margin-top:8px}
+.rec{background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:14px 15px;margin-bottom:10px;transition:opacity .25s,transform .25s,max-height .3s}
+.rec .rtop{display:flex;align-items:baseline;gap:8px;margin-bottom:3px}
+.rec .rtop b{font-family:"Gowun Dodum",sans-serif;font-size:17px;flex:1}
+.rec .badge{flex:none;font-size:10.5px;color:#fff;background:var(--mint);
+  border-radius:999px;padding:2px 9px;white-space:nowrap}
+.rec .why{font-size:13px;margin:0 0 7px;line-height:1.7}
+.rec .meta{font-size:12px;color:var(--muted);line-height:1.75;
+  border-top:1px dashed var(--line);padding-top:7px}
+.rec .meta b{color:var(--ink)}
+.rec .lks{margin-top:8px;display:flex;flex-wrap:wrap;gap:7px}
+.rec .lks a{font-size:11.5px;text-decoration:none;color:var(--mint);
+  border:1px solid var(--line);border-radius:999px;padding:4px 11px;background:var(--paper)}
+.pick{display:block;width:100%;margin-top:10px;padding:11px;border:0;border-radius:12px;
+  background:var(--pink);color:#fff;font-size:14px;font-weight:700;cursor:pointer;
+  font-family:"Gowun Dodum",sans-serif}
+.rec.sel{border-color:var(--pink);box-shadow:0 0 0 2px rgba(238,127,166,.3)}
+.rec.sel .pick{background:var(--mint)}
+.rec.dim{opacity:.32;transform:scale(.985)}
+.done{display:none;background:rgba(78,158,146,.12);border:1px solid var(--mint);
+  border-radius:14px;padding:12px 14px;font-size:13.5px;margin-top:10px;line-height:1.7}
+.done.on{display:block}
+.done b{color:var(--mint)}
+
+/* 상표권 */
+.tm{background:linear-gradient(160deg,rgba(78,158,146,.10),rgba(238,127,166,.07));
+  border:1px solid var(--line);border-radius:18px;padding:16px 17px;margin-top:8px}
+.tm ol{margin:8px 0 0;padding-left:20px;font-size:13.5px;line-height:1.85}
+.tm ol b{color:var(--mint)}
+.tm .chk{font-size:12.5px;color:var(--muted);margin:11px 0 0;
+  border-top:1px dashed var(--line);padding-top:9px;line-height:1.7}
+
+.back{display:inline-block;margin-top:28px;font-size:13.5px;color:var(--pink);
+  text-decoration:none;font-family:"Gowun Dodum",sans-serif}
+.foot{text-align:center;color:var(--muted);font-size:13.5px;
+  font-family:"Gowun Dodum",sans-serif;padding-top:22px}
+.share{display:block;width:100%;margin-top:22px;padding:14px;border:0;border-radius:14px;
+  background:linear-gradient(120deg,var(--mint),var(--pink));color:#fff;font-size:15px;
+  font-weight:700;cursor:pointer;font-family:"Gowun Dodum",sans-serif}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kick">1 OCT · THURSDAY</div>
+  <h1>공쥬님 회복 데이트</h1>
+  <div class="sub">시술 끝나고 · 천천히 · 무리 없이 🤍</div>
+  <div class="cd"><b id="cd">…</b><small>목요일까지</small></div>
+  <div class="ico">🤍 ☕ 🍚</div>
+</header>
+
+<div class="wrap">
+
+  <div class="note">공쥬님, 목요일은 <b>아무것도 안 힘든 날</b>로 만들어두려고요.
+    많이 걷는 것도, 오래 서 있는 것도 다 뺐습니다.
+    앉아서 먹고, 앉아서 쉬는 것만 넣어놨어요 🤍<br><br>
+    <b>점심이랑 카페</b>는 공쥬님이 골라주시면 제가 그대로 준비할게요.</div>
+
+  <h2>🗓️ 하루 흐름</h2>
+  <p class="hint">빨간 점은 고정 일정 · 분홍 점은 골라주실 것</p>
+
+  <div class="tl">
+    <div class="ti fix">
+      <div class="t">07:30 ~ 09:00</div>
+      <div class="h">공쥬님 아침 일정</div>
+      <p>1시간 30분 예정 · 저는 이 시간에 이동하면서 대기하고 있을게요</p>
+    </div>
+
+    <div class="ti fix">
+      <div class="t">오전 (시간 알려주세요)</div>
+      <div class="h">강남 · 팔 고주파 시술 💉</div>
+      <p>끝나는 시간 맞춰서 앞에서 기다리고 있겠습니다.
+        짐은 제가 다 들게요 — 팔 쓰실 일 없게 할게요</p>
+      <span class="mv">🚗 제 차로 이동 · 주차는 제가 알아서</span>
+    </div>
+
+    <div class="ti pick">
+      <div class="t">시술 후 · 점심</div>
+      <div class="h">부드러운 걸로 한 끼 🍚</div>
+      <p>앉아서 편하게 · 양 적게 · 아래에서 골라주세요</p>
+    </div>
+
+    <div class="ti">
+      <div class="t">점심 후 30분</div>
+      <div class="h">상표권 출원 같이 하기 ⚖️</div>
+      <p>카페 자리에서 노트북으로 · 저랑 같이 하면 30분이면 됩니다</p>
+    </div>
+
+    <div class="ti pick">
+      <div class="t">오후</div>
+      <div class="h">조용한 카페에서 쉬기 ☕</div>
+      <p>푹신한 자리 · 사람 적은 곳으로만 골랐어요</p>
+    </div>
+
+    <div class="ti">
+      <div class="t">저녁</div>
+      <div class="h">컨디션 보고 결정 🌙</div>
+      <p>괜찮으시면 가볍게 한 끼 더, 피곤하시면 바로 집으로.
+        이건 그날 공쥬님 몸 상태 보고 정하는 걸로 해요</p>
+    </div>
+  </div>
+
+  <h2>🤍 시술 후 이건 지켜요</h2>
+  <p class="hint">일반적인 주의사항이에요 · 병원 안내가 우선입니다</p>
+
+  <div class="care">
+    <h3>목요일에 피할 것</h3>
+    <ul>
+      <li><b>사우나 · 찜질방 · 뜨거운 탕</b> — 열이 들어가면 붓기가 더 올라와요. 목요일 일정에서 아예 뺐습니다</li>
+      <li><b>술</b> — 붓기랑 회복에 제일 안 좋아서 이날은 건너뛰기로 해요</li>
+      <li><b>무거운 것 들기 · 팔 많이 쓰기</b> — 가방, 짐, 문 여는 것까지 제가 할게요</li>
+      <li><b>오래 걷기 · 오래 서 있기</b> — 그래서 전시나 산책 대신 앉는 일정만 넣었어요</li>
+      <li><b>압박복</b> — 병원에서 착용 안내받으시면 그대로 따라주세요</li>
+    </ul>
+    <p class="src">시술 종류·병원마다 안내가 다르니, 당일 병원에서 받은 주의사항이 항상 우선이에요.
+      물 많이 드시고, 짜게 먹지 않는 것도 붓기에 도움이 된다고 해요.</p>
+  </div>
+
+  <h2>🍚 점심, 골라주세요</h2>
+  <p class="hint">셋 다 앉아서 편하게 먹는 곳 · 양 조절 되는 곳으로만 골랐어요</p>
+
+  <div class="c eat">
+
+    <div class="rec" data-k="porridge">
+      <div class="rtop"><b>지니전복죽</b><span class="badge">제일 추천</span></div>
+      <p class="why">시술 끝나고 속이 부담스러울 때 이만한 게 없어요.
+        전복죽이 진하게 나오고, 양이 꽤 많아서 공쥬님은 반만 드셔도 충분할 거예요.
+        가게가 작고 조용해서 시끄럽지 않은 것도 좋고요. 구글 별점 <b>4.8</b>이에요.</p>
+      <div class="meta">
+        📍 강남구 봉은사로30길 59, 2층<br>
+        🕘 목요일 10:10~16:00 / 17:00~20:20<br>
+        ☎️ 02-522-1052 · 💳 1만원대 중반
+      </div>
+      <div class="lks">
+        <a href="https://map.naver.com/p/search/%EC%A7%80%EB%8B%88%EC%A0%84%EB%B3%B5%EC%A3%BD%20%EB%B4%89%EC%9D%80%EC%82%AC%EB%A1%9C30%EA%B8%B8" target="_blank" rel="noopener">네이버 지도</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Jenie%20Abalone%20Porridge&query_place_id=ChIJgwTJCvCjfDURGqgYtQZh9hI" target="_blank" rel="noopener">구글 지도</a>
+      </div>
+      <button class="pick">여기로 할래요</button>
+    </div>
+
+    <div class="rec" data-k="udon">
+      <div class="rtop"><b>백소정 강남</b><span class="badge">따뜻한 국물</span></div>
+      <p class="why">죽이 좀 심심하시면 여기요. 우동이랑 소바가 잘 나오고,
+        돈카츠도 있어서 저는 그걸 먹으면 돼요.
+        점심시간 내내 열어서 시술 끝나는 시간 안 맞아도 괜찮은 게 제일 큰 장점이에요.</p>
+      <div class="meta">
+        📍 강남구 봉은사로2길 10, 1층<br>
+        🕘 목요일 11:00~21:00 (브레이크타임 없음)<br>
+        ☎️ 02-562-1005 · 💳 1만원대
+      </div>
+      <div class="lks">
+        <a href="https://map.naver.com/p/search/%EB%B0%B1%EC%86%8C%EC%A0%95%20%EA%B0%95%EB%82%A8%20%EB%B4%89%EC%9D%80%EC%82%AC%EB%A1%9C2%EA%B8%B8" target="_blank" rel="noopener">네이버 지도</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Baeksojeong%20Gangnam&query_place_id=ChIJn6HtNSOjfDUR3PczRt1lVuU" target="_blank" rel="noopener">구글 지도</a>
+      </div>
+      <button class="pick">여기로 할래요</button>
+    </div>
+
+    <div class="rec" data-k="bonjuk">
+      <div class="rtop"><b>본죽&amp;비빔밥 강남역점</b><span class="badge">제일 무난</span></div>
+      <p class="why">아는 맛이 제일 안전할 때가 있죠.
+        호박죽·전복죽 중에 고르시면 되고, 저는 비빔밥 먹으면 돼서 둘 다 만족이에요.
+        강남역에서 제일 가까워서 시술 끝나고 바로 앉기 좋아요.</p>
+      <div class="meta">
+        📍 서초구 서초대로78길 36, 강남지웰타워 201호<br>
+        🕘 목요일 10:00~15:00 / 17:00~21:00<br>
+        ☎️ 02-525-6653 · 💳 1만원 안팎<br>
+        ⚠️ 점심때 붐빈다는 후기가 있어요 — 12시 전후는 피하는 게 좋겠어요
+      </div>
+      <div class="lks">
+        <a href="https://map.naver.com/p/search/%EB%B3%B8%EC%A3%BD%EB%B9%84%EB%B9%94%EB%B0%A5%EC%B9%B4%ED%8E%98%20%EA%B0%95%EB%82%A8%EC%97%AD%EC%A0%90" target="_blank" rel="noopener">네이버 지도</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Bonjuk%20Bibimbap%20Gangnam&query_place_id=ChIJKYCQiFqhfDURIYCZ0t4F-R8" target="_blank" rel="noopener">구글 지도</a>
+      </div>
+      <button class="pick">여기로 할래요</button>
+    </div>
+
+    <div class="done" id="edone">🤍 <b id="ename"></b>로 정하셨어요.
+      제가 자리랑 시간 맞춰서 준비해둘게요. 골라주셔서 고마워요!</div>
+  </div>
+
+  <h2>⚖️ 상표권 출원, 30분이면 돼요</h2>
+  <p class="hint">점심 먹고 카페 앉아서 · 노트북은 제가 챙겨갈게요</p>
+
+  <div class="tm">
+    <p style="margin:0;font-size:13.5px;line-height:1.7">
+      <b>키티티바이지영</b> 상표 출원이요.
+      2월 오픈 생각하면 지금이 진짜 마지노선이라서, 목요일에 같이 앉은 김에 끝내버리려고요.
+      제가 화면 보면서 진행할 테니까 공쥬님은 옆에서 확인만 해주시면 됩니다.</p>
+
+    <ol>
+      <li><b>선행상표 검색</b> — KIPRIS에서 비슷한 이름 이미 있는지 확인 (5분)</li>
+      <li><b>상품류 정하기</b> — 미용·네일 서비스는 서비스업류, 화장품 판매까지 하면 별도 류 추가.
+        여기서 공쥬님 의견이 제일 필요해요 (10분)</li>
+      <li><b>출원인 코드 신청</b> — 특허로에서 개인 출원인 등록 (10분)</li>
+      <li><b>출원서 작성·제출</b> — 상표 이미지(로고)까지 같이 올릴지 결정 (5분)</li>
+    </ol>
+
+    <p class="chk"><b>미리 준비해둘 것</b><br>
+      · 공동인증서 (특허로 제출에 필요해요 — 제가 미리 확인할게요)<br>
+      · 로고 파일 — 글자만 출원할지, 로고까지 같이 할지 정해야 해요<br>
+      · 관납료는 류 하나당 몇만 원대예요. 정확한 금액은 제가 그날 화면에서 확인해서 말씀드릴게요<br>
+      · 출원부터 등록까지 보통 1년 이상 걸려요. 그래서 지금 넣어두는 거예요</p>
+  </div>
+
+  <h2>☕ 오후 카페, 골라주세요</h2>
+  <p class="hint">여기서 상표권도 하고, 쉬기도 하고</p>
+
+  <div class="c cafe">
+
+    <div class="rec" data-k="leben">
+      <div class="rtop"><b>북카페 레벤</b><span class="badge">제일 조용</span></div>
+      <p class="why">여기가 목요일 오후에 제일 조용할 거예요.
+        책방 겸 카페라 다들 소리를 낮추고 있고, 무릎담요도 있대요.
+        노트북 펴고 상표권 하기에도 딱이고, 끝나고 공쥬님은 그냥 쉬셔도 되고요.
+        구글 별점 <b>4.7</b>인데 아는 사람만 아는 곳 같더라고요.</p>
+      <div class="meta">
+        📍 강남구 학동로 116 (논현1동)<br>
+        🕘 목요일 08:30~19:00 · 일요일 휴무<br>
+        ☎️ 02-2278-6607 · ☕ 저렴한 편
+      </div>
+      <div class="lks">
+        <a href="https://map.naver.com/p/search/%EB%B6%81%EC%B9%B4%ED%8E%98%20%EB%A0%88%EB%B2%A4%20%ED%95%99%EB%8F%99%EB%A1%9C116" target="_blank" rel="noopener">네이버 지도</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Book%20Cafe%20Leben&query_place_id=ChIJ1_tudOajfDURRHUg8mUygHA" target="_blank" rel="noopener">구글 지도</a>
+      </div>
+      <button class="pick">여기로 할래요</button>
+    </div>
+
+    <div class="rec" data-k="upper">
+      <div class="rtop"><b>어퍼앤언더</b><span class="badge">자리 넉넉</span></div>
+      <p class="why">3층에 테라스까지 있어서 자리가 넉넉해요.
+        시술받은 날 제일 싫은 게 좁은 자리에 끼어 앉는 건데, 여기는 그럴 일이 없어요.
+        디저트가 예쁘다는 후기가 많고, 구글 별점 <b>4.9</b>에 리뷰가 981개예요.
+        다만 금요일 오후엔 붐볐다는 후기가 있어서, 목요일 이른 오후로 가는 게 좋겠어요.</p>
+      <div class="meta">
+        📍 강남구 강남대로102길 28<br>
+        🕘 목요일 11:00~22:00<br>
+        ☎️ 02-557-6991 · ☕ 중간 가격대
+      </div>
+      <div class="lks">
+        <a href="https://map.naver.com/p/search/%EC%96%B4%ED%8D%BC%EC%95%A4%EC%96%B8%EB%8D%94%20%EA%B0%95%EB%82%A8%EB%8C%80%EB%A1%9C102%EA%B8%B8" target="_blank" rel="noopener">네이버 지도</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Upper%20and%20Under&query_place_id=ChIJxQ0WL-GjfDURTof1w6DMceg" target="_blank" rel="noopener">구글 지도</a>
+      </div>
+      <button class="pick">여기로 할래요</button>
+    </div>
+
+    <div class="rec" data-k="gabaedo">
+      <div class="rtop"><b>가배도 신논현</b><span class="badge">분위기</span></div>
+      <p class="why">한옥 창틀에 옛날 다방 느낌으로 꾸며놓은 곳이에요.
+        2·3층을 통째로 쓰는데 간판이 작아서 사람이 잘 안 몰린대요 —
+        "항상 조용하고 한산해서 좋다"는 후기가 여럿 있어요.
+        콘센트랑 와이파이도 있어서 상표권 하기에도 괜찮고요.</p>
+      <div class="meta">
+        📍 강남구 강남대로110길 13, 2층<br>
+        🕘 목요일 11:00~21:00<br>
+        ☎️ 02-554-4542 · ☕ 저렴한 편
+      </div>
+      <div class="lks">
+        <a href="https://map.naver.com/p/search/%EA%B0%80%EB%B0%B0%EB%8F%84%20%EC%8B%A0%EB%85%BC%ED%98%84" target="_blank" rel="noopener">네이버 지도</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Gabaedo%20Sinnonhyeon&query_place_id=ChIJnXCrQuKjfDUR88D2CVd19RY" target="_blank" rel="noopener">구글 지도</a>
+      </div>
+      <button class="pick">여기로 할래요</button>
+    </div>
+
+    <div class="done" id="cdone">☕ <b id="cname"></b>로 정하셨어요.
+      자리 여유 있는 시간대로 맞춰갈게요 🤍</div>
+  </div>
+
+  <div class="note">시술 병원 위치랑 끝나는 시간만 알려주시면
+    동선이랑 주차까지 제가 다시 정리해서 올려둘게요.
+    <b>공쥬님은 그날 아무 생각 안 하셔도 됩니다</b> 🤍</div>
+
+  <button class="share" id="sh">골라주신 거 믿음이한테 보내기 💌</button>
+
+  <a class="back" href="../">← 데이트 앨범으로 돌아가기</a>
+  <p class="foot">목요일엔 푹 쉬어요 우리 🤍</p>
+</div>
+
+<script>
+(function(){
+  var T=new Date(2026,9,1), n=new Date(); n.setHours(0,0,0,0);
+  var k=Math.round((T-n)/86400000);
+  document.getElementById('cd').textContent =
+    k>0 ? 'D-'+k : (k===0 ? '오늘이에요!' : '지났어요');
+
+  function bind(sel,key,doneId,nameId,label){
+    var recs=document.querySelectorAll(sel);
+    var done=document.getElementById(doneId), nm=document.getElementById(nameId);
+    function paint(k){
+      recs.forEach(function(r){
+        var on = r.getAttribute('data-k')===k;
+        r.classList.toggle('sel',on);
+        r.classList.toggle('dim', !!k && !on);
+        var b=r.querySelector('.pick');
+        if(b) b.textContent = on ? '✓ 이걸로 정했어요' : label;
+      });
+      if(k){
+        var t=document.querySelector(sel.split(' ')[0]+' .rec[data-k="'+k+'"] .rtop b');
+        if(t&&nm) nm.textContent=t.textContent;
+        if(done) done.classList.add('on');
+      } else if(done){ done.classList.remove('on'); }
+    }
+    var saved=null;
+    try{ saved=localStorage.getItem(key); }catch(e){}
+    if(saved) paint(saved);
+    recs.forEach(function(r){
+      var b=r.querySelector('.pick'); if(!b) return;
+      b.addEventListener('click',function(){
+        var k=r.getAttribute('data-k');
+        var cur=null; try{ cur=localStorage.getItem(key); }catch(e){}
+        var next = (cur===k) ? null : k;
+        try{ next ? localStorage.setItem(key,next) : localStorage.removeItem(key); }catch(e){}
+        paint(next);
+      });
+    });
+  }
+
+  bind('.c.eat .rec','eat-1001','edone','ename','여기로 할래요');
+  bind('.c.cafe .rec','cafe-1001','cdone','cname','여기로 할래요');
+
+  document.getElementById('sh').addEventListener('click',function(){
+    function g(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+    function nameOf(sel,k){
+      if(!k) return '아직 안 정함';
+      var e=document.querySelector(sel+' .rec[data-k="'+k+'"] .rtop b');
+      return e ? e.textContent : k;
+    }
+    var msg='🤍 10월 1일 목요일 — 공쥬님이 고른 것\n\n'
+      + '🍚 점심: '+nameOf('.c.eat',g('eat-1001'))+'\n'
+      + '☕ 카페: '+nameOf('.c.cafe',g('cafe-1001'))+'\n\n'
+      + '이걸로 준비해줘요 💌';
+    if(navigator.share){
+      navigator.share({text:msg}).catch(function(){});
+    } else if(navigator.clipboard){
+      navigator.clipboard.writeText(msg).then(function(){
+        alert('복사했어요! 카톡에 붙여넣기 해주세요 💌');
+      });
+    } else { prompt('아래 내용을 복사해서 보내주세요',msg); }
+  });
+})();
+</script>
+</body>
+</html>
