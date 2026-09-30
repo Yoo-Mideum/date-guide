@@ -89,6 +89,31 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:28px 0 8px;
 .sharemsg{font-size:12.5px;color:var(--muted);text-align:center;margin-top:8px}
 .foot{text-align:center;color:var(--muted);font-size:13.5px;
   font-family:"Gowun Dodum",sans-serif;padding-top:20px}
+.info{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  margin:8px 0 0;overflow:hidden}
+.info summary{cursor:pointer;list-style:none;padding:11px 14px;font-size:13.5px;
+  font-family:"Gowun Dodum",sans-serif;color:var(--org);font-weight:700;
+  display:flex;align-items:center;justify-content:space-between;gap:8px}
+.info summary::-webkit-details-marker{display:none}
+.info summary::after{content:"＋";font-size:15px;opacity:.6;flex:none}
+.info[open] summary::after{content:"－"}
+.info[open] summary{border-bottom:1px dashed var(--line)}
+.info .body{padding:12px 14px 14px;font-size:13px;line-height:1.75}
+.info .body dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:5px 12px}
+.info .body dt{color:var(--muted);white-space:nowrap;font-size:12.5px}
+.info .body dd{margin:0}
+.info .body p{margin:10px 0 0}
+.info .body ul{margin:8px 0 0;padding-left:18px}
+.info .body li{margin-bottom:4px}
+.info .tip{margin-top:11px;padding-top:9px;border-top:1px dashed var(--line);
+  font-size:12.5px;color:var(--muted)}
+.info .tip b{color:var(--ink)}
+.info .unk{color:#C0392B;font-weight:700}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .info .unk{color:#F08878}
+}
+.info .lk{display:inline-block;margin-top:9px;font-size:12px;text-decoration:none;
+  color:var(--org);border:1px solid var(--line);border-radius:999px;padding:4px 11px}
 :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 </style>
 </head>
@@ -119,6 +144,27 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:28px 0 8px;
       <h3>출발 🚗</h3>
       <div class="move">🛣️ 서울 → 판교 <b>약 30 km · 40~50분</b></div>
       <p class="sub">체크인이 15시인데 얼리 체크인을 요청해둘게요. 되면 더 빨리 들어갑니다.</p>
+
+      <details class="info">
+        <summary>🏨 호텔 기본 정보 보기</summary>
+        <div class="body">
+          <dl>
+            <dt>이름</dt><dd>더블트리 바이 힐튼 서울 판교</dd>
+            <dt>주소</dt><dd>경기 성남시 분당구 백현로 26</dd>
+            <dt>전화</dt><dd>031-678-5500</dd>
+            <dt>예약 메일</dt><dd>SELSE_RSVN@hilton.com</dd>
+            <dt>체크인</dt><dd><b>15:00</b></dd>
+            <dt>체크아웃</dt><dd><b>11:00</b></dd>
+            <dt>평점</dt><dd>구글 4.3 · 리뷰 658개</dd>
+          </dl>
+          <p><b>⚠️ 예약할 때 주의</b> — 바로 옆에 <b>레지던스 동</b>이 따로 있어요
+            (전화 031-678-5678). 이름이 거의 같아서 헷갈리기 쉬운데,
+            우리가 갈 곳은 <b>호텔 동</b>입니다.</p>
+          <div class="tip"><b>셔틀</b> — 판교역·정자역·수내역으로 무료 셔틀이 다닙니다.
+            우리는 차로 가니까 쓸 일은 없지만, 술 마시게 되면 참고하세요.</div>
+          <a class="lk" href="https://www.hilton.com/ko/hotels/selsedi-doubletree-seoul-pangyo/" target="_blank" rel="noopener">힐튼 공식 페이지 열기</a>
+        </div>
+      </details>
     </div>
 
     <div class="t">14:30</div>
@@ -135,6 +181,25 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:28px 0 8px;
       <p class="sub">실내 수영장이라 10월에도 문제없어요. 사우나까지 하고 나오면 나른해집니다.
         헬스장이랑 골프 연습장, 테니스 코트도 있어요.</p>
       <div class="chk">🩱 수영복 · 래시가드 · 수영모 챙기기</div>
+
+      <details class="info">
+        <summary>🏊 수영장 · 부대시설 자세히</summary>
+        <div class="body">
+          <p style="margin:0"><b>힐튼 공식 페이지에서 확인된 시설</b></p>
+          <ul>
+            <li><b>실내 수영장</b> — 실내라 10월 날씨와 무관</li>
+            <li><b>피트니스 센터</b></li>
+            <li><b>골프 연습장</b> (스크린골프 시설이 좋다는 후기 다수)</li>
+            <li><b>야외 테니스 코트</b></li>
+            <li>키즈 라운지 · 편의점(1층 CU) · 미용실 · 세탁실</li>
+          </ul>
+          <p><b>운영 시간은 <span class="unk">확인 필요</span></b>예요.
+            수영장·사우나 시간이 공식 페이지에 안 나와 있어서,
+            제가 예약할 때 전화로 같이 물어보겠습니다.</p>
+          <div class="tip"><b>물어볼 것</b> — 수영장 운영 시간 / 사우나 포함 여부 /
+            수영모 필수인지 / 대여 가능한지</div>
+        </div>
+      </details>
     </div>
 
     <div class="t">18:00</div>
@@ -143,7 +208,28 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:28px 0 8px;
       <p><b>해피아워 — 오늘의 하이라이트</b></p>
       <p class="sub">음료와 가벼운 안주가 나와요. 여기 라운지 평이 아주 좋습니다.
         드라이한 와인 있는지 물어보세요 🍷</p>
-      <div class="chk">⏱️ 보통 17:30~19:30 · 정확한 시간은 체크인 때 확인</div>
+      <div class="chk">⏱️ 정확한 시간은 체크인 때 확인</div>
+
+      <details class="info">
+        <summary>🥂 라운지, 뭐가 나오고 언제 여나</summary>
+        <div class="body">
+          <p style="margin:0"><b>이그제큐티브룸을 잡으면 라운지가 포함</b>돼요.
+            그래서 이 방으로 정한 거고요.</p>
+          <ul>
+            <li>음료와 가벼운 안주가 나옵니다</li>
+            <li>"다이아몬드 회원으로서 라운지의 음료와 스낵 구성을 정말 즐겼다"는 후기가 있어요</li>
+            <li>전반적으로 <b>콘래드 서울에 가까운 수준</b>이라는 평이 나옵니다</li>
+          </ul>
+          <p><b>운영 시간은 <span class="unk">확인 필요</span></b>입니다.
+            제가 이전에 "보통 17:30~19:30"이라고 적어뒀었는데,
+            <b>공식 확인된 게 아니라 지웠어요.</b>
+            트립어드바이저에 "해피아워가 너무 짧다"는 리뷰가 있어서
+            생각보다 시간이 빡빡할 수 있습니다.</p>
+          <div class="tip"><b>그래서</b> — 예약 전화할 때 라운지 시간을 꼭 확인하고,
+            <b>그 시간에 맞춰서 수영을 앞당길지 뒤로 미룰지</b> 정하겠습니다.
+            해피아워가 짧으면 그게 그날의 중심이 되니까요.</div>
+        </div>
+      </details>
     </div>
 
     <div class="t">20:00</div>
@@ -151,6 +237,33 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:28px 0 8px;
       <h3>저녁 🍽️</h3>
       <p class="sub">라운지에서 이미 배가 찼으면 가볍게. 호텔 안 레스토랑 데메테르가
         가격 합리적이고 맛있다는 평이에요. 방에서 시켜 먹어도 되고요.</p>
+
+      <details class="info">
+        <summary>🍽️ 데메테르(DEMETER) 자세히</summary>
+        <div class="body">
+          <dl>
+            <dt>위치</dt><dd>호텔 1층</dd>
+            <dt>전화</dt><dd>031-678-5599</dd>
+            <dt>수요일</dt><dd>조식 06:30~10:00<br>런치 11:30~14:30<br><b>디너 18:00~21:00</b></dd>
+            <dt>목요일</dt><dd><b>조식 06:30~10:00</b><br>런치 11:30~14:30<br>디너 18:00~21:00</dd>
+            <dt>평점</dt><dd>구글 3.8 · 리뷰 37개</dd>
+          </dl>
+          <p><b>⚠️ 디너가 21:00에 끝납니다.</b> 라운지에서 늦게까지 있다가
+            내려가면 못 먹을 수 있어요. 먹을 거면 <b>20:00 전에는 앉아야</b> 합니다.</p>
+          <ul>
+            <li>뷔페 형식이고 가격대는 높은 편이에요</li>
+            <li>후기에 <b>조식 뷔페가 1인 $38 정도</b>라는 언급이 있습니다
+              (환율 따라 5만원대 · 정확한 금액은 확인 필요)</li>
+            <li><b>힐튼 아너스 회원 10% · 다이아몬드 25% 할인</b>된다는 후기가 있어요</li>
+            <li>금요일은 크랩레그 나이트라 예약이 어렵다는데,
+              <b>우리는 수·목이라 해당 없습니다</b></li>
+          </ul>
+          <div class="tip"><b>솔직한 평</b> — 호텔 평점(4.3)에 비해
+            레스토랑 평점은 3.8로 낮은 편이에요. 서비스 불만 후기가 몇 개 있습니다.
+            라운지에서 충분히 드시고 <b>여기는 건너뛰는 것도 괜찮은 선택</b>이에요.</div>
+          <a class="lk" href="https://www.google.com/maps/search/?api=1&query=DEMETER%20Pangyo&query_place_id=ChIJ2fao9WpZezURRrIAOVMv_BY" target="_blank" rel="noopener">구글 지도에서 보기</a>
+        </div>
+      </details>
     </div>
 
     <div class="t">21:30</div>
@@ -158,6 +271,19 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:28px 0 8px;
       <h3>루프톱 바에서 한 잔 🌃</h3>
       <p class="sub">100일이니까 여기서 한 잔. 주변에 식당이 많지 않은 동네라
         오히려 밖에 안 나가고 호텔에서 다 해결하기 좋아요.</p>
+
+      <details class="info">
+        <summary>🌃 루프톱 바 'LUH Pangyo'</summary>
+        <div class="body">
+          <p style="margin:0">힐튼 공식 페이지에 <b>LUH Pangyo</b>라는 이름으로 올라와 있는
+            루프톱 바예요. 호텔 안에 카페도 따로 있고요.</p>
+          <p><b>운영 시간과 예약 필요 여부는 <span class="unk">확인 필요</span></b>입니다.
+            공식 페이지에 시간이 안 나와 있어요.</p>
+          <div class="tip"><b>물어볼 것</b> — 영업 시간 / 예약이 필요한지 /
+            10월 중순에 루프톱을 여는지 (야외라 날씨 타는 곳이면
+            그날 추우면 못 앉을 수 있어요)</div>
+        </div>
+      </details>
     </div>
   </div>
 
@@ -170,6 +296,25 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:28px 0 8px;
       <h3>라운지 조식 🍳</h3>
       <p class="sub">여기 조식이 진짜 유명해요. "라스베이거스 뷔페보다 낫다"는 후기까지 있습니다.
         오늘 많이 걸을 거니까 든든하게.</p>
+
+      <details class="info">
+        <summary>🍳 조식, 몇 시에 가는 게 좋을까</summary>
+        <div class="body">
+          <p style="margin:0"><b>데메테르 조식은 목요일 06:30~10:00</b>입니다.</p>
+          <p><b>⏰ 07:30에 잡은 이유</b> — 후기에 <b>"호텔이 꽉 차면 자리 기다리는 데
+            15~20분씩 걸리고, 8시 이후에 확실히 한산해진다"</b>는 말이 있어요.
+            우리는 평일이라 덜하겠지만, 일찍 가면 안전합니다.<br>
+            반대로 여유 있게 자고 싶으시면 <b>8시 이후</b>가 오히려 편할 수 있어요.</p>
+          <ul>
+            <li>메뉴는 매일 비슷하지만 종류가 아주 많다는 평</li>
+            <li>츄러스, 브레드푸딩, 도넛, 오믈렛, 팬케이크, 수프, 에스프레소 등</li>
+            <li><b>이그제큐티브룸이면 라운지 조식이 포함</b>일 가능성이 높은데,
+              레스토랑 조식과 별개인지는 <span class="unk">확인 필요</span></li>
+          </ul>
+          <div class="tip"><b>10:30 체크아웃 전에</b> 조식 → 수영 순서라
+            시간이 빡빡하지 않아요. 09:00 수영은 조식 끝나고 바로입니다.</div>
+        </div>
+      </details>
     </div>
 
     <div class="t">09:00</div>
@@ -273,6 +418,28 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:28px 0 8px;
     1층에 CU가 있어서 <b>밖에 안 나가고 1박 2일 다 놀 수 있다</b>는 후기가 많아요.
     조식 뷔페 평이 특히 좋습니다.<br>
     ☎ 031-678-5500 · 경기 성남시 분당구 백현로 26</div>
+
+  <details class="info" style="margin-top:10px">
+    <summary>📞 예약 전화할 때 물어볼 것 (한 번에 정리)</summary>
+    <div class="body">
+      <p style="margin:0">공식 페이지에 안 나와 있어서 <b>전화로만 알 수 있는 것들</b>이에요.
+        예약하면서 한 번에 다 물어보면 됩니다.</p>
+      <ul>
+        <li><b>이그제큐티브 라운지</b> — 운영 시간, 해피아워 시간,
+          이그제큐티브룸 2인 모두 이용 가능한지</li>
+        <li><b>조식</b> — 이그제큐티브룸에 포함인지, 라운지 조식과 레스토랑 조식이 별개인지</li>
+        <li><b>수영장·사우나</b> — 운영 시간, 수영모 필수 여부, 대여 가능한지</li>
+        <li><b>루프톱 바</b> — 10월 중순에 여는지, 예약이 필요한지</li>
+        <li><b>얼리 체크인</b> — 14:30쯤 가능한지</li>
+        <li><b>주차</b> — 투숙객 무료인지, 등록이 필요한지</li>
+      </ul>
+      <div class="tip"><b>작은 팁</b> — 후기에 <b>"얼음 가져다주는 데 5,000원을 청구했다"</b>는
+        불만이 있었어요. 방에 아이스버킷은 있지만 채워주는 건 유료일 수 있으니,
+        필요하면 1층 CU에서 사는 게 나을 수 있습니다.</div>
+      <a class="lk" href="https://www.hilton.com/ko/hotels/selsedi-doubletree-seoul-pangyo/" target="_blank" rel="noopener">힐튼 공식 페이지</a>
+      <a class="lk" href="https://www.google.com/maps/search/?api=1&query=DoubleTree%20by%20Hilton%20Seoul%20Pangyo&query_place_id=ChIJ53fg2B1ZezURls9v7RNaVtA" target="_blank" rel="noopener">구글 지도</a>
+    </div>
+  </details>
 
   <h2>🎒 챙길 것</h2>
   <div class="kit">
