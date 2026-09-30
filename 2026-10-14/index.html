@@ -114,6 +114,14 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:28px 0 8px;
 }
 .info .lk{display:inline-block;margin-top:9px;font-size:12px;text-decoration:none;
   color:var(--org);border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+.gal{display:grid;grid-template-columns:1fr;gap:11px;margin-top:8px}
+.gal figure{margin:0;background:var(--card);border:1px solid var(--line);
+  border-radius:16px;overflow:hidden}
+.gal img{display:block;width:100%;height:auto}
+.gal figcaption{padding:10px 13px 12px;font-size:12.5px;color:var(--muted);line-height:1.6}
+.gal figcaption b{color:var(--ink);font-family:"Gowun Dodum",sans-serif;font-size:14px}
+.gal .two{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.credit{font-size:11.5px;color:var(--muted);margin:10px 0 0;line-height:1.6;text-align:center}
 :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 </style>
 </head>
@@ -134,6 +142,40 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:28px 0 8px;
     목요일은 체크아웃하고 에버랜드에서 사파리와 할로윈까지.
     평일이라 라운지도 수영장도 에버랜드도 전부 한산합니다.
     할로윈 이벤트는 10월 31일까지라 이때가 한창일 때예요.</div>
+
+  <h2>📷 우리가 갈 곳, 미리 보기</h2>
+  <p class="hint">공쥬님 여기예요 · 사진만 봐도 기대되죠 🤍</p>
+
+  <div class="gal">
+    <figure>
+      <img src="./photos/02-pool.jpg" alt="더블트리 판교 실내 수영장" loading="lazy">
+      <figcaption><b>실내 수영장 🏊</b><br>
+        통유리에 대리석 기둥 · 선베드까지 · 실내라 10월에도 상관없어요.
+        <b>여기서 아침 수영 하고 나오는 게 이번 호캉스의 핵심</b>입니다.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="./photos/04-lounge.jpg" alt="더블트리 판교 이그제큐티브 라운지" loading="lazy">
+      <figcaption><b>이그제큐티브 라운지 🥂</b><br>
+        1층에 있고, 저녁엔 해피아워 칵테일이 나와요.
+        소파석이랑 테이블석이 나뉘어 있어서 편하게 앉을 수 있습니다.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="./photos/03-terrace.jpg" alt="더블트리 판교 야외 테라스 다이닝" loading="lazy">
+      <figcaption><b>야외 테라스 🌿</b><br>
+        파라솔 깔린 데크에서 식사할 수 있어요.
+        10월 중순이면 단풍 들 때라 딱 좋을 것 같은데, 그날 날씨만 받쳐주면요.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="./photos/01-exterior.jpg" alt="더블트리 바이 힐튼 서울 판교 외관" loading="lazy">
+      <figcaption><b>호텔 외관 🏨</b><br>
+        판교 백현로 · 뒤가 바로 산이라 "숲캉스"로 홍보하는 곳이에요.</figcaption>
+    </figure>
+  </div>
+
+  <p class="credit">사진은 힐튼 공식 페이지에서 가져왔어요 · 우리끼리 보려고 담아둔 것</p>
 
   <h2>💗 수요일 — 호캉스</h2>
   <p class="hint">더블트리 바이 힐튼 판교 · 이그제큐티브룸</p>
@@ -208,26 +250,31 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:28px 0 8px;
       <p><b>해피아워 — 오늘의 하이라이트</b></p>
       <p class="sub">음료와 가벼운 안주가 나와요. 여기 라운지 평이 아주 좋습니다.
         드라이한 와인 있는지 물어보세요 🍷</p>
-      <div class="chk">⏱️ 정확한 시간은 체크인 때 확인</div>
+      <div class="chk">⏱️ 라운지는 20:00에 닫아요 · 18시에 들어가면 2시간</div>
 
       <details class="info">
         <summary>🥂 라운지, 뭐가 나오고 언제 여나</summary>
         <div class="body">
-          <p style="margin:0"><b>이그제큐티브룸을 잡으면 라운지가 포함</b>돼요.
-            그래서 이 방으로 정한 거고요.</p>
+          <dl>
+            <dt>위치</dt><dd>호텔 <b>1층</b></dd>
+            <dt>운영</dt><dd><b>매일 오전 6:30 ~ 오후 8:00</b></dd>
+            <dt>포함</dt><dd>이그제큐티브룸 투숙객</dd>
+          </dl>
+          <p><b>힐튼 공식 안내에 나와 있는 것</b></p>
           <ul>
-            <li>음료와 가벼운 안주가 나옵니다</li>
-            <li>"다이아몬드 회원으로서 라운지의 음료와 스낵 구성을 정말 즐겼다"는 후기가 있어요</li>
-            <li>전반적으로 <b>콘래드 서울에 가까운 수준</b>이라는 평이 나옵니다</li>
+            <li><b>전용 체크인 서비스</b> — 프런트 줄 안 서고 라운지에서 바로 체크인</li>
+            <li><b>조식 제공</b> — 아침도 여기서 해결됩니다</li>
+            <li><b>올데이 메뉴</b> — 낮에도 가벼운 다과를 먹을 수 있어요</li>
+            <li><b>해피아워 이브닝 칵테일</b> — 저녁 시간대에 술이 나옵니다</li>
           </ul>
-          <p><b>운영 시간은 <span class="unk">확인 필요</span></b>입니다.
-            제가 이전에 "보통 17:30~19:30"이라고 적어뒀었는데,
-            <b>공식 확인된 게 아니라 지웠어요.</b>
-            트립어드바이저에 "해피아워가 너무 짧다"는 리뷰가 있어서
-            생각보다 시간이 빡빡할 수 있습니다.</p>
-          <div class="tip"><b>그래서</b> — 예약 전화할 때 라운지 시간을 꼭 확인하고,
-            <b>그 시간에 맞춰서 수영을 앞당길지 뒤로 미룰지</b> 정하겠습니다.
-            해피아워가 짧으면 그게 그날의 중심이 되니까요.</div>
+          <p><b>⏰ 20:00에 닫는 게 중요해요.</b>
+            18시에 들어가면 2시간이 있으니 넉넉하지만,
+            수영을 늦게까지 하면 라운지 시간이 깎입니다.
+            <b>수영은 17:30에는 나오는 걸로</b> 잡아두는 게 안전해요.</p>
+          <div class="tip"><b>아직 확인 못 한 것</b> —
+            해피아워(칵테일)가 몇 시부터인지는 안 나와 있어요.
+            라운지는 6:30부터 열지만 술은 저녁 시간대만 나올 테니,
+            <b>체크인할 때 "칵테일 몇 시부터예요" 한 번만 물어보면</b> 됩니다.</div>
         </div>
       </details>
     </div>
@@ -308,9 +355,14 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:28px 0 8px;
           <ul>
             <li>메뉴는 매일 비슷하지만 종류가 아주 많다는 평</li>
             <li>츄러스, 브레드푸딩, 도넛, 오믈렛, 팬케이크, 수프, 에스프레소 등</li>
-            <li><b>이그제큐티브룸이면 라운지 조식이 포함</b>일 가능성이 높은데,
-              레스토랑 조식과 별개인지는 <span class="unk">확인 필요</span></li>
+            <li><b>이그제큐티브 라운지에서도 조식이 나옵니다</b> —
+              공식 안내에 명시돼 있어요. 라운지는 <b>6:30부터</b> 열고요</li>
           </ul>
+          <p><b>그래서 선택지가 두 개예요</b><br>
+            ① <b>라운지 조식</b> — 조용하고 사람 적음. 1층이라 가깝고.<br>
+            ② <b>데메테르 뷔페</b> — 종류가 훨씬 많음. 대신 붐빌 수 있음.<br>
+            <b>둘 다 가볼 수도 있어요.</b> 라운지에서 커피 마시고
+            뷔페에서 제대로 먹는 식으로요.</p>
           <div class="tip"><b>10:30 체크아웃 전에</b> 조식 → 수영 순서라
             시간이 빡빡하지 않아요. 09:00 수영은 조식 끝나고 바로입니다.</div>
         </div>
@@ -425,9 +477,10 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:28px 0 8px;
       <p style="margin:0">공식 페이지에 안 나와 있어서 <b>전화로만 알 수 있는 것들</b>이에요.
         예약하면서 한 번에 다 물어보면 됩니다.</p>
       <ul>
-        <li><b>이그제큐티브 라운지</b> — 운영 시간, 해피아워 시간,
-          이그제큐티브룸 2인 모두 이용 가능한지</li>
-        <li><b>조식</b> — 이그제큐티브룸에 포함인지, 라운지 조식과 레스토랑 조식이 별개인지</li>
+        <li><b>라운지 해피아워</b> — 칵테일이 몇 시부터인지
+          (라운지 자체는 6:30~20:00으로 확인됨)</li>
+        <li><b>라운지 이용 인원</b> — 이그제큐티브룸 2인 모두 되는지</li>
+        <li><b>조식</b> — 데메테르 뷔페도 포함인지, 라운지 조식만인지</li>
         <li><b>수영장·사우나</b> — 운영 시간, 수영모 필수 여부, 대여 가능한지</li>
         <li><b>루프톱 바</b> — 10월 중순에 여는지, 예약이 필요한지</li>
         <li><b>얼리 체크인</b> — 14:30쯤 가능한지</li>
