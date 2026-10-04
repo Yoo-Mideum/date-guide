@@ -69,6 +69,8 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:21px;margin:28px 0 10px;
 .card.sketch .d{color:#8B6BB1} .card.sketch .tag{background:#8B6BB1} .card.sketch .go{color:#8B6BB1}
 .card.snow::before{background:#5B8DD6}
 .card.snow .d{color:#5B8DD6} .card.snow .tag{background:#5B8DD6}
+.card.wine::before{background:#8C3A4A}
+.card.wine .d{color:#8C3A4A} .card.wine .tag{background:#8C3A4A} .card.wine .go{color:#8C3A4A}
 .card.mem::before{background:#9C7BA8}
 .card.mem .d{color:#9C7BA8} .card.mem .tag{background:#9C7BA8} .card.mem .go{color:#9C7BA8}
 .archint{font-size:13px;color:var(--muted);margin:0 0 4px}
@@ -136,12 +138,12 @@ a.card:active{transform:scale(.99)}
   <h2>🗓️ 다가올 일정</h2>
   <p class="hint">눌러서 자세한 계획을 볼 수 있어요</p>
 
-  <a class="card rf" href="./2026-10-01/">
-    <div class="top"><span class="d">10월 1일 (목)</span><span class="tag" id="t0">D-</span></div>
-    <b>긴 하루, 같이 갑니다 🤍</b>
-    <span class="desc">샵 → 에스테틱·태닝 → 카페 작업 2시간 → 번동 장수마늘보쌈<br>
-      ⭐ 오늘 정할 것 — 할로윈 의상</span>
-    <span class="go">일정 보기 · 골라주세요 →</span>
+  <a class="card wine" href="./2026-10-08/">
+    <div class="top"><span class="d">10월 8일 (목)</span><span class="tag" id="t5">D-</span></div>
+    <b>비스트로 알베르 🍷</b>
+    <span class="desc">미아동 작은 와인바 · 구글 4.8<br>
+      🎃 이 날 할로윈 의상도 같이 정하기 (10/10 주문 마감)</span>
+    <span class="go">일정 보기 →</span>
   </a>
 
   <a class="card orange" href="./2026-10-14/">
@@ -308,6 +310,13 @@ a.card:active{transform:scale(.99)}
     <span class="go">앨범 열기 →</span>
   </a>
 
+  <a class="card mem" href="./2026-10-01/">
+    <div class="top"><span class="d">10월 1일 (목)</span><span class="tag">다녀옴</span></div>
+    <b>긴 하루, 같이 갑니다 🤍</b>
+    <span class="desc">샵 → 에스테틱·태닝 → 카페 작업 → 번동 장수마늘보쌈</span>
+    <span class="go">다시 보기 →</span>
+  </a>
+
   <a class="card mem" href="./2026-09-26/">
     <div class="top"><span class="d">9월 26일 (토)</span><span class="tag">📷 사진 있음</span></div>
     <b>훠궈 · 미술관 · 해산물</b>
@@ -382,8 +391,8 @@ a.card:active{transform:scale(.99)}
     var k=Math.round((t-n)/86400000);
     el.textContent = k>0 ? 'D-'+k : (k===0 ? 'D-DAY' : '지남');
   }
-  dd('t0',2026,9,1);
   dd('t2',2026,9,14);
+  dd('t5',2026,9,8);
   dd('t4',2026,9,24);
 })();
 </script>
