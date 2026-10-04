@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>할로윈 커플 의상 — 골라주세요</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F3F8; --ink:#2A1F30; --muted:#7D6B88; --line:#E3D6EA; --card:#FFFFFF;
+  --pur:#6B3FA0; --org:#E07A28; --mint:#4E9E92; --warn:#C0392B;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#17111C; --ink:#F0E7F5; --muted:#B4A0C0; --line:#342A3C; --card:#221A29;
+    --pur:#A77ED8; --org:#F09A4E; --mint:#6FBFB2; --warn:#E8705F;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#17111C; --ink:#F0E7F5; --muted:#B4A0C0; --line:#342A3C; --card:#221A29;
+  --pur:#A77ED8; --org:#F09A4E; --mint:#6FBFB2; --warn:#E8705F;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans KR","Apple SD Gothic Neo",sans-serif;font-size:16px;line-height:1.7}
+.wrap{max-width:600px;margin:0 auto;padding:0 18px 48px}
+
+.hero{background:linear-gradient(160deg,#2A1230,var(--pur) 55%,var(--org));
+  color:#fff;padding:36px 20px 28px;text-align:center}
+.hero .kick{font-size:11px;letter-spacing:5px;opacity:.85}
+.hero h1{font-family:"Gowun Dodum",sans-serif;font-size:32px;margin:10px 0 4px;line-height:1.25}
+.hero .date{font-size:14px;opacity:.95}
+.cd{margin-top:14px;background:rgba(255,255,255,.2);border-radius:16px;padding:10px 18px;display:inline-block}
+.cd span{display:block;font-family:"Gowun Dodum",sans-serif;font-size:26px;font-weight:700;line-height:1.1}
+.cd small{display:block;font-size:11px;opacity:.9;margin-top:2px}
+.deco{font-size:20px;letter-spacing:7px;margin-top:12px;opacity:.75}
+
+.note{background:var(--card);border:2px dashed var(--line);border-radius:14px;
+  padding:13px 15px;font-size:14px;margin:18px 0;line-height:1.75}
+.note b{color:var(--pur)}
+.warn{background:rgba(192,57,43,.09);border:1px solid rgba(192,57,43,.3);
+  border-radius:14px;padding:12px 14px;font-size:13.5px;margin:14px 0;line-height:1.7}
+.warn b{color:var(--warn)}
+
+.rec{background:var(--card);border:1px solid var(--line);border-radius:18px;
+  padding:15px 16px;margin:14px 0;transition:opacity .25s ease,border-color .25s ease}
+.rec.sel{border-color:var(--mint);border-width:2px;
+  box-shadow:0 2px 16px rgba(78,158,146,.18)}
+.rec.dim{opacity:.42}
+.rtop{display:flex;align-items:baseline;gap:9px}
+.rtop b{font-family:"Gowun Dodum",sans-serif;font-size:20px}
+.rtop .n{font-size:11px;background:var(--pur);color:#fff;padding:3px 9px;border-radius:999px;flex:none}
+.pair{font-size:13px;color:var(--muted);margin:3px 0 9px}
+.pair em{font-style:normal;color:var(--ink);font-weight:700}
+
+.kv{display:grid;grid-template-columns:62px 1fr;gap:4px 10px;font-size:13.5px;margin:9px 0}
+.kv .k{color:var(--muted);font-size:12.5px;padding-top:2px}
+.kv .v{line-height:1.6}
+
+.score{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 2px}
+.sc{font-size:11.5px;padding:4px 10px;border-radius:999px;border:1px solid var(--line)}
+.sc.g{background:rgba(78,158,146,.14);border-color:rgba(78,158,146,.4);color:var(--mint)}
+.sc.b{background:rgba(192,57,43,.1);border-color:rgba(192,57,43,.32);color:var(--warn)}
+
+.pick{display:block;width:100%;margin-top:11px;padding:11px;border:0;border-radius:12px;
+  background:var(--pur);color:#fff;font-size:14.5px;font-weight:700;cursor:pointer;
+  font-family:"Gowun Dodum",sans-serif}
+.rec.sel .pick{background:var(--mint)}
+
+.done{display:none;background:rgba(78,158,146,.12);border:1px solid var(--mint);
+  border-radius:14px;padding:13px 15px;margin:16px 0;font-size:14px;line-height:1.7}
+.done.on{display:block}
+.done b{color:var(--mint)}
+.share{display:block;width:100%;margin-top:10px;padding:10px;border:1px dashed var(--mint);
+  border-radius:999px;background:none;color:var(--mint);font-size:13.5px;cursor:pointer;
+  font-family:"Gowun Dodum",sans-serif}
+
+.foot{text-align:center;color:var(--muted);font-size:13.5px;
+  font-family:"Gowun Dodum",sans-serif;padding-top:24px;line-height:1.9}
+.foot a{color:var(--pur);text-decoration:none}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kick">HALLOWEEN 2026</div>
+  <h1>커플 의상<br>골라주세요 🎃</h1>
+  <div class="date">10월 15일 (목) · 에버랜드 블러드시티</div>
+  <div class="cd"><span id="cd">—</span><small>주문 마감까지</small></div>
+  <div class="deco">🎃 ✦ 🦇 ✦ 🕸️</div>
+</header>
+
+<div class="wrap">
+
+  <div class="note">
+    <b>세 가지 중에 하나만 골라주시면 돼요.</b><br>
+    고르면 저장되고, 아래 버튼으로 저한테 바로 보낼 수 있어요.
+    그러면 제가 제품이랑 가격 찾아서 주문할게요 💜
+  </div>
+
+  <div class="warn">
+    <b>⏰ 10월 10일까지는 주문해야 해요</b> — 배송이 걸리니까요.
+    그 전에만 정해주시면 됩니다.
+  </div>
+
+  <!-- ① -->
+  <div class="rec" data-k="harley">
+    <div class="rtop"><span class="n">①</span><b>할리퀸 × 조커</b></div>
+    <div class="pair">지영이 <em>할리퀸</em> · 루크 <em>조커</em></div>
+
+    <div class="kv">
+      <div class="k">분장</div>
+      <div class="v">아이 메이크업 + 투톤 헤어. <b>얼굴만</b> 하면 끝</div>
+      <div class="k">옷</div>
+      <div class="v">반바지·바지라 움직이기 제일 편해요<br>
+        재킷을 겹쳐 입을 수 있어서 밤에 추워도 괜찮고</div>
+      <div class="k">루크</div>
+      <div class="v">보라 재킷에 초록 헤어 정도만 해도 바로 조커</div>
+    </div>
+
+    <div class="score">
+      <span class="sc g">놀이기구 ◎</span>
+      <span class="sc g">사파리 ◎</span>
+      <span class="sc g">보온 ◎</span>
+      <span class="sc g">사진 ○</span>
+      <span class="sc b">좀 흔해요</span>
+    </div>
+
+    <p style="font-size:13px;color:var(--muted);margin:8px 0 0">
+      ⚠️ 야구방망이는 빼요. 놀이공원에 모형 무기 반입 제한이 있을 수 있어요.</p>
+
+    <button class="pick" type="button">이걸로 할래요</button>
+  </div>
+
+  <!-- ② -->
+  <div class="rec" data-k="bride">
+    <div class="rtop"><span class="n">②</span><b>유령신부 × 빅터</b></div>
+    <div class="pair">지영이 <em>에밀리</em> · 루크 <em>빅터 반 도트</em></div>
+
+    <div class="kv">
+      <div class="k">분장</div>
+      <div class="v"><b>파란 피부 + 크랙 메이크업</b>.
+        지영이가 제일 잘하는 거라 완성도가 확 달라져요</div>
+      <div class="k">옷</div>
+      <div class="v">낡은 웨딩드레스 + 베일 + 부케</div>
+      <div class="k">루크</div>
+      <div class="v">검은 수트에 창백한 얼굴. 빅터는 옷이 단순해서 쉬워요</div>
+    </div>
+
+    <div class="score">
+      <span class="sc g">사진 ◎◎</span>
+      <span class="sc b">놀이기구 △</span>
+      <span class="sc b">밤에 추움</span>
+      <span class="sc b">분장 묻어남</span>
+    </div>
+
+    <p style="font-size:13px;color:var(--muted);margin:8px 0 0">
+      사진은 셋 중 제일 멋있어요. 대신 드레스가 길어서 놀이기구가 불편하고,
+      파란 분장이 하루 종일 버티기 어려워요.</p>
+
+    <button class="pick" type="button">이걸로 할래요</button>
+  </div>
+
+  <!-- ③ -->
+  <div class="rec" data-k="school">
+    <div class="rtop"><span class="n">③</span><b>효산고 좀비</b></div>
+    <div class="pair">둘 다 <em>교복 + 좀비 분장</em></div>
+
+    <div class="kv">
+      <div class="k">분장</div>
+      <div class="v">좀비 메이크업. 현장 <b>마담좀비 분장살롱</b>에서 전문가가 해줘요</div>
+      <div class="k">옷</div>
+      <div class="v"><b>에버랜드에서 교복을 대여</b>해줘요 —
+        '지금 우리 학교는' 효산고 교복</div>
+      <div class="k">특징</div>
+      <div class="v">올해 블러드시티 공식 컨셉이라 현장이랑 제일 잘 어울려요</div>
+    </div>
+
+    <div class="score">
+      <span class="sc g">놀이기구 ◎</span>
+      <span class="sc g">안 사도 됨</span>
+      <span class="sc g">현장 분위기 ◎</span>
+      <span class="sc b">같은 옷 많음</span>
+    </div>
+
+    <p style="font-size:13px;color:var(--muted);margin:8px 0 0">
+      <b>미리 살 게 없어요.</b> 당일에 현장에서 빌려 입고 분장받으면 끝.
+      대신 대여·분장이 유료인지, 예약이 필요한지는 제가 확인할게요.</p>
+
+    <button class="pick" type="button">이걸로 할래요</button>
+  </div>
+
+  <div class="done" id="done">
+    <b>✓ <span id="name">—</span> 로 정했어요!</b><br>
+    아래 버튼 눌러서 저한테 보내주시면, 제품이랑 가격 찾아서 주문할게요 💜
+    <button class="share" type="button" id="share">루크한테 보내기 📨</button>
+  </div>
+
+  <div class="note" style="margin-top:22px">
+    <b>셋 다 고민되면 이렇게 해도 돼요</b><br>
+    <b>에버랜드는 ① 할리퀸</b>으로 가고,
+    <b>유령신부는 따로 날 잡아서 샵에서</b> 제대로 찍는 거예요.
+    파란 분장에 크랙 메이크업까지 한 사진은 샵 할로윈 콘텐츠로도 쓸 수 있잖아요.
+    조명도 거울도 다 있고, 지우기도 편하고요. 둘 다 살리는 방법입니다.
+  </div>
+
+  <div class="foot">
+    🎃<br>
+    <a href="../2026-10-14/">100일 일정 보기 →</a><br>
+    <a href="../">처음으로</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  var KEY='costume2026';
+  var recs=[].slice.call(document.querySelectorAll('.rec'));
+  var done=document.getElementById('done'), nm=document.getElementById('name');
+
+  function paint(k){
+    recs.forEach(function(r){
+      var on = r.getAttribute('data-k')===k;
+      r.classList.toggle('sel',on);
+      r.classList.toggle('dim', !!k && !on);
+      var b=r.querySelector('.pick');
+      if(b) b.textContent = on ? '✓ 이걸로 정했어요' : '이걸로 할래요';
+      if(on && nm) nm.textContent = r.querySelector('.rtop b').textContent;
+    });
+    if(k && done) done.classList.add('on');
+    else if(done) done.classList.remove('on');
+  }
+
+  var saved=null;
+  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  if(saved) paint(saved);
+
+  recs.forEach(function(r){
+    var b=r.querySelector('.pick'); if(!b) return;
+    b.addEventListener('click',function(){
+      var kk=r.getAttribute('data-k');
+      var cur=null; try{ cur=localStorage.getItem(KEY); }catch(e){}
+      var next=(cur===kk)?null:kk;
+      try{ next ? localStorage.setItem(KEY,next) : localStorage.removeItem(KEY); }catch(e){}
+      paint(next);
+    });
+  });
+
+  document.getElementById('share').addEventListener('click',function(){
+    var msg='할로윈 의상 정했어요 🎃 → '+(nm.textContent||'');
+    if(navigator.share){ navigator.share({text:msg}).catch(function(){}); return; }
+    if(navigator.clipboard){
+      navigator.clipboard.writeText(msg).then(function(){
+        alert('복사했어요! 루크한테 붙여넣기 해주세요 💜');
+      }).catch(function(){ alert(msg); });
+    } else { alert(msg); }
+  });
+
+  var t=new Date(2026,9,10), n=new Date(); n.setHours(0,0,0,0);
+  var d=Math.round((t-n)/86400000);
+  document.getElementById('cd').textContent = d>0 ? 'D-'+d : (d===0 ? '오늘까지!' : '지남');
+})();
+</script>
+</body>
+</html>
