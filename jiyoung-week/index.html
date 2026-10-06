@@ -12,21 +12,21 @@
 :root{
   --paper:#FBF6FA; --ink:#3B2B38; --muted:#8B7788; --line:#EEDFE9; --card:#FFFFFF;
   --pink:#F06292; --lav:#B98FD6; --gold:#E8B84B;
-  --sch:#E25A44; --care:#5A6B7C; --task:#D99B22; --deal:#2FA36B; --us:#F06292; --ex:#8B6BB1;
+  --sch:#E25A44; --care:#5A6B7C; --task:#D99B22; --deal:#2FA36B; --us:#F06292; --ex:#8B6BB1; --car:#3C7A9E;
   --gap:#B9A9C4;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --paper:#241A22; --ink:#F5E7F0; --muted:#C2A8B8; --line:#412F3C; --card:#312330;
     --pink:#F48FB1; --lav:#A67CC6;
-    --sch:#F07A62; --care:#8DA2B5; --task:#E8B84B; --deal:#4FC08D; --us:#F48FB1; --ex:#A98FD0;
+    --sch:#F07A62; --care:#8DA2B5; --task:#E8B84B; --deal:#4FC08D; --us:#F48FB1; --ex:#A98FD0; --car:#6FB0CE;
     --gap:#6C5C78;
   }
 }
 :root[data-theme="dark"]{
   --paper:#241A22; --ink:#F5E7F0; --muted:#C2A8B8; --line:#412F3C; --card:#312330;
   --pink:#F48FB1; --lav:#A67CC6;
-  --sch:#F07A62; --care:#8DA2B5; --task:#E8B84B; --deal:#4FC08D; --us:#F48FB1; --ex:#A98FD0;
+  --sch:#F07A62; --care:#8DA2B5; --task:#E8B84B; --deal:#4FC08D; --us:#F48FB1; --ex:#A98FD0; --car:#6FB0CE;
   --gap:#6C5C78;
 }
 *{box-sizing:border-box}
@@ -88,6 +88,10 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:20px;margin:30px 0 8px;
 .k-deal::before{background:var(--deal)} .k-deal .kind{background:var(--deal)}
 .k-us::before{background:var(--us)} .k-us .kind{background:var(--us)}
 .k-ex::before{background:var(--ex)} .k-ex .kind{background:var(--ex)}
+.k-car::before{background:var(--car)} .k-car .kind{background:var(--car)}
+.row.tent .bd{border-left-style:dashed}
+.row.tent .kind{background:transparent;color:var(--car);border:1px dashed var(--car)}
+.row.tent .bd::before{background:var(--card);border:2px dashed var(--car)}
 
 /* 비는 시간 */
 .row.free .bd{border-left-style:dashed;border-left-color:var(--gap)}
@@ -111,6 +115,7 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:20px;margin:30px 0 8px;
 .lg .s{background:var(--sch)} .lg .c{background:var(--care)}
 .lg .t{background:var(--task);color:#4A3608} .lg .d{background:var(--deal)}
 .lg .u{background:var(--us)} .lg .e{background:var(--ex)}
+.lg .r{background:transparent;color:var(--car);border:1px dashed var(--car)}
 
 .back{display:inline-block;margin-top:24px;font-size:13.5px;color:var(--pink);
   text-decoration:none;font-family:"Gowun Dodum",sans-serif}
@@ -146,7 +151,7 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:20px;margin:30px 0 8px;
   <div class="lg">
     <span class="s">수업·실습</span><span class="c">관리·병원</span>
     <span class="t">과제</span><span class="d">계약</span>
-    <span class="e">운동</span><span class="u">우리</span>
+    <span class="e">운동</span><span class="u">우리</span><span class="r">미정</span>
   </div>
 
   <div id="days"></div>
@@ -186,6 +191,7 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:20px;margin:30px 0 8px;
       ['09:30','11:00','연주 여1','sch','수업'],
       ['14:00','15:00','권리계약서','deal','계약'],
       ['15:00','16:00','임대차계약서','deal','계약'],
+      ['16:00','18:00','차량 판매 양도 🚗','car','미정',1],
       ['18:00','20:00','오빠랑 저녁 🤍','us','우리']
     ]},
     {d:9, w:'금', items:[
@@ -220,10 +226,10 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:20px;margin:30px 0 8px;
         out += '<div class="row free"><div class="tm">'+hm(prevEnd)+'<b>&nbsp;</b></div>'
              + '<div class="bd"><div class="ttl">비는 시간 · <b>'+span(prevEnd,s)+'</b></div></div></div>';
       }
-      out += '<div class="row k-'+it[3]+'" data-s="'+s+'" data-e="'+e+'" data-d="'+day.d+'">'
+      out += '<div class="row k-'+it[3]+(it[5]?' tent':'')+'" data-s="'+s+'" data-e="'+e+'" data-d="'+day.d+'">'
            + '<div class="tm"><b>'+it[0]+'</b>'+it[1]+'</div>'
            + '<div class="bd"><div class="ttl">'+it[2]+'<span class="kind">'+it[4]+'</span></div>'
-           + '<div class="dur">'+span(s,e)+'</div></div></div>';
+           + '<div class="dur">'+span(s,e)+(it[5]?' · 아직 확정 아님':'')+'</div></div></div>';
       prevEnd=e;
     });
     out += '<div class="endrow">'+hm(prevEnd)+' 이후는 비어 있어요</div>';
