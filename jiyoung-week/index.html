@@ -107,6 +107,21 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:20px;margin:30px 0 8px;
 
 .endrow{font-size:12.5px;color:var(--muted);padding:2px 0 4px 73px}
 
+/* 종일 일정 */
+.aday{display:inline-block;font-size:12px;color:var(--task);
+  border:1px dashed var(--task);border-radius:999px;padding:3px 11px;margin:0 0 12px}
+
+/* 지난 일정 */
+.day.past{opacity:.5}
+.dhead .bdg.done{background:var(--muted)}
+.arc{margin-top:8px}
+.arc summary{cursor:pointer;list-style:none;color:var(--muted);font-size:13.5px;
+  font-family:"Gowun Dodum",sans-serif;padding:12px 0;text-align:center;
+  border-top:1px solid var(--line)}
+.arc summary::-webkit-details-marker{display:none}
+.arc summary::after{content:" ▾"} .arc[open] summary::after{content:" ▴"}
+.arcbody{padding-top:4px}
+
 .note{background:var(--card);border:2px dashed var(--line);border-radius:16px;
   padding:13px 15px;font-size:13.5px;margin:22px 0 0;line-height:1.7}
 .note b{color:var(--pink)}
@@ -179,13 +194,14 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:20px;margin:30px 0 8px;
       ['17:00','18:00','병원','care','관리'],
       ['20:00','21:10','발레','ex','운동']
     ]},
-    {d:7, w:'수', items:[
+    {d:7, w:'수', allday:['클라우드 업로드 ⏰'], items:[
       ['08:15','09:00','헤어만+피부만3','sch','수업'],
+      ['09:00','09:30','북부공소청 / 은행 전화','task','연락'],
       ['09:30','11:00','촬영 여1','sch','수업'],
-      ['13:30','14:00','화이트태닝','care','관리'],
-      ['14:30','15:30','피부과','care','관리'],
-      ['19:30','20:20','스텝박스','ex','운동'],
-      ['20:30','21:20','바레','ex','운동']
+      ['11:00','12:30','촬영 여1','sch','수업'],
+      ['13:00','13:30','주민센터 — 차량매도용 본인서명사실확인서','car','서류'],
+      ['14:00','14:30','화이트태닝','care','관리'],
+      ['14:30','15:30','재이언니 / 피부과','care','관리']
     ]},
     {d:8, w:'목', items:[
       ['09:30','11:00','연주 여1','sch','수업'],
@@ -209,15 +225,21 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:20px;margin:30px 0 8px;
   var today=new Date();
   var isThisMonth = (today.getFullYear()===YEAR && today.getMonth()+1===MON);
   var td = isThisMonth ? today.getDate() : -1;
-  var out='';
-
-  DAYS.forEach(function(day){
-    var on = (day.d===td);
-    out += '<div class="day'+(on?' istoday':'')+'" id="d'+day.d+'">';
+  function card(day){
+    var on = (day.d===td), past = (td>0 && day.d<td);
+    var out='';
+    out += '<div class="day'+(on?' istoday':'')+(past?' past':'')+'" id="d'+day.d+'">';
     out += '<div class="dhead"><span class="dt">10월 '+day.d+'일</span>'
          + '<span class="wk">('+day.w+'요일)</span>'
          + (on?'<span class="bdg">오늘</span>':'')
+         + (past?'<span class="bdg done">지남</span>':'')
          + '<span class="cnt">일정 '+day.items.length+'개</span></div>';
+
+    if(day.allday && day.allday.length){
+      day.allday.forEach(function(a){
+        out += '<div class="aday">종일 · '+a+'</div>';
+      });
+    }
 
     var prevEnd=null;
     day.items.forEach(function(it){
@@ -234,8 +256,18 @@ h2{font-family:"Gowun Dodum",sans-serif;font-size:20px;margin:30px 0 8px;
     });
     out += '<div class="endrow">'+hm(prevEnd)+' 이후는 비어 있어요</div>';
     out += '</div>';
+    return out;
+  }
+
+  var ahead='', gone='';
+  DAYS.forEach(function(day){
+    if(td>0 && day.d<td){ gone += card(day); } else { ahead += card(day); }
   });
-  document.getElementById('days').innerHTML=out;
+  if(gone){
+    ahead += '<details class="arc"><summary>지난 일정 보기</summary>'
+           + '<div class="arcbody">'+gone+'</div></details>';
+  }
+  document.getElementById('days').innerHTML=ahead;
 
   /* ---------- 지금 배너 ---------- */
   function paint(){
