@@ -140,6 +140,14 @@ a.card:active{transform:scale(.99)}
   <h2>🗓️ 다가올 일정</h2>
   <p class="hint">눌러서 자세한 계획을 볼 수 있어요</p>
 
+  <div class="card ddp">
+    <div class="top"><span class="d" id="t9">D-</span><span class="tag">10월 22일 (목)</span></div>
+    <b>힐튼 설명회 🏨</b>
+    <span class="desc">공쥬님이 목요일로 예약해둔 그 일정<br>
+      <b>시간이랑 장소는 아직 안 적어뒀어요</b> — 알려주시면 채울게요<br>
+      다음 날 23일(금)이 바쁘니 이 날 일찍 마치면 좋겠습니다</span>
+  </div>
+
   <a class="card sea" href="./bukseoul/">
     <div class="top"><span class="d" id="t8">D-</span><span class="tag">10/25 종료</span></div>
     <b>그 전시, 다시 보러 가기 🎨</b>
@@ -149,14 +157,6 @@ a.card:active{transform:scale(.99)}
     <span class="go">갈 수 있는 날 보기 →</span>
   </a>
 
-  <a class="card orange" href="./2026-10-14/">
-    <div class="top"><span class="d">10월 14일 (수) ~ 15일 (목)</span><span class="tag" id="t2">D-</span></div>
-    <b>100일 · 호캉스 &amp; 할로윈 🎃</b>
-    <span class="desc">✅ 숙소 예약 완료 — 더블트리 판교 킹 주니어 스위트<br>
-      호캉스 → 사파리 → 블러드시티<br>
-      <b>이번 주예요.</b> 짐이랑 의상만 맞추면 됩니다</span>
-    <span class="go">준비 계획 보기 →</span>
-  </a>
 
   <a class="card sketch" href="./ideas/">
     <div class="top"><span class="d">12월 24일 (목)</span><span class="tag">아이디어 3개</span></div>
@@ -243,17 +243,6 @@ a.card:active{transform:scale(.99)}
       출원부터 등록까지 보통 1년 이상 · 2월 오픈 생각하면 지금이 마지노선</span>
   </div>
 
-  <a class="card today" href="./costume/">
-    <div class="top"><span class="d" id="t6">D-</span><span class="tag">제일 급함</span></div>
-    <b>할로윈 커플 의상 🎃</b>
-    <span class="desc">① 유령신부 × 빅터 &nbsp; ② 할리퀸 × 조커 &nbsp; ③ 효산고 좀비<br>
-      ⚠️ <b>10/10 주문 마감일이 지났어요.</b> 일반 배송으로는 15일에 못 맞춥니다<br>
-      남은 방법은 둘 중 하나 —
-      <b>내일(월) 당일·익일배송 상품으로 주문</b>하거나,
-      <b>에버랜드 현장에서 해결</b>(효산고 교복 대여 · 마담좀비 분장살롱)<br>
-      어느 쪽으로 갈지만 정해주시면 바로 알아볼게요</span>
-    <span class="go">세 가지 비교하고 고르기 →</span>
-  </a>
 
   <div class="card todo" hidden>
     <div class="top"><span class="d">D-13 · 급함</span><span class="tag">100일</span></div>
@@ -323,7 +312,15 @@ a.card:active{transform:scale(.99)}
   <h2>📷 추억 저장소</h2>
   <p class="archint">다녀온 날들은 여기 쌓입니다. 눌러서 그날로 돌아가요.</p>
 
-  <a class="card wine" href="./2026-10-08/" style="margin-top:12px">
+  <a class="card orange" href="./2026-10-14/" style="margin-top:12px">
+    <div class="top"><span class="d">10월 14일 (수) ~ 15일 (목)</span><span class="tag">100일 💗</span></div>
+    <b>100일 · 호캉스 &amp; 할로윈 🎃</b>
+    <span class="desc">더블트리 판교 → 에버랜드 사파리 → 블러드시티<br>
+      사진이랑 그날 얘기 들려주시면 앨범으로 채워둘게요</span>
+    <span class="go">그날 보기 →</span>
+  </a>
+
+  <a class="card wine" href="./2026-10-08/">
     <div class="top"><span class="d">10월 8일 (목)</span><span class="tag">다녀옴</span></div>
     <b>계약, 그리고 와인 ✍️🍷</b>
     <span class="desc">✅ 권리계약서 · 임대차계약서 · 차량 양도까지 다 끝내고 알베르에서 저녁<br>
@@ -427,10 +424,9 @@ a.card:active{transform:scale(.99)}
     var k=Math.round((t-n)/86400000);
     el.textContent = k>0 ? 'D-'+k : (k===0 ? 'D-DAY' : '지남');
   }
-  dd('t2',2026,9,14);
-  dd('t6',2026,9,15);
   dd('t7',2026,9,23);
   dd('t8',2026,9,25);
+  dd('t9',2026,9,22);
   dd('t4',2026,9,24);
 })();
 </script>
