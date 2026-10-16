@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cache-control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>11월까지의 계획 🍂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF6F2; --ink:#39302C; --muted:#89756B; --line:#EBDFD6; --card:#FFFFFF;
+  --thu:#B5542F; --sat:#6B5B95; --sun:#2E7C8C; --free:#A99287;
+  --pink:#E0618C; --gold:#D9A441; --warn:#C2503C;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#201A17; --ink:#F2E8E2; --muted:#BCA698; --line:#3A302A; --card:#2C2420;
+    --thu:#E58A5F; --sat:#A392CC; --sun:#5CA8BA; --free:#8E7A6E;
+    --pink:#F08CAD; --gold:#E3BC60; --warn:#E07A62;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans KR","Apple SD Gothic Neo",sans-serif;font-size:16px;line-height:1.7}
+.wrap{max-width:600px;margin:0 auto;padding:0 18px 54px}
+
+.hero{background:linear-gradient(160deg,#7A3F2E,#B5542F 55%,#D99A6C);color:#fff;
+  padding:38px 20px 30px;text-align:center}
+.hero .kicker{font-size:11px;letter-spacing:5px;opacity:.85}
+.hero h1{font-family:"Gowun Dodum",sans-serif;font-size:31px;margin:9px 0 5px;line-height:1.3}
+.hero .sub{font-size:13.5px;opacity:.95}
+
+.rhythm{background:var(--card);border:2px dashed var(--line);border-radius:16px;
+  padding:16px 18px;margin:26px 0 0}
+.rhythm h3{font-family:"Gowun Dodum",sans-serif;font-size:17px;margin:0 0 11px}
+.rhythm dl{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;margin:0;font-size:13.5px}
+.rhythm dt{font-family:"Gowun Dodum",sans-serif;white-space:nowrap}
+.rhythm dd{margin:0;color:var(--muted);min-width:0}
+.rhythm .t1{color:var(--thu)} .rhythm .t2{color:var(--sat)} .rhythm .t3{color:var(--sun)}
+
+h2{font-family:"Gowun Dodum",sans-serif;font-size:22px;margin:36px 0 4px}
+.hint{font-size:12.5px;color:var(--muted);margin:0 0 14px}
+
+.d{background:var(--card);border:1px solid var(--line);border-radius:15px;
+  padding:14px 16px;margin-bottom:10px;position:relative;overflow:hidden}
+.d::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--free)}
+.d.thu::before{background:var(--thu)} .d.sat::before{background:var(--sat)}
+.d.sun::before{background:var(--sun)}
+.d.hi{border-color:var(--pink);box-shadow:0 0 0 2px rgba(224,97,140,.13)}
+.d.hi::before{background:var(--pink)}
+.dh{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:4px}
+.dh .date{font-family:"Gowun Dodum",sans-serif;font-size:15px;color:var(--muted)}
+.d.thu .date{color:var(--thu)} .d.sat .date{color:var(--sat)} .d.sun .date{color:var(--sun)}
+.d.hi .date{color:var(--pink)}
+.dh b{font-family:"Gowun Dodum",sans-serif;font-size:17px;width:100%}
+.d p{font-size:13.5px;color:var(--muted);margin:0;line-height:1.7}
+.d p b{color:var(--ink)}
+.d .len{font-size:10.5px;padding:2px 9px;border-radius:999px;background:var(--muted);
+  color:#fff;margin-left:auto;white-space:nowrap}
+.d.thu .len{background:var(--thu)} .d.sat .len{background:var(--sat)}
+.d.sun .len{background:var(--sun)} .d.hi .len{background:var(--pink)}
+
+.tl{display:grid;grid-template-columns:58px 1fr;gap:12px;margin-top:12px}
+.tl .t{font-size:12.5px;color:var(--muted);text-align:right;font-weight:700;padding-top:2px}
+.tl .c{padding-bottom:12px;border-left:2px solid var(--line);padding-left:13px;position:relative}
+.tl .c::before{content:"";position:absolute;left:-5px;top:7px;width:8px;height:8px;
+  border-radius:50%;background:var(--thu)}
+.tl .c:last-child{border-left-color:transparent}
+.tl h4{font-family:"Gowun Dodum",sans-serif;font-size:15.5px;margin:0 0 3px}
+.tl p{font-size:13px;margin:0;color:var(--muted);line-height:1.65}
+
+.pick{background:var(--paper);border:1px solid var(--line);border-radius:11px;
+  padding:10px 12px;margin-top:8px;font-size:12.5px;line-height:1.7}
+.pick b{color:var(--ink)}
+
+.must{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--warn);
+  border-radius:0 15px 15px 0;padding:17px 19px;margin-top:18px}
+.must h3{font-family:"Gowun Dodum",sans-serif;font-size:18px;margin:0 0 11px;color:var(--warn)}
+.must ol{margin:0;padding-left:20px;font-size:13.5px;line-height:1.85}
+.must li{margin-bottom:8px}
+.must b{color:var(--ink)}
+
+.back{display:inline-block;margin-top:28px;font-size:13.5px;color:var(--pink);
+  text-decoration:none;font-family:"Gowun Dodum",sans-serif}
+.foot{text-align:center;color:var(--muted);font-size:13.5px;
+  font-family:"Gowun Dodum",sans-serif;padding-top:20px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">OCT — NOV</div>
+  <h1>11월까지의 계획</h1>
+  <div class="sub">우리 리듬에 맞춰 미리 짜둔 것 🍂</div>
+</header>
+
+<div class="wrap">
+
+  <div class="rhythm">
+    <h3>우리가 만나는 리듬</h3>
+    <dl>
+      <dt class="t1">목요일</dt><dd>오후부터 밤까지 — 멀리 가거나 오래 걸리는 건 이 날</dd>
+      <dt class="t2">토요일 저녁</dt><dd>종일 일정 끝나고 3~5시간 — 가볍게</dd>
+      <dt class="t3">일요일 저녁</dt><dd>3~5시간 — 가볍게</dd>
+    </dl>
+    <p style="font-size:12.5px;color:var(--muted);margin:11px 0 0">
+      아래는 제안이에요. 마음에 안 드는 날은 바꾸면 됩니다 🙂</p>
+  </div>
+
+  <h2>10월 남은 날</h2>
+  <p class="hint">전시가 25일에 끝나는 것만 날짜가 고정입니다</p>
+
+  <div class="d sat hi">
+    <div class="dh"><span class="date">10/17 토</span><span class="len">15시부터</span>
+      <b>미술관 보고 저녁 🎨</b></div>
+    <p><b>3시 강의가 휴강이라 시간이 많이 생겼어요.</b>
+      다시 가고 싶다고 하셨던 북서울미술관, 이번 주에 가면 딱 맞습니다 —
+      그 전시가 <b>25일에 끝나거든요.</b></p>
+
+    <div class="tl">
+      <div class="t">15:00</div>
+      <div class="c"><h4>학교 앞에서 픽업</h4>
+        <p>B108 끝나는 시간에 맞춰 갈게요</p></div>
+
+      <div class="t">15:30</div>
+      <div class="c"><h4>북서울미술관</h4>
+        <p>차로 20분 · <b>무료</b> · 자체 주차장 있음<br>
+          토요일은 19시 마감이라 시간 넉넉해요. 30분~1시간이면 다 보고,
+          옥상 정원도 있습니다</p></div>
+
+      <div class="t">17:00</div>
+      <div class="c"><h4>저녁</h4>
+        <p>셋 다 미술관에서 10분 안쪽이에요</p>
+        <div class="pick">
+          <b>숟가락반상마실</b> — 한정식, 2인 세트. 간 세지 않고 정갈하다는 평.
+          9시간 일한 날엔 이게 제일 편할 것 같아요<br>
+          <b>요남자파스타</b> — 4.5점 이탈리안. 6시 반이면 자리가 찬다니 가려면 미리 전화<br>
+          <b>하나샤브샤브</b> — 따뜻하고 부담 없음. 다만 <b>첫눈 오는 날 샤브샤브</b>가
+          따로 있으니 그건 아껴둘까요?
+        </div></div>
+
+      <div class="t">20:00</div>
+      <div class="c"><h4>집까지</h4>
+        <p>전부 노원 안이라 귀가가 금방입니다</p></div>
+    </div>
+  </div>
+
+  <div class="d sun">
+    <div class="dh"><span class="date">10/18 일</span><span class="len">비우기</span>
+      <b>쉬는 날로 두기</b></div>
+    <p>토요일에 나갔으면 일요일은 각자 쉬는 게 낫습니다.
+      공쥬님 월요일 아침 일정도 있고요.</p>
+  </div>
+
+  <div class="d thu">
+    <div class="dh"><span class="date">10/22 목</span><span class="len">저녁까지</span>
+      <b>힐튼 설명회 + 저녁 🏨</b></div>
+    <p>이미 예약해둔 일정. <b>몇 시에 끝나는지만 알려주시면</b>
+      저녁 자리를 그 근처로 잡아둘게요.</p>
+  </div>
+
+  <div class="d sat">
+    <div class="dh"><span class="date">10/24 토</span><span class="len">3~4시간</span>
+      <b>비스트로 알베르 🍷</b></div>
+    <p>달에 한 번 오자고 했던 집, <b>10월의 한 번</b>으로.
+      미아동이라 가깝고 토요일도 엽니다. 예약 전화는 제가 할게요.</p>
+  </div>
+
+  <div class="d sun">
+    <div class="dh"><span class="date">10/25 일</span><span class="len">예비</span>
+      <b>전시 마지막 날</b></div>
+    <p>17일에 다녀왔으면 이 날은 비워둡니다.
+      혹시 못 갔으면 이 날이 마지막이에요 — 마지막 날은 사람이 몰리니 오전에.</p>
+  </div>
+
+  <div class="d thu hi">
+    <div class="dh"><span class="date">10/29 목</span><span class="len">오후~밤</span>
+      <b>강화도 간장게장 🦀</b></div>
+    <p>먹고 싶다고 하셨던 거. <b>목요일이 아니면 못 가는 코스</b>예요 —
+      강화도가 왕복 세 시간이라 저녁만으로는 안 되거든요.</p>
+    <p style="margin-top:7px">오후에 출발해서 이른 저녁 먹고, 돌아오는 길에 노을 보면
+      하루가 딱 맞습니다. <b>게장집은 제가 골라둘게요.</b></p>
+  </div>
+
+  <div class="d sat">
+    <div class="dh"><span class="date">10/31 토</span><span class="len">3~5시간</span>
+      <b>할로윈 당일 🎃</b></div>
+    <p>이태원 얘기가 나왔었는데, <b>할로윈 이태원은 사람이 정말 많아요.</b>
+      둘 다 붐비는 거 싫어하니 조용한 데서 분위기만 내는 쪽을 권합니다.
+      분장은 이미 해봤으니까요.</p>
+  </div>
+
+  <h2>11월</h2>
+  <p class="hint">12월부터는 샵 준비로 바빠집니다. <b>큰 건 11월 안에</b></p>
+
+  <div class="d sun">
+    <div class="dh"><span class="date">11/1 일</span><span class="len">3시간</span>
+      <b>11월 날짜 정하는 저녁</b></div>
+    <p>글램핑 날짜랑 크리스마스를 이 날 정하면 됩니다.
+      <b>둘 다 미루면 자리가 없어지는 것들</b>이라 11월 첫 주에 끝내는 게 좋아요.</p>
+  </div>
+
+  <div class="d thu">
+    <div class="dh"><span class="date">11/5 목</span><span class="len">오후~밤</span>
+      <b>해포 — 곱창 🔥</b></div>
+    <p>가기로 적어두고 아직 못 간 집. 일요일은 쉬니까 이 날로.</p>
+  </div>
+
+  <div class="d sun hi">
+    <div class="dh"><span class="date">11/8 일 ~ 9 월</span><span class="len">1박 2일</span>
+      <b>홍천 비발디파크 글램핑 ⛺</b></div>
+    <p>더 추워지기 전에 가기로 한 것. <b>토요일은 종일 일정이라 일요일에 출발</b>해서
+      월요일에 돌아오는 게 제일 여유로워요.</p>
+    <p style="margin-top:7px">1차는 비발디파크 후문 쪽 과일숙성 고추장삼겹살,
+      2차는 글램핑장에서 등갈비 — <b>재료랑 요리는 제가 합니다.</b>
+      지하에 경기용 카트장도 있어요.</p>
+  </div>
+
+  <div class="d thu">
+    <div class="dh"><span class="date">11/12 목</span><span class="len">오후~밤</span>
+      <b>비워둔 날</b></div>
+    <p>글램핑 다녀온 주라 가볍게. 가고 싶은 데 생기면 여기 넣으면 됩니다.</p>
+  </div>
+
+  <div class="d sat">
+    <div class="dh"><span class="date">11/14 토 · 15 일</span><span class="len">3~5시간</span>
+      <b>첫눈 경계 시작 ❄️</b></div>
+    <p><b>10일부터 첫눈이 올 수 있는 기간</b>이에요.
+      이 주말부터는 눈 소식 보고 움직이면 됩니다. 눈 오면 샤브샤브.</p>
+  </div>
+
+  <div class="d thu">
+    <div class="dh"><span class="date">11/19 목</span><span class="len">저녁</span>
+      <b>알베르 — 11월의 한 번 🍷</b></div>
+    <p>달에 한 번 약속, 11월분.</p>
+  </div>
+
+  <div class="d sat">
+    <div class="dh"><span class="date">11/21 토 · 22 일</span><span class="len">3~5시간</span>
+      <b>굴 제철 시작 🦪</b></div>
+    <p>석화찜 먹기로 한 거, 굴은 11월부터가 제철이에요.
+      멀리 가는 축제 대신 <b>가까운 굴집부터</b> 가보고 좋으면 나중에 통영 쪽으로.</p>
+  </div>
+
+  <div class="d thu">
+    <div class="dh"><span class="date">11/26 목</span><span class="len">오후~밤</span>
+      <b>비워둔 날</b></div>
+    <p>이 날도 열어뒀어요. 11월에 하고 싶은 게 생기면 여기로.</p>
+  </div>
+
+  <div class="d sat">
+    <div class="dh"><span class="date">11/28 토 · 29 일</span><span class="len">3~5시간</span>
+      <b>12월 확정하는 주말</b></div>
+    <p>150일(12/3), 크리스마스, 연말, 대구까지 12월이 꽉 차요.
+      이 주말에 한 번 맞춰보면 됩니다.</p>
+  </div>
+
+  <div class="must">
+    <h3>⏰ 11월 안에 해둬야 하는 것</h3>
+    <ol>
+      <li><b>홍천 글램핑 예약 — 지금 바로.</b>
+        11월 주말 글램핑은 금방 찹니다. 날짜만 정하면 제가 잡을게요.</li>
+      <li><b>크리스마스 이브 숙소 — 11월 초.</b>
+        이브는 두 달 전부터 차기 시작해요. 호텔로 갈지 집에서 보낼지부터 정해야 합니다.</li>
+      <li><b>르 쁘띠 셰프 — 150일(12/3 목)에 쓸까요?</b>
+        테이블에 영상 쏴주는 그 집(콘래드 서울). 2시간 4코스,
+        1인 20만원부터라 아무 날에나 쓰긴 아까워요.
+        150일은 여행 없이 기념일로만 보내기로 한 날이고 마침 목요일입니다.
+        <b>보증금 환불이 안 되니</b> 날짜를 확실히 정하고 잡아야 해요.</li>
+      <li><b>이문세 연말 공연</b> — 보통 10~11월에 공지가 뜹니다. 알림 걸어두기.</li>
+      <li><b>삿포로 눈축제 일정</b> — 11월쯤 발표돼요. 나오면 2월 계획 시작.</li>
+    </ol>
+  </div>
+
+  <a class="back" href="../">← 데이트 앨범으로 돌아가기</a>
+  <p class="foot">바꾸고 싶은 날 있으면 말씀만 해주세요 🙂</p>
+</div>
+</body>
+</html>
