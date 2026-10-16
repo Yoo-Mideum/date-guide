@@ -70,6 +70,16 @@ h2 .w{font-size:13px;color:var(--muted);font-family:"Noto Sans KR",sans-serif;ma
   padding:12px 14px;border-radius:0 11px 11px 0;font-size:13px;margin-top:11px;line-height:1.7}
 .warnbox b{color:var(--warn)}
 
+.tip{background:rgba(201,162,77,.10);border-left:3px solid var(--gold);
+  padding:12px 14px;border-radius:0 11px 11px 0;font-size:13px;margin-top:11px;line-height:1.7}
+.tip b{color:var(--ink)}
+details.info{margin-top:10px;background:var(--paper);border:1px solid var(--line);
+  border-radius:12px;padding:0 13px}
+details.info summary{font-family:"Gowun Dodum",sans-serif;font-size:14px;
+  padding:11px 0;cursor:pointer;color:var(--pink)}
+details.info[open] summary{border-bottom:1px solid var(--line);margin-bottom:9px}
+details.info p{font-size:12.5px;line-height:1.75;margin:0 0 9px}
+details.info p.src{font-size:11.5px;color:var(--muted);font-style:italic}
 .back{display:inline-block;margin-top:30px;font-size:13.5px;color:var(--pink);
   text-decoration:none;font-family:"Gowun Dodum",sans-serif}
 .foot{text-align:center;color:var(--muted);font-size:13.5px;
@@ -88,79 +98,103 @@ h2 .w{font-size:13px;color:var(--muted);font-family:"Noto Sans KR",sans-serif;ma
 <div class="wrap">
 
   <div class="note">
-    <b>토요일은 3시 강의가 휴강</b>이라 시간이 많이 생겼어요.
-    보고 싶다던 전시가 25일에 끝나니까 이번 주에 갑니다.<br>
+    <b>오늘은 공쥬님 학교 일정이 먼저예요.</b> 11시 반에 김밥 받아서 12시까지 모셔다 드리고,
+    3시에 마초스테이크에서 만납니다.<br>
+    <b>저녁은 공쥬님이 해주신다고 하셨으니</b> 미술관은 다음 주 토요일로 미뤘어요.<br>
     <b>일요일은 강화도.</b> 간장게장 먹고 카페에서 상표권 출원까지 끝내고 와요.
   </div>
 
   <!-- 토요일 -->
   <section class="sat">
-    <h2 class="s">토요일<span class="w">10/17 · 15시부터</span></h2>
-    <p class="hint">아침 6시부터 일하셨으니 멀리 안 가고 한 동네 안에서 다 끝냅니다</p>
+    <h2 class="s">토요일<span class="w">10/17 · 11시 반부터</span></h2>
+    <p class="hint">오전은 학교, 오후는 스테이크, 저녁은 집밥</p>
 
     <div class="tl">
+      <div class="t">11:30</div>
+      <div class="c">
+        <h3>수온당 김밥 픽업 🍙</h3>
+        <p>성북구 동소문로20가길 33 · ☎ 02-926-0625 · 08:00~20:00</p>
+        <p><b>포장 전문이라 앉을 자리는 없어요.</b> 김밥 종류가 많은 집이라
+          고르는 데 시간이 걸릴 수 있습니다.</p>
+        <div class="tip">
+          <b>미리 주문해두면 기다릴 일이 없습니다.</b>
+          네이버 주문으로 미리 걸어두고 11시 반에 받아만 오면 돼요.
+          오늘 받아야 하는 건 공쥬님이 학교에서 드실 거니까 늦으면 안 됩니다.
+        </div>
+      </div>
+
+      <div class="t">12:00</div>
+      <div class="c">
+        <h3>학교 도착 🚗</h3>
+        <p>수온당에서 학교까지 코앞이에요. 11시 반에 받으면 넉넉합니다.</p>
+        <p>끝나는 시간 맞춰서 다시 가 있을게요.</p>
+      </div>
+
       <div class="t">15:00</div>
       <div class="c">
-        <h3>학교 앞 픽업</h3>
-        <p>B108 앞으로 갈게요. 차로 중계동까지 <b>20분</b>.</p>
-      </div>
+        <h3>마초스테이크 🥩</h3>
+        <p><b>마초스테이크 혜화점</b> — 종로구 동성길 136 · ☎ 070-4222-0227<br>
+          <b>11:30~21:00, 브레이크타임 없음</b> · ★4.9</p>
+        <p>학교에서 차로 10분 거리라 세 지점 중에 여기가 제일 가깝습니다.
+          3시에 그냥 들어가도 돼요.</p>
 
-      <div class="t">15:25</div>
-      <div class="c">
-        <h3>늦은 점심 겸 이른 저녁 🍽️</h3>
-        <p><b>다섯 곳 다 브레이크타임이 없어요.</b> 3시 반에 그냥 들어가면 됩니다 —
-          이 시간에 문 닫는 집이 많아서 그것부터 보고 골랐어요.</p>
+        <details class="info">
+          <summary>어떤 집인지</summary>
+          <p>철판에 버터 올린 스테이크가 지글지글한 채로 나오고,
+            <b>처음엔 레어로 나와서 썰어가며 취향대로 익혀 먹는</b> 방식이에요.
+            밥·구운 옥수수·할라피뇨가 한 쟁반에 1인 세트로 같이 나옵니다.</p>
+          <p>간판 메뉴는 <b>마초 비법소스</b>예요. 양파 간장 베이스라
+            버터랑 섞이면 밥까지 비벼 먹게 됩니다.
+            <b>리베라 비법소스</b>도 따로 있는데, 도쿄에서 1976년부터 격투기 선수들이
+            드나들던 리베라 스테이크하우스에서 온 이름이에요.
+            메뉴에 <b>1파운드 추성훈 스테이크</b>가 있는 것도 그 연결입니다.</p>
+          <p><b>소스를 두 종류 다 시켜서 비교해 보는 게 이 집 먹는 법</b>이라
+            리뷰마다 나와요. 추가 1,500원입니다.</p>
+        </details>
 
-        <div class="cands">
-          <div class="cd best">
-            <div class="n">숟가락반상마실 <span class="r">★4.1 · 11:30~21:30</span></div>
-            <p>한정식 2인 세트. 간 세지 않고 정갈하다는 평이 많아요.
-              <b>9시간 일하고 나온 날엔 이게 제일 편할 것 같습니다.</b>
-              다만 테이블 간격이 좁다는 말은 있어요</p>
-          </div>
-          <div class="cd">
-            <div class="n">중계고기파티 <span class="r">★4.5 · 11:30~22:00</span></div>
-            <p>이베리코·소갈비·육회. 넓고 연기 배기가 좋다는 평.
-              고기가 당기면 여기. 값대는 높은 편</p>
-          </div>
-          <div class="cd">
-            <div class="n">매드포갈릭 (롯데 노원 9층) <span class="r">★4.9 · 10:30~21:00</span></div>
-            <p>백화점 안이라 주차·화장실이 편하고 조용해요.
-              <b>밥 먹고 바로 백화점 구경</b>도 되고, 집에서 마실 와인도 지하에서 사면 됩니다</p>
-          </div>
-          <div class="cd">
-            <div class="n">미도인 노원 <span class="r">★4.4 · 11:30~21:00</span></div>
-            <p>스테이크덮밥·명란크림파스타. 노원역 9번 출구 앞.
-              한 끼 먹기 딱 좋은 양</p>
-          </div>
-          <div class="cd">
-            <div class="n">하나샤브샤브 <span class="r">★4.4 · 11:00~22:00</span></div>
-            <p>미술관 바로 옆. 따뜻하고 코스 끝에 커피·푸딩까지.
-              다만 <b>첫눈 오는 날 샤브샤브</b>가 따로 있으니 그건 아껴둘까요?</p>
-          </div>
+        <details class="info">
+          <summary>메뉴와 값 (본점 기준)</summary>
+          <p><b>둘이 먹는 세트</b><br>
+            마초 시그니처 커플 set 69,800 · 마초 트리플 set 65,800</p>
+          <p><b>단품 스테이크</b><br>
+            한우 등심 39,900 · 치즈 36,900 · 안심 36,900 · 립아이 33,900<br>
+            1파운드 추성훈 스테이크 58,900 · 돼지 스테이크 18,900 · 함박 19,900</p>
+          <p><b>곁들임</b><br>
+            철판 비프 비빔밥 17,900 · 함박 카레 16,000 · 양송이 스프 3,000 ·
+            양상추 샐러드 2,000 · 불닭 야끼소바 7,900</p>
+          <p><b>술</b><br>
+            마초 살얼음 생맥 3,700 · 기린 살얼음 생맥 6,900 ·
+            하이볼 8,800~9,900</p>
+          <p class="src">지점마다 값이 조금씩 다를 수 있어요.</p>
+        </details>
+
+        <div class="tip">
+          <b>저녁을 공쥬님이 해주시니까 여기선 가볍게.</b>
+          커플 세트까지 가면 저녁을 못 드세요. 단품 하나씩에 소스 두 종류가 딱입니다.
         </div>
       </div>
 
-      <div class="t">17:10</div>
+      <div class="t">16:30</div>
       <div class="c">
-        <h3>북서울미술관 🎨</h3>
-        <p><b>《오인환 vs. 장서영: 휴먼 에러》</b> — 25일에 끝나는 그 전시.
-          무료고 자체 주차장 있어요.</p>
-        <p>AI가 창작을 대신한다는 시대에 <b>사람만 할 수 있는 창작이 뭔가</b>를 묻는 전시예요.
-          영상·사진·설치 23점. 30분~1시간이면 다 봅니다.</p>
-        <div class="warnbox">
-          <b>토요일은 19시 폐관, 입장은 18시까지.</b>
-          식사가 길어져도 <b>17시 50분 전에는</b> 들어가야 해요.
-        </div>
+        <h3>돌아오는 길에 장보기 🛒</h3>
+        <p>저녁 재료가 필요하면 지금 사야 해요.</p>
+        <p>👉 <b>스테이크 먹으면서 뭐 해주실 건지, 뭐가 필요한지 여쭤보기.</b>
+          집 근처 마트 들렀다 가면 됩니다.</p>
       </div>
 
-      <div class="t">19:00</div>
+      <div class="t">저녁</div>
       <div class="c">
-        <h3>집에서 한잔 🍷</h3>
-        <p>미술관에서 집까지 금방이라 저녁이 길게 남아요.</p>
-        <p><b>드라이한 걸로 준비할게요.</b> 매드포갈릭에 가면 같은 건물 지하에서
-          사면 되고, 아니면 가는 길에 들르겠습니다.</p>
+        <h3>공쥬님 밥 🍚</h3>
+        <p>오늘은 제가 설거지랑 뒷정리 담당입니다.</p>
+        <p>술은 음식 나오는 거 보고 맞추면 되니까, 뭐 하시는지만 알면
+          오는 길에 같이 사 올게요.</p>
       </div>
+    </div>
+
+    <div class="warnbox">
+      <b>미술관은 다음 주 토요일(10/24)로 옮겼습니다.</b>
+      《휴먼 에러》가 25일(일)에 끝나니까 <b>24일이 마지막 토요일</b>이에요.
+      오늘 넣으면 집에 8시 넘어 도착해서 저녁이 너무 늦어집니다.
     </div>
   </section>
 
