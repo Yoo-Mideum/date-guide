@@ -46,3 +46,43 @@
 .kmap-leg{display:block;text-align:center;padding:9px 12px;border-radius:12px;font-size:13px;
   text-decoration:none;color:#191919;background:#FEE500;font-weight:700}
 .kmap-note{font-size:11.5px;color:var(--muted,#888);margin:6px 2px 0}
+
+/* 상태별 색 — 오늘(분홍) · 앞으로(파랑) · 다녀온 곳(회색) · 후보(회색) */
+.kmap-box{--kmap-future:#3F7BA6}
+.kpin.st-today{border-color:var(--kmap-accent)} .kpin.st-today::after{border-top-color:var(--kmap-accent)}
+.kpin.st-today .n{background:var(--kmap-accent)}
+.kpin.st-future{border-color:var(--kmap-future)} .kpin.st-future::after{border-top-color:var(--kmap-future)}
+.kpin.st-future .n{background:var(--kmap-future)}
+.kpin.st-past{opacity:.82}
+.kpin.compact{padding:2px;margin-bottom:7px}
+.kpin.compact .n{min-width:26px;height:22px;padding:0 6px;font-size:11px}
+.kpin.compact::after{left:50%;margin-left:-7px}
+.kcard .kc-when{display:block;font-size:11.5px;color:#6B7A82;margin:0 18px 2px 0}
+.kmap-item.st-today .kmap-no{background:var(--kmap-accent)}
+.kmap-item.st-future .kmap-no{background:var(--kmap-future)}
+.kmap-item.st-past{opacity:.85}
+
+.kmap-filter{display:flex;gap:6px;margin:0 0 8px;flex-wrap:wrap}
+.kmap-filter button{border:1px solid var(--line,#ddd);background:var(--card,#fff);color:var(--ink,#222);
+  border-radius:999px;padding:6px 13px;font:600 12.5px "Noto Sans KR",sans-serif;cursor:pointer}
+.kmap-filter button.on{background:var(--ink,#222);color:var(--card,#fff);border-color:var(--ink,#222)}
+.kmap-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted,#888);margin:7px 2px 0}
+.kmap-legend .lg{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.kmap-legend .lg.today{background:var(--kmap-accent)} .kmap-legend .lg.future{background:var(--kmap-future)}
+.kmap-legend .lg.past{background:#A3AEB5}
+
+.kmap-group{margin-top:14px}
+.kmap-group .kmap-list{margin-top:6px}
+.kmap-ghead{display:flex;align-items:baseline;gap:8px;text-decoration:none;color:var(--ink,#222);padding:0 2px}
+.kmap-ghead .dd{font-size:11.5px;font-weight:800;color:#fff;background:#A3AEB5;border-radius:999px;padding:2px 9px;flex-shrink:0}
+.kmap-group.st-today .kmap-ghead .dd{background:var(--kmap-accent)}
+.kmap-group.st-future .kmap-ghead .dd{background:var(--kmap-future)}
+.kmap-ghead .gd{font-size:12.5px;color:var(--muted,#888);flex-shrink:0}
+.kmap-ghead .gt{font-family:"Gowun Dodum",sans-serif;font-size:16px;font-weight:700;flex:1}
+.kmap-ghead .go{color:var(--muted,#888)}
+
+.kmap-item.st-past .kmap-no,.kmap-item.st-cand .kmap-no{background:#A3AEB5}
+.kmap-past{margin-top:16px;border-top:1px dashed var(--line,#ddd);padding-top:10px}
+.kmap-past summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--muted,#888);padding:6px 2px;list-style:none}
+.kmap-past summary::-webkit-details-marker{display:none}
+.kmap-past[open] summary{color:var(--ink,#222)}

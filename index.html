@@ -105,6 +105,9 @@ a.card:active{transform:scale(.99)}
 .paw svg:nth-child(2n){transform:rotate(16deg)}
 :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 </style>
+<link rel="stylesheet" href="./assets/kmap.css">
+<script src="./assets/trips.js" defer></script>
+<script src="./assets/kmap.js" defer></script>
 </head>
 <body>
 
@@ -136,6 +139,10 @@ a.card:active{transform:scale(.99)}
 </header>
 
 <div class="wrap">
+
+  <h2>🗺️ 우리 지도</h2>
+  <p class="hint">다녀온 곳은 ✓, 앞으로 갈 곳은 D-day로 떠요. 핀을 누르면 길찾기가 나와요</p>
+  <div class="kmap-box" data-all></div>
 
   <h2>🗓️ 다가올 일정</h2>
   <p class="hint">눌러서 자세한 계획을 볼 수 있어요</p>
