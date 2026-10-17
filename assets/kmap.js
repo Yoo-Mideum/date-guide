@@ -302,7 +302,18 @@
           if (shown.length) fit(shown);
         };
       });
-      if (c.box.hasAttribute("data-live")) addLive(found.filter(function (p) { return p.route; }));
+      if (c.box.hasAttribute("data-live")) {
+        var liveRoute;
+        if (c.mode === "all") {
+          // 메인: 오늘 코스, 없으면 가장 가까운 다음 코스
+          var g0 = c.groups.filter(function (g) { return g.status === "today"; })[0] ||
+                   c.groups.filter(function (g) { return g.status === "future"; })[0];
+          liveRoute = g0 ? g0.points.filter(function (p) { return p.pos; }) : [];
+        } else {
+          liveRoute = found.filter(function (p) { return p.route; });
+        }
+        addLive(liveRoute);
+      }
       done();
     }
 
@@ -314,11 +325,18 @@
       if (!route.length || !navigator.geolocation) return;
       var bar = document.createElement("div");
       bar.className = "kmap-live";
-      bar.innerHTML = '<button type="button" class="kmap-live-btn">📍 지금 위치에서 코스 보기</button>' +
+      bar.innerHTML = '<button type="button" class="kmap-live-btn">📍 지금 위치에서 ' + esc(route[0].name) + '까지 길 보기</button>' +
         '<div class="kmap-live-out" aria-live="polite"></div>';
       var frame = el.parentNode; frame.parentNode.insertBefore(bar, frame);
       var btn = bar.querySelector("button"), out = bar.querySelector(".kmap-live-out");
       var drawn = [];
+      // 한 번 위치를 허용해둔 휴대폰이면 페이지 열 때 자동으로 그려요
+      var ld = c.box.getAttribute("data-live-date");
+      if ((!ld || ld === TODAY) && navigator.permissions && navigator.permissions.query) {
+        navigator.permissions.query({ name: "geolocation" }).then(function (st) {
+          if (st.state === "granted") btn.onclick();
+        }).catch(function () {});
+      }
       btn.onclick = function () {
         btn.disabled = true; btn.textContent = "위치 찾는 중…";
         navigator.geolocation.getCurrentPosition(function (g) {

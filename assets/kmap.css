@@ -106,7 +106,7 @@
 
 /* 액자 — 루크가 만든 금박 액자 이미지 (assets/frame.png, 9분할) */
 .kmap-frame{position:relative;border-style:solid;border-color:transparent;border-width:46px 44px 44px 44px;
-  border-image:url(frame.png?v=20261017-1500) 88 86 84 87 stretch;
+  border-image:url(frame.png?v=20261017-1505) 88 86 84 87 stretch;
   filter:drop-shadow(0 10px 16px rgba(50,32,6,.35)) drop-shadow(0 2px 3px rgba(50,32,6,.3))}
 .kmap-frame .kmap{border:0;border-radius:0;box-shadow:none}
 .kmap-frame .kmap::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;
