@@ -29,20 +29,30 @@
   var TODAY = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
   function dayDiff(d) { return Math.round((Date.parse(d) - Date.parse(TODAY)) / 864e5); }
   function statusOf(t) {
+    if (!t.date) return "past";
     var end = t.end || t.date;
     if (TODAY >= t.date && TODAY <= end) return "today";
     return t.date > TODAY ? "future" : "past";
   }
+  // 핀에 붙는 짧은 표시: 오늘 / D-7 / ✓9/12
   function ddayText(t) {
     var s = statusOf(t);
     if (s === "today") return "오늘";
-    if (s === "past") return "✓";
+    if (s === "past") return t.date ? "✓" + md(t.date) : "✓";
     return "D-" + dayDiff(t.date);
   }
   function md(d) { var p = d.split("-"); return (+p[1]) + "/" + (+p[2]); }
   function dateText(t) {
+    if (!t.date) return t.when || "날짜 확인 필요";
     var w = "일월화수목금토"[dow(t.date)];
     return md(t.date) + " (" + w + ")" + (t.end ? " ~ " + md(t.end) : "");
+  }
+  // 목록·창에 붙는 설명: "9/12 (토) ~ 9/13 · 35일 전 다녀옴"
+  function whenText(t) {
+    var s = statusOf(t);
+    if (s === "past") return dateText(t) + (t.date ? " · " + (-dayDiff(t.end || t.date)) + "일 전 다녀옴" : " · 다녀옴");
+    if (s === "today") return dateText(t) + " · 오늘";
+    return dateText(t) + " · " + dayDiff(t.date) + "일 남음";
   }
   function dow(d) { var p = d.split("-"); return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])).getUTCDay(); }
 
@@ -71,7 +81,8 @@
       c.groups = TRIPS.slice().sort(function (a, b) {
         var sa = statusOf(a), sb = statusOf(b);
         if (sa !== sb) return order[sa] - order[sb];
-        return sa === "past" ? (a.date < b.date ? 1 : -1) : (a.date > b.date ? 1 : -1);
+        var ad = a.date || "0000", bd = b.date || "0000";
+        return sa === "past" ? (ad < bd ? 1 : -1) : (ad > bd ? 1 : -1);
       }).map(function (t) { return groupFromTrip(t, true); });
     } else if (box.hasAttribute("data-trip")) {
       box.getAttribute("data-trip").split(",").forEach(function (id) {
@@ -119,10 +130,10 @@
       sec.className = "kmap-group st-" + g.status;
       g.el = sec;
       if (g.trip && c.mode === "all") {
-        sec.innerHTML = '<a class="kmap-ghead" href="' + esc(g.trip.href) + '">' +
+        sec.innerHTML = '<a class="kmap-ghead"' + (g.trip.href ? ' href="' + esc(g.trip.href) + '"' : '') + '>' +
           '<span class="dd">' + esc(ddayText(g.trip)) + '</span>' +
-          '<span class="gd">' + esc(dateText(g.trip)) + '</span>' +
-          '<span class="gt">' + esc(g.trip.title) + '</span><span class="go">›</span></a>';
+          '<span class="gt">' + esc(g.trip.title) + '</span><span class="go">›</span>' +
+          '<span class="gd">' + esc(whenText(g.trip)) + '</span></a>';
       }
       var ol = document.createElement("ol");
       ol.className = "kmap-list";
@@ -238,7 +249,7 @@
       card.className = "kcard";
       card.innerHTML =
         '<button type="button" class="x" aria-label="닫기">×</button>' +
-        (g.trip ? '<span class="kc-when">' + esc(ddayText(g.trip)) + ' · ' + esc(dateText(g.trip)) + ' · ' + esc(g.trip.title) + '</span>' : '') +
+        (g.trip ? '<span class="kc-when">' + esc(whenText(g.trip)) + '<br>' + esc(g.trip.title) + '</span>' : '') +
         '<b>' + (g.trip ? esc(p.label) + '. ' : '') + esc(p.name) + '</b>' +
         '<a href="' + esc(p.url) + '" target="_blank" rel="noopener">카카오맵에서 보기</a>' +
         '<a class="go" href="' + toLink(p) + '" target="_blank" rel="noopener">길찾기</a>';

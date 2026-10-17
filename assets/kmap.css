@@ -73,7 +73,7 @@
 
 .kmap-group{margin-top:14px}
 .kmap-group .kmap-list{margin-top:6px}
-.kmap-ghead{display:flex;align-items:baseline;gap:8px;text-decoration:none;color:var(--ink,#222);padding:0 2px}
+.kmap-ghead{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px;text-decoration:none;color:var(--ink,#222);padding:0 2px}
 .kmap-ghead .dd{font-size:11.5px;font-weight:800;color:#fff;background:#A3AEB5;border-radius:999px;padding:2px 9px;flex-shrink:0}
 .kmap-group.st-today .kmap-ghead .dd{background:var(--kmap-accent)}
 .kmap-group.st-future .kmap-ghead .dd{background:var(--kmap-future)}
@@ -86,3 +86,5 @@
 .kmap-past summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--muted,#888);padding:6px 2px;list-style:none}
 .kmap-past summary::-webkit-details-marker{display:none}
 .kmap-past[open] summary{color:var(--ink,#222)}
+.kmap-ghead .gd{flex-basis:100%;order:3;padding-left:2px}
+.kpin.compact.st-past .n{font-size:10.5px}
