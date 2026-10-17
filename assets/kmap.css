@@ -1,0 +1,48 @@
+/* 데이트 지도 — 각 페이지 색(--pink, --card, --line, --ink, --muted)을 그대로 따름 */
+.kmap-box{--kmap-accent:var(--pink,#E0618C);--kmap-line:var(--pink,#E0618C);margin:14px 0 6px}
+.kmap{position:relative;width:100%;height:60vh;min-height:300px;max-height:620px;
+  border-radius:16px;overflow:hidden;border:1px solid var(--line,#ddd);background:var(--card,#fff)}
+.kmap-msg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  padding:20px;text-align:center;font-size:13.5px;color:var(--muted,#888);line-height:1.6}
+
+.kmap.is-empty{height:auto;min-height:0;max-height:none}
+.kmap.is-empty .kmap-msg{position:static;padding:14px}
+
+.kpin{display:flex;align-items:center;gap:5px;padding:3px 9px 3px 3px;border-radius:999px;
+  background:#fff;border:2px solid #9AA5AD;box-shadow:0 2px 6px rgba(0,0,0,.18);
+  font:600 12.5px/1.2 "Noto Sans KR",sans-serif;color:#24323A;white-space:nowrap;cursor:pointer;
+  position:relative;margin-bottom:8px}
+.kpin::after{content:"";position:absolute;left:12px;bottom:-8px;border:7px solid transparent;
+  border-top-color:#9AA5AD;border-bottom:0}
+.kpin .n{min-width:22px;height:22px;padding:0 5px;border-radius:999px;background:#9AA5AD;color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:11.5px}
+.kpin.is-route{border-color:var(--kmap-accent)}
+.kpin.is-route::after{border-top-color:var(--kmap-accent)}
+.kpin.is-route .n{background:var(--kmap-accent)}
+
+.kcard{position:relative;background:#fff;color:#24323A;border-radius:12px;padding:11px 13px 10px;
+  min-width:180px;box-shadow:0 4px 16px rgba(0,0,0,.22);font:13px/1.5 "Noto Sans KR",sans-serif}
+.kcard b{display:block;font-size:14px;margin:0 18px 6px 0}
+.kcard a{display:inline-block;margin:2px 6px 0 0;padding:5px 10px;border-radius:999px;
+  border:1px solid #D5DCE0;color:#24323A;text-decoration:none;font-size:12.5px}
+.kcard a.go{background:#FEE500;border-color:#FEE500;color:#191919;font-weight:700}
+.kcard .x{position:absolute;top:4px;right:6px;border:0;background:none;font-size:18px;
+  color:#8A979E;cursor:pointer;line-height:1;padding:4px}
+
+.kmap-list{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+.kmap-item{display:flex;align-items:center;gap:9px;flex-wrap:wrap;background:var(--card,#fff);
+  border:1px solid var(--line,#ddd);border-radius:12px;padding:9px 11px}
+.kmap-no{min-width:26px;height:26px;padding:0 6px;border-radius:999px;background:#9AA5AD;color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.kmap-item.is-route .kmap-no{background:var(--kmap-accent)}
+.kmap-name{flex:1;min-width:120px;font-size:14px;font-weight:600;color:var(--ink,#222)}
+.kmap-name small{display:block;font-size:11.5px;font-weight:400;color:var(--muted,#888)}
+.kmap-name small.miss{color:#C2503C;font-weight:700}
+.kmap-btns{display:flex;gap:6px;flex-wrap:wrap}
+.kmap-btn{display:inline-block;padding:6px 11px;border-radius:999px;font-size:12.5px;text-decoration:none;
+  background:#FEE500;color:#191919;font-weight:700;white-space:nowrap}
+.kmap-btn.ghost{background:transparent;color:var(--ink,#222);font-weight:500;border:1px solid var(--line,#ddd)}
+.kmap-legs{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.kmap-leg{display:block;text-align:center;padding:9px 12px;border-radius:12px;font-size:13px;
+  text-decoration:none;color:#191919;background:#FEE500;font-weight:700}
+.kmap-note{font-size:11.5px;color:var(--muted,#888);margin:6px 2px 0}

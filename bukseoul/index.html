@@ -92,6 +92,8 @@ dd{margin:0;min-width:0}
   font-family:"Gowun Dodum",sans-serif;padding-top:20px}
 :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 </style>
+<link rel="stylesheet" href="../assets/kmap.css">
+<script src="../assets/kmap.js" defer></script>
 </head>
 <body>
 
@@ -109,6 +111,11 @@ dd{margin:0;min-width:0}
     <b>10월 25일(일)에 끝납니다.</b><br>
     다른 전시 세 개는 내년까지 하니까 급한 건 이것 하나예요.
   </div>
+
+  <h2>📍 가는 길</h2>
+  <div class="kmap-box" data-course="kmap-buk"></div>
+  <script type="application/json" id="kmap-buk">{"points": [{"label": "1", "name": "서울시립 북서울미술관", "q": "서울시립북서울미술관", "route": true, "note": "《휴먼 에러》 · 10/25까지"}]}</script>
+  <p class="kmap-note">길찾기를 누르면 지금 있는 곳에서 미술관까지 경로가 열려요.</p>
 
   <h2>📅 갈 수 있는 날</h2>
   <p class="hint">월요일은 휴관이고, 금요일만 밤 9시까지 합니다</p>
