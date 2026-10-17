@@ -88,3 +88,37 @@
 .kmap-past[open] summary{color:var(--ink,#222)}
 .kmap-ghead .gd{flex-basis:100%;order:3;padding-left:2px}
 .kpin.compact.st-past .n{font-size:10.5px}
+
+/* 지금 위치에서 코스 */
+.kmap-live{margin:0 0 8px}
+.kmap-live-btn{width:100%;border:0;border-radius:12px;padding:11px 14px;background:var(--kmap-accent);color:#fff;
+  font:700 14px "Noto Sans KR",sans-serif;cursor:pointer}
+.kmap-live-btn:disabled{opacity:.7}
+.kmap-live-out:empty{display:none}
+.kmap-live-out{margin-top:8px;background:var(--card,#fff);border:1px solid var(--line,#ddd);border-radius:12px;padding:10px 12px}
+.kl-total{font-size:14.5px;margin-bottom:4px} .kl-total b{color:var(--kmap-accent);font-size:17px}
+.kl-total small{color:var(--muted,#888);font-size:11.5px}
+.kl-leg{display:flex;justify-content:space-between;gap:10px;font-size:13px;padding:4px 0;border-top:1px dashed var(--line,#ddd)}
+.kl-leg b{white-space:nowrap}
+.kl-note{font-size:11.5px;color:var(--muted,#888);margin:6px 0 0}
+.kme{width:16px;height:16px;border-radius:50%;background:#2F80ED;border:3px solid #fff;box-shadow:0 0 0 6px rgba(47,128,237,.25)}
+.kcar{font-size:22px;line-height:1;transform:translate(-50%,-50%);filter:drop-shadow(0 2px 2px rgba(0,0,0,.3))}
+
+/* 액자 — 금박 몰딩 + 안쪽 매트 + 모서리 장식 */
+.kmap-frame{position:relative;padding:13px;border-radius:8px;
+  background:
+    linear-gradient(135deg,#6E4F12 0%,#E9C873 14%,#A87E26 30%,#FFF0B8 48%,#B88A2C 62%,#F1D27E 80%,#6E4F12 100%);
+  box-shadow:0 12px 28px rgba(60,40,10,.28),0 2px 4px rgba(60,40,10,.25),
+    inset 0 0 0 1px rgba(255,248,220,.7),inset 0 0 0 4px rgba(110,79,18,.55),inset 0 0 0 5px rgba(255,240,190,.55)}
+.kmap-frame::before{content:"";position:absolute;inset:8px;border-radius:4px;pointer-events:none;
+  border:1px solid rgba(255,244,205,.8);box-shadow:0 0 0 1px rgba(90,62,12,.6)}
+.kmap-frame .kmap{border:0;border-radius:3px;
+  box-shadow:inset 0 0 0 3px #FBF6EA,inset 0 0 0 4px rgba(120,90,30,.45),0 0 0 1px rgba(70,48,10,.5)}
+.kmap-frame .kmap::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;border-radius:3px;
+  box-shadow:inset 0 3px 10px rgba(0,0,0,.22)}
+.kf-c{position:absolute;width:22px;height:22px;z-index:3;pointer-events:none;
+  background:radial-gradient(circle at 50% 50%,#FFF6D0 0 3px,#C79A38 3.5px 5px,transparent 5.5px),
+    radial-gradient(circle at 50% 50%,transparent 6px,#8A6418 6.5px 7.5px,transparent 8px);
+  filter:drop-shadow(0 1px 1px rgba(0,0,0,.35))}
+.kf-c.tl{top:-4px;left:-4px}.kf-c.tr{top:-4px;right:-4px}.kf-c.bl{bottom:-4px;left:-4px}.kf-c.br{bottom:-4px;right:-4px}
+.kmap-frame .kmap.is-empty{box-shadow:inset 0 0 0 3px #FBF6EA}

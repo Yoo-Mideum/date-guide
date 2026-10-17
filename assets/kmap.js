@@ -109,7 +109,8 @@
         '<button type="button" data-f="past">다녀온 곳</button></div>'
       : "";
     box.innerHTML = filters +
-      '<div class="kmap" role="region" aria-label="데이트 지도"><div class="kmap-msg">지도 불러오는 중…</div></div>' +
+      '<div class="kmap-frame"><i class="kf-c tl"></i><i class="kf-c tr"></i><i class="kf-c bl"></i><i class="kf-c br"></i>' +
+      '<div class="kmap" role="region" aria-label="데이트 지도"><div class="kmap-msg">지도 불러오는 중…</div></div></div>' +
       (c.mode === "all"
         ? '<div class="kmap-legend"><span><i class="lg today"></i>오늘</span><span><i class="lg future"></i>앞으로 (D-day)</span><span><i class="lg past"></i>다녀온 곳 ✓</span></div>'
         : "") +
@@ -301,7 +302,110 @@
           if (shown.length) fit(shown);
         };
       });
+      if (c.box.hasAttribute("data-live")) addLive(found.filter(function (p) { return p.route; }));
       done();
+    }
+
+    /* ---------- 지금 위치에서 출발 (누를 때만 위치 사용) ----------
+     * 도로 경로: OSRM 공개 서버(키 불필요, OpenStreetMap 도로 기준). 실시간 교통은 반영 안 됨.
+     * 실패하면 직선 + 대략 시간으로 대신 보여줌. 정확한 시간·경로는 카카오맵 길찾기 버튼으로.
+     */
+    function addLive(route) {
+      if (!route.length || !navigator.geolocation) return;
+      var bar = document.createElement("div");
+      bar.className = "kmap-live";
+      bar.innerHTML = '<button type="button" class="kmap-live-btn">📍 지금 위치에서 코스 보기</button>' +
+        '<div class="kmap-live-out" aria-live="polite"></div>';
+      var frame = el.parentNode; frame.parentNode.insertBefore(bar, frame);
+      var btn = bar.querySelector("button"), out = bar.querySelector(".kmap-live-out");
+      var drawn = [];
+      btn.onclick = function () {
+        btn.disabled = true; btn.textContent = "위치 찾는 중…";
+        navigator.geolocation.getCurrentPosition(function (g) {
+          var me = { name: "지금 위치", lat: g.coords.latitude, lng: g.coords.longitude };
+          me.pos = new kakao.maps.LatLng(me.lat, me.lng);
+          drawn.forEach(function (o) { o.setMap(null); }); drawn = [];
+          var dot = document.createElement("div"); dot.className = "kme";
+          drawn.push(new kakao.maps.CustomOverlay({ map: map, position: me.pos, content: dot, zIndex: 8 }));
+          var stops = [me].concat(route);
+          btn.textContent = "길 찾는 중…";
+          osrm(stops, function (res) {
+            btn.disabled = false; btn.textContent = "🔄 다시 찾기";
+            var legs = res ? res.legs : stops.slice(1).map(function (b, i) { return roughLeg(stops[i], b); });
+            var path = res ? res.path : stops.map(function (p) { return p.pos; });
+            animate(path);
+            fit([me].concat(route));
+            var total = legs.reduce(function (a, l) { return a + l.min; }, 0);
+            out.innerHTML =
+              '<div class="kl-total">🚗 전체 약 <b>' + fmtMin(total) + '</b>' +
+              (res ? '' : ' <small>(직선거리로 어림)</small>') + '</div>' +
+              legs.map(function (l, i) {
+                var a = stops[i], b = stops[i + 1];
+                return '<div class="kl-leg"><span>' + esc(i === 0 ? "지금 위치" : a.label + " " + a.name) +
+                  ' → ' + esc(b.label + " " + b.name) + '</span><b>' + fmtMin(l.min) + ' · ' + l.km.toFixed(1) + 'km</b></div>';
+              }).join("") +
+              '<p class="kl-note">' + (res ? "도로 기준 예상 시간이에요(막히는 건 반영 안 됨). " : "") +
+              '실제 경로·시간은 아래 <b>길찾기</b> 버튼으로 카카오맵에서 보세요.</p>';
+          });
+        }, function () {
+          btn.disabled = false; btn.textContent = "📍 지금 위치에서 코스 보기";
+          out.innerHTML = '<p class="kl-note">위치 권한이 필요해요. 브라우저에서 위치 허용 후 다시 눌러주세요.</p>';
+        }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
+      };
+
+      function osrm(stops, cb) {
+        var url = "https://router.project-osrm.org/route/v1/driving/" +
+          stops.map(function (p) { return p.lng.toFixed(6) + "," + p.lat.toFixed(6); }).join(";") +
+          "?overview=full&geometries=geojson";
+        var done = false;
+        var timer = setTimeout(function () { if (!done) { done = true; cb(null); } }, 8000);
+        fetch(url).then(function (r) { return r.json(); }).then(function (j) {
+          if (done) return; done = true; clearTimeout(timer);
+          if (!j.routes || !j.routes[0]) return cb(null);
+          var r0 = j.routes[0];
+          cb({
+            path: r0.geometry.coordinates.map(function (xy) { return new kakao.maps.LatLng(xy[1], xy[0]); }),
+            legs: r0.legs.map(function (l) { return { min: l.duration / 60, km: l.distance / 1000 }; })
+          });
+        }).catch(function () { if (!done) { done = true; clearTimeout(timer); cb(null); } });
+      }
+      function roughLeg(a, b) {
+        var R = 6371, dLat = (b.lat - a.lat) * Math.PI / 180, dLng = (b.lng - a.lng) * Math.PI / 180;
+        var h = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(a.lat * Math.PI / 180) * Math.cos(b.lat * Math.PI / 180) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+        var km = 2 * R * Math.asin(Math.sqrt(h)) * 1.35; // 도로는 직선보다 35% 정도 길다고 보고
+        return { km: km, min: km / 25 * 60 };          // 시내 평균 25km/h로 어림
+      }
+      function fmtMin(m) {
+        m = Math.max(1, Math.round(m));
+        return m >= 60 ? Math.floor(m / 60) + "시간 " + (m % 60 ? (m % 60) + "분" : "") : m + "분";
+      }
+      // 선이 출발점에서 목적지까지 그려지고, 점이 그 위를 따라 움직임
+      function animate(path) {
+        var color = getComputedStyle(c.box).getPropertyValue("--kmap-accent").trim() || "#E0618C";
+        var line = new kakao.maps.Polyline({ map: map, path: [path[0]], strokeWeight: 6, strokeColor: color, strokeOpacity: 0.95 });
+        var car = document.createElement("div"); car.className = "kcar"; car.textContent = "🚗";
+        var carOv = new kakao.maps.CustomOverlay({ map: map, position: path[0], content: car, zIndex: 9 });
+        drawn.push(line, carOv);
+        var n = path.length, dur = Math.min(4000, 800 + n * 6), t0 = null;
+        function step(ts) {
+          if (!t0) t0 = ts;
+          var k = Math.min(1, (ts - t0) / dur), idx = Math.max(1, Math.floor(k * (n - 1)) + 1);
+          line.setPath(path.slice(0, idx));
+          carOv.setPosition(path[idx - 1]);
+          if (k < 1) requestAnimationFrame(step);
+          else loop();
+        }
+        requestAnimationFrame(step);
+        // 다 그린 뒤에는 차가 코스를 천천히 계속 돌아요
+        function loop() {
+          var i = 0;
+          var id = setInterval(function () {
+            if (!carOv.getMap()) return clearInterval(id);
+            i = (i + Math.max(1, Math.floor(n / 120))) % n;
+            carOv.setPosition(path[i]);
+          }, 60);
+        }
+      }
     }
 
     function fit(list) {

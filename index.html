@@ -27,6 +27,17 @@ body{margin:0;background:var(--paper);color:var(--ink);
 
 .hero{background:linear-gradient(160deg,var(--pink),var(--lav));color:#fff;
   padding:40px 20px 34px;text-align:center;position:relative;overflow:hidden}
+.crown{position:relative;width:96px;height:64px;margin:0 auto 4px;animation:cfloat 3.2s ease-in-out infinite}
+.crown svg{width:100%;height:100%;filter:drop-shadow(0 3px 6px rgba(120,60,10,.35)) drop-shadow(0 0 10px rgba(255,230,150,.55))}
+.crown .shine{animation:cshine 2.6s ease-in-out infinite}
+.crown .tw{position:absolute;color:#FFF6C8;text-shadow:0 0 6px #fff,0 0 12px #FFE48A;font-size:14px;opacity:0;animation:ctw 2.2s ease-in-out infinite}
+.crown .t1{left:-14px;top:6px}.crown .t2{right:-12px;top:0;font-size:11px;animation-delay:.5s}
+.crown .t3{left:44px;top:-14px;font-size:12px;animation-delay:1s}.crown .t4{left:-6px;bottom:2px;font-size:10px;animation-delay:1.4s}
+.crown .t5{right:-16px;bottom:10px;animation-delay:1.8s}
+@keyframes cshine{0%{transform:translateX(0) skewX(-20deg)}55%,100%{transform:translateX(190px) skewX(-20deg)}}
+@keyframes ctw{0%,100%{opacity:0;transform:scale(.4) rotate(0)}50%{opacity:1;transform:scale(1.15) rotate(25deg)}}
+@keyframes cfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@media (prefers-reduced-motion:reduce){.crown,.crown .shine,.crown .tw{animation:none}.crown .tw{opacity:.8}}
 .hero h1{font-family:"Gowun Dodum",sans-serif;font-size:32px;margin:6px 0 4px;line-height:1.25}
 .hero .kick{font-size:11px;letter-spacing:5px;opacity:.85}
 .hero .sub{font-size:13.5px;opacity:.95;margin-top:4px}
@@ -112,6 +123,32 @@ a.card:active{transform:scale(.99)}
 <body>
 
 <header class="hero">
+  <div class="crown" aria-hidden="true">
+    <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#FFF4C2"/><stop offset=".35" stop-color="#F2C94C"/>
+          <stop offset=".6" stop-color="#C9962B"/><stop offset="1" stop-color="#FFE48A"/>
+        </linearGradient>
+        <linearGradient id="cs" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".85"/>
+          <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <clipPath id="cc"><path d="M14 62 L8 22 L34 42 L60 10 L86 42 L112 22 L106 62 Z"/></clipPath>
+      </defs>
+      <path d="M14 62 L8 22 L34 42 L60 10 L86 42 L112 22 L106 62 Z" fill="url(#cg)" stroke="#9A6F17" stroke-width="2" stroke-linejoin="round"/>
+      <rect x="12" y="60" width="96" height="12" rx="3" fill="url(#cg)" stroke="#9A6F17" stroke-width="2"/>
+      <g clip-path="url(#cc)"><rect class="shine" x="-40" y="0" width="30" height="80" fill="url(#cs)" transform="skewX(-20)"/></g>
+      <circle cx="8" cy="20" r="4.5" fill="#FFE48A" stroke="#9A6F17" stroke-width="1.5"/>
+      <circle cx="60" cy="8" r="5" fill="#FFE48A" stroke="#9A6F17" stroke-width="1.5"/>
+      <circle cx="112" cy="20" r="4.5" fill="#FFE48A" stroke="#9A6F17" stroke-width="1.5"/>
+      <path d="M60 36 l6 8 -6 8 -6 -8 Z" fill="#FF6FA3" stroke="#B83266" stroke-width="1.2"/>
+      <circle cx="34" cy="52" r="3.6" fill="#7FD3F7" stroke="#2C7FA8" stroke-width="1"/>
+      <circle cx="86" cy="52" r="3.6" fill="#7FD3F7" stroke="#2C7FA8" stroke-width="1"/>
+      <circle cx="36" cy="66" r="2.6" fill="#FF6FA3"/><circle cx="60" cy="66" r="3" fill="#B98CFF"/><circle cx="84" cy="66" r="2.6" fill="#FF6FA3"/>
+    </svg>
+    <span class="tw t1">✦</span><span class="tw t2">✧</span><span class="tw t3">✦</span><span class="tw t4">✧</span><span class="tw t5">✦</span>
+  </div>
   <div class="kick">OUR DATE ALBUM</div>
   <h1>지영 · 믿음<br>데이트 앨범</h1>
   <div class="sub">2026년 7월 7일부터 💗</div>
