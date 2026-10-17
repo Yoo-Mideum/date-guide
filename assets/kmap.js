@@ -109,7 +109,7 @@
         '<button type="button" data-f="past">다녀온 곳</button></div>'
       : "";
     box.innerHTML = filters +
-      '<div class="kmap-frame"><i class="kf-c tl"></i><i class="kf-c tr"></i><i class="kf-c bl"></i><i class="kf-c br"></i>' +
+      '<div class="kmap-frame"><i class="kf-o t"></i><i class="kf-o b"></i><i class="kf-o l"></i><i class="kf-o r"></i>' +
       '<div class="kmap" role="region" aria-label="데이트 지도"><div class="kmap-msg">지도 불러오는 중…</div></div></div>' +
       (c.mode === "all"
         ? '<div class="kmap-legend"><span><i class="lg today"></i>오늘</span><span><i class="lg future"></i>앞으로 (D-day)</span><span><i class="lg past"></i>다녀온 곳 ✓</span></div>'
