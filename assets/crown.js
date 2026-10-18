@@ -19,7 +19,7 @@
 
   // 루크가 만든 티아라 사진 (배경만 지움) + 빛줄기 + 반짝이
   var base = (_cs && _cs.src) || "";
-  var src = base.replace(/crown\.js(\?.*)?$/, "crown.png?v=20261017-1505");
+  var src = base.replace(/crown\.js(\?.*)?$/, "crown.png?v=20261018-1040");
   var svg =
     '<img src="' + src + '" alt="" width="360" height="237">' +
     '<span class="shine" style="-webkit-mask-image:url(' + src + ');mask-image:url(' + src + ')"><i></i></span>';
