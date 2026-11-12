@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cache-control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>가보고 싶은 식당 🍽️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FDF8F3;--ink:#3A2E2A;--muted:#8B7466;--line:#EEE0D4;--card:#FFFFFF;--pink:#E0618C;--soft:#FBEFF3}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#221B18;--ink:#F3E9E2;--muted:#BFA698;--line:#3D322C;--card:#2E2521;--pink:#F08CAD;--soft:#3A2A2E}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans KR","Apple SD Gothic Neo",sans-serif;font-size:16px;line-height:1.7}
+header{background:linear-gradient(160deg,#B04E6E,#E0618C 55%,#F2A7B9);color:#fff;padding:36px 20px 28px;text-align:center}
+header .kicker{font-size:11px;letter-spacing:5px;opacity:.85}
+header h1{font-family:"Gowun Dodum",sans-serif;font-size:30px;margin:8px 0 4px;line-height:1.3}
+header .sub{font-size:13.5px;opacity:.95}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px 54px}
+.lead{background:var(--card);border:2px dashed var(--line);border-radius:16px;padding:14px 16px;font-size:13.5px;margin:22px 0 0}
+.nav{display:flex;gap:6px;flex-wrap:wrap;margin:16px 0 0}
+.nav a{font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none}
+h2{font-family:"Gowun Dodum",sans-serif;font-size:22px;margin:38px 0 2px;scroll-margin-top:12px}
+.hint{font-size:12.5px;color:var(--muted);margin:0 0 12px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;color:var(--muted);font-weight:700;background:var(--soft)}
+tr:last-child td{border-bottom:0} td small{color:var(--muted)}
+.shop{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:14px 15px;margin-top:10px}
+.sh{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.sh .no{min-width:24px;height:24px;border-radius:999px;background:var(--pink);color:#fff;font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;align-self:center}
+.sh b{font-family:"Gowun Dodum",sans-serif;font-size:17.5px}
+.sh .area{font-size:12px;color:var(--muted);margin-left:auto}
+dl{margin:8px 0 0;display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:13.5px}
+dt{color:var(--muted);white-space:nowrap;font-size:12.5px} dd{margin:0}
+.btns{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.btns a{font-size:12.5px;padding:6px 11px;border-radius:999px;text-decoration:none;border:1px solid var(--line);color:var(--ink)}
+.btns a.ph{background:#FEE500;border-color:#FEE500;color:#191919;font-weight:700}
+.note{font-size:12px;color:var(--muted);margin-top:26px;line-height:1.7}
+.back{display:block;text-align:center;margin:26px 0 0;color:var(--pink);font-weight:700;text-decoration:none}
+</style>
+<link rel="stylesheet" href="../assets/kmap.css?v=20261112-1710">
+<script src="../assets/kmap.js?v=20261112-1710" defer></script>
+<script src="../assets/crown.js?v=20261018-1040" defer></script>
+</head>
+<body>
+<header>
+  <div class="kicker">OUR FOOD LIST</div>
+  <h1>가보고 싶은 식당 🍽️</h1>
+  <div class="sub">종류별로 3곳씩 — 고르기만 하면 예약은 제가</div>
+</header>
+<div class="wrap">
+  <div class="lead">딤섬이랑 매운 불족발 얘기가 나와서 모아봤어요. 방어 · 고기 · 조용한 곳까지 다섯 갈래, 열다섯 곳.
+    <b>노란 버튼</b>을 누르면 카카오맵에서 가게 사진이랑 실시간 별점을 볼 수 있어요.</div>
+  <div class="nav"><a href="#dimsum">🥟 딤섬</a> <a href="#jokbal">🔥 매운 불족발</a> <a href="#fish">🐟 방어 · 회</a> <a href="#meat">🥩 고기 구이</a> <a href="#room">🕯️ 조용한 곳 · 룸</a></div>
+
+  <h2>🗺️ 한눈에 보기</h2>
+  <p class="hint">핀을 누르면 길찾기로 넘어가요</p>
+  <div class="kmap-box" data-course="eats-map"></div>
+  <script type="application/json" id="eats-map">{"points": [{"label": "🥟1", "name": "더딤섬 THE DIMSUM", "q": "더딤섬 관철동"}, {"label": "🥟2", "name": "딤딤섬 명동점", "q": "딤딤섬 명동점"}, {"label": "🥟3", "name": "팀호완 삼성점", "q": "팀호완 삼성"}, {"label": "🔥1", "name": "창신동 매운족발 (원조)", "q": "창신동매운족발 종로51길"}, {"label": "🔥2", "name": "옥천매운족발", "q": "옥천매운족발"}, {"label": "🔥3", "name": "창신동 매운족발 석계점", "q": "창신동매운족발 석계"}, {"label": "🐟1", "name": "남해바다마차", "q": "남해바다마차 석관동"}, {"label": "🐟2", "name": "광명수산", "q": "광명수산 성신여대"}, {"label": "🐟3", "name": "청춘종합어시장 성신여대점", "q": "청춘종합어시장 성신여대"}, {"label": "🥩1", "name": "초원 도산대로", "q": "초원 도산대로"}, {"label": "🥩2", "name": "소제이 서울본점", "q": "소제이 서울본점"}, {"label": "🥩3", "name": "삼각산숯불생고기", "q": "삼각산숯불생고기 우이동"}, {"label": "🕯️1", "name": "사유의서재 남산 테라스", "q": "사유의서재 남산"}, {"label": "🕯️2", "name": "진사댁 명동", "q": "진사댁 명동"}, {"label": "🕯️3", "name": "바리에가타 명동", "q": "바리에가타 명동"}]}</script>
+
+  <h2 id="dimsum">🥟 딤섬</h2>
+  <p class="hint">얘기 나왔던 거 — 샤오롱바오·하가우</p>
+  <div class="tbl"><table><thead><tr><th>가게</th><th>가격대</th><th>대표 메뉴</th></tr></thead><tbody><tr><td><b>더딤섬 THE DIMSUM</b><br><small>종각 · 관철동</small></td><td>1인 2만원대</td><td>샤오롱바오(돼지·매운 닭·생선)</td></tr><tr><td><b>딤딤섬 명동점</b><br><small>명동</small></td><td>2인 세트 약 4.9만원</td><td>2인 세트(딤섬 3종 + 새우가지 + 바비큐 덮밥)</td></tr><tr><td><b>팀호완 삼성점</b><br><small>삼성동</small></td><td>1인 2~3만원대</td><td>차슈번(바비큐 번)</td></tr></tbody></table></div>
+
+  <div class="shop">
+    <div class="sh"><span class="no">1</span><b>더딤섬 THE DIMSUM</b><span class="area">종각 · 관철동</span></div>
+    <dl>
+      <dt>💰 가격대</dt><dd>1인 2만원대</dd>
+      <dt>🍽️ 주요 메뉴</dt><dd>샤오롱바오(돼지·매운 닭·생선), 단호박 딤섬, 우육면, 가지튀김</dd>
+      <dt>💬 사람들 평가</dt><dd>샤오롱바오가 '먹어본 중 최고'라는 말이 반복돼요. 태블릿 주문, 직원이 친절하게 먹는 법까지 알려준다는 평. 작은 가게라 피크 시간엔 대기.</dd>
+      <dt>🕐 영업</dt><dd>평일 11–15 · 17–22 / 일 휴무</dd>
+    </dl>
+    <div class="btns"><a class="ph" href="https://map.kakao.com/link/search/%EB%8D%94%EB%94%A4%EC%84%AC%20%EA%B4%80%EC%B2%A0%EB%8F%99" target="_blank" rel="noopener">📷 사진 · 별점 (카카오맵)</a><a href="https://map.naver.com/p/search/%EB%8D%94%EB%94%A4%EC%84%AC%20%EA%B4%80%EC%B2%A0%EB%8F%99" target="_blank" rel="noopener">네이버 지도</a></div>
+  </div>
+  <div class="shop">
+    <div class="sh"><span class="no">2</span><b>딤딤섬 명동점</b><span class="area">명동</span></div>
+    <dl>
+      <dt>💰 가격대</dt><dd>2인 세트 약 4.9만원</dd>
+      <dt>🍽️ 주요 메뉴</dt><dd>2인 세트(딤섬 3종 + 새우가지 + 바비큐 덮밥), 샤오롱바오</dd>
+      <dt>💬 사람들 평가</dt><dd>가성비 좋은 홍콩식 딤섬이라는 평이 많고, 세트가 무난해요. 오리고기 덮밥은 기대보다 아쉽다는 의견, 바쁠 땐 서비스가 들쭉날쭉.</dd>
+      <dt>🕐 영업</dt><dd>매일 11–21</dd>
+    </dl>
+    <div class="btns"><a class="ph" href="https://map.kakao.com/link/search/%EB%94%A4%EB%94%A4%EC%84%AC%20%EB%AA%85%EB%8F%99%EC%A0%90" target="_blank" rel="noopener">📷 사진 · 별점 (카카오맵)</a><a href="https://map.naver.com/p/search/%EB%94%A4%EB%94%A4%EC%84%AC%20%EB%AA%85%EB%8F%99%EC%A0%90" target="_blank" rel="noopener">네이버 지도</a></div>
+  </div>
+  <div class="shop">
+    <div class="sh"><span class="no">3</span><b>팀호완 삼성점</b><span class="area">삼성동</span></div>
+    <dl>
+      <dt>💰 가격대</dt><dd>1인 2~3만원대</dd>
+      <dt>🍽️ 주요 메뉴</dt><dd>차슈번(바비큐 번), 새우 창펀, 완탕면, 에그타르트</dd>
+      <dt>💬 사람들 평가</dt><dd>홍콩 본점 그 맛이라는 시그니처 차슈번 호평. 반대로 '달다', '양이 적다'는 의견도 있어요. 매장 깔끔하고 직원 설명 친절.</dd>
+      <dt>🕐 영업</dt><dd>평일 11:30–15 · 17:30–21:30 / 주말 연속 영업</dd>
+    </dl>
+    <div class="btns"><a class="ph" href="https://map.kakao.com/link/search/%ED%8C%80%ED%98%B8%EC%99%84%20%EC%82%BC%EC%84%B1" target="_blank" rel="noopener">📷 사진 · 별점 (카카오맵)</a><a href="https://map.naver.com/p/search/%ED%8C%80%ED%98%B8%EC%99%84%20%EC%82%BC%EC%84%B1" target="_blank" rel="noopener">네이버 지도</a></div>
+  </div>
+  <h2 id="jokbal">🔥 매운 불족발</h2>
+  <p class="hint">얘기 나왔던 거 — 불맛 나는 매운 족발</p>
+  <div class="tbl"><table><thead><tr><th>가게</th><th>가격대</th><th>대표 메뉴</th></tr></thead><tbody><tr><td><b>창신동 매운족발 (원조)</b><br><small>종로 · 창신시장</small></td><td>1인 2만원대</td><td>매운 족발</td></tr><tr><td><b>옥천매운족발</b><br><small>종로 · 창신동</small></td><td>1인 2만원대</td><td>반반 족발</td></tr><tr><td><b>창신동 매운족발 석계점</b><br><small>석관동 · 석계역</small></td><td>1인 2만원대</td><td>매운 족발(앞다리 大)</td></tr></tbody></table></div>
+
+  <div class="shop">
+    <div class="sh"><span class="no">1</span><b>창신동 매운족발 (원조)</b><span class="area">종로 · 창신시장</span></div>
+    <dl>
+      <dt>💰 가격대</dt><dd>1인 2만원대</dd>
+      <dt>🍽️ 주요 메뉴</dt><dd>매운 족발, 반반(매운+일반), 계란찜, 주먹밥</dd>
+      <dt>💬 사람들 평가</dt><dd>'원조'로 통하는 집. 진짜 맵다, 불맛이 세다는 평이 공통이고, 시장 골목 로컬 분위기 그대로예요. 반찬 계속 채워주는 정 있는 서비스.</dd>
+      <dt>🕐 영업</dt><dd>화–일 10:30–22 / 월 휴무</dd>
+    </dl>
+    <div class="btns"><a class="ph" href="https://map.kakao.com/link/search/%EC%B0%BD%EC%8B%A0%EB%8F%99%EB%A7%A4%EC%9A%B4%EC%A1%B1%EB%B0%9C%20%EC%A2%85%EB%A1%9C51%EA%B8%B8" target="_blank" rel="noopener">📷 사진 · 별점 (카카오맵)</a><a href="https://map.naver.com/p/search/%EC%B0%BD%EC%8B%A0%EB%8F%99%EB%A7%A4%EC%9A%B4%EC%A1%B1%EB%B0%9C%20%EC%A2%85%EB%A1%9C51%EA%B8%B8" target="_blank" rel="noopener">네이버 지도</a></div>
+  </div>
+  <div class="shop">
+    <div class="sh"><span class="no">2</span><b>옥천매운족발</b><span class="area">종로 · 창신동</span></div>
+    <dl>
+      <dt>💰 가격대</dt><dd>1인 2만원대</dd>
+      <dt>🍽️ 주요 메뉴</dt><dd>반반 족발, 계란찜, 주먹밥</dd>
+      <dt>💬 사람들 평가</dt><dd>같은 골목 맞은편. 백종원 '3대천왕'에 나온 집으로 알려져 있고, 훈연 향이 진하다는 평. 맵기가 세서 반반 + 계란찜 조합을 다들 추천.</dd>
+      <dt>🕐 영업</dt><dd>10–24 / 화 휴무</dd>
+    </dl>
+    <div class="btns"><a class="ph" href="https://map.kakao.com/link/search/%EC%98%A5%EC%B2%9C%EB%A7%A4%EC%9A%B4%EC%A1%B1%EB%B0%9C" target="_blank" rel="noopener">📷 사진 · 별점 (카카오맵)</a><a href="https://map.naver.com/p/search/%EC%98%A5%EC%B2%9C%EB%A7%A4%EC%9A%B4%EC%A1%B1%EB%B0%9C" target="_blank" rel="noopener">네이버 지도</a></div>
+  </div>
+  <div class="shop">
+    <div class="sh"><span class="no">3</span><b>창신동 매운족발 석계점</b><span class="area">석관동 · 석계역</span></div>
+    <dl>
+      <dt>💰 가격대</dt><dd>1인 2만원대</dd>
+      <dt>🍽️ 주요 메뉴</dt><dd>매운 족발(앞다리 大), 미니족, 순살 반반</dd>
+      <dt>💬 사람들 평가</dt><dd>집에서 제일 가까운 불족발. 스트레스 받을 때 생각나는 맛이라는 평, 포장해서 집에서 먹는 사람도 많아요. 가게가 좁고 주차는 불편.</dd>
+      <dt>🕐 영업</dt><dd>매일 15–23:45</dd>
+    </dl>
+    <div class="btns"><a class="ph" href="https://map.kakao.com/link/search/%EC%B0%BD%EC%8B%A0%EB%8F%99%EB%A7%A4%EC%9A%B4%EC%A1%B1%EB%B0%9C%20%EC%84%9D%EA%B3%84" target="_blank" rel="noopener">📷 사진 · 별점 (카카오맵)</a><a href="https://map.naver.com/p/search/%EC%B0%BD%EC%8B%A0%EB%8F%99%EB%A7%A4%EC%9A%B4%EC%A1%B1%EB%B0%9C%20%EC%84%9D%EA%B3%84" target="_blank" rel="noopener">네이버 지도</a></div>
+  </div>
+  <h2 id="fish">🐟 방어 · 회</h2>
+  <p class="hint">겨울 방어 시즌 — 11월부터 기름 올라요</p>
+  <div class="tbl"><table><thead><tr><th>가게</th><th>가격대</th><th>대표 메뉴</th></tr></thead><tbody><tr><td><b>남해바다마차</b><br><small>석관동 · 석계역</small></td><td>숙성회 세트 1인 약 3.8만원</td><td>숙성회 세트(광어·농어·방어·잿방어·전복·문어)</td></tr><tr><td><b>광명수산</b><br><small>성신여대 앞</small></td><td>1인 3만원 안팎</td><td>대방어(대·중·소</td></tr><tr><td><b>청춘종합어시장 성신여대점</b><br><small>성신여대 앞</small></td><td>1인 2~3만원대</td><td>제철 회 세트</td></tr></tbody></table></div>
+
+  <div class="shop">
+    <div class="sh"><span class="no">1</span><b>남해바다마차</b><span class="area">석관동 · 석계역</span></div>
+    <dl>
+      <dt>💰 가격대</dt><dd>숙성회 세트 1인 약 3.8만원</dd>
+      <dt>🍽️ 주요 메뉴</dt><dd>숙성회 세트(광어·농어·방어·잿방어·전복·문어), 대방어</dd>
+      <dt>💬 사람들 평가</dt><dd>동북권 숙성회 맛집으로 유명. 종류별로 맛보기 좋은 세트가 호평이고, 가격이 높다는 의견도 있어요. 주말 저녁은 웨이팅 2~3시간 — 캐치테이블 예약 필수.</dd>
+      <dt>🕐 영업</dt><dd>매일 15–23:50</dd>
+    </dl>
+    <div class="btns"><a class="ph" href="https://map.kakao.com/link/search/%EB%82%A8%ED%95%B4%EB%B0%94%EB%8B%A4%EB%A7%88%EC%B0%A8%20%EC%84%9D%EA%B4%80%EB%8F%99" target="_blank" rel="noopener">📷 사진 · 별점 (카카오맵)</a><a href="https://map.naver.com/p/search/%EB%82%A8%ED%95%B4%EB%B0%94%EB%8B%A4%EB%A7%88%EC%B0%A8%20%EC%84%9D%EA%B4%80%EB%8F%99" target="_blank" rel="noopener">네이버 지도</a></div>
+  </div>
+  <div class="shop">
+    <div class="sh"><span class="no">2</span><b>광명수산</b><span class="area">성신여대 앞</span></div>
+    <dl>
+      <dt>💰 가격대</dt><dd>1인 3만원 안팎</dd>
+      <dt>🍽️ 주요 메뉴</dt><dd>대방어(대·중·소, 부위별로 나옴)</dd>
+      <dt>💬 사람들 평가</dt><dd>대방어를 시키면 부위별로 고루 맛볼 수 있다는 평. 쫄깃하고 기름진 방어 맛 호평, 웨이팅은 보통 30분 이내. 새벽 2시까지라 늦게도 OK.</dd>
+      <dt>🕐 영업</dt><dd>매일 11:30–02</dd>
+    </dl>
+    <div class="btns"><a class="ph" href="https://map.kakao.com/link/search/%EA%B4%91%EB%AA%85%EC%88%98%EC%82%B0%20%EC%84%B1%EC%8B%A0%EC%97%AC%EB%8C%80" target="_blank" rel="noopener">📷 사진 · 별점 (카카오맵)</a><a href="https://map.naver.com/p/search/%EA%B4%91%EB%AA%85%EC%88%98%EC%82%B0%20%EC%84%B1%EC%8B%A0%EC%97%AC%EB%8C%80" target="_blank" rel="noopener">네이버 지도</a></div>
+  </div>
+  <div class="shop">
+    <div class="sh"><span class="no">3</span><b>청춘종합어시장 성신여대점</b><span class="area">성신여대 앞</span></div>
+    <dl>
+      <dt>💰 가격대</dt><dd>1인 2~3만원대</dd>
+      <dt>🍽️ 주요 메뉴</dt><dd>제철 회 세트, 광어 소금김밥, 광어국수, 오징어</dd>
+      <dt>💬 사람들 평가</dt><dd>가격 대비 회 양이 넉넉한 세트가 장점. 회전이 빨라 신선하다는 평, 가게가 넓고 늘 북적여요. 조용한 데이트보단 활기찬 분위기.</dd>
+      <dt>🕐 영업</dt><dd>매일 11:30–02</dd>
+    </dl>
+    <div class="btns"><a class="ph" href="https://map.kakao.com/link/search/%EC%B2%AD%EC%B6%98%EC%A2%85%ED%95%A9%EC%96%B4%EC%8B%9C%EC%9E%A5%20%EC%84%B1%EC%8B%A0%EC%97%AC%EB%8C%80" target="_blank" rel="noopener">📷 사진 · 별점 (카카오맵)</a><a href="https://map.naver.com/p/search/%EC%B2%AD%EC%B6%98%EC%A2%85%ED%95%A9%EC%96%B4%EC%8B%9C%EC%9E%A5%20%EC%84%B1%EC%8B%A0%EC%97%AC%EB%8C%80" target="_blank" rel="noopener">네이버 지도</a></div>
+  </div>
+  <h2 id="meat">🥩 고기 구이</h2>
+  <p class="hint">직원이 구워주는 곳 위주</p>
+  <div class="tbl"><table><thead><tr><th>가게</th><th>가격대</th><th>대표 메뉴</th></tr></thead><tbody><tr><td><b>초원 도산대로</b><br><small>압구정 · 도산대로</small></td><td>1인 5만원 이상</td><td>소금갈비(약 5.8만원)</td></tr><tr><td><b>소제이 서울본점</b><br><small>신논현</small></td><td>1인 3~5만원대</td><td>생 LA갈비</td></tr><tr><td><b>삼각산숯불생고기</b><br><small>우이동 · 북한산 아래</small></td><td>1인 2~3만원대</td><td>뼈 있는 돼지갈비</td></tr></tbody></table></div>
+
+  <div class="shop">
+    <div class="sh"><span class="no">1</span><b>초원 도산대로</b><span class="area">압구정 · 도산대로</span></div>
+    <dl>
+      <dt>💰 가격대</dt><dd>1인 5만원 이상</dd>
+      <dt>🍽️ 주요 메뉴</dt><dd>소금갈비(약 5.8만원), 등심(약 4.2만원), 우설, 한우 뭇국</dd>
+      <dt>💬 사람들 평가</dt><dd>몽탄 세컨드 브랜드. 우설과 소금갈비가 시그니처로 호평, 반찬 구성도 다양하다는 평. 가격대는 높은 편.</dd>
+      <dt>🕐 영업</dt><dd>리뷰상 연중무휴 · 방문 전 영업시간 확인</dd>
+    </dl>
+    <div class="btns"><a class="ph" href="https://map.kakao.com/link/search/%EC%B4%88%EC%9B%90%20%EB%8F%84%EC%82%B0%EB%8C%80%EB%A1%9C" target="_blank" rel="noopener">📷 사진 · 별점 (카카오맵)</a><a href="https://map.naver.com/p/search/%EC%B4%88%EC%9B%90%20%EB%8F%84%EC%82%B0%EB%8C%80%EB%A1%9C" target="_blank" rel="noopener">네이버 지도</a></div>
+  </div>
+  <div class="shop">
+    <div class="sh"><span class="no">2</span><b>소제이 서울본점</b><span class="area">신논현</span></div>
+    <dl>
+      <dt>💰 가격대</dt><dd>1인 3~5만원대</dd>
+      <dt>🍽️ 주요 메뉴</dt><dd>생 LA갈비, 소꼬리찜, 된장찌개, 계란밥</dd>
+      <dt>💬 사람들 평가</dt><dd>직원이 다 구워줘서 대화하며 편하게 먹을 수 있다는 평이 많아요. 레트로 분위기, 소스 조합이 다양해 끝까지 안 질린다는 평.</dd>
+      <dt>🕐 영업</dt><dd>월–토 17–01(금토 02) / 일 휴무</dd>
+    </dl>
+    <div class="btns"><a class="ph" href="https://map.kakao.com/link/search/%EC%86%8C%EC%A0%9C%EC%9D%B4%20%EC%84%9C%EC%9A%B8%EB%B3%B8%EC%A0%90" target="_blank" rel="noopener">📷 사진 · 별점 (카카오맵)</a><a href="https://map.naver.com/p/search/%EC%86%8C%EC%A0%9C%EC%9D%B4%20%EC%84%9C%EC%9A%B8%EB%B3%B8%EC%A0%90" target="_blank" rel="noopener">네이버 지도</a></div>
+  </div>
+  <div class="shop">
+    <div class="sh"><span class="no">3</span><b>삼각산숯불생고기</b><span class="area">우이동 · 북한산 아래</span></div>
+    <dl>
+      <dt>💰 가격대</dt><dd>1인 2~3만원대</dd>
+      <dt>🍽️ 주요 메뉴</dt><dd>뼈 있는 돼지갈비, 숯불 생고기</dd>
+      <dt>💬 사람들 평가</dt><dd>집에서 가깝고 직원이 구워주는 뼈갈비 집. 저희가 두 번 계획만 하고 아직 못 간 곳이에요 😅</dd>
+      <dt>🕐 영업</dt><dd>방문 전 영업시간 확인</dd>
+    </dl>
+    <div class="btns"><a class="ph" href="https://map.kakao.com/link/search/%EC%82%BC%EA%B0%81%EC%82%B0%EC%88%AF%EB%B6%88%EC%83%9D%EA%B3%A0%EA%B8%B0%20%EC%9A%B0%EC%9D%B4%EB%8F%99" target="_blank" rel="noopener">📷 사진 · 별점 (카카오맵)</a><a href="https://map.naver.com/p/search/%EC%82%BC%EA%B0%81%EC%82%B0%EC%88%AF%EB%B6%88%EC%83%9D%EA%B3%A0%EA%B8%B0%20%EC%9A%B0%EC%9D%B4%EB%8F%99" target="_blank" rel="noopener">네이버 지도</a></div>
+  </div>
+  <h2 id="room">🕯️ 조용한 곳 · 룸</h2>
+  <p class="hint">얘기 나누기 좋은 곳</p>
+  <div class="tbl"><table><thead><tr><th>가게</th><th>가격대</th><th>대표 메뉴</th></tr></thead><tbody><tr><td><b>사유의서재 남산 테라스</b><br><small>명동 · 정화예대 옆</small></td><td>1인 4~6만원대</td><td>라구 파스타(치즈 휠)</td></tr><tr><td><b>진사댁 명동</b><br><small>명동</small></td><td>코스 1인 3~5만원대</td><td>한정식 코스(전복·보리굴비·백김치 등)</td></tr><tr><td><b>바리에가타 명동</b><br><small>명동 · 남대문로</small></td><td>1인 3~5만원대</td><td>그로타 뇨끼</td></tr></tbody></table></div>
+
+  <div class="shop">
+    <div class="sh"><span class="no">1</span><b>사유의서재 남산 테라스</b><span class="area">명동 · 정화예대 옆</span></div>
+    <dl>
+      <dt>💰 가격대</dt><dd>1인 4~6만원대</dd>
+      <dt>🍽️ 주요 메뉴</dt><dd>라구 파스타(치즈 휠), 버섯 크림 리소토, 피자, 와인</dd>
+      <dt>💬 사람들 평가</dt><dd>남산타워·케이블카 뷰가 압도적이라는 평. 룸이 있어 조용한 데이트에 좋았다는 후기, 위층 카페·와인숍까지 이어가기 좋아요.</dd>
+      <dt>🕐 영업</dt><dd>매일 11–23</dd>
+    </dl>
+    <div class="btns"><a class="ph" href="https://map.kakao.com/link/search/%EC%82%AC%EC%9C%A0%EC%9D%98%EC%84%9C%EC%9E%AC%20%EB%82%A8%EC%82%B0" target="_blank" rel="noopener">📷 사진 · 별점 (카카오맵)</a><a href="https://map.naver.com/p/search/%EC%82%AC%EC%9C%A0%EC%9D%98%EC%84%9C%EC%9E%AC%20%EB%82%A8%EC%82%B0" target="_blank" rel="noopener">네이버 지도</a></div>
+  </div>
+  <div class="shop">
+    <div class="sh"><span class="no">2</span><b>진사댁 명동</b><span class="area">명동</span></div>
+    <dl>
+      <dt>💰 가격대</dt><dd>코스 1인 3~5만원대</dd>
+      <dt>🍽️ 주요 메뉴</dt><dd>한정식 코스(전복·보리굴비·백김치 등), 막걸리</dd>
+      <dt>💬 사람들 평가</dt><dd>개별 룸이 많아 모임·식사 자리로 좋다는 평. 보리굴비·전복 호평, 반면 고기 메뉴나 서비스가 아쉬웠다는 후기도 있어요. 가야금 공연 요청 가능.</dd>
+      <dt>🕐 영업</dt><dd>매일 11:30–22</dd>
+    </dl>
+    <div class="btns"><a class="ph" href="https://map.kakao.com/link/search/%EC%A7%84%EC%82%AC%EB%8C%81%20%EB%AA%85%EB%8F%99" target="_blank" rel="noopener">📷 사진 · 별점 (카카오맵)</a><a href="https://map.naver.com/p/search/%EC%A7%84%EC%82%AC%EB%8C%81%20%EB%AA%85%EB%8F%99" target="_blank" rel="noopener">네이버 지도</a></div>
+  </div>
+  <div class="shop">
+    <div class="sh"><span class="no">3</span><b>바리에가타 명동</b><span class="area">명동 · 남대문로</span></div>
+    <dl>
+      <dt>💰 가격대</dt><dd>1인 3~5만원대</dd>
+      <dt>🍽️ 주요 메뉴</dt><dd>그로타 뇨끼, 피스타치오 시저 샐러드, 파스타, 와인</dd>
+      <dt>💬 사람들 평가</dt><dd>복잡한 명동에서 벗어난 차분하고 스타일리시한 공간이라는 평. 파스타 알덴테·뇨끼 호평, 서빙이 느렸다는 후기도 하나 있어요.</dd>
+      <dt>🕐 영업</dt><dd>매일 11:30–15 · 17–22</dd>
+    </dl>
+    <div class="btns"><a class="ph" href="https://map.kakao.com/link/search/%EB%B0%94%EB%A6%AC%EC%97%90%EA%B0%80%ED%83%80%20%EB%AA%85%EB%8F%99" target="_blank" rel="noopener">📷 사진 · 별점 (카카오맵)</a><a href="https://map.naver.com/p/search/%EB%B0%94%EB%A6%AC%EC%97%90%EA%B0%80%ED%83%80%20%EB%AA%85%EB%8F%99" target="_blank" rel="noopener">네이버 지도</a></div>
+  </div>
+  <p class="note">가격대는 메뉴판·후기에 나온 값과 가격 수준을 바탕으로 한 대략치예요. 영업시간·가격은 바뀔 수 있으니 가기 전에 한 번 확인할게요.
+    '사람들 평가'는 지도 앱 후기들을 읽고 제가 공통점만 요약한 거예요. 사진과 별점은 각 지도 앱에서 직접 보는 게 정확해요.</p>
+  <a class="back" href="../">← 데이트 앨범으로 돌아가기</a>
+</div>
+</body>
+</html>
