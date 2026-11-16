@@ -56,6 +56,6 @@ window.DATE_TRIPS = [
   { date: "2026-11-12", title: "명동 하루 → 몽중헌 🏆", href: "./plan/", points: [
     { name: "정화예술대학교", q: "정화예술대학교" },
     { name: "몽중헌 페럼타워점", q: "몽중헌 페럼타워점" } ] },
-  { date: "2026-11-25", end: "2026-11-26", title: "글램핑 (후보)", href: "./plan/", points: [
-    { name: "휴토피아 글램핑", q: "휴토피아 글램핑 홍천" } ] }
+  { date: "2026-11-25", title: "홍천 당일 여행", href: "./plan/", points: [
+    { name: "비발디파크", q: "소노벨 비발디파크" } ] }
 ];
